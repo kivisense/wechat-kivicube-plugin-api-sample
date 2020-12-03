@@ -1,0 +1,28 @@
+{
+  "pages": [
+    {
+      "path": "pages/index/index"
+    },
+    {
+      "path": "pages/web/index"
+    },
+    {
+      "path": "pages/scene/index"
+    },
+    {
+      "path": "pages/cloudar/index"
+    },
+    {
+      "path": "pages/some/index"
+    }
+  ],
+  "globalStyle": {
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "小程序AR示例",
+    "navigationBarTextStyle": "black",
+    "usingComponents": {
+      "kivicube-scene": "plugin://kivicube/kivicube-scene",
+      "kivicube-cloudar": "plugin://kivicube/kivi-cloudar"
+    }
+  }
+}
