@@ -22,7 +22,7 @@
         src="/static/scene1/bottom.png"
       ></cover-image>
       <cover-image
-        @click="$parent.takephoto"
+        @click="getTakephoto"
         class="camera-img"
         src="/static/scene1/camera.png"
       ></cover-image>
@@ -59,6 +59,15 @@ export default {
       const position = this.defaultPosition === "front" ? "back" : "front";
       this.view.switchCamera(position);
       this.defaultPosition = position;
+    },
+    getTakephoto() {
+      this.takePhoto().then(photo => {
+        wx.navigateTo({
+          url: `../../pages/scene/mergePic/index?photo=${encodeURIComponent(
+            photo
+          )}`
+        });
+      });
     }
   }
 };
