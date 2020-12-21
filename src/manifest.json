@@ -71,9 +71,10 @@
       "urlCheck": false
     },
     "usingComponents": true,
+    "optimization":{"subPackages":true},
     "plugins": {
       "kivicube": {
-        "version": "1.4.0",
+        "version": "1.5.1",
         "provider": "wx3bbab3920eabccb2"
       }
 		}

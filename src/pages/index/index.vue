@@ -17,16 +17,18 @@
       </view>
     </scroll-view>
     <Modal ref="showModal" />
+    <WebModal ref="showWebModal" />
   </view>
 </template>
 
 <script>
 import share from "@/mixins/share.mixin";
 import Modal from "@/components/Modal";
+import WebModal from "@/components/WebModal";
 import { sceneOptions } from "@/components/scene/scene";
 import { MTAInit, MTAEvent } from "@/MTA";
 export default {
-  components: { Modal },
+  components: { Modal, WebModal },
   mixins: [share],
   data: () => ({
     sceneOptions: sceneOptions
@@ -37,7 +39,7 @@ export default {
   methods: {
     clickOpt(item) {
       if (item.type === "web") {
-        this.openWeb(item.key);
+        this.openWebMadal(item);
       } else {
         this.openModal(item);
       }
@@ -46,16 +48,19 @@ export default {
     openModal(item) {
       this.$refs.showModal.show(item);
     },
-    openWeb(type) {
-      let url = "";
-      if (type === "development") {
-        url = "https://www.kivicube.com/blog/mp-ar-plugin";
-      }
-      if (type === "creativity") {
-        url = "https://www.kivicube.com/blog/mp-ar";
-      }
-      wx.navigateTo({ url: `../web/index?url=${encodeURIComponent(url)}` });
+    openWebMadal(item) {
+      this.$refs.showWebModal.show(item);
     }
+    // openWeb(type) {
+    //   let url = "";
+    //   if (type === "development") {
+    //     url = "https://www.kivicube.com/blog/mp-ar-plugin";
+    //   }
+    //   if (type === "creativity") {
+    //     url = "https://www.kivicube.com/blog/mp-ar";
+    //   }
+    //   wx.navigateTo({ url: `../web/index?url=${encodeURIComponent(url)}` });
+    // }
   }
 };
 </script>

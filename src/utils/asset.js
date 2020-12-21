@@ -1,23 +1,3 @@
-export function getUrl(filename) {
-  return `${process.env.VUE_APP_ASSET_HOST}/${filename}`;
-}
-
-let tryonAsset;
-export function initTryOnAsset(assetUrlList) {
-  try {
-    if (!tryonAsset) {
-      tryonAsset = Promise.all([
-        ...assetUrlList.map(url => {
-          return Promise.resolve(url);
-        })
-      ]);
-    }
-    return tryonAsset;
-  } catch (e) {
-    console.error("initTryOnAsset", e);
-  }
-}
-
 export function downloadFile(file) {
   const download = (resolve, reject) => {
     wx.downloadFile({

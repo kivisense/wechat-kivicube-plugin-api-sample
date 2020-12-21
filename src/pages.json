@@ -16,6 +16,9 @@
       "path": "pages/some/index"
     },
     {
+      "path": "pages/collectScene/index"
+    },
+    {
       "path": "pages/scene/mergePic/index"
     }
   ],
@@ -25,7 +28,8 @@
     "navigationBarTextStyle": "black",
     "usingComponents": {
       "kivicube-scene": "plugin://kivicube/kivicube-scene",
-      "kivicube-cloudar": "plugin://kivicube/kivi-cloudar"
+      "kivicube-cloudar": "plugin://kivicube/kivi-cloudar",
+      "kivicube-collection": "plugin://kivicube/kivicube-collection"
     }
   }
 }

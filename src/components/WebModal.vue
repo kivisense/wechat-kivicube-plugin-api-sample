@@ -18,15 +18,14 @@
           {{ txt.txt }}
         </cover-view>
       </cover-view>
-      <cover-view class="btn" scroll-top="0" @click="immediateExperience"
-        >立即体验</cover-view
+      <cover-view class="btn" scroll-top="0" @click="copyClick"
+        >复制链接</cover-view
       >
     </cover-view>
   </cover-view>
 </template>
 
 <script>
-import { MTAEvent } from "@/MTA";
 export default {
   props: {
     value: {
@@ -36,8 +35,7 @@ export default {
   },
   data: () => ({
     showModal: false,
-    showData: {},
-    cb: () => {}
+    showData: {}
   }),
   mounted() {
     this.showModal = this.value;
@@ -48,28 +46,20 @@ export default {
     }
   },
   methods: {
-    show(showData, cb = () => {}) {
+    show(showData) {
       this.showModal = true;
       this.showData = showData;
-      this.cb = cb;
     },
     hidden() {
       this.showModal = false;
-      this.$emit("input", false);
-      this.$emit("close");
-      this.cb();
     },
-    immediateExperience() {
-      MTAEvent(this.showData.startMta);
-      uni.setStorageSync("sceneData", this.showData);
-      this.hidden();
-      if (this.showData.type === "scene") {
-        wx.navigateTo({ url: "../scene/index" });
-      } else if (this.showData.type === "collectScene") {
-        wx.navigateTo({ url: "../collectScene/index" });
-      } else {
-        wx.navigateTo({ url: "../cloudar/index" });
-      }
+    copyClick() {
+      wx.setClipboardData({
+        data: this.showData.url,
+        success(res) {
+          console.log(res, "res");
+        }
+      });
     }
   }
 };

@@ -7,6 +7,13 @@ const sceneOptions = [
         type: "web",
         title: "创意者",
         key: "creativity",
+        description: [
+          {
+            txt: "文档地址：https://www.kivicube.com/blog/mp-ar",
+            type: "txt",
+            style: ""
+          }
+        ],
         url: "https://www.kivicube.com/blog/mp-ar",
         clickMta: "click_creator_button",
         startMta: ""
@@ -16,7 +23,30 @@ const sceneOptions = [
         type: "web",
         title: "开发者",
         key: "development",
-        url: "https://www.kivicube.com/blog/mp-ar",
+        description: [
+          {
+            txt: "文档地址：https://www.kivicube.com/blog/mp-ar-plugin",
+            type: "txt",
+            style: ""
+          }
+        ],
+        url: "https://www.kivicube.com/blog/mp-ar-plugin",
+        clickMta: "click_developer_button",
+        startMta: ""
+      },
+      {
+        id: 19,
+        type: "web",
+        title: "AR示例说明文档",
+        key: "development",
+        description: [
+          {
+            txt: "文档地址：https://www.yuque.com/kivicube/manual/advanced-api",
+            type: "txt",
+            style: ""
+          }
+        ],
+        url: "https://www.yuque.com/kivicube/manual/advanced-api",
         clickMta: "click_developer_button",
         startMta: ""
       },
@@ -26,11 +56,28 @@ const sceneOptions = [
         sceneId: "Q3mSW9yDIuLrXeUgaN0H23WaxBQ7ZKgE",
         from: "list",
         type: "scene",
-        title: "快速接入",
+        title: "快速接入kivicube-scene组件",
         description: [
           {
             txt:
               "10分钟为您的小程序接入AR功能，并可以通过Kivicube后台实时管理与编辑~",
+            type: "txt",
+            style: ""
+          }
+        ],
+        clickMta: "click_quickstart_button",
+        startMta: "click_quickstart_start"
+      },
+      {
+        id: 18,
+        name: "collectionEnter",
+        collectionId: "nw4uq2",
+        type: "collectScene",
+        title: "快速接入kivicube-collection组件",
+        description: [
+          {
+            txt:
+              "10分钟为您的小程序接入AR多场景（多图连续识别）功能，并可以通过Kivicube后台实时管理与编辑~",
             type: "txt",
             style: ""
           }
@@ -318,6 +365,29 @@ const sceneOptions = [
         ],
         clickMta: "click_customanimation_button",
         startMta: "click_customanimation_start"
+      },
+      {
+        id: 19,
+        name: "maskModel",
+        type: "scene",
+        title: "模型遮罩",
+        description: [
+          { txt: "源场景：", type: "title", style: "" },
+          {
+            txt: "源场景中添加了名称为“柠檬”与“Occluder”的模型对象",
+            type: "txt",
+            style: ""
+          },
+          { txt: "高级API功能：", type: "title", style: "" },
+          {
+            txt:
+              "将Occluder设置为遮罩类型，Occluder便可以挡住“柠檬”部分运动轨迹，达到柠檬跑到物体背后被遮挡，AR体验更真实",
+            type: "txt",
+            style: ""
+          }
+        ],
+        clickMta: "click_customanimation_button",
+        startMta: "click_customanimation_start"
       }
     ]
   },
@@ -394,6 +464,70 @@ const sceneOptions = [
         ],
         clickMta: "click_cloudar_button",
         startMta: "click_cloudar_start"
+      }
+    ]
+  },
+  {
+    title: "多图连续识别（kivicube-collection组件）",
+    child: [
+      {
+        id: 20,
+        name: "cloudOrGyroscopeCollecttion",
+        type: "collectScene",
+        collectionId: "8rwg2z",
+        title: "多个陀螺仪/云识别场景",
+        description: [
+          { txt: "高级API功能：", type: "title", style: "" },
+          {
+            txt: "（1）隐藏自带的返回按钮，并自定义UI；",
+            type: "txt",
+            style: ""
+          },
+          {
+            txt: "（2）隐藏自带的云识别扫描提示，并自定义UI；",
+            type: "txt",
+            style: ""
+          },
+          {
+            txt: "（3）场景切换功能；",
+            type: "txt",
+            style: ""
+          }
+        ],
+        clickMta: "click_arscan_button",
+        startMta: "click_arscan_start"
+      },
+      {
+        id: 21,
+        name: "trackingCollecttion",
+        type: "collectScene",
+        collectionId: "uucpmp",
+        title: "多个图像跟踪场景",
+        description: [
+          { txt: "高级API功能：", type: "title", style: "" },
+          {
+            txt: "（1）自定义开启或关闭识别的时机；",
+            type: "txt",
+            style: ""
+          },
+          {
+            txt: "（2）隐藏自带的云识别扫描提示，并自定义UI；",
+            type: "txt",
+            style: ""
+          },
+          {
+            txt: "（3）隐藏自带的图像跟踪提示，并自定义UI；",
+            type: "txt",
+            style: ""
+          },
+          {
+            txt: "（4）场景切换功能；",
+            type: "txt",
+            style: ""
+          }
+        ],
+        clickMta: "click_arscan_button",
+        startMta: "click_arscan_start"
       }
     ]
   },

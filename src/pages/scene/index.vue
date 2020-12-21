@@ -10,6 +10,7 @@
     <alpha-video ref="scene" v-if="sceneData.name === 'alphaVideo'" />
     <audioOpt ref="scene" v-if="sceneData.name === 'audio'" />
     <tweenAnimation ref="scene" v-if="sceneData.name === 'tweenAnimation'" />
+    <maskModel ref="scene" v-if="sceneData.name === 'maskModel'"></maskModel>
     <envMap ref="scene" v-if="sceneData.name === 'envMap'" />
     <imageSprite ref="scene" v-if="sceneData.name === 'imageSprite'" />
     <autoEnter ref="scene" v-if="sceneData.name === 'autoEnter'" />
@@ -77,7 +78,7 @@
         >
       </cover-view>
     </cover-view>
-    <cover-view v-if="showAlert" class="show-alert"
+    <cover-view v-if="showAlert && showFrame" class="show-alert"
       >移近一点，保持扫描</cover-view
     >
   </view>
@@ -101,6 +102,7 @@ import modelOpt from "@/components/scene/modelOpt.vue";
 import videoOpt from "@/components/scene/videoOpt.vue";
 import AlphaVideo from "@/components/scene/alphaVideo.vue";
 import audioOpt from "@/components/scene/audioOpt.vue";
+import maskModel from "@/components/scene/maskModel.vue";
 
 export default {
   mixins: [share],
@@ -118,7 +120,8 @@ export default {
     imageSprite,
     autoEnter,
     imageScan,
-    penetrateUITracking
+    penetrateUITracking,
+    maskModel
   },
   data() {
     return {
@@ -142,8 +145,9 @@ export default {
     });
 
     this.sceneData = uni.getStorageSync("sceneData");
-    console.log("sceneData", this.sceneData.id === 1);
-    this.playLoading();
+    if (this.sceneData.name !== "maskModel") {
+      this.playLoading();
+    }
   },
   onShow() {},
   onHide() {},

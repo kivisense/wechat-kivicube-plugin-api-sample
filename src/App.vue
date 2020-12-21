@@ -64,4 +64,19 @@ page {
   box-sizing: border-box;
   margin: 0 0.5vw;
 }
+
+.default-view-add-btn {
+  height: 10.67vw;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 0.53vw solid #eeeeee;
+  border-radius: 5vw;
+  backdrop-filter: blur(2px);
+  font-size: 3.7vw;
+  line-height: 9.61vw;
+  color: #515a6e;
+  text-align: center;
+  overflow: auto;
+  box-sizing: border-box;
+  margin: 0 0.5vw;
+}
 </style>
