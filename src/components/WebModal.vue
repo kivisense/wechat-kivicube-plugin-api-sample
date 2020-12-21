@@ -26,25 +26,13 @@
 </template>
 
 <script>
+import { MTAEvent } from "@/MTA";
+
 export default {
-  props: {
-    value: {
-      type: Boolean,
-      default: false
-    }
-  },
   data: () => ({
     showModal: false,
     showData: {}
   }),
-  mounted() {
-    this.showModal = this.value;
-  },
-  watch: {
-    value(val) {
-      this.showModal = val;
-    }
-  },
   methods: {
     show(showData) {
       this.showModal = true;
@@ -54,6 +42,7 @@ export default {
       this.showModal = false;
     },
     copyClick() {
+      MTAEvent(this.showData.startMta);
       wx.setClipboardData({
         data: this.showData.url,
         success(res) {

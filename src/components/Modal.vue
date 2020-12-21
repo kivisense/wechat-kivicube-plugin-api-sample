@@ -66,7 +66,9 @@ export default {
       if (this.showData.type === "scene") {
         wx.navigateTo({ url: "../scene/index" });
       } else if (this.showData.type === "collectScene") {
-        wx.navigateTo({ url: "../collectScene/index" });
+        wx.navigateTo({
+          url: "/collect/pages/collectScene/index"
+        });
       } else {
         wx.navigateTo({ url: "../cloudar/index" });
       }

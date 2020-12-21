@@ -71,6 +71,7 @@
       "urlCheck": false
     },
     "usingComponents": true,
+    // 优化分包
     "optimization":{"subPackages":true},
     "plugins": {
       "kivicube": {

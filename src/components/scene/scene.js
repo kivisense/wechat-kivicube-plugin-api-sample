@@ -16,7 +16,7 @@ const sceneOptions = [
         ],
         url: "https://www.kivicube.com/blog/mp-ar",
         clickMta: "click_creator_button",
-        startMta: ""
+        startMta: "copy_creator_link"
       },
       {
         id: 2,
@@ -32,7 +32,7 @@ const sceneOptions = [
         ],
         url: "https://www.kivicube.com/blog/mp-ar-plugin",
         clickMta: "click_developer_button",
-        startMta: ""
+        startMta: "copy_developer_link"
       },
       {
         id: 19,
@@ -47,8 +47,8 @@ const sceneOptions = [
           }
         ],
         url: "https://www.yuque.com/kivicube/manual/advanced-api",
-        clickMta: "click_developer_button",
-        startMta: ""
+        clickMta: "click_doc_button",
+        startMta: "copy_doc_link"
       },
       {
         id: 3,
@@ -82,8 +82,8 @@ const sceneOptions = [
             style: ""
           }
         ],
-        clickMta: "click_quickstart_button",
-        startMta: "click_quickstart_start"
+        clickMta: "click_colltction_button",
+        startMta: "click_colltction_start"
       }
     ]
   },
@@ -386,8 +386,8 @@ const sceneOptions = [
             style: ""
           }
         ],
-        clickMta: "click_customanimation_button",
-        startMta: "click_customanimation_start"
+        clickMta: "click_occluder_button",
+        startMta: "click_occluder_start"
       }
     ]
   },
@@ -494,8 +494,8 @@ const sceneOptions = [
             style: ""
           }
         ],
-        clickMta: "click_arscan_button",
-        startMta: "click_arscan_start"
+        clickMta: "click_cloudar_button",
+        startMta: "click_cloudar_start"
       },
       {
         id: 21,
@@ -526,8 +526,8 @@ const sceneOptions = [
             style: ""
           }
         ],
-        clickMta: "click_arscan_button",
-        startMta: "click_arscan_start"
+        clickMta: "click_tracking_button",
+        startMta: "click_tracking _start"
       }
     ]
   },

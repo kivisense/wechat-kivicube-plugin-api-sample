@@ -28,27 +28,25 @@
         <cover-image
           v-if="showScene"
           class="scan-img"
-          src="/static/tyrannosaurus.jpg"
+          src="../static/image/tyrannosaurus.jpg"
         ></cover-image>
         <cover-image
           v-if="!showScene"
           class="scan-img"
-          src="/static/shark.jpg"
+          src="../static/image/shark.jpg"
         ></cover-image>
       </cover-view>
       <cover-view class="scan-font">请对准识别图</cover-view>
     </cover-view>
-    <cover-view v-if="btnShow" class="btn" scroll-top="0">
+    <cover-view v-if="btnShow" class="btn">
       <cover-view
         class="default-view-add-btn"
-        scroll-top="0"
         @click="scanningOtherClick"
         v-if="showScanning"
         >扫描其它卡片</cover-view
       >
       <cover-view
         class="default-view-add-btn"
-        scroll-top="0"
         @click="tyrannosaurusClick"
         v-if="!showScene"
         >切换到霸王龙场景</cover-view
@@ -56,7 +54,6 @@
       <cover-view
         v-if="showScene"
         class="default-view-add-btn"
-        scroll-top="0"
         @click="sharkClick"
         >切换到鲨鱼场景</cover-view
       >
@@ -86,7 +83,7 @@
 </template>
 
 <script>
-import collectScene from "@/mixins/collectScene.mixin";
+import collectScene from "../mixins/collectScene.mixin";
 
 export default {
   props: {},
@@ -120,7 +117,6 @@ export default {
     this.sceneData = uni.getStorageSync("sceneData");
     this.collectionId = this.sceneData.collectionId;
   },
-  beforeDestroyed() {},
   methods: {
     async ready({ detail: collection }) {
       wx.hideLoading();
@@ -131,18 +127,12 @@ export default {
       }, 100);
     },
     // 场景准备
-    sceneReady(detail) {
+    sceneReady({ target }) {
       // 记录场景id
-      this.recordSceneId = detail.target.sceneInfo.sceneId;
-      console.log(detail.target.sceneInfo, this.recordSceneId, "recordSceId");
+      this.recordSceneId = target.sceneInfo.sceneId;
       this.$parent.scaningStopAnimation();
       // 判断是否点击按钮切换
       this.showTracking = this.ifClickModal;
-      // if (!this.ifClickModal) {
-      //   this.showTracking = false;
-      // } else {
-      //   this.showTracking = true;
-      // }
     },
     downloadAssetStart() {
       this.showTracking = false;
@@ -156,7 +146,6 @@ export default {
       setTimeout(() => {
         this.collection.stopCloudar();
       });
-      console.log(this.loaddingTimer, "loaddingTimer");
       if (this.loaddingTimer) {
         clearTimeout(this.loaddingTimer);
       }

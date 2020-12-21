@@ -18,7 +18,6 @@ export default {
     // 场景加载完毕。
     downloadAssetEnd() {
       this.$parent.changeProgress(1);
-      console.log(this.loaddingTimer, "loaddingTimer");
       if (this.loaddingTimer) {
         clearTimeout(this.loaddingTimer);
       }

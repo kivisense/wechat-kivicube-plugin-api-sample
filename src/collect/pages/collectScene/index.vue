@@ -48,16 +48,14 @@
 </template>
 
 <script>
-// import { promisify } from "@/utils/helper";
 import share from "@/mixins/share.mixin";
-import collectScene from "@/mixins/collectScene.mixin";
 
-import collectionEnter from "@/components/scene/collectionEnter";
-import cloudOrGyroscopeCollecttion from "@/components/scene/cloudOrGyroscopeCollecttion";
-import trackingCollecttion from "@/components/scene/trackingCollecttion";
+import collectionEnter from "../../components/collectionEnter";
+import cloudOrGyroscopeCollecttion from "../../components/cloudOrGyroscopeCollecttion";
+import trackingCollecttion from "../../components/trackingCollecttion";
 
 export default {
-  mixins: [share, collectScene],
+  mixins: [share],
   components: {
     collectionEnter,
     cloudOrGyroscopeCollecttion,
@@ -87,7 +85,6 @@ export default {
     });
 
     this.sceneData = uni.getStorageSync("sceneData");
-    // this.playLoading();
   },
   onShow() {},
   onHide() {},
@@ -160,56 +157,6 @@ export default {
   position: absolute;
   z-index: 2;
 }
-.frame-up-left {
-  left: 4.27vw;
-  top: 14.13vw;
-}
-.frame-up-right {
-  right: 4.27vw;
-  top: 14.13vw;
-  transform: rotate(90deg);
-}
-.frame-bottom-left {
-  left: 4.27vw;
-  bottom: 14.67vw;
-  transform: rotate(270deg);
-}
-.frame-bottom-right {
-  right: 4.27vw;
-  bottom: 14.67vw;
-  transform: rotate(180deg);
-}
-.take-photo {
-  width: 20vw;
-  height: 20vw;
-  position: absolute;
-  bottom: 8vw;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  z-index: 2;
-}
-.photo-frame {
-  z-index: 3;
-}
-.btn-close {
-  position: absolute;
-  z-index: 1;
-  right: 3.2vw;
-  top: 3.2vw;
-  width: 16vw;
-  height: 16vw;
-}
-.btn-download {
-  width: 20vw;
-  height: 20vw;
-  bottom: 8vw;
-  left: 0;
-  right: 0;
-  position: absolute;
-  z-index: 1;
-  margin: 0 auto;
-}
 .loading {
   z-index: 5;
   display: flex;
@@ -234,25 +181,12 @@ export default {
   height: 12.8vw;
   z-index: 1000;
 }
-.loading-rotate {
-  animation: rotate 1s linear infinite;
-}
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(359deg);
-  }
-}
 .icon-middle {
   width: 100vw;
   height: 14vw;
   position: absolute;
   top: 20vh;
   z-index: 2;
-  /* animation: myMove 3s infinite;
-  -webkit-animation: myMove 2s infinite; */
 }
 
 .show-alert {

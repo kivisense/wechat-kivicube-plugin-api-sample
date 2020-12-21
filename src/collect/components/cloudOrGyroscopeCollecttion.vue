@@ -16,11 +16,8 @@
       hideDownload
       hideScan
     />
-    <cover-view v-if="btnShow" class="btn" scroll-top="0">
-      <cover-view
-        class=".default-view-add-btn"
-        scroll-top="0"
-        @click="returnClick"
+    <cover-view v-if="btnShow" class="btn">
+      <cover-view class="default-view-add-btn" @click="returnClick"
         >扫描其它卡片</cover-view
       >
       <cover-view
@@ -40,7 +37,7 @@
 </template>
 
 <script>
-import collectScene from "@/mixins/collectScene.mixin";
+import collectScene from "../mixins/collectScene.mixin";
 
 export default {
   props: {},
@@ -75,13 +72,10 @@ export default {
         this.$parent.scaningStartAnimation();
       }, 100);
     },
-    sceneReady(detail) {
-      this.recordSceneId = detail.target.sceneInfo.sceneId;
+    sceneReady({ target }) {
+      this.recordSceneId = target.sceneInfo.sceneId;
       this.$parent.scaningStopAnimation();
     },
-    // sceneStart() {
-    //   this.returnBtn = true;
-    // },
     // 场景加载完毕。
     sceneStart() {
       this.btnShow = true;
@@ -98,7 +92,6 @@ export default {
       // 此方法只有云识别类型合辑有效。
       if (this.collection.collectionInfo.functionType === "cloud-ar") {
         this.returnBtn = false;
-        // this.$parent.closeProgress();
         this.$parent.scaningStartAnimation();
         this.collection.backToScan();
       }
@@ -111,11 +104,8 @@ export default {
     },
     openScene(sceneId) {
       this.$parent.scaningStopAnimation();
-      // this.$parent.closeProgress();
-      // wx.showLoading({ title: "下载中...", mask: true });
       this.collection.openScene(sceneId).then(
         () => {
-          // wx.hideLoading();
           console.log("已准备好场景信息，且sceneReady事件已触发");
         },
         err => {
@@ -134,42 +124,7 @@ export default {
   width: 100vw;
   height: 100vh;
 }
-/* .icon-middle {
-  width: 100vw;
-  height: 16vw;
-  position: absolute;
-  top: 20vh;
-  z-index: 2; */
-/* animation: myMove 3s infinite;
-  -webkit-animation: myMove 2s infinite; */
-/* } */
-/* @keyframes myMove {
-  0% {
-    top: 20vh;
-  }
 
-  100% {
-    top: 65vh;
-  }
-}
-@-webkit-keyframes myMove {
-  0% {
-    top: 20vh;
-  }
-
-  100% {
-    top: 65vh;
-  }
-} */
-
-.icon-return {
-  width: 16vw;
-  height: 16vw;
-  position: absolute;
-  z-index: 3;
-  left: 5vw;
-  top: 5vw;
-}
 .btn {
   width: 100vw;
   position: absolute;

@@ -4,9 +4,6 @@
       "path": "pages/index/index"
     },
     {
-      "path": "pages/web/index"
-    },
-    {
       "path": "pages/scene/index"
     },
     {
@@ -16,12 +13,15 @@
       "path": "pages/some/index"
     },
     {
-      "path": "pages/collectScene/index"
-    },
-    {
       "path": "pages/scene/mergePic/index"
     }
   ],
+  "subPackages": [{
+    "root": "collect",
+    "pages": [{
+      "path": "pages/collectScene/index"
+  }]
+  }],
   "globalStyle": {
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "小程序AR示例",

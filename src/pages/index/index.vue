@@ -17,18 +17,18 @@
       </view>
     </scroll-view>
     <Modal ref="showModal" />
-    <WebModal ref="showWebModal" />
+    <webModal ref="showWebModal" />
   </view>
 </template>
 
 <script>
 import share from "@/mixins/share.mixin";
 import Modal from "@/components/Modal";
-import WebModal from "@/components/WebModal";
+import webModal from "@/components/webModal";
 import { sceneOptions } from "@/components/scene/scene";
 import { MTAInit, MTAEvent } from "@/MTA";
 export default {
-  components: { Modal, WebModal },
+  components: { Modal, webModal },
   mixins: [share],
   data: () => ({
     sceneOptions: sceneOptions
@@ -51,16 +51,6 @@ export default {
     openWebMadal(item) {
       this.$refs.showWebModal.show(item);
     }
-    // openWeb(type) {
-    //   let url = "";
-    //   if (type === "development") {
-    //     url = "https://www.kivicube.com/blog/mp-ar-plugin";
-    //   }
-    //   if (type === "creativity") {
-    //     url = "https://www.kivicube.com/blog/mp-ar";
-    //   }
-    //   wx.navigateTo({ url: `../web/index?url=${encodeURIComponent(url)}` });
-    // }
   }
 };
 </script>
