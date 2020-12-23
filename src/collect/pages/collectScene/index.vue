@@ -86,8 +86,6 @@ export default {
 
     this.sceneData = uni.getStorageSync("sceneData");
   },
-  onShow() {},
-  onHide() {},
   watch: {
     progress(value) {
       if (value === 1) {
