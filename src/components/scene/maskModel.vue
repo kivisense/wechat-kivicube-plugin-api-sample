@@ -96,7 +96,6 @@ export default {
   .scan-img-box {
     padding: 2.76vw;
     background: rgba(255, 255, 255, 0.4);
-    /* 入了模糊, 安卓不支持 */
     backdrop-filter: blur(2px);
     border-radius: 1vw;
   }
@@ -104,7 +103,6 @@ export default {
     margin: 0 auto;
     width: 70vw;
     height: auto;
-    // opacity: 0.35;
   }
   .scan-font {
     margin-top: 2.4vw;

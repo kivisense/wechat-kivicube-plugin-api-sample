@@ -11,12 +11,10 @@
 </template>
 <script>
 export default {
-  props: {},
   data: () => ({
     collectionId: "",
     sceneData: {}
   }),
-  mixins: [],
   beforeCreate() {
     wx.showLoading({ title: "加载中..." });
   },
@@ -24,7 +22,6 @@ export default {
     this.sceneData = uni.getStorageSync("sceneData");
     this.collectionId = this.sceneData.collectionId;
   },
-  beforeDestroyed() {},
   methods: {
     ready({ detail: view }) {
       wx.hideLoading();

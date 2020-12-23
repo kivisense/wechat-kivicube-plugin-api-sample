@@ -37,7 +37,7 @@
 </template>
 
 <script>
-import collectScene from "../mixins/collectScene.mixin";
+import collectScene from "@/collect/mixins/collectScene.mixin";
 
 export default {
   props: {},
@@ -59,11 +59,9 @@ export default {
   },
   watch: {
     recordSceneId(val) {
-      this.showScene =
-        val === "zhgOzfNgAyMzD4gMdC7rXRzKIIj4C8JC" ? true : false;
+      this.showScene = val === "zhgOzfNgAyMzD4gMdC7rXRzKIIj4C8JC";
     }
   },
-  beforeDestroyed() {},
   methods: {
     ready({ detail: collection }) {
       wx.hideLoading();
@@ -72,8 +70,8 @@ export default {
         this.$parent.scaningStartAnimation();
       }, 100);
     },
-    sceneReady({ target }) {
-      this.recordSceneId = target.sceneInfo.sceneId;
+    sceneReady({ detail }) {
+      this.recordSceneId = detail.sceneInfo.sceneId;
       this.$parent.scaningStopAnimation();
     },
     // 场景加载完毕。

@@ -67,16 +67,16 @@ page {
 
 .default-view-add-btn {
   height: 10.67vw;
-  background-color: rgba(255, 255, 255, 0.7);
-  border: 0.53vw solid #eeeeee;
-  border-radius: 5vw;
-  backdrop-filter: blur(2px);
-  font-size: 3.7vw;
+  margin: 0 0.5vw;
   line-height: 9.61vw;
-  color: #515a6e;
+  font-size: 3.7vw;
+  border-radius: 5vw;
+  border: 0.53vw solid #eeeeee;
+  backdrop-filter: blur(2px);
   text-align: center;
   overflow: auto;
   box-sizing: border-box;
-  margin: 0 0.5vw;
+  color: #515a6e;
+  background-color: rgba(255, 255, 255, 0.7);
 }
 </style>

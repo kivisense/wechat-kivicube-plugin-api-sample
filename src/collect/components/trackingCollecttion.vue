@@ -28,12 +28,12 @@
         <cover-image
           v-if="showScene"
           class="scan-img"
-          src="../static/image/tyrannosaurus.jpg"
+          src="/collect/static/image/tyrannosaurus.jpg"
         ></cover-image>
         <cover-image
           v-if="!showScene"
           class="scan-img"
-          src="../static/image/shark.jpg"
+          src="/collect/static/image/shark.jpg"
         ></cover-image>
       </cover-view>
       <cover-view class="scan-font">请对准识别图</cover-view>
@@ -83,10 +83,9 @@
 </template>
 
 <script>
-import collectScene from "../mixins/collectScene.mixin";
+import collectScene from "@/collect/mixins/collectScene.mixin";
 
 export default {
-  props: {},
   mixins: [collectScene],
   data: () => ({
     collectionId: "",
@@ -109,8 +108,7 @@ export default {
   },
   watch: {
     recordSceneId(val) {
-      this.showScene =
-        val === "Znr2xURGhdlQeFKikcIKfxG8VhjKKwXF" ? true : false;
+      this.showScene = val === "Znr2xURGhdlQeFKikcIKfxG8VhjKKwXF";
     }
   },
   mounted() {
@@ -127,9 +125,9 @@ export default {
       }, 100);
     },
     // 场景准备
-    sceneReady({ target }) {
+    sceneReady({ detail }) {
       // 记录场景id
-      this.recordSceneId = target.sceneInfo.sceneId;
+      this.recordSceneId = detail.sceneInfo.sceneId;
       this.$parent.scaningStopAnimation();
       // 判断是否点击按钮切换
       this.showTracking = this.ifClickModal;
@@ -177,7 +175,8 @@ export default {
       this.$parent.scaningStartAnimation();
       this.ifClickModal = false;
       this.showTracking = false;
-      (this.showScanning = false), (this.btnShow = false);
+      this.showScanning = false;
+      this.btnShow = false;
       // 开启云识别
       const sceneId = await this.collection.startCloudar();
       if (sceneId) {
@@ -237,7 +236,6 @@ export default {
   .scan-img-box {
     padding: 2.76vw;
     background: rgba(255, 255, 255, 0.4);
-    /* 入了模糊, 安卓不支持 */
     backdrop-filter: blur(2px);
     border-radius: 1vw;
   }
