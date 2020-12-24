@@ -67,13 +67,14 @@ page {
 
 .default-view-add-btn {
   height: 10.67vw;
-  margin: 0 0.5vw;
   line-height: 9.61vw;
+  margin: 0 0.5vw;
+  text-align: center;
+  /* 不影响回流 */
   font-size: 3.7vw;
   border-radius: 5vw;
   border: 0.53vw solid #eeeeee;
   backdrop-filter: blur(2px);
-  text-align: center;
   overflow: auto;
   box-sizing: border-box;
   color: #515a6e;

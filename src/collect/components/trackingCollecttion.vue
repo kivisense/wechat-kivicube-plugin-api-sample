@@ -28,12 +28,12 @@
         <cover-image
           v-if="showScene"
           class="scan-img"
-          src="/collect/static/image/tyrannosaurus.jpg"
+          src="../static/image/tyrannosaurus.jpg"
         ></cover-image>
         <cover-image
           v-if="!showScene"
           class="scan-img"
-          src="/collect/static/image/shark.jpg"
+          src="../static/image/shark.jpg"
         ></cover-image>
       </cover-view>
       <cover-view class="scan-font">请对准识别图</cover-view>
