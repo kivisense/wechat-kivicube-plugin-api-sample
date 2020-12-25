@@ -33,14 +33,12 @@ export default {
   props: {},
   data: () => ({
     showTip: false,
-    trackTimer: null
+    trackTimer: null,
+    animationName: ["柠檬-1", "柠檬-2", "柠檬-3"],
+    animationInstance: []
   }),
   mixins: [scene],
   computed: {},
-  beforeCreate() {
-    // this.$parent.changeProgress(1);
-    // wx.showLoading({ title: "加载中..." });
-  },
   methods: {
     ready({ detail: view }) {
       this.view = view;
@@ -62,8 +60,37 @@ export default {
       const model = this.view.getObject("Occluder");
       // 设置遮罩
       model.setEnableMask();
+      this.animationName.map(v => {
+        let lemonModel = this.view.getObject(v);
+        this.animationInstance.push(lemonModel);
+      });
     },
+    stop(model) {
+      const [name] = model.getAnimationNames();
+      if (name) {
+        model.stopAnimation(name);
+      } else {
+        console.warn(`模型(${model.name})没有动画`);
+      }
+    },
+    play(model) {
+      const [name] = model.getAnimationNames();
+      // 如果name为假，说明此模型没有模型动画
+      if (name) {
+        model.playAnimation({
+          name, // 动画名称
+          loop: false, // 是否循环播放
+          clampWhenFinished: true // 播放完毕后是否停留在动画最后一帧
+        });
+      } else {
+        console.warn(`模型(${model.name})没有动画`);
+      }
+    },
+
     tracked() {
+      this.animationInstance.map(model => {
+        this.play(model);
+      });
       this.showTip = false;
       this.$parent.changeShowFrame(false);
       if (this.trackTimer) {
@@ -72,6 +99,9 @@ export default {
       this.$parent.changeShowAlert(false);
     },
     lostTrack() {
+      this.animationInstance.map(model => {
+        this.stop(model);
+      });
       this.showTip = true;
       this.$parent.changeShowFrame(true);
       this.trackTimer = setTimeout(() => {

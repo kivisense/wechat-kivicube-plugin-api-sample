@@ -28,7 +28,7 @@
     "navigationBarTextStyle": "black",
     "usingComponents": {
       "kivicube-scene": "plugin://kivicube/kivicube-scene",
-      "kivicube-cloudar": "plugin://kivicube/kivi-cloudar",
+      "kivi-cloudar": "plugin://kivicube/kivi-cloudar",
       "kivicube-collection": "plugin://kivicube/kivicube-collection"
     }
   }

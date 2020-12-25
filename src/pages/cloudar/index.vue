@@ -1,11 +1,11 @@
 <template>
   <view class="layer bg">
-    <kivicube-cloudar
+    <kivi-cloudar
       v-if="showCloudar"
       collectionId="nw4uq2"
       class="layer"
       @error="error"
-    ></kivicube-cloudar>
+    ></kivi-cloudar>
     <cover-image
       v-if="showFrame"
       class="frame frame-up-left"
