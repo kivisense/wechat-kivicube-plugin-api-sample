@@ -34,9 +34,7 @@
 
 <script>
 const { startCloudar } = requirePlugin("kivicube");
-import share from "@/mixins/share.mixin";
 export default {
-  mixins: [share],
   components: {},
   data() {
     return {
@@ -62,6 +60,13 @@ export default {
   },
   onHide() {},
   methods: {
+    onShareAppMessage() {
+      return {
+        title: "Kivicube企业版高级API示例：使用kivi-cloudar实现",
+        path: "/pages/cloudar/index",
+        imageUrl: "/static/share.jpg"
+      };
+    },
     async start() {
       console.log("开始识别");
       setTimeout(() => {

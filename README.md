@@ -1,12 +1,14 @@
 ##  项目介绍
 
-* 此项目是为了帮助您快速了解和使用kivicube插件的高级api。
+* 此项目是为了帮助您快速了解和使用kivicube插件的高级api
 
-* 此项目是基于uniapp开发,[uniapp相关文档](https://uniapp.dcloud.io/)
+* 此项目是基于uniapp开发，[uniapp相关文档](https://uniapp.dcloud.io/)
 
-* 此项目功能说明文档, 详见[2.示例仓库](https://www.yuque.com/kivicube/manual/advanced-api)
+* 此项目功能说明文档，详见[示例仓库](https://www.yuque.com/kivicube/manual/advanced-api)
 
-* 此项目对应的微信小程序叫”AR示例“,可扫描如下所示小程序码  
+* DEMO示例[（API示例与文档）](https://github.com/kivisense/wechat-kivicube-plugin-api-demo)
+
+* 此项目对应的微信小程序叫”AR示例“，可扫描如下所示小程序码  
 ![avatar](https://cdn.nlark.com/yuque/0/2020/jpeg/217517/1606982678816-87c46bb6-261c-458d-b8bf-e3a6d15b9993.jpeg?x-oss-process=image%2Fresize%2Cw_200)
 
 ## 项目启动步骤
@@ -70,7 +72,4 @@ uni.scss 全局scss变量
       }
 	}
 
-## 相关文档
-
-其他demo见[github(kivisense)](https://github.com/kivisense)
 

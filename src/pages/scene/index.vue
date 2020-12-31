@@ -86,7 +86,7 @@
 
 <script>
 import { promisify } from "@/utils/helper";
-import share from "@/mixins/share.mixin";
+import { sceneOptions } from "@/components/scene/scene";
 
 import penetrateUI from "@/components/scene/penetrateUI";
 import skipCloudar from "@/components/scene/skipCloudar";
@@ -105,7 +105,6 @@ import audioOpt from "@/components/scene/audioOpt.vue";
 import maskModel from "@/components/scene/maskModel.vue";
 
 export default {
-  mixins: [share],
   components: {
     penetrateUI,
     skipCloudar,
@@ -135,7 +134,8 @@ export default {
       animationData: {}
     };
   },
-  onLoad() {
+  onLoad(options) {
+    this.sceneData = {};
     // 注册loading动画
     this.animation = wx.createAnimation({
       duration: 500,
@@ -143,8 +143,17 @@ export default {
       delay: 0,
       transformOrigin: "50% 50% 0"
     });
-
-    this.sceneData = uni.getStorageSync("sceneData");
+    if (options.id) {
+      sceneOptions.map(v => {
+        v.child.map(scene => {
+          if (scene.id === Number(options.id)) {
+            this.sceneData = scene;
+          }
+        });
+      });
+    } else {
+      this.sceneData = uni.getStorageSync("sceneData");
+    }
     if (this.sceneData.name !== "maskModel") {
       this.playLoading();
     }
@@ -159,9 +168,16 @@ export default {
     }
   },
   methods: {
+    onShareAppMessage() {
+      return {
+        title: `Kivicube企业版高级API示例：${this.sceneData.title}`,
+        path: `/pages/scene/index?id=${this.sceneData.id}`,
+        imageUrl: "/static/share.jpg"
+      };
+    },
     rotateAni(n) {
       //TODO: 部分手机存在问题
-      this.animation.rotate(180 * n).step();
+      this.animation.rotate(90 * n).step();
       this.animationData = this.animation.export();
     },
     playLoading() {
