@@ -44,6 +44,7 @@ export default {
         this.openModal(item);
       }
       MTAEvent(item.clickMta);
+      this.$uma.trackEvent(item.clickMta);
     },
     openModal(item) {
       this.$refs.showModal.show(item);

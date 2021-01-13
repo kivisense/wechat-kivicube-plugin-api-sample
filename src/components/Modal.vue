@@ -61,6 +61,7 @@ export default {
     },
     immediateExperience() {
       MTAEvent(this.showData.startMta);
+      this.$uma.trackEvent(this.showData.startMta);
       uni.setStorageSync("sceneData", this.showData);
       this.hidden();
       if (this.showData.type === "scene") {

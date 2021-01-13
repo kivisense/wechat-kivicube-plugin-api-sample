@@ -43,6 +43,7 @@ export default {
     },
     copyClick() {
       MTAEvent(this.showData.startMta);
+      this.$uma.trackEvent(this.showData.startMta);
       wx.setClipboardData({
         data: this.showData.url,
         success(res) {
