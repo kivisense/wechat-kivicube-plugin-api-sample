@@ -17,18 +17,18 @@
       </view>
     </scroll-view>
     <Modal ref="showModal" />
-    <webModal ref="showWebModal" />
+    <WebModal ref="showWebModal" />
   </view>
 </template>
 
 <script>
 import share from "@/mixins/share.mixin";
 import Modal from "@/components/Modal";
-import webModal from "@/components/webModal";
+import WebModal from "@/components/WebModal";
 import { sceneOptions } from "@/components/scene/scene";
 import { MTAInit, MTAEvent } from "@/MTA";
 export default {
-  components: { Modal, webModal },
+  components: { Modal, WebModal },
   mixins: [share],
   data: () => ({
     sceneOptions: sceneOptions

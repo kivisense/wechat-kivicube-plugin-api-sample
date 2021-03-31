@@ -45,6 +45,7 @@
   "devDependencies": {
     "@babel/plugin-proposal-export-default-from": "^7.5.2",
     "@dcloudio/uni-cli-shared": "^2.0.0-24220191115011",
+    "@dcloudio/uni-migration": "^2.0.0-31620210325001",
     "@dcloudio/uni-template-compiler": "^2.0.0-24220191115011",
     "@dcloudio/vue-cli-plugin-hbuilderx": "^2.0.0-24220191115011",
     "@dcloudio/vue-cli-plugin-uni": "^2.0.0-24220191115011",
