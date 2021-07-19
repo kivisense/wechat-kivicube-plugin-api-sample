@@ -6,7 +6,7 @@ uma.init({
   appKey: "5ffc27c2f1eb4f3f9b5a0fd2",
   useOpenid: false,
   autoGetOpenid: false,
-  debug: true
+  debug: false
 });
 
 Vue.config.productionTip = false;

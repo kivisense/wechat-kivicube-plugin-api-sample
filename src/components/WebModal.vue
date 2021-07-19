@@ -26,8 +26,6 @@
 </template>
 
 <script>
-import { MTAEvent } from "@/MTA";
-
 export default {
   data: () => ({
     showModal: false,
@@ -42,7 +40,6 @@ export default {
       this.showModal = false;
     },
     copyClick() {
-      MTAEvent(this.showData.startMta);
       this.$uma.trackEvent(this.showData.startMta);
       wx.setClipboardData({
         data: this.showData.url,

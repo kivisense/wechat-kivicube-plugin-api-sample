@@ -26,16 +26,13 @@ import share from "@/mixins/share.mixin";
 import Modal from "@/components/Modal";
 import WebModal from "@/components/WebModal";
 import { sceneOptions } from "@/components/scene/scene";
-import { MTAInit, MTAEvent } from "@/MTA";
+
 export default {
   components: { Modal, WebModal },
   mixins: [share],
   data: () => ({
     sceneOptions: sceneOptions
   }),
-  onLoad() {
-    MTAInit();
-  },
   methods: {
     clickOpt(item) {
       if (item.type === "web") {
@@ -43,7 +40,6 @@ export default {
       } else {
         this.openModal(item);
       }
-      MTAEvent(item.clickMta);
       this.$uma.trackEvent(item.clickMta);
     },
     openModal(item) {

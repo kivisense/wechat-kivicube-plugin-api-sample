@@ -26,7 +26,6 @@
 </template>
 
 <script>
-import { MTAEvent } from "@/MTA";
 export default {
   props: {
     value: {
@@ -60,7 +59,6 @@ export default {
       this.cb();
     },
     immediateExperience() {
-      MTAEvent(this.showData.startMta);
       this.$uma.trackEvent(this.showData.startMta);
       uni.setStorageSync("sceneData", this.showData);
       this.hidden();

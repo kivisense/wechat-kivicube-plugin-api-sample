@@ -1,14 +1,8 @@
 <script>
 const logger = wx.getRealtimeLogManager();
-import { MTAConfig } from "./MTA";
 
 export default {
-  onLaunch: function(options) {
-    // #ifdef MP-WEIXIN
-    if (process.env.NODE_ENV === "production") {
-      MTAConfig(options);
-    }
-    // #endif
+  onLaunch() {
     wx.onMemoryWarning(e => {
       logger.error("onMemoryWarning", e, uni.getSystemInfoSync());
     });
