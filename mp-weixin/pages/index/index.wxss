@@ -1,0 +1,29 @@
+.scene-list-box {
+  padding: 8vw;
+}
+.scene-type {
+  margin-bottom: 10vw;
+}
+.scene-type .title {
+  color: #cbcbcb;
+  font-size: 3vw;
+  margin-left: 3vw;
+  font-weight: bold;
+}
+.scene-type .item {
+  height: 10vw;
+  margin: 10px 0;
+  border-radius: 10vw;
+  background: #eeeeee;
+  font-size: 3vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3vw;
+  color: #333;
+}
+.scene-type .aim {
+  width: 5vw;
+  display: block;
+  height: auto;
+}
