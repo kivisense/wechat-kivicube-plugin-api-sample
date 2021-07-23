@@ -1,0 +1,18 @@
+<block wx:if="{{showFrame}}">
+  <cover-image
+    class="frame frame-up-left"
+    src="/assets/images/Up_Left@2x.png"
+  ></cover-image>
+  <cover-image
+    class="frame frame-up-right"
+    src="/assets/images/Up_Left@2x.png"
+  ></cover-image>
+  <cover-image
+    class="frame frame-bottom-left"
+    src="/assets/images/Up_Left@2x.png"
+  ></cover-image>
+  <cover-image
+    class="frame frame-bottom-right"
+    src="/assets/images/Up_Left@2x.png"
+  ></cover-image>
+</block>

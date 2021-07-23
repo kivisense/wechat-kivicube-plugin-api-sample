@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<view class="container">
+<view class="layout layer">
   <scroll-view scroll-y="true" class="layer">
       <view class="scene-list-box">
         <view wx:for="{{sceneOptions}}" wx:key="idx" wx:for-item="type" class="scene-type">
@@ -13,9 +13,10 @@
             bindtap="handleTap"
           >
             <view>{{ item.title }}</view>
-            <image src="../../assets/icons/right.png" class="aim" mode="widthFix" />
+            <image src="/assets/icons/right.png" class="aim" mode="widthFix" />
           </view>
         </view>
       </view>
     </scroll-view>
+    <Modal id="modal" hiddenStatus="{{modalHidden}}" bind:onHide="hideModal" bind:btnTap="handleBtnTap"></Modal>
 </view>

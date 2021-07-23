@@ -66,7 +66,8 @@ const sceneOptions = [
           }
         ],
         clickMta: "click_quickstart_button",
-        startMta: "click_quickstart_start"
+        startMta: "click_quickstart_start",
+        url: "/pages/started/kivi-scene/kivi-scene"
       },
       {
         id: 18,
@@ -83,7 +84,8 @@ const sceneOptions = [
           }
         ],
         clickMta: "click_colltction_button",
-        startMta: "click_colltction_start"
+        startMta: "click_colltction_start",
+        url: "/pages/started/kivi-collection/kivi-collection"
       }
     ]
   },

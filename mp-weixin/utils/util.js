@@ -19,7 +19,61 @@ const formatNumber = n => {
   n = n.toString();
   return n[1] ? n : `0${n}`;
 };
+/**
+ * 图片下载
+ */
+const downloadImage = url => {
+  wx.saveImageToPhotosAlbum({
+    filePath: url,
+    success: () => {
+      wx.showToast({
+        icon: "none",
+        duration: 2000,
+        title: "保存成功"
+      });
+    },
+    fail: async err => {
+      if (
+        err.errMsg &&
+        (err.errMsg.includes("auth deny") ||
+          err.errMsg.includes("authorize no response"))
+      ) {
+        const { confirm } = await promisify(wx.showModal)({
+          title: "提示",
+          content: "开启相册授权后，就可以把照片保存到本地啦！",
+          confirmText: "去开启"
+        });
+        if (confirm) {
+          const { authSetting } = await promisify(wx.openSetting)();
+          if (authSetting["scope.writePhotosAlbum"]) {
+            downloadImage(url);
+          }
+        }
+      } else {
+        console.log("保存失败", err);
+      }
+    }
+  });
+};
+
+const takePhoto = view => {
+  return new Promise((resolve, reject) => {
+    wx.showLoading({ title: "拍照中...", mask: true });
+    view
+      .takePhoto()
+      .then(photoPath => {
+        wx.hideLoading();
+        resolve(photoPath);
+      })
+      .catch(e => {
+        wx.hideLoading();
+        reject("error", e);
+      });
+  });
+};
 
 module.exports = {
-  formatTime
+  formatTime,
+  downloadImage,
+  takePhoto
 };

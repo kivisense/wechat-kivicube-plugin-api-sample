@@ -1,13 +1,30 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/started/kivi-scene/kivi-scene",
+    "pages/started/kivi-collection/kivi-collection"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "Weixin",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
+  },
+  "networkTimeout": {
+    "request": 100000,
+    "downloadFile": 100000
+  },
+  "plugins": {
+    "kivicube": {
+      "version": "1.5.7",
+      "provider": "wx3bbab3920eabccb2"
+    }
+  },
+  "usingComponents": {
+    "kivicube-scene": "plugin://kivicube/kivicube-scene",
+    "kivi-cloudar": "plugin://kivicube/kivi-cloudar",
+    "kivicube-collection": "plugin://kivicube/kivicube-collection"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"
