@@ -1,0 +1,45 @@
+<!--pages/scene-setup/setup-skip/setup-skip.wxml-->
+<view class="layer scene-box">
+  <kivicube-scene
+      class="kivicube"
+      scene-id="qcAluuIz6JGQU0ArD2HS4fAytPPaLoZp"
+      bind:error="error"
+      bind:ready="ready"
+      bind:sceneStart="sceneStart"
+      bind:downloadAssetStart="downloadAssetStart"
+      bind:downloadAssetProgress="downloadAssetProgress"
+      bind:downloadAssetEnd="downloadAssetEnd"
+      bind:loadSceneStart="loadSceneStart"
+      bind:loadSceneEnd="loadSceneEnd"
+      hideTakePhoto
+      hideLoading
+      hideDownload
+      hideScan
+    />
+    <!-- 相机边框 -->
+    <camera-frame showFrame="{{showFrame}}"></camera-frame>
+    <!-- loading -->
+    <loading progress="{{progress}}" showProgressNum="{{false}}"></loading>
+    <!-- 拍照按钮 -->
+    <cover-image
+      wx:if="{{showTakePhoto && photo === ''}}"
+      bind:tap="handleTakephoto"
+      class="take-photo"
+      src="/assets/icons/btn-takephoto.png"
+    ></cover-image>
+    <!-- 显示照片 -->
+    <cover-view class="layer photo-frame" wx:if="{{photo}}">
+      <cover-image class="layer" src="{{photo}}"></cover-image>
+      <cover-image
+        class="btn-close"
+        bind:tap="clearPhoto"
+        src="/assets/icons/btn-close.png"
+      ></cover-image>
+      <cover-image
+        class="btn-download"
+        bind:tap="saveImg"
+        src="/assets/icons/btn-download.png"
+      ></cover-image>
+    </cover-view>
+  </view>
+  

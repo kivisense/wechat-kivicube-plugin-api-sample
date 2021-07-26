@@ -184,7 +184,8 @@ const sceneOptions = [
           }
         ],
         clickMta: "click_skipcloudar_button",
-        startMta: "click_skipcloudar_start"
+        startMta: "click_skipcloudar_start",
+        url: "/pages/scene-setup/setup-skip/setup-skip"
       },
       {
         id: 7,

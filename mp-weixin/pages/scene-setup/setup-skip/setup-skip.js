@@ -1,3 +1,4 @@
+// pages/scene-setup/setup-skip/setup-skip.js
 const util = require("../../../utils/util.js");
 Page({
   data: {
@@ -28,9 +29,17 @@ Page({
   },
   // 场景内容开始出现并可体验
   sceneStart() {
-    console.log("scenestart");
-    this.setData({ showFrame: false }, () => {
-      console.log(this.data.showFrame);
+    this.setData({ showFrame: false });
+    this.changeShowTakePhoto(true);
+
+    const { name } = this.view.sceneInfo.objects[0];
+    const obj = this.view.getObject(name);
+    obj.addEventListener("click", () => {
+      // 点击后跳转示例小程序
+      wx.navigateToMiniProgram({
+        appId: "wx667be9ee0e001ef2",
+        path: "/pages/lemma/lemma?ch=wx.item&lid=4169539"
+      });
     });
   },
   back() {
@@ -56,9 +65,19 @@ Page({
   loadSceneStart() {},
   // 场景加载完毕。
   loadSceneEnd() {
-    this.setData({ startLoad: false });
     this.changeProgress(1);
-    this.changeShowTakePhoto(true);
+    // 只有云识别类型的场景，才具备api：skipCloudar。
+    console.log(this.view.sceneInfo);
+    if (this.view.sceneInfo.mode === "cloud-ar") {
+      // 立即跳过识别，插件版本 <= 1.3.4时，需要延时执行才有效。
+      setTimeout(() => {
+        // this.view.skipCloudar();
+      }, 0);
+      // 或者实现为识别超时5s，就自动跳过。
+      // setTimeout(() => {
+      //   this.view.skipCloudar();
+      // }, 5000);
+    }
   },
   // 错误判断
   error(e) {
@@ -78,6 +97,7 @@ Page({
     this.setData({ showTakePhoto: status });
   },
   handleTakephoto() {
+    console.log("take photo");
     util.takePhoto(this.view).then(photo => {
       this.setData({ photo });
     });
