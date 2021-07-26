@@ -67,7 +67,7 @@ const sceneOptions = [
         ],
         clickMta: "click_quickstart_button",
         startMta: "click_quickstart_start",
-        url: "/pages/started/kivi-scene/kivi-scene"
+        url: "/pages/started/kivicube-scene/kivicube-scene"
       },
       {
         id: 18,
@@ -85,7 +85,7 @@ const sceneOptions = [
         ],
         clickMta: "click_colltction_button",
         startMta: "click_colltction_start",
-        url: "/pages/started/kivi-collection/kivi-collection"
+        url: "/pages/started/kivicube-collection/kivicube-collection"
       }
     ]
   },
@@ -122,7 +122,8 @@ const sceneOptions = [
           { txt: "6.自定义AR相框", type: "txt", style: "" }
         ],
         clickMta: "click_uisetting_button",
-        startMta: "click_uisetting_start"
+        startMta: "click_uisetting_start",
+        url: "/pages/scene-setup/setup-ui/setup-ui"
       },
       {
         id: 5,

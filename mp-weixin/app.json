@@ -2,8 +2,10 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/started/kivi-scene/kivi-scene",
-    "pages/started/kivi-collection/kivi-collection"
+    "pages/started/kivicube-scene/kivicube-scene",
+    "pages/started/kivicube-collection/kivicube-collection",
+    "pages/scene-setup/setup-ui/setup-ui",
+    "pages/camera-preview/camera-preview"
   ],
   "window": {
     "backgroundTextStyle": "light",

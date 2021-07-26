@@ -22,9 +22,11 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function() {},
+  // 已获取到场景数据，并准备开始去打开场景
   ready({ detail: view }) {
     this.view = view;
   },
+  // 场景内容开始出现并可体验
   sceneStart() {
     console.log("scenestart");
     this.setData({ showFrame: false }, () => {
@@ -65,28 +67,9 @@ Page({
   // 错误判断
   error(e) {
     const { detail } = e;
+    const page = this;
     // 判定是否camera权限问题，是则向用户申请权限。
-    if (detail && detail.isCameraAuthDenied) {
-      const page = this;
-      wx.showModal({
-        title: "提示",
-        content: "请给予“摄像头”权限",
-        success() {
-          wx.openSetting({
-            success({ authSetting: { "scope.camera": isGrantedCamera } }) {
-              if (isGrantedCamera) {
-                wx.redirectTo({ url: "/" + page.__route__ });
-              } else {
-                wx.showToast({
-                  title: "获取“摄像头”权限失败！",
-                  icon: "none"
-                });
-              }
-            }
-          });
-        }
-      });
-    }
+    util.cameraErrorHandler(detail, page);
   },
   // 显示素材下载进度
   showProgress() {

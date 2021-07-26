@@ -59,6 +59,7 @@ const downloadImage = url => {
 const takePhoto = view => {
   return new Promise((resolve, reject) => {
     wx.showLoading({ title: "拍照中...", mask: true });
+    console.log(view);
     view
       .takePhoto()
       .then(photoPath => {
@@ -72,8 +73,46 @@ const takePhoto = view => {
   });
 };
 
+const promisify = (fn, context) => {
+  return config => {
+    return new Promise((resolve, reject) => {
+      fn.call(context || wx, {
+        ...config,
+        success: resolve,
+        fail: reject
+      });
+    });
+  };
+};
+
+const cameraErrorHandler = (detail, page) => {
+  // 判定是否camera权限问题，是则向用户申请权限。
+  if (detail && detail.isCameraAuthDenied) {
+    wx.showModal({
+      title: "提示",
+      content: "请给予“摄像头”权限",
+      success() {
+        wx.openSetting({
+          success({ authSetting: { "scope.camera": isGrantedCamera } }) {
+            if (isGrantedCamera) {
+              wx.redirectTo({ url: "/" + page.__route__ });
+            } else {
+              wx.showToast({
+                title: "获取“摄像头”权限失败！",
+                icon: "none"
+              });
+            }
+          }
+        });
+      }
+    });
+  }
+};
+
 module.exports = {
   formatTime,
   downloadImage,
-  takePhoto
+  takePhoto,
+  promisify,
+  cameraErrorHandler
 };
