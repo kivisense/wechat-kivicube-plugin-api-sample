@@ -60,10 +60,6 @@ Page({
     this.changeProgress(1);
     this.changeShowTakePhoto(true);
   },
-  // 拍照
-  takePhoto() {
-    return util.takePhoto(this.view);
-  },
   // 错误判断
   error(e) {
     const { detail } = e;
@@ -82,7 +78,7 @@ Page({
     this.setData({ showTakePhoto: status });
   },
   handleTakephoto() {
-    this.takePhoto().then(photo => {
+    util.takePhoto(this.view).then(photo => {
       this.setData({ photo });
     });
   },

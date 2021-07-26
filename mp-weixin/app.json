@@ -5,7 +5,8 @@
     "pages/started/kivicube-scene/kivicube-scene",
     "pages/started/kivicube-collection/kivicube-collection",
     "pages/scene-setup/setup-ui/setup-ui",
-    "pages/camera-preview/camera-preview"
+    "pages/camera-preview/camera-preview",
+    "pages/scene-setup/setup-tracking/setup-tracking"
   ],
   "window": {
     "backgroundTextStyle": "light",

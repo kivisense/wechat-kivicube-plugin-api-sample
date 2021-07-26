@@ -1,0 +1,48 @@
+<!--pages/scene-setup/setup-tracking.wxml-->
+<view class="layer">
+    <kivicube-scene
+      class="kivicube"
+      scene-id="2AzAoec4Ojw9G84NA4DFouYAgHP4Q5YT"
+      bind:error="error"
+      bind:ready="ready"
+      bind:downloadAssetProgress="downloadAssetProgress"
+      bind:sceneStart="sceneStart"
+      bind:loadSceneEnd="loadSceneEnd"
+      bind:tracked="tracked"
+      bind:lostTrack="lostTrack"
+      hideTakePhoto
+      hideLoading
+      hideDownload
+      hideScan
+    />
+    <!-- 显示需要识别的图片和提示 -->
+    <cover-view hidden="{{hideTip}}" class="tip">
+      <cover-view class="scan-img-box">
+        <cover-image class="scan-img" src="/assets/images/track-image.jpg"></cover-image>
+      </cover-view>
+      <cover-view class="scan-font">请对准识别图</cover-view>
+    </cover-view>
+     <!-- 拍照按钮 -->
+     <cover-image
+      wx:if="{{showTakePhoto && photo === ''}}"
+      bind:tap="handleTakephoto"
+      class="take-photo"
+      src="/assets/icons/btn-takephoto.png"
+    ></cover-image>
+     <!-- 显示照片 -->
+     <cover-view class="layer photo-frame" wx:if="{{photo}}">
+      <cover-image class="layer" src="{{photo}}"></cover-image>
+      <cover-image
+        class="btn-close"
+        bind:tap="clearPhoto"
+        src="/assets/icons/btn-close.png"
+      ></cover-image>
+      <cover-image
+        class="btn-download"
+        bind:tap="saveImg"
+        src="/assets/icons/btn-download.png"
+      ></cover-image>
+    </cover-view>
+    <camera-frame showFrame="{{showFrame}}"></camera-frame>
+    <cover-view wx:if="{{showAlert && showFrame}}" class="show-alert">移近一点，保持扫描</cover-view>
+</view>

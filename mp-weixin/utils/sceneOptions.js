@@ -153,7 +153,8 @@ const sceneOptions = [
           { txt: "4.自定义照片预览页面；", type: "txt", style: "" }
         ],
         clickMta: "click_uitracking_button",
-        startMta: "click_uitracking_start"
+        startMta: "click_uitracking_start",
+        url: "/pages/scene-setup/setup-tracking/setup-tracking"
       },
       {
         id: 6,
