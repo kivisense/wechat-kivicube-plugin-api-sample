@@ -1,12 +1,13 @@
-// pages/material/video-control/video-control.js
+// pages/material/tween-control/tween-control.js
 const { takePhoto, downloadImage } = require("../../../utils/util.js");
+const TWEEN = require("@tweenjs/tween.js");
 Page({
   data: {
     startLoad: false,
     progress: 0, // 下载进度
     showProgressNum: false, // 显示下载进度
     showTakePhoto: false, // 显示拍照UI
-    sceneId: "93eawlW1uO4bHksz3ALspPtuixH2DPoG", // 场景ID
+    sceneId: "qcAluuIz6JGQU0ArD2HS4fAytPPaLoZp", // 场景ID
     sceneData: { from: "list" },
     photo: "" // 拍照生成的图片地址
   },
@@ -75,24 +76,42 @@ Page({
     this.view = view;
   },
   sceneStart() {
-    console.log("scene", this.view.sceneInfo);
     const { name } = this.view.sceneInfo.objects[0];
-    const video = this.view.getObject(name);
-    video.addEventListener("click", () => {
-      wx.showToast({ icon: "none", title: "视频被点击" });
-      video.stop();
-    });
-    video.addEventListener("play", () => {
-      wx.showToast({ icon: "none", title: "视频开始播放" });
-    });
-    video.addEventListener("pause", () => {
-      wx.showToast({ icon: "none", title: "视频暂停播放" });
-      console.log("video", video);
-    });
-    video.addEventListener("ended", () => {
-      wx.showToast({ icon: "none", title: "视频播放完毕" });
-    });
-    this.video = video;
+    const model = this.view.getObject(name);
+
+    const toDeg = num => (num * Math.PI) / 180;
+    const toAngle = deg => (deg * 180) / Math.PI;
+
+    const originScale = model.scale.x;
+    const changeScale = model.scale.x * 0.6;
+
+    const originRotationY = toAngle(model.rotation.y);
+    const changeRotationY = originRotationY - 30;
+
+    model.rotation.y = toDeg(changeRotationY);
+    model.scale.setScalar(changeScale);
+
+    model.onBeforeRender = () => {
+      TWEEN.update();
+    };
+    const startTransform = {
+      scale: changeScale,
+      angle: changeRotationY
+    };
+    const endTransform = {
+      scale: originScale,
+      angle: originRotationY
+    };
+    const duration = 1000;
+    new TWEEN.Tween(startTransform)
+      .to(endTransform, duration)
+      .easing(TWEEN.Easing.Quadratic.Out)
+      .onUpdate(({ scale, angle }) => {
+        model.rotation.set(0, toDeg(angle), 0);
+        model.scale.setScalar(scale);
+      })
+      .repeat(0)
+      .start();
   },
   error(e) {
     console.log(e);
@@ -100,19 +119,18 @@ Page({
   handleControl(e) {
     const type = e.currentTarget.dataset.type;
     if (type === "pause") {
-      this.video.pause();
+      this.audio.pause();
     }
     if (type === "stop") {
-      this.video.stop();
+      this.audio.stop();
     }
     if (type === "play") {
-      this.video.loop = false; // 是否循环播放
-      this.video.play();
+      this.audio.loop = false; // 是否循环播放
+      this.audio.play();
     }
     if (type === "playback") {
-      this.video.play();
-      this.video.seek(0);
-      this.video.loop = true; // 是否循环播放
+      this.audio.loop = false; // 是否循环播放
+      this.audio.playback();
     }
   }
 });

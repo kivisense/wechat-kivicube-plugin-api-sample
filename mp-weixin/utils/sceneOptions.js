@@ -366,10 +366,11 @@ const sceneOptions = [
             style: ""
           },
           { txt: "高级API功能：", type: "title", style: "" },
-          { txt: "使用Tween实现一个简单的入场动画", type: "txt", style: "" }
+          { txt: "使用TweenJS实现一个简单的入场动画", type: "txt", style: "" }
         ],
         clickMta: "click_customanimation_button",
-        startMta: "click_customanimation_start"
+        startMta: "click_customanimation_start",
+        url: "/pages/material/tween-control/tween-control"
       },
       {
         id: 19,

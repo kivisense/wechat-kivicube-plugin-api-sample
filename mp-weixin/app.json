@@ -13,7 +13,8 @@
     "pages/material/model-control/model-control",
     "pages/material/video-control/video-control",
     "pages/material/alphaVideo-control/alphaVideo-control",
-    "pages/material/audio-control/audio-control"
+    "pages/material/audio-control/audio-control",
+    "pages/material/tween-control/tween-control"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -16,7 +16,6 @@ Page({
   onLoad: function() {
     const sceneData = wx.getStorageSync("sceneData");
     this.setData({ sceneData });
-    this.setData({ sceneId: sceneData.sceneId });
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
