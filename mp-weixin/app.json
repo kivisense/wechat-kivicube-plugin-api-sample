@@ -14,7 +14,8 @@
     "pages/material/video-control/video-control",
     "pages/material/alphaVideo-control/alphaVideo-control",
     "pages/material/audio-control/audio-control",
-    "pages/material/tween-control/tween-control"
+    "pages/material/tween-control/tween-control",
+    "pages/material/mask-control/mask-control"
   ],
   "window": {
     "backgroundTextStyle": "light",

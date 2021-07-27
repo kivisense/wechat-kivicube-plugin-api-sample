@@ -393,7 +393,8 @@ const sceneOptions = [
           }
         ],
         clickMta: "click_occluder_button",
-        startMta: "click_occluder_start"
+        startMta: "click_occluder_start",
+        url: "/pages/material/mask-control/mask-control"
       }
     ]
   },
