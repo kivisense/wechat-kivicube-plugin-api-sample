@@ -284,20 +284,20 @@ const sceneOptions = [
           },
           { txt: "高级API功能：", type: "title", style: "" },
           {
-            txt:
-              "1.点击按钮分别播放视频一次，暂停播放视频，停止播放视频，重新播放循环视频；",
+            txt: "1.视频的播放，暂停，停止，循环播放可通过点击事件直接控制；",
             type: "txt",
             style: ""
           },
           {
             txt:
-              "2.点击视频停止播放视频，视频停止播放后跳转网页：https://www.kivicube.com",
+              "2.视频被绑定点击、播放、暂停、播放结束四个事件，事件触发后会有toast提示；",
             type: "txt",
             style: ""
           }
         ],
         clickMta: "click_arvideocontrol_button",
-        startMta: "click_arvideocontrol_start"
+        startMta: "click_arvideocontrol_start",
+        url: "/pages/material/video-control/video-control"
       },
       {
         id: 11,

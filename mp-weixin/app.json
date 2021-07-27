@@ -10,7 +10,8 @@
     "pages/scene-setup/setup-skip/setup-skip",
     "pages/scene-setup/setup-autoPlay/setup-autoPlay",
     "pages/scene-setup/setup-source/setup-source",
-    "pages/material/model-control/model-control"
+    "pages/material/model-control/model-control",
+    "pages/material/video-control/video-control"
   ],
   "window": {
     "backgroundTextStyle": "light",
