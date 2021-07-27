@@ -417,7 +417,8 @@ const sceneOptions = [
           { txt: "自定义PBR材质的环境贴图", type: "txt", style: "" }
         ],
         clickMta: "click_customenv_button",
-        startMta: "click_customenv_start"
+        startMta: "click_customenv_start",
+        url: "/pages/material-special/environment-map/environment-map"
       },
       {
         id: 15,
