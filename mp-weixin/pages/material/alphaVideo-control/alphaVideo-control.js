@@ -1,4 +1,4 @@
-// pages/material/video-control/video-control.js
+// pages/material/alphaVideo-control/alphaVideo-control.js
 const { takePhoto, downloadImage } = require("../../../utils/util.js");
 Page({
   data: {
@@ -6,7 +6,7 @@ Page({
     progress: 0, // 下载进度
     showProgressNum: false, // 显示下载进度
     showTakePhoto: false, // 显示拍照UI
-    sceneId: "93eawlW1uO4bHksz3ALspPtuixH2DPoG", // 场景ID
+    sceneId: "lu1zB3xiVd1oVpqIFRNtk8Mt3h2XH1ox", // 场景ID
     sceneData: { from: "list" },
     photo: "" // 拍照生成的图片地址
   },
@@ -107,13 +107,13 @@ Page({
       this.video.stop();
     }
     if (type === "play") {
-      this.video.loop = false; // 是否循环播放
+      this.video.loop = true; // 是否循环播放
       this.video.play();
     }
     if (type === "playback") {
       this.video.play();
       this.video.seek(0);
-      this.video.loop = true; // 是否循环播放
+      this.video.loop = false; // 是否循环播放
     }
   }
 });

@@ -11,7 +11,8 @@
     "pages/scene-setup/setup-autoPlay/setup-autoPlay",
     "pages/scene-setup/setup-source/setup-source",
     "pages/material/model-control/model-control",
-    "pages/material/video-control/video-control"
+    "pages/material/video-control/video-control",
+    "pages/material/alphaVideo-control/alphaVideo-control"
   ],
   "window": {
     "backgroundTextStyle": "light",

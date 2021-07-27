@@ -325,7 +325,8 @@ const sceneOptions = [
           }
         ],
         clickMta: "click_alphavideocontrol_button",
-        startMta: "click_alphavideocontrol_start"
+        startMta: "click_alphavideocontrol_start",
+        url: "/pages/material/alphaVideo-control/alphaVideo-control"
       },
       {
         id: 12,

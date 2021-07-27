@@ -1,4 +1,4 @@
-<!--pages/material/video-control/video-control.wxml-->
+<!--pages/material/alphaVideo-control/alphaVideo-control.wxml-->
 <view class="layer scene-box">
     <kivicube-scene
       class="kivicube"
@@ -18,7 +18,7 @@
     />
     <cover-view class="bottom-btn-group" wx:if="{{progress === 1}}">
       <cover-view class="model-btn-group">
-        <cover-view class="default-view-btn" bind:tap="handleControl" data-type="play">播放一次</cover-view>
+        <cover-view class="default-view-btn" bind:tap="handleControl" data-type="play">循环播放</cover-view>
         <cover-view class="default-view-btn" bind:tap="handleControl" data-type="pause">暂停播放</cover-view>
         <cover-view class="default-view-btn" bind:tap="handleControl" data-type="stop">停止播放</cover-view>
         <cover-view class="default-view-btn" bind:tap="handleControl" data-type="playback">重新播放</cover-view>
