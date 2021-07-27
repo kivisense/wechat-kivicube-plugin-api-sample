@@ -17,7 +17,8 @@
     "pages/material/tween-control/tween-control",
     "pages/material/mask-control/mask-control",
     "pages/material-special/environment-map/environment-map",
-    "pages/material-special/sprite-image/sprite-image"
+    "pages/material-special/sprite-image/sprite-image",
+    "pages/multi-recognition/multi-recognition"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -472,7 +472,8 @@ const sceneOptions = [
           { txt: "2.跳转新的页面加载刚才识别到的场景", type: "txt", style: "" }
         ],
         clickMta: "click_cloudar_button",
-        startMta: "click_cloudar_start"
+        startMta: "click_cloudar_start",
+        url: "/pages/multi-recognition/multi-recognition"
       }
     ]
   },

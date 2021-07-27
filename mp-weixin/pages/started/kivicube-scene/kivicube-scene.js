@@ -1,6 +1,7 @@
 const util = require("../../../utils/util.js");
 Page({
   data: {
+    showBackIcon: false, // 显示返回按钮
     startLoad: false,
     showFrame: false, // 显示相机外框
     progress: 0, // 下载进度
@@ -13,10 +14,13 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function() {
+  onLoad: function(options) {
     const sceneData = wx.getStorageSync("sceneData");
     this.setData({ sceneData });
     this.setData({ sceneId: sceneData.sceneId });
+    if (options.showBackIcon) {
+      this.setData({ showBackIcon: true });
+    }
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
