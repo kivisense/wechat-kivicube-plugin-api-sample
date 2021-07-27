@@ -38,8 +38,8 @@
         <cover-view class="default-view-btn" bind:tap="removeVideo">移除视频</cover-view>
       </cover-view>
     </cover-view>
-     <!-- loading -->
-     <loading progress="{{progress}}" showProgressNum="{{false}}"></loading>
+    <!-- loading -->
+    <loading progress="{{progress}}" showProgressNum="{{false}}"></loading>
     <!-- 拍照按钮 -->
     <cover-image
       wx:if="{{showTakePhoto && photo === ''}}"

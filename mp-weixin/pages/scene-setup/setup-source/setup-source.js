@@ -3,7 +3,6 @@ const util = require("../../../utils/util.js");
 Page({
   data: {
     startLoad: false,
-    showFrame: false, // 显示相机外框
     progress: 0, // 下载进度
     showProgressNum: false, // 显示下载进度
     showTakePhoto: false, // 显示拍照UI
@@ -83,7 +82,6 @@ Page({
     const path = this.data.photo;
     util.downloadImage(path);
   },
-  // page methods
   ready({ detail: view }) {
     this.view = view;
   },

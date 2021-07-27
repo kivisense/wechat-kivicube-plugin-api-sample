@@ -266,7 +266,8 @@ const sceneOptions = [
           }
         ],
         clickMta: "click_modelcontrol_button",
-        startMta: "click_modelcontrol_start"
+        startMta: "click_modelcontrol_start",
+        url: "/pages/material/model-control/model-control"
       },
       {
         id: 10,
