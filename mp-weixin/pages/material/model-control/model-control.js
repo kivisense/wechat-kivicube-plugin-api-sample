@@ -1,5 +1,9 @@
 // pages/material/model-control/model-control.js
-const util = require("../../../utils/util.js");
+const {
+  cameraErrorHandler,
+  takePhoto,
+  downloadImage
+} = require("../../../utils/util.js");
 Page({
   data: {
     startLoad: false,
@@ -55,7 +59,7 @@ Page({
     const { detail } = e;
     const page = this;
     // 判定是否camera权限问题，是则向用户申请权限。
-    util.cameraErrorHandler(detail, page);
+    cameraErrorHandler(detail, page);
   },
   // 显示素材下载进度
   showProgress() {
@@ -69,7 +73,7 @@ Page({
   },
   handleTakephoto() {
     console.log("take photo");
-    util.takePhoto(this.view).then(photo => {
+    takePhoto(this.view).then(photo => {
       this.setData({ photo });
     });
   },
@@ -78,7 +82,7 @@ Page({
   },
   saveImg() {
     const path = this.data.photo;
-    util.downloadImage(path);
+    downloadImage(path);
   },
   ready({ detail: view }) {
     this.view = view;

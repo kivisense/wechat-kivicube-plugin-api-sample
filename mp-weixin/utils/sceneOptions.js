@@ -448,7 +448,8 @@ const sceneOptions = [
           }
         ],
         clickMta: "click_sprite_button",
-        startMta: "click_sprite_start"
+        startMta: "click_sprite_start",
+        url: "/pages/material-special/sprite-image/sprite-image"
       }
     ]
   },

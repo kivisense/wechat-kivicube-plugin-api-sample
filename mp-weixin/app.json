@@ -16,7 +16,8 @@
     "pages/material/audio-control/audio-control",
     "pages/material/tween-control/tween-control",
     "pages/material/mask-control/mask-control",
-    "pages/material-special/environment-map/environment-map"
+    "pages/material-special/environment-map/environment-map",
+    "pages/material-special/sprite-image/sprite-image"
   ],
   "window": {
     "backgroundTextStyle": "light",
