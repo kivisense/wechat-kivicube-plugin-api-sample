@@ -12,7 +12,8 @@
     "pages/scene-setup/setup-source/setup-source",
     "pages/material/model-control/model-control",
     "pages/material/video-control/video-control",
-    "pages/material/alphaVideo-control/alphaVideo-control"
+    "pages/material/alphaVideo-control/alphaVideo-control",
+    "pages/material/audio-control/audio-control"
   ],
   "window": {
     "backgroundTextStyle": "light",

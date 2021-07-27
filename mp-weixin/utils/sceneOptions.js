@@ -347,15 +347,11 @@ const sceneOptions = [
               "1.点击按钮循环播放音频，暂停播放音频，停止播放音频，重新播放音频；",
             type: "txt",
             style: ""
-          },
-          {
-            txt: "2.音乐停止后，跳转到QQ音乐小程序继续播放歌曲Childhood-Dreams",
-            type: "txt",
-            style: ""
           }
         ],
         clickMta: "click_audiocontrol_button",
-        startMta: "click_audiocontrol_start"
+        startMta: "click_audiocontrol_start",
+        url: "/pages/material/audio-control/audio-control"
       },
       {
         id: 13,
