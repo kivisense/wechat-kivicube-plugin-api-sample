@@ -2,7 +2,7 @@
 <view class="layer scene-box">
   <kivicube-scene
       class="kivicube"
-      scene-id="qcAluuIz6JGQU0ArD2HS4fAytPPaLoZp"
+      scene-id="{{sceneId}}"
       bind:error="error"
       bind:ready="ready"
       bind:sceneStart="sceneStart"

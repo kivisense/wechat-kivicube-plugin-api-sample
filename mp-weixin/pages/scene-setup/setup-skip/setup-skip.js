@@ -7,7 +7,7 @@ Page({
     progress: 0, // 下载进度
     showProgressNum: false, // 显示下载进度
     showTakePhoto: false, // 显示拍照UI
-    sceneId: "", // 场景ID
+    sceneId: "qcAluuIz6JGQU0ArD2HS4fAytPPaLoZp", // 场景ID
     sceneData: { from: "list" },
     photo: "" // 拍照生成的图片地址
   },

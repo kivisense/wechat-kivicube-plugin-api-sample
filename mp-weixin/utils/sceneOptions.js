@@ -208,7 +208,8 @@ const sceneOptions = [
           }
         ],
         clickMta: "click_autoplay_button",
-        startMta: "click_autoplay_start"
+        startMta: "click_autoplay_start",
+        url: "/pages/scene-setup/setup-autoPlay/setup-autoPlay"
       },
       {
         id: 8,
@@ -229,7 +230,8 @@ const sceneOptions = [
           { txt: "4.增加三方在线视频；", type: "txt", style: "" }
         ],
         clickMta: "click_assetmanage_button",
-        startMta: "click_assetmanage_start"
+        startMta: "click_assetmanage_start",
+        url: "/pages/scene-setup/setup-source/setup-source"
       }
     ]
   },

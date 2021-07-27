@@ -11,6 +11,9 @@ Page({
   handleTap(e) {
     const modal = this.selectComponent("#modal");
     const info = e.currentTarget.dataset.item;
+    if (!info.url) {
+      return wx.showToast({ title: "正在开发中", icon: "none" });
+    }
     modal.setInfo(info, () => {
       this.setData({ modalHidden: false });
     });

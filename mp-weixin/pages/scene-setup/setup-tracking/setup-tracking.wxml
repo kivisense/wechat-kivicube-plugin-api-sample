@@ -2,7 +2,7 @@
 <view class="layer">
     <kivicube-scene
       class="kivicube"
-      scene-id="2AzAoec4Ojw9G84NA4DFouYAgHP4Q5YT"
+      scene-id="{{sceneId}}"
       bind:error="error"
       bind:ready="ready"
       bind:downloadAssetProgress="downloadAssetProgress"

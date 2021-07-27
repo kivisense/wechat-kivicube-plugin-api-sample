@@ -7,7 +7,9 @@
     "pages/scene-setup/setup-ui/setup-ui",
     "pages/camera-preview/camera-preview",
     "pages/scene-setup/setup-tracking/setup-tracking",
-    "pages/scene-setup/setup-skip/setup-skip"
+    "pages/scene-setup/setup-skip/setup-skip",
+    "pages/scene-setup/setup-autoPlay/setup-autoPlay",
+    "pages/scene-setup/setup-source/setup-source"
   ],
   "window": {
     "backgroundTextStyle": "light",

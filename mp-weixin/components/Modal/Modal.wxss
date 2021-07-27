@@ -17,8 +17,10 @@
   transition: all .4s ease;
 }
 .modal.hidden{
-  visibility: hidden;
-  opacity: 0;
+  /* bug: 安卓会渲染遮罩层，导致无法点击遮罩层下面的内容 */
+  /* visibility: hidden;
+  opacity: 0; */
+  display: none;
 }
 .modal-box {
   background: rgba(255, 255, 255, 1);

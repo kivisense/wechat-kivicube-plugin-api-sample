@@ -10,9 +10,9 @@
             wx:for-item="item"
             class="item"
             data-item="{{item}}"
-            bindtap="handleTap"
+            bind:tap="handleTap"
           >
-            <view>{{ item.title }}</view>
+            <view class="{{item.url ? '' : 'undo'}}">{{ item.title }}</view>
             <image src="/assets/icons/right.png" class="aim" mode="widthFix" />
           </view>
         </view>

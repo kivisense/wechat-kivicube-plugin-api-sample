@@ -84,7 +84,7 @@ const promisify = (fn, context) => {
     });
   };
 };
-
+// 摄像头打开失败处理
 const cameraErrorHandler = (detail, page) => {
   // 判定是否camera权限问题，是则向用户申请权限。
   if (detail && detail.isCameraAuthDenied) {
@@ -109,10 +109,67 @@ const cameraErrorHandler = (detail, page) => {
   }
 };
 
+function errorHandler(errInfo) {
+  let message = errInfo;
+  if (typeof errInfo === "object") {
+    if (errInfo instanceof Error) {
+      message = errInfo.message;
+    } else if (errInfo.errMsg) {
+      message = errInfo.errMsg;
+    } else {
+      message = Object.values(errInfo).join("; ");
+    }
+  }
+  console.error(errInfo);
+  wx.showToast({
+    title: message,
+    icon: "none"
+  });
+}
+
+function requestFile(url) {
+  return new Promise((resolve, reject) => {
+    wx.request({
+      url,
+      dataType: "",
+      responseType: "arraybuffer",
+      success({ statusCode, data }) {
+        if (statusCode === 200) {
+          resolve(data);
+        } else {
+          reject(new Error(`下载素材(${url})发生错误(状态码-${statusCode})`));
+        }
+      },
+      fail: reject
+    });
+  });
+}
+
+function downloadFile(file) {
+  return new Promise((resolve, reject) => {
+    wx.downloadFile({
+      url: file,
+      success(res) {
+        if (res.statusCode === 200) {
+          resolve(res.tempFilePath);
+        } else {
+          reject(
+            new Error(`下载文件：${file} 失败。statusCode：${res.statusCode}`)
+          );
+        }
+      },
+      fail: reject
+    });
+  });
+}
+
 module.exports = {
   formatTime,
   downloadImage,
   takePhoto,
   promisify,
-  cameraErrorHandler
+  cameraErrorHandler,
+  errorHandler,
+  requestFile,
+  downloadFile
 };
