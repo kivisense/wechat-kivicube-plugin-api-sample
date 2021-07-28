@@ -13,7 +13,7 @@ Page({
     showScanning: false, // 显示相机扫描动画
     // 记录当前场景id
     recordSceneId: "",
-    isNotShark: false,
+    isShark: false,
     loadingTimer: null,
     titleScanTimer: null,
     titleScanning: false,
@@ -28,7 +28,7 @@ Page({
   },
   async ready({ detail: collection }) {
     wx.hideLoading();
-    this.setData({ collection });
+    this.collection = collection;
     this.changeProgress(1);
     setTimeout(() => {
       this.startScanning();
@@ -39,8 +39,7 @@ Page({
     // 记录场景id
     this.setData({ recordSceneId: detail.sceneInfo.sceneId }, () => {
       this.setData({
-        isNotShark:
-          this.data.recordSceneId === "Znr2xURGhdlQeFKikcIKfxG8VhjKKwXF"
+        isShark: this.data.recordSceneId === "T8z00V3DB0KjwS9CLew7mo8c9DTBrFJU"
       });
     });
     this.stopScanning();

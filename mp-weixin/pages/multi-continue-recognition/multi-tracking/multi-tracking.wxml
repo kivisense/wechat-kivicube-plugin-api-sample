@@ -23,8 +23,8 @@
     <cover-view wx:if="{{showTracking && titleScanning}}" class="show-tracking">移近一点，保持扫描</cover-view>
     <cover-view wx:if="{{showTracking}}" class="tip">
       <cover-view class="scan-img-box">
-        <cover-image wx:if="{{showScene}}" class="scan-img" src="/assets/images/tyrannosaurus.jpg"></cover-image>
-        <cover-image wx:if="{{!showScene}}" class="scan-img" src="/assets/images/shark.jpg"></cover-image>
+        <cover-image wx:if="{{!isShark}}" class="scan-img" src="/assets/images/tyrannosaurus.jpg"></cover-image>
+        <cover-image wx:if="{{isShark}}" class="scan-img" src="/assets/images/shark.jpg"></cover-image>
       </cover-view>
       <cover-view class="scan-font">请对准识别图</cover-view>
     </cover-view>
@@ -38,11 +38,11 @@
       <cover-view
         class="default-view-add-btn"
         bind:tap="tyrannosaurusClick"
-        wx:if="{{!isNotShark}}"
+        wx:if="{{isShark}}"
       >切换到霸王龙场景
       </cover-view>
       <cover-view
-        wx:if="{{isNotShark}}"
+        wx:if="{{!isShark}}"
         class="default-view-add-btn"
         bind:tap="sharkClick"
       >切换到鲨鱼场景
