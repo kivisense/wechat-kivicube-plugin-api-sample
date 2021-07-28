@@ -538,7 +538,8 @@ const sceneOptions = [
           }
         ],
         clickMta: "click_tracking_button",
-        startMta: "click_tracking _start"
+        startMta: "click_tracking _start",
+        url: "/pages/multi-continue-recognition/multi-tracking/multi-tracking"
       }
     ]
   },

@@ -2,17 +2,17 @@
 const { cameraErrorHandler } = require("../../../utils/util.js");
 Page({
   data: {
+    startLoad: false,
     collectionId: "",
     sceneData: {},
     showBtn: false,
     recordSceneId: "",
     isShark: false,
-    loaddingTimer: null,
+    loadingTimer: null,
     progress: 1,
     showProgressNum: false,
     showAlert: false,
     animationData: {},
-    loadingTimer: null,
     timer: null,
     scanProgress: 20,
     showScanning: false, // 显示相机扫描动画
@@ -21,8 +21,7 @@ Page({
   onLoad: function() {
     wx.showLoading({ title: "加载中..." });
     const sceneData = wx.getStorageSync("sceneData");
-    this.setData({ sceneData });
-    this.setData({ collectionId: sceneData.collectionId });
+    this.setData({ sceneData, collectionId: sceneData.collectionId });
   },
   // 开始下载场景所需的素材。
   downloadAssetStart() {
@@ -41,8 +40,8 @@ Page({
   // 场景加载完毕。
   downloadAssetEnd() {
     this.changeProgress(1);
-    if (this.data.loaddingTimer) {
-      clearTimeout(this.data.loaddingTimer);
+    if (this.data.loadingTimer) {
+      clearTimeout(this.data.loadingTimer);
     }
     this.closeProgress();
   },
@@ -70,8 +69,8 @@ Page({
   sceneStart() {
     this.setData({ showBtn: true });
     this.changeProgress(1);
-    if (this.loaddingTimer) {
-      clearTimeout(this.loaddingTimer);
+    if (this.loadingTimer) {
+      clearTimeout(this.loadingTimer);
     }
     this.closeProgress();
   },

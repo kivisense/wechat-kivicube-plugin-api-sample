@@ -1,4 +1,9 @@
 /* pages/multi-continue-recognition/cloud-gyroscope/cloud-gyroscope.wxss */
+.kivicube {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
 .icon-middle {
   width: 100vw;
   height: 14vw;
