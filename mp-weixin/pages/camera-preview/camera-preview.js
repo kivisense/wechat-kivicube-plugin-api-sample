@@ -42,9 +42,7 @@ Page({
       await this.addCameraPic(canvas, ctx);
       await this.addFramePic(canvas, ctx);
       await this.addBottomCowPic(canvas, ctx);
-      // await Promise.all([[p1, p2, p3]])
       const { tempFilePath } = await this.generatePicPath(canvas);
-      // this.showImg = tempFilePath;
       this.setData({ showImg: tempFilePath });
     } catch (e) {
       wx.showToast({ icon: "none", title: e.message });

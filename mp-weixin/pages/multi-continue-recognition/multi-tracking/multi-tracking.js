@@ -15,7 +15,7 @@ Page({
     recordSceneId: "",
     isNotShark: false,
     loadingTimer: null,
-    titleScannTimer: null,
+    titleScanTimer: null,
     titleScanning: false,
     timer: null,
     scanProgress: 20,
@@ -89,7 +89,7 @@ Page({
     this.stopScanning();
     this.setData({ showScanning: false, showTracking: false, showBtn: true });
     if (this.data.titleScanning) {
-      clearTimeout(this.data.titleScannTimer);
+      clearTimeout(this.data.titleScanTimer);
     }
     this.setData({ titleScanning: false });
   },
@@ -100,7 +100,7 @@ Page({
     setTimeout(() => {
       this.collection.stopCloudar();
     });
-    this.data.titleScannTimer = setTimeout(() => {
+    this.data.titleScanTimer = setTimeout(() => {
       this.setData({ titleScanning: true });
     }, 3000);
   },
