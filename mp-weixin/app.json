@@ -18,7 +18,9 @@
     "pages/material/mask-control/mask-control",
     "pages/material-special/environment-map/environment-map",
     "pages/material-special/sprite-image/sprite-image",
-    "pages/multi-recognition/multi-recognition"
+    "pages/multi-recognition/multi-recognition",
+    "pages/multi-continue-recognition/cloud-gyroscope/cloud-gyroscope",
+    "pages/multi-continue-recognition/multi-tracking/multi-tracking"
   ],
   "window": {
     "backgroundTextStyle": "light",

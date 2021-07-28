@@ -505,7 +505,8 @@ const sceneOptions = [
           }
         ],
         clickMta: "click_cloudar_button",
-        startMta: "click_cloudar_start"
+        startMta: "click_cloudar_start",
+        url: "/pages/multi-continue-recognition/cloud-gyroscope/cloud-gyroscope"
       },
       {
         id: 21,

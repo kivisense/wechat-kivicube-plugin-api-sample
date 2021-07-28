@@ -1,0 +1,34 @@
+/* pages/multi-continue-recognition/cloud-gyroscope/cloud-gyroscope.wxss */
+.icon-middle {
+  width: 100vw;
+  height: 14vw;
+  position: absolute;
+  top: 20vh;
+  z-index: 2;
+}
+.btn {
+  width: 100vw;
+  position: absolute;
+  bottom: 6vh;
+  z-index: 3;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.show-alert {
+  width: 42.67vw;
+  height: 8.53vw;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 18vh;
+  background: rgba(111, 111, 111, 0.8);
+  border-radius: 1vw;
+  margin: 0 auto;
+  font-size: 3.73vw;
+  font-weight: 400;
+  line-height: 8.53vw;
+  color: #ffffff;
+  text-align: center;
+  z-index: 2;
+}
