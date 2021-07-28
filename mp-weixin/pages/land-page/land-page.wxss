@@ -1,0 +1,5 @@
+.land-page{
+  padding: 15px;
+  box-sizing: border-box;
+  word-break: break-all;
+}

@@ -1,7 +1,7 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs",
+    "pages/land-page/land-page",
     "pages/started/kivicube-scene/kivicube-scene",
     "pages/started/kivicube-collection/kivicube-collection",
     "pages/scene-setup/setup-ui/setup-ui",
@@ -20,7 +20,8 @@
     "pages/material-special/sprite-image/sprite-image",
     "pages/multi-recognition/multi-recognition",
     "pages/multi-continue-recognition/cloud-gyroscope/cloud-gyroscope",
-    "pages/multi-continue-recognition/multi-tracking/multi-tracking"
+    "pages/multi-continue-recognition/multi-tracking/multi-tracking",
+    "pages/case/image-scan"
   ],
   "window": {
     "backgroundTextStyle": "light",

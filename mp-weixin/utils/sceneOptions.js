@@ -567,7 +567,8 @@ const sceneOptions = [
           }
         ],
         clickMta: "click_arscan_button",
-        startMta: "click_arscan_start"
+        startMta: "click_arscan_start",
+        url: "/pages/case/image-scan"
       }
     ]
   }
