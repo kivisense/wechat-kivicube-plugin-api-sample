@@ -1,0 +1,17 @@
+/* pages/camera-preview/camera-preview.wxss */
+.btn-download {
+  width: 20vw;
+  height: 20vw;
+  bottom: 8vw;
+  left: 0;
+  right: 0;
+  position: absolute;
+  z-index: 3;
+  margin: 0 auto;
+}
+#syntheticPic {
+  position: absolute;
+  left: 9999rpx;
+  left: 0;
+  top: 0;
+}

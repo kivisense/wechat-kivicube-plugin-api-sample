@@ -1,0 +1,41 @@
+/* pages/scene-setup/setup-source/setup-source.wxss */
+.kivicube {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+.bottom-btn-group {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  bottom: 35vw;
+}
+.model-btn-group {
+  display: flex;
+}
+.start-btn{
+  display: flex;
+  justify-content: center;
+}
+.start-btn .default-view-btn{
+  margin: 0 2vw;
+}
+.btn-close {
+  position: absolute;
+  z-index: 1;
+  right: 3.2vw;
+  top: 3.2vw;
+  width: 16vw;
+  height: 16vw;
+}
+.btn-download {
+  width: 20vw;
+  height: 20vw;
+  bottom: 8vw;
+  left: 0;
+  right: 0;
+  position: absolute;
+  z-index: 1;
+  margin: 0 auto;
+}

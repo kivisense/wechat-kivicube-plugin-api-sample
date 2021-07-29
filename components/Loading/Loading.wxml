@@ -1,0 +1,14 @@
+<cover-view class="layer loading" wx:if="{{progress !== 1}}">
+  <cover-image
+    animation="{{animationData}}"
+    class="loading-icon"
+    src="/assets/images/loading2.png"
+  ></cover-image>
+  <cover-view
+    class="loading-font"
+    style="margin: 2.13vw 0 0; display: flex; justify-content: center; align-items: center;"
+  >
+    <cover-view>加载中...</cover-view>
+    <cover-view wx:if="{{showProgressNum}}">{{ parseInt(progress * 100) }}%</cover-view>
+  </cover-view>
+</cover-view>

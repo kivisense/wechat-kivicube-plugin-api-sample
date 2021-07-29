@@ -1,0 +1,18 @@
+/* pages/multi-recognition/multi-recognition.wxss */
+.show-alert {
+  width: 42.67vw;
+  height: 8.53vw;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 18vh;
+  background: rgba(111, 111, 111, 0.8);
+  border-radius: 1vw;
+  margin: 0 auto;
+  font-size: 3.73vw;
+  font-weight: 400;
+  line-height: 8.53vw;
+  color: #ffffff;
+  text-align: center;
+  z-index: 2;
+}

@@ -1,0 +1,6 @@
+/* pages/scene-setup/setup-autoPlay/setup-autoPlay.wxss */
+.kivicube {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
