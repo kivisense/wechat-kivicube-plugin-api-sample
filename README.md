@@ -28,26 +28,26 @@
 │  ├─index		首页列表
 │  ├─land-page 		落地页
 │  ├─material 		素材对象
-│  │  ├─alphaVideo-control  透明视频控制
-│  │  ├─audio-control 	    音频控制
-│  │  ├─mask-control  	    模型遮罩
-│  │  ├─model-control       模型控制
-│  │  ├─tween-control	    自定义动画
-│  │  └─video-control	    AR视频控制
+│  │  ├─alphaVideo-control透明视频控制
+│  │  ├─audio-control 	  音频控制
+│  │  ├─mask-control  	  模型遮罩
+│  │  ├─model-control     模型控制
+│  │  ├─tween-control	  自定义动画
+│  │  └─video-control	  AR视频控制
 │  ├─material-special	特殊素材
-│  │  ├─environment-map	    自定义环境贴图
-│  │  └─sprite-image	    精灵图序列
+│  │  ├─environment-map	  自定义环境贴图
+│  │  └─sprite-image	  精灵图序列
 │  ├─multi-continue-recognition 多图连续识别
 │  │  ├─cloud-gyroscope	          多个陀螺仪/云识别场景
 │  │  └─multi-tracking		  多个图像跟踪场景
-│  ├─multi-recognition 	  多图识别
-│  ├─scene-setup	  场景设置
-│  │  ├─setup-autoPlay	    自动播放
-│  │  ├─setup-skip	    跳过云识别
-│  │  ├─setup-source 	    素材管理
-│  │  ├─setup-tracking	    自定义跟踪UI
-│  │  └─setup-ui	    自定义UI与设置
-│  └─started
+│  ├─multi-recognition 	多图识别
+│  ├─scene-setup	场景设置
+│  │  ├─setup-autoPlay	  自动播放
+│  │  ├─setup-skip	  跳过云识别
+│  │  ├─setup-source 	  素材管理
+│  │  ├─setup-tracking	  自定义跟踪UI
+│  │  └─setup-ui	  自定义UI与设置
+│  └─started		入门教程
 │      ├─kivicube-collection	快速接入kivicube-collection组件
 │      └─kivicube-scene		快速接入kivicube-scene组件
 └─utils			
