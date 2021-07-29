@@ -1,6 +1,0 @@
-{
-  "usingComponents": {
-    "kivi-cloudar": "plugin://kivicube/kivi-cloudar",
-    "camera-frame": "/components/CameraFrame/CameraFrame"
-  }
-}

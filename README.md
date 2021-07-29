@@ -2,7 +2,7 @@
 
 * 此项目是为了帮助您快速了解和使用kivicube插件的高级api
 
-* 此项目是基于uniapp开发，[uniapp相关文档](https://uniapp.dcloud.io/)
+* 此项目是基于微信小程序开发，[微信小程序开发文档](https://developers.weixin.qq.com/miniprogram/dev/framework/)
 
 * 此项目功能说明文档，详见[示例仓库](https://www.yuque.com/kivicube/manual/advanced-api)
 
@@ -12,54 +12,54 @@
 ![avatar](https://cdn.nlark.com/yuque/0/2020/jpeg/217517/1606982678816-87c46bb6-261c-458d-b8bf-e3a6d15b9993.jpeg?x-oss-process=image%2Fresize%2Cw_200)
 
 ## 项目启动步骤
-
 * npm install
 
-* npm run dev:mp-weixin （该示例只支持微信小程序 ）
+* 使用微信开发者工具导入本项目
 
-## 项目基本构成
+* 在微信开发者工具栏点击`详情`，在侧边栏中切换到`本地设置`，勾选下方的`使用npm模块`选项，然后点击工具栏的`工具`，在下拉列表中点击`构建npm`后即可预览
 
-collect: 分包页面（合辑)  
-components：各种场景的demo  
-mixins: 项目公共混合方法  
-pages 主包页面  
-static 静态图片资源  
-App.vue 导入全局样式  
-utils 全局工具集  
-main.js 入口文件  
-manifest.json uni-app配置文件 appid 插件等  
-pages.json 页面url注册 分包已建好  
-uni.scss 全局scss变量  
+## 项目目录及页面介绍
+```
+├─assets 		资源文件
+├─components 	视图组件
+├─pages
+│  ├─camera-preview 	  相机预览页
+│  ├─case 				使用案例，AR扫福
+│  ├─index 			   首页列表
+│  ├─land-page 		   落地页
+│  ├─material 		    素材对象
+│  │  ├─alphaVideo-control  透明视频控制
+│  │  ├─audio-control 	  音频控制
+│  │  ├─mask-control  	  模型遮罩
+│  │  ├─model-control       模型控制
+│  │  ├─tween-control   	自定义动画
+│  │  └─video-control	   AR视频控制
+│  ├─material-special		特殊素材
+│  │  ├─environment-map 	  自定义环境贴图
+│  │  └─sprite-image 		 精灵图序列
+│  ├─multi-continue-recognition 多图连续识别
+│  │  ├─cloud-gyroscope		  多个陀螺仪/云识别场景
+│  │  └─multi-tracking 		  多个图像跟踪场景
+│  ├─multi-recognition 	  多图识别
+│  ├─scene-setup 			场景设置
+│  │  ├─setup-autoPlay 		自动播放
+│  │  ├─setup-skip 			跳过云识别
+│  │  ├─setup-source 		  素材管理
+│  │  ├─setup-tracking 		自定义跟踪UI
+│  │  └─setup-ui 			  自定义UI与设置
+│  └─started
+│      ├─kivicube-collection	快速接入kivicube-collection组件
+│      └─kivicube-scene 		快速接入kivicube-scene组件
+└─utils			
+	├─ sceneOptions.js	 整个项目示例的页面配置文件
+	└─ util.js 			工具函数
+```
 
-###  AR示例分为三个页面
+## 插件使用说明
 
-1.kivicube-scene ==> @/pages/scene
+[Kivicube AR插件使用说明](https://mp.weixin.qq.com/wxopen/plugindevdoc?appid=wx3bbab3920eabccb2&token=&lang=zh_CN)
 
-功能示例：场景设置，素材对象，特殊素材等
-
-因以上功能示例具有大部分相同功能，故@/pages/scene页面中实现公共功能，并引入scene组件（@/components/scene）进行不同功能展示。
-
-2.kivi-cloudar ==> @/pages/cloudar
-
-功能示例：多图识别，实用案例
-
-因以上功能示例具有大部分相同功能，故@/pages/cloudar页面中实现公共功能，并引入cloudar组件（@/components/scene）进行不同功能展示。
-
-3.kivicube-collection ==> @/collect/pages/index 
-
-功能示例：多图连续识别（kivicube-collection组件）
-
-因微信主包不能超过2M, 对合辑采取分包政策，所有合辑相关都在collect分包内
-
-
-
-以上对应可功能示例在scene.js配置可见(@/components/scene/scene.js)
-
-## 插件的介绍
-
-详见[文档](https://mp.weixin.qq.com/wxopen/plugindevdoc?appid=wx3bbab3920eabccb2&token=&lang=zh_CN)
-
-## 插件的使用
+[微信插件使用文档](https://developers.weixin.qq.com/miniprogram/dev/framework/plugin/using.html) 
 
 ### 添加插件
 首先要在小程序管理后台的“设置-第三方服务-插件管理”中添加插件。
@@ -71,5 +71,6 @@ uni.scss 全局scss变量
         "provider": "wx3bbab3920eabccb2"
       }
 	}
+
 
 

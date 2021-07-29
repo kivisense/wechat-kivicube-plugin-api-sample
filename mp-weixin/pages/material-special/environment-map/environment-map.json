@@ -1,6 +1,0 @@
-{
-  "usingComponents": {
-    "kivicube-scene": "plugin://kivicube/kivicube-scene",
-    "loading": "/components/Loading/Loading"
-  }
-}

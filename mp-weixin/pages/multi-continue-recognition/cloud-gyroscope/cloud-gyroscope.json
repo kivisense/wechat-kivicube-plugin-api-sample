@@ -1,6 +1,0 @@
-{
-  "usingComponents": {
-    "kivicube-collection": "plugin://kivicube/kivicube-collection",
-    "loading": "/components/Loading/Loading"
-  }
-}

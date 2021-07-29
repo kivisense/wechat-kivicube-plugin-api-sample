@@ -1,7 +1,0 @@
-{
-  "usingComponents": {
-    "kivicube-collection": "plugin://kivicube/kivicube-collection",
-    "camera-frame": "/components/CameraFrame/CameraFrame",
-    "loading": "/components/Loading/Loading"
-  }
-}
