@@ -20,39 +20,39 @@
 
 ## 项目目录及页面介绍
 ```
-├─assets 		  资源文件
+├─assets 	资源文件
 ├─components 	视图组件
 ├─pages
-│  ├─camera-preview   相机预览页
-│  ├─case 				    使用案例，AR扫福
-│  ├─index 			      首页列表
-│  ├─land-page 		    落地页
-│  ├─material 		    素材对象
+│  ├─camera-preview   	相机预览页
+│  ├─case		使用案例，AR扫福
+│  ├─index		首页列表
+│  ├─land-page 		落地页
+│  ├─material 		素材对象
 │  │  ├─alphaVideo-control  透明视频控制
 │  │  ├─audio-control 	    音频控制
 │  │  ├─mask-control  	    模型遮罩
 │  │  ├─model-control       模型控制
-│  │  ├─tween-control   	  自定义动画
-│  │  └─video-control	      AR视频控制
-│  ├─material-special		  特殊素材
-│  │  ├─environment-map 	  自定义环境贴图
-│  │  └─sprite-image 		    精灵图序列
+│  │  ├─tween-control	    自定义动画
+│  │  └─video-control	    AR视频控制
+│  ├─material-special	特殊素材
+│  │  ├─environment-map	    自定义环境贴图
+│  │  └─sprite-image	    精灵图序列
 │  ├─multi-continue-recognition 多图连续识别
-│  │  ├─cloud-gyroscope		        多个陀螺仪/云识别场景
-│  │  └─multi-tracking 		        多个图像跟踪场景
+│  │  ├─cloud-gyroscope	          多个陀螺仪/云识别场景
+│  │  └─multi-tracking		  多个图像跟踪场景
 │  ├─multi-recognition 	  多图识别
-│  ├─scene-setup 			    场景设置
-│  │  ├─setup-autoPlay 		  自动播放
-│  │  ├─setup-skip 			    跳过云识别
-│  │  ├─setup-source 		    素材管理
-│  │  ├─setup-tracking 		  自定义跟踪UI
-│  │  └─setup-ui 			      自定义UI与设置
+│  ├─scene-setup	  场景设置
+│  │  ├─setup-autoPlay	    自动播放
+│  │  ├─setup-skip	    跳过云识别
+│  │  ├─setup-source 	    素材管理
+│  │  ├─setup-tracking	    自定义跟踪UI
+│  │  └─setup-ui	    自定义UI与设置
 │  └─started
 │      ├─kivicube-collection	快速接入kivicube-collection组件
-│      └─kivicube-scene 		  快速接入kivicube-scene组件
+│      └─kivicube-scene		快速接入kivicube-scene组件
 └─utils			
-	├─ sceneOptions.js	 整个项目示例的页面配置文件
-	└─ util.js 			工具函数
+	├─ sceneOptions.js	整个项目示例的页面配置文件
+	└─ util.js 		工具函数
 ```
 
 ## 插件使用说明
