@@ -12,11 +12,11 @@
 ![avatar](https://cdn.nlark.com/yuque/0/2020/jpeg/217517/1606982678816-87c46bb6-261c-458d-b8bf-e3a6d15b9993.jpeg?x-oss-process=image%2Fresize%2Cw_200)
 
 ## 项目启动步骤
-* npm install
+* 安装依赖包： npm install
 
-* 使用微信开发者工具导入本项目
+* 导入项目： 使用微信开发者工具导入本项目
 
-* 在微信开发者工具栏点击`详情`，在侧边栏中切换到`本地设置`，勾选下方的`使用npm模块`选项，然后点击工具栏的`工具`，在下拉列表中点击`构建npm`后即可预览
+* 使用微信开发者工具构建npm：在工具栏点击`详情`，在侧边栏中切换到`本地设置`，勾选下方的`使用npm模块`选项，然后点击工具栏的`工具`，在下拉列表中点击`构建npm`后即可预览
 
 ## 项目目录及页面介绍
 ```
@@ -51,8 +51,8 @@
 │      ├─kivicube-collection	快速接入kivicube-collection组件
 │      └─kivicube-scene		快速接入kivicube-scene组件
 └─utils			
-	├─ sceneOptions.js	整个项目示例的页面配置文件
-	└─ util.js 		工具函数
+  ├─ sceneOptions.js	整个项目示例的页面配置文件
+  └─ util.js 		工具函数
 ```
 
 ## 插件使用说明
