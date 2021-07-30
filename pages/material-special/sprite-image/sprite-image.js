@@ -112,18 +112,15 @@ Page({
         height: 1,
         fps: 30
       });
-
       // imageSprite.position.y = 2.5;
       imageSprite.rotation.y = -Math.PI / 4;
       imageSprite.scale.setScalar(1);
-
       imageSprite.addEventListener("spriteEnded", ({ sprites }) => {
         wx.showToast({
           title: `精灵图自然播放完毕，序列名称：${sprites.join(",")}`,
           icon: "none"
         });
       });
-
       imageSprite.addEventListener("spriteLoop", ({ sprites, loopDelta }) => {
         wx.showToast({
           title: `精灵图循环播放完毕${loopDelta}次，序列名称：${sprites.join(
@@ -158,5 +155,12 @@ Page({
       this.audio.play();
       this.imageSprite.playSprite(this.spriteName, true);
     }
+  },
+  onShareAppMessage: function() {
+    return {
+      title: `Kivicube企业版高级API示例：${this.data.sceneData.title}`,
+      path: `/pages/material-special/sprite-image/sprite-image?id=${this.data.sceneData.id}`,
+      imageUrl: "/assets/images/share.jpg"
+    };
   }
 });

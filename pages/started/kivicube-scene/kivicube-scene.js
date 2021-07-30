@@ -96,5 +96,12 @@ Page({
   saveImg() {
     const path = this.data.photo;
     downloadImage(path);
+  },
+  onShareAppMessage: function() {
+    return {
+      title: `Kivicube企业版高级API示例：${this.data.sceneData.title}`,
+      path: `/pages/started/kivicube-scene/kivicube-scene?id=${this.data.sceneData.id}`,
+      imageUrl: "/assets/images/share.jpg"
+    };
   }
 });

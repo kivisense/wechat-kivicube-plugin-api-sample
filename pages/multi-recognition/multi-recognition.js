@@ -67,10 +67,10 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
+  onShareAppMessage() {
     return {
-      title: "Kivicube企业版高级API示例：使用kivi-cloudar实现",
-      path: "/pages/multi-recognition/multi-recognitionx",
+      title: `Kivicube企业版高级API示例：${this.data.sceneData.title}`,
+      path: `/pages/multi-recognition/multi-recognition?id=${this.data.sceneData.id}`,
       imageUrl: "/assets/images/share.jpg"
     };
   }

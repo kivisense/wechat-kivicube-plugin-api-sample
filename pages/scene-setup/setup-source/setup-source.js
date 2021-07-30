@@ -219,5 +219,12 @@ Page({
       this.video = null;
       this.setData({ showVideo: false, isControl: false });
     }
+  },
+  onShareAppMessage() {
+    return {
+      title: `Kivicube企业版高级API示例：${this.data.sceneData.title}`,
+      path: `/pages/scene-setup/setup-source/setup-source?id=${this.data.sceneData.id}`,
+      imageUrl: "/assets/images/share.jpg"
+    };
   }
 });

@@ -112,5 +112,12 @@ Page({
     this.trackTimer = setTimeout(() => {
       this.setData({ showAlert: true });
     }, 3000);
+  },
+  onShareAppMessage: function() {
+    return {
+      title: `Kivicube企业版高级API示例：${this.data.sceneData.title}`,
+      path: `/pages/material/mask-control/mask-control?id=${this.data.sceneData.id}`,
+      imageUrl: "/assets/images/share.jpg"
+    };
   }
 });

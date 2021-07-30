@@ -114,5 +114,12 @@ Page({
       this.video.seek(0);
       this.video.loop = false; // 是否循环播放
     }
+  },
+  onShareAppMessage: function() {
+    return {
+      title: `Kivicube企业版高级API示例：${this.data.sceneData.title}`,
+      path: `/pages/material/alphaVideo-control/alphaVideo-control?id=${this.data.sceneData.id}`,
+      imageUrl: "/assets/images/share.jpg"
+    };
   }
 });

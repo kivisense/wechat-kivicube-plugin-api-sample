@@ -81,5 +81,12 @@ Page({
     const page = this;
     // 判定是否camera权限问题，是则向用户申请权限。
     cameraErrorHandler(detail, page);
+  },
+  onShareAppMessage() {
+    return {
+      title: `Kivicube企业版高级API示例：${this.data.sceneData.title}`,
+      path: `/pages/scene-setup/setup-tracking/setup-tracking?id=${this.data.sceneData.id}`,
+      imageUrl: "/assets/images/share.jpg"
+    };
   }
 });

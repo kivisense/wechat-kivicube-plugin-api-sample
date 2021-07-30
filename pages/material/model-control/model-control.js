@@ -163,5 +163,12 @@ Page({
       loop: true, // 是否循环播放
       clampWhenFinished: false // 播放完毕后是否停留在动画最后一帧
     });
+  },
+  onShareAppMessage: function() {
+    return {
+      title: `Kivicube企业版高级API示例：${this.data.sceneData.title}`,
+      path: `/pages/material/model-control/model-control?id=${this.data.sceneData.id}`,
+      imageUrl: "/assets/images/share.jpg"
+    };
   }
 });
