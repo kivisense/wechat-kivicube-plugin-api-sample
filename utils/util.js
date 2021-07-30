@@ -84,7 +84,7 @@ const promisify = (fn, context) => {
     });
   };
 };
-// 摄像头打开失败处理
+// 插件内发生错误，或camera发生问题，都会触发此事件
 const cameraErrorHandler = (detail, page) => {
   // 判定是否camera权限问题，是则向用户申请权限。
   if (detail && detail.isCameraAuthDenied) {
@@ -111,6 +111,9 @@ const cameraErrorHandler = (detail, page) => {
       title: "初始化失败，请重新进入",
       icon: "none"
     });
+    setTimeout(() => {
+      wx.navigateBack();
+    }, 500)
   }
 };
 
