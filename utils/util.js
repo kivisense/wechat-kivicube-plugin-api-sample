@@ -106,6 +106,11 @@ const cameraErrorHandler = (detail, page) => {
         });
       }
     });
+  } else {
+    wx.showToast({
+      title: "初始化失败，请重新进入",
+      icon: "none"
+    });
   }
 };
 

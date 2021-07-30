@@ -154,6 +154,7 @@ Page({
     downloadImage(path);
   },
   error(e) {
+    console.warn('error', e)
     const { detail } = e;
     const page = this;
     // 判定是否camera权限问题，是则向用户申请权限。

@@ -7,6 +7,12 @@ Page({
     sceneOptions,
     modalHidden: true
   },
+  onShow () {
+    // 打开页面后开启屏幕常亮
+    wx.setKeepScreenOn({
+      keepScreenOn: false
+    })
+  },
   // 事件处理函数
   handleTap(e) {
     const modal = this.selectComponent("#modal");
@@ -37,7 +43,12 @@ Page({
   immediateExperience(info) {
     this.hideModal();
     wx.setStorageSync("sceneData", info);
-    wx.navigateTo({ url: info.url });
+    wx.navigateTo({ url: info.url , success: () => {
+      // 打开页面后开启屏幕常亮
+      wx.setKeepScreenOn({
+        keepScreenOn: true
+      })
+    }});
   },
   /**
    * web场景复制链接

@@ -72,7 +72,7 @@ const sceneOptions = [
       {
         id: 18,
         name: "collectionEnter",
-        collectionId: "nw4uq2",
+        collectionId: "uucpmp",
         type: "collectScene",
         title: "快速接入kivicube-collection组件",
         description: [
