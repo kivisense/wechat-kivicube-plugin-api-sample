@@ -22,7 +22,7 @@ Page({
     this.setData({ progress: 1 });
   },
   changerCamera() {
-    const position = this.defaultPosition === "front" ? "back" : "front";
+    const position = this.data.defaultPosition === "front" ? "back" : "front";
     this.view.switchCamera(position);
     this.setData({ defaultPosition: position });
   },
