@@ -18,6 +18,8 @@
 
 * 使用微信开发者工具构建npm：在工具栏点击`详情`，在侧边栏中切换到`本地设置`，勾选下方的`使用npm模块`选项，然后点击工具栏的`工具`，在下拉列表中点击`构建npm`后即可预览
 
+* 小程序npm构建有疑惑详见：[npm 支持 | 微信开放文档](https://github.com/kivisense/wechat-kivicube-plugin-api-demo)
+
 ## 项目目录及页面介绍
 ```
 ├─assets 	资源文件
