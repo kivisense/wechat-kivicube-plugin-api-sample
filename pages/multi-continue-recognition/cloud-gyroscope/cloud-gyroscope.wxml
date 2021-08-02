@@ -18,7 +18,7 @@
       hideScan
     />
     <cover-view wx:if="{{showBtn}}" class="btn">
-      <cover-view class="default-view-add-btn" bind:tap="back2Scan">扫描其它卡片</cover-view>
+      <cover-view class="default-view-add-btn" bind:tap="backToScan">扫描其它卡片</cover-view>
       <cover-view
         class="default-view-add-btn"
         wx:if="{{isShark}}"

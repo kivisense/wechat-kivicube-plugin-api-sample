@@ -20,8 +20,7 @@ Page({
    */
   onLoad: function(options) {
     const sceneData = wx.getStorageSync("sceneData");
-    this.setData({ sceneData });
-    this.setData({ sceneId: sceneData.sceneId });
+    this.setData({ sceneData, sceneId: sceneData.sceneId });
     if (options.showBackIcon) {
       this.setData({ showBackIcon: true });
     }

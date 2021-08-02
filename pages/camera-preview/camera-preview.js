@@ -15,7 +15,6 @@ Page({
       this.getCanvasInformation();
     });
   },
-  onReady: function() {},
   saveImg() {
     downloadImage(this.data.showImg);
   },

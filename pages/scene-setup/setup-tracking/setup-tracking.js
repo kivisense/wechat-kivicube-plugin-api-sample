@@ -21,8 +21,10 @@ Page({
     sceneData: { from: "list" },
     photo: "" // 拍照生成的图片地址
   },
-  onLoad: function() {},
-  onReady: function() {},
+  onLoad: function() {
+    const sceneData = wx.getStorageSync("sceneData");
+    this.setData({ sceneData });
+  },
   ready({ detail: view }) {
     this.view = view;
   },

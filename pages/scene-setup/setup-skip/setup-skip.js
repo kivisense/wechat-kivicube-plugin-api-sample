@@ -18,10 +18,6 @@ Page({
     const sceneData = wx.getStorageSync("sceneData");
     this.setData({ sceneData });
   },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function() {},
   // 已获取到场景数据，并准备开始去打开场景
   ready({ detail: view }) {
     this.view = view;
@@ -30,7 +26,6 @@ Page({
   sceneStart() {
     this.setData({ showFrame: false });
     this.changeShowTakePhoto(true);
-
     const { name } = this.view.sceneInfo.objects[0];
     const obj = this.view.getObject(name);
     obj.addEventListener("click", () => {

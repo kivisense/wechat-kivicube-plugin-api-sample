@@ -11,8 +11,10 @@ Page({
     photo: "", // 拍照生成的图片地址
     defaultPosition: "back"
   },
-  onLoad: function() {},
-  onReady: function() {},
+  onLoad: function() {
+    const sceneData = wx.getStorageSync("sceneData");
+    this.setData({ sceneData });
+  },
   // 已获取到场景数据，并准备开始去打开场景
   ready({ detail: view }) {
     this.view = view;

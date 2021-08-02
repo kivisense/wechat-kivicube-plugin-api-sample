@@ -5,8 +5,7 @@ Page({
   },
   onLoad: function() {
     const sceneData = wx.getStorageSync("sceneData");
-    this.setData({ sceneData });
-    this.setData({ collectionId: sceneData.collectionId });
+    this.setData({ sceneData, collectionId: sceneData.collectionId });
   },
   ready({ detail: view }) {
     this.view = view;

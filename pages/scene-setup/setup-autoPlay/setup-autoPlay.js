@@ -8,7 +8,6 @@ Page({
   onLoad: function() {
     wx.showLoading({ title: "加载中..." });
   },
-  onReady: function() {},
   ready({ detail: view }) {
     this.view = view;
   },

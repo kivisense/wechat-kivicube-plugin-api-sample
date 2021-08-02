@@ -6,13 +6,15 @@ Page({
     showFrame: true,
     showCloudar: false,
     isInit: false,
-    showAlert: false
+    showAlert: false,
+    sceneData: { from: "list" },
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function() {
-    this.setData({ showCloudar: true });
+    const sceneData = wx.getStorageSync("sceneData");
+    this.setData({ sceneData, showCloudar: true });
     setTimeout(() => {
       this.start();
     }, 2000);

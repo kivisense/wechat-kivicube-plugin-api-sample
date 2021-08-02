@@ -35,9 +35,8 @@ Page({
       progress += 0.01;
       this.changeProgress(progress);
     }).then(list => {
-      this.setData({ photoList: list });
+      this.setData({ photoList: list, showFrame: true });
       this.changeProgress(1);
-      this.setData({ showFrame: true });
       setTimeout(() => {
         if (!this.data.isStart) {
           this.changeShowAlert(true);
