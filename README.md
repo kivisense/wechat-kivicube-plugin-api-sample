@@ -8,7 +8,7 @@
 
 * DEMO示例[（API示例与文档）](https://github.com/kivisense/wechat-kivicube-plugin-api-demo)
 
-* 此项目对应的微信小程序叫”AR示例“，可扫描如下所示小程序码  
+* 此项目对应的微信小程序叫”AR示例“，可扫描下方小程序码进行体验  
 ![avatar](https://cdn.nlark.com/yuque/0/2020/jpeg/217517/1606982678816-87c46bb6-261c-458d-b8bf-e3a6d15b9993.jpeg?x-oss-process=image%2Fresize%2Cw_200)
 
 ## 项目启动步骤
@@ -16,7 +16,7 @@
 
 * 导入项目： 使用微信开发者工具导入本项目
 
-* 使用微信开发者工具构建npm：在工具栏点击`详情`，在侧边栏中切换到`本地设置`，勾选下方的`使用npm模块`选项，然后点击工具栏的`工具`，在下拉列表中点击`构建npm`后即可预览
+* 使用微信开发者工具构建npm：点击工具栏`工具`按钮，在下拉列表中点击`构建npm`，构建成功后即可预览
 
 * 小程序npm构建有疑惑详见：[npm 支持 | 微信开放文档](https://github.com/kivisense/wechat-kivicube-plugin-api-demo)
 
@@ -26,7 +26,7 @@
 ├─components 	视图组件
 ├─pages
 │  ├─camera-preview   	相机预览页
-│  ├─case		使用案例，AR扫福
+│  ├─case		实用案例，AR扫福
 │  ├─index		首页列表
 │  ├─land-page 		落地页
 │  ├─material 		素材对象
