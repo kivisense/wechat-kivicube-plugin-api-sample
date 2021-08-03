@@ -1,5 +1,5 @@
 {
-  "description": "项目配置文件",
+  "description": "",
   "packOptions": {
     "ignore": []
   },
@@ -41,7 +41,7 @@
   "compileType": "miniprogram",
   "libVersion": "2.18.1",
   "appid": "wxd7870f63f5450bbc",
-  "projectname": "%E5%B0%8F%E7%A8%8B%E5%BA%8FAR%E7%A4%BA%E4%BE%8B",
+  "projectname": "wechat-kivicube-plugin-api-sample",
   "debugOptions": {
     "hidedInDevtools": []
   },
