@@ -571,6 +571,21 @@ const sceneOptions = [
         url: "/pages/case/image-scan"
       }
     ]
+  },
+  {
+    title: "",
+    child: [
+      {
+        id: 1001,
+        name: "feedback",
+        type: "feedback",
+        title: "反馈页面",
+        description: [],
+        clickMta: "click_feedback_button",
+        startMta: "click_feedback_start",
+        url: "/pages/feedback/feedback"
+      }
+    ]
   }
 ];
 export default sceneOptions;

@@ -1,0 +1,67 @@
+// pages/feedback/feedback.js
+const { formatTime } = require("../../utils/util.js");
+Page({
+  data: {
+    list: [],
+    labelMap: {
+      time: "反馈时间",
+      system: "操作系统",
+      version: "微信版本",
+      brand: "手机品牌",
+      model: "手机型号",
+      language: "语言版本",
+      screenWidth: "屏幕宽度",
+      screenHeight: "屏幕高度",
+      windowWidth: "屏幕可用宽度", // 微信上叫‘可使用窗口宽度’
+      windowHeight: "屏幕可用高度", // 微信上叫‘可使用窗口高度’
+      statusBarHeight: "状态栏高度",
+      safeAreaWidth: "安全区域宽度",
+      safeAreaHeight: "安全区域高度",
+      safeAreaPos: "安全区域坐标",
+      pixelRatio: "设备像素比",
+      fontSizeSetting: "字体大小", // 用户字体大小（单位px）。以微信客户端「我-设置-通用-字体大小」中的设置为准
+      albumAuthorized: "相册权限(ios)", // 允许微信使用相册的开关（仅 iOS 有效）
+      cameraAuthorized: "摄像头权限",
+      locationAuthorized: "定位权限",
+      microphoneAuthorized: "麦克风权限",
+      bluetoothEnabled: "系统蓝牙开关",
+      locationEnabled: "系统定位开关",
+      wifiEnabled: "系统WIFI开关",
+      locationReducedAccuracy: "系统模糊定位(ios)", // true 表示模糊定位，false 表示精确定位，仅 iOS 支持
+      theme: "系统主题", // 系统当前主题，取值为light或dark，全局配置"darkmode":true时才能获取，否则为 undefined （不支持小游戏）
+      deviceOrientation: "设备方向",
+      benchmarkLevel: "设备评级(android)", // 设备性能等级(only Android)
+    }
+  },
+  onLoad: function () {
+    wx.setNavigationBarTitle({
+      title: '反馈页面'
+    })
+    wx.getSystemInfoAsync({
+      success: res => {
+        console.log(res)
+        const arr = Object.entries(this.data.labelMap).map(arr => {
+          const [key, label] = arr
+          res.time = formatTime(new Date())
+          const safeArea = res.safeArea
+          res.safeAreaHeight = safeArea.height
+          res.safeAreaWidth = safeArea.width
+          res.safeAreaPos = `left:${safeArea.left} | right:${safeArea.right} | top:${safeArea.top} | bottom:${safeArea.bottom}`
+          return {
+            key,
+            label,
+            value: res[key]
+          }
+        })
+        this.setData({list: arr})
+      }
+    })
+  },
+  onShareAppMessage: function () {
+    return {
+      title: "Kivicube企业版高级API示例 - 页面反馈",
+      path: "/pages/feedback/feedback",
+      imageUrl: "/assets/images/share.jpg"
+    };
+  }
+})

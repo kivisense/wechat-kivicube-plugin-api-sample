@@ -18,6 +18,10 @@ Page({
     const modal = this.selectComponent("#modal");
     const info = e.currentTarget.dataset.item;
     wx.uma.trackEvent(info.startMta);
+    if(info.type === 'feedback'){
+      wx.navigateTo({ url: info.url });
+      return false
+    }
     if (!info.url) {
       return wx.showToast({ title: "正在开发中", icon: "none" });
     }
@@ -47,6 +51,9 @@ Page({
       // 打开页面后开启屏幕常亮
       wx.setKeepScreenOn({
         keepScreenOn: true
+      })
+      wx.setNavigationBarTitle({
+        title: info.title
       })
     }});
   },

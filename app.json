@@ -21,7 +21,8 @@
     "pages/multi-recognition/multi-recognition",
     "pages/multi-continue-recognition/cloud-gyroscope/cloud-gyroscope",
     "pages/multi-continue-recognition/multi-tracking/multi-tracking",
-    "pages/case/image-scan"
+    "pages/case/image-scan",
+    "pages/feedback/feedback"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -39,6 +40,7 @@
       "provider": "wx3bbab3920eabccb2"
     }
   },
+  "darkmode": true,
   "style": "v2",
   "sitemapLocation": "sitemap.json"
 }
