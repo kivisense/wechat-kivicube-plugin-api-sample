@@ -17,30 +17,30 @@
       hideDownload
       hideScan
     />
-    <cover-view wx:if="{{showBtn}}" class="btn">
-      <cover-view class="default-view-add-btn" bind:tap="backToScan">扫描其它卡片</cover-view>
-      <cover-view
+    <view wx:if="{{showBtn}}" class="btn">
+      <view class="default-view-add-btn" bind:tap="backToScan">扫描其它卡片</view>
+      <view
         class="default-view-add-btn"
         wx:if="{{isShark}}"
         bind:tap="tyrannosaurusClick"
       >切换到霸王龙场景
-      </cover-view>
-      <cover-view
+      </view>
+      <view
         wx:if="{{!isShark}}"
         class="default-view-add-btn"
         bind:tap="sharkClick"
       >切换到鲨鱼场景
-      </cover-view>
-    </cover-view>
+      </view>
+    </view>
     <!-- loading -->
     <loading progress="{{progress}}" showProgressNum="{{false}}"></loading>
     <!-- 只限于扫描使用 -->
-    <cover-view wx:if="{{showAlert && showScanning}}" class="show-alert">移近一点，保持扫描</cover-view>
-    <cover-view wx:if="{{!showAlert && showScanning}}" class="show-alert">请对准识别图</cover-view>
-    <cover-image
+    <view wx:if="{{showAlert && showScanning}}" class="show-alert">移近一点，保持扫描</view>
+    <view wx:if="{{!showAlert && showScanning}}" class="show-alert">请对准识别图</view>
+    <image
       wx:if="{{showScanning}}"
       src="/assets/images/scanning.png"
       class="icon-middle"
       style="top: {{scanProgress}}vh"
-    ></cover-image>
+    ></image>
   </view>

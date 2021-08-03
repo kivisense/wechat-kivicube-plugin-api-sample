@@ -16,49 +16,49 @@
       hideDownload
       hideScan
     />
-    <cover-view class="bottom-btn-group" wx:if="{{progress === 1}}">
-      <cover-view class="start-btn">
-        <cover-view class="default-view-btn" wx:if="{{!showModel && !isControl}}" bind:tap="addModel">增加模型</cover-view>
-        <cover-view class="default-view-btn" wx:if="{{!showVideo && !isControl}}" bind:tap="addVideo">增加视频</cover-view>
-      </cover-view>
+    <view class="bottom-btn-group" wx:if="{{progress === 1}}">
+      <view class="start-btn">
+        <view class="default-view-btn" wx:if="{{!showModel && !isControl}}" bind:tap="addModel">增加模型</view>
+        <view class="default-view-btn" wx:if="{{!showVideo && !isControl}}" bind:tap="addVideo">增加视频</view>
+      </view>
       <!-- 控制模型 -->
-      <cover-view class="model-btn-group" wx:if="{{showModel}}">
-        <cover-view class="default-view-btn" bind:tap="handleModelControl" data-type="scale-up">增大</cover-view>
-        <cover-view class="default-view-btn" bind:tap="handleModelControl" data-type="scale-down">缩小</cover-view>
-        <cover-view class="default-view-btn" bind:tap="handleModelControl" data-type="rotation">旋转</cover-view>
-        <cover-view class="default-view-btn" bind:tap="handleModelControl" data-type="change-position">改变位置</cover-view>
-        <cover-view class="default-view-btn" bind:tap="removeModel">移除模型</cover-view>
-      </cover-view>
+      <view class="model-btn-group" wx:if="{{showModel}}">
+        <view class="default-view-btn" bind:tap="handleModelControl" data-type="scale-up">增大</view>
+        <view class="default-view-btn" bind:tap="handleModelControl" data-type="scale-down">缩小</view>
+        <view class="default-view-btn" bind:tap="handleModelControl" data-type="rotation">旋转</view>
+        <view class="default-view-btn" bind:tap="handleModelControl" data-type="change-position">改变位置</view>
+        <view class="default-view-btn" bind:tap="removeModel">移除模型</view>
+      </view>
       <!-- 控制视频 -->
-      <cover-view class="model-btn-group" wx:if="{{showVideo}}">
-        <cover-view class="default-view-btn" bind:tap="handleVideoControl" data-type="play">循环播放</cover-view>
-        <cover-view class="default-view-btn" bind:tap="handleVideoControl" data-type="pause">暂停播放</cover-view>
-        <cover-view class="default-view-btn" bind:tap="handleVideoControl" data-type="stop">停止播放</cover-view>
-        <cover-view class="default-view-btn" bind:tap="handleVideoControl" data-type="full-screen">全屏播放</cover-view>
-        <cover-view class="default-view-btn" bind:tap="removeVideo">移除视频</cover-view>
-      </cover-view>
-    </cover-view>
+      <view class="model-btn-group" wx:if="{{showVideo}}">
+        <view class="default-view-btn" bind:tap="handleVideoControl" data-type="play">循环播放</view>
+        <view class="default-view-btn" bind:tap="handleVideoControl" data-type="pause">暂停播放</view>
+        <view class="default-view-btn" bind:tap="handleVideoControl" data-type="stop">停止播放</view>
+        <view class="default-view-btn" bind:tap="handleVideoControl" data-type="full-screen">全屏播放</view>
+        <view class="default-view-btn" bind:tap="removeVideo">移除视频</view>
+      </view>
+    </view>
     <!-- loading -->
     <loading progress="{{progress}}" showProgressNum="{{false}}"></loading>
     <!-- 拍照按钮 -->
-    <cover-image
+    <image
       wx:if="{{showTakePhoto && photo === ''}}"
       bind:tap="handleTakephoto"
       class="take-photo"
       src="/assets/icons/btn-takephoto.png"
-    ></cover-image>
+    ></image>
     <!-- 显示照片 -->
-    <cover-view class="layer photo-frame" wx:if="{{photo}}">
-      <cover-image class="layer" src="{{photo}}"></cover-image>
-      <cover-image
+    <view class="layer photo-frame" wx:if="{{photo}}">
+      <image class="layer" src="{{photo}}"></image>
+      <image
         class="btn-close"
         bind:tap="clearPhoto"
         src="/assets/icons/btn-close.png"
-      ></cover-image>
-      <cover-image
+      ></image>
+      <image
         class="btn-download"
         bind:tap="saveImg"
         src="/assets/icons/btn-download.png"
-      ></cover-image>
-    </cover-view>
+      ></image>
+    </view>
   </view>

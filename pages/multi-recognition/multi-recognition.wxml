@@ -8,5 +8,5 @@
     ></kivi-cloudar>
     <!-- 相机边框 -->
     <camera-frame showFrame="{{showFrame}}"></camera-frame>
-    <cover-view wx:if="{{showAlert}}" class="show-alert">移近一点，保持扫描</cover-view>
+    <view wx:if="{{showAlert}}" class="show-alert">移近一点，保持扫描</view>
   </view>

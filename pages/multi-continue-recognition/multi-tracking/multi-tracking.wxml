@@ -20,40 +20,40 @@
       hideScan
     />
 
-    <cover-view wx:if="{{showTracking && titleScanning}}" class="show-tracking">移近一点，保持扫描</cover-view>
-    <cover-view wx:if="{{showTracking}}" class="tip">
-      <cover-view class="scan-img-box">
-        <cover-image wx:if="{{!isShark}}" class="scan-img" src="/assets/images/tyrannosaurus.jpg"></cover-image>
-        <cover-image wx:if="{{isShark}}" class="scan-img" src="/assets/images/shark.jpg"></cover-image>
-      </cover-view>
-      <cover-view class="scan-font">请对准识别图</cover-view>
-    </cover-view>
-    <cover-view wx:if="{{showBtn}}" class="btn">
-      <cover-view
+    <view wx:if="{{showTracking && titleScanning}}" class="show-tracking">移近一点，保持扫描</view>
+    <view wx:if="{{showTracking}}" class="tip">
+      <view class="scan-img-box">
+        <image wx:if="{{!isShark}}" class="scan-img" src="/assets/images/tyrannosaurus.jpg"></image>
+        <image wx:if="{{isShark}}" class="scan-img" src="/assets/images/shark.jpg"></image>
+      </view>
+      <view class="scan-font">请对准识别图</view>
+    </view>
+    <view wx:if="{{showBtn}}" class="btn">
+      <view
         class="default-view-add-btn"
         bind:tap="back2Scan"
         wx:if="{{showScanning}}"
       >扫描其它卡片
-      </cover-view>
-      <cover-view
+      </view>
+      <view
         class="default-view-add-btn"
         bind:tap="tyrannosaurusClick"
         wx:if="{{isShark}}"
       >切换到霸王龙场景
-      </cover-view>
-      <cover-view
+      </view>
+      <view
         wx:if="{{!isShark}}"
         class="default-view-add-btn"
         bind:tap="sharkClick"
       >切换到鲨鱼场景
-      </cover-view>
-    </cover-view>
+      </view>
+    </view>
     <!-- 相机边框 -->
     <camera-frame showFrame="{{showTracking}}"></camera-frame>
-    <cover-image
+    <image
       wx:if="{{showScanning}}"
       src="/assets/images/scanning.png"
       class="icon-middle"
       style="top: {{scanProgress}}vh"
-    ></cover-image>
+    ></image>
   </view>

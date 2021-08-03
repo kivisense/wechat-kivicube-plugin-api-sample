@@ -17,15 +17,15 @@
       hideDownload
       hideScan
     />
-    <cover-view wx:if="{{showTip}}" class="tip">
-      <cover-view class="scan-img-box">
-        <cover-image class="scan-img" src="/assets/images/weita.jpg"></cover-image>
-      </cover-view>
-      <cover-view class="scan-font">请对准识别图</cover-view>
-    </cover-view>
+    <view wx:if="{{showTip}}" class="tip">
+      <view class="scan-img-box">
+        <image class="scan-img" src="/assets/images/weita.jpg"></image>
+      </view>
+      <view class="scan-font">请对准识别图</view>
+    </view>
     <!-- 相机边框 -->
     <camera-frame showFrame="{{showFrame}}"></camera-frame>
     <!-- loading -->
     <loading progress="{{progress}}" showProgressNum="{{false}}"></loading>
-    <cover-view hidden="{{!showAlert && !showFrame}}" class="show-alert">移近一点，保持扫描</cover-view>
+    <view hidden="{{!showAlert && !showFrame}}" class="show-alert">移近一点，保持扫描</view>
   </view>

@@ -59,7 +59,7 @@ Page({
     this.setData({ showTakePhoto: status });
   },
   handleTakephoto() {
-    console.log("take photo");
+    this.video.pause()
     takePhoto(this.view).then(photo => {
       this.setData({ photo });
     });

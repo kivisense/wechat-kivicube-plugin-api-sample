@@ -1,23 +1,23 @@
-<cover-view class="flex-box layer modal {{hiddenStatus ? 'hidden' : ''}}" scroll-top="0" capture-bind:tap="maskTap" id="modal-wrap">
-    <cover-view class="modal-box flex-box" scroll-top="0">
-      <cover-view wx:if="info.title" class="modal-title" scroll-top="0">
+<view class="flex-box layer modal {{hiddenStatus ? 'hidden' : ''}}" scroll-top="0" capture-bind:tap="maskTap" id="modal-wrap">
+    <view class="modal-box flex-box" scroll-top="0">
+      <view wx:if="info.title" class="modal-title" scroll-top="0">
         {{ info.title }}
-      </cover-view>
+      </view>
       <cover-image
         class="close"
         src="/assets/icons/close.png"
         capture-bind:tap="handleHide"
       ></cover-image>
-      <cover-view wx:if="info.description" class="modal-txt" scroll-top="0">
-        <cover-view
+      <view wx:if="info.description" class="modal-txt" scroll-top="0">
+        <view
           wx:for="{{info.description}}"
           wx:key="idx"
           wx:for-item="descItem"
           class="line-txt {{ descItem.type === 'title' ? 'line-title' : '' }}"
         >
           {{ descItem.txt }}
-        </cover-view>
-      </cover-view>
-      <cover-view class="btn" scroll-top="0" bindtap="handleTap">{{info.type === 'web' ? '复制链接' : '立即体验'}}</cover-view>
-    </cover-view>
-  </cover-view>
+        </view>
+      </view>
+      <view class="btn" scroll-top="0" bindtap="handleTap">{{info.type === 'web' ? '复制链接' : '立即体验'}}</view>
+    </view>
+  </view>

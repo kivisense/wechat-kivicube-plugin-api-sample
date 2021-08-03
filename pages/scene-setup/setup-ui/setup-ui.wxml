@@ -14,23 +14,23 @@
       hideScan
       hideTakePhoto
     />
-    <cover-view class="layer" style="z-index: 2;">
-      <cover-image class="layer" src="/assets/images/scene1/frame.png"></cover-image>
-      <cover-image
+    <view class="layer" style="z-index: 2;">
+      <image class="layer" src="/assets/images/scene1/frame.png"></image>
+      <image
         class="bottom-img"
         src="/assets/images/scene1/bottom.png"
-      ></cover-image>
-      <cover-image
+      ></image>
+      <image
         bind:tap="handleTakephoto"
         class="camera-img"
         src="/assets/images/scene1/camera.png"
-      ></cover-image>
-      <cover-image
+      ></image>
+      <image
         bind:tap="changerCamera"
         class="camera-change-img"
         src="/assets/images/scene1/camera-change.png"
-      ></cover-image>
-    </cover-view>
+      ></image>
+    </view>
     <!-- loading -->
     <loading progress="{{progress}}" showProgressNum="{{false}}"></loading>
   </view>

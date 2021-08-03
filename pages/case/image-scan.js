@@ -22,7 +22,6 @@ Page({
     const sceneData = wx.getStorageSync("sceneData");
     console.log(sceneData)
     this.setData({ sceneData });
-    this.changeShowTakePhoto(false);
     let downloadList = [];
     for (let i = 0; i <= 74; i++) {
       const name = `${i}`.padStart(5, "0");
@@ -37,11 +36,6 @@ Page({
     }).then(list => {
       this.setData({ photoList: list, showFrame: true });
       this.changeProgress(1);
-      setTimeout(() => {
-        if (!this.data.isStart) {
-          this.changeShowAlert(true);
-        }
-      }, 3000);
     });
   },
   ready({ detail: view }) {
@@ -65,16 +59,8 @@ Page({
   downloadAssetEnd() {},
   // 开始将素材加载进场景。
   loadSceneStart() {},
-  // 场景加载完毕。
-  loadSceneEnd() {
-    this.setData({ startLoad: false });
-    this.changeProgress(1);
-    this.changeShowTakePhoto(true);
-  },
   sceneStart() {
     this.setData({ isStart: true, showFrame: false });
-    this.changeShowTakePhoto(true);
-    this.changeShowAlert(false);
     this.drawImg(this.data.photoList);
   },
   async drawImg(giftLoading) {
@@ -128,17 +114,11 @@ Page({
     };
     render();
   },
-  changeShowAlert(show = true) {
-    this.setData({ showAlert: show });
-  },
   showProgress() {
     this.setData({ showProgressNum: true });
   },
   changeProgress(progress) {
     this.setData({ progress });
-  },
-  changeShowTakePhoto(status = true) {
-    this.setData({ showTakePhoto: status });
   },
   handleTakephoto() {
     takePhoto(this.view).then(photo => {

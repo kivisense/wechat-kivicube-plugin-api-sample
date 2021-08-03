@@ -70,6 +70,9 @@ Page({
   },
   handleTakephoto() {
     console.log("take photo");
+    if(this.data.showVideo){
+      this.video.pause();
+    }
     util.takePhoto(this.view).then(photo => {
       this.setData({ photo });
     });

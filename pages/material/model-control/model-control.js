@@ -73,6 +73,7 @@ Page({
   },
   handleTakephoto() {
     console.log("take photo");
+    this.pause()
     takePhoto(this.view).then(photo => {
       this.setData({ photo });
     });

@@ -16,33 +16,33 @@
       hideScan
     />
     <!-- 显示需要识别的图片和提示 -->
-    <cover-view hidden="{{hideTip}}" class="tip">
-      <cover-view class="scan-img-box">
-        <cover-image class="scan-img" src="/assets/images/track-image.jpg"></cover-image>
-      </cover-view>
-      <cover-view class="scan-font">请对准识别图</cover-view>
-    </cover-view>
+    <view hidden="{{hideTip}}" class="tip">
+      <view class="scan-img-box">
+        <image class="scan-img" src="/assets/images/track-image.jpg"></image>
+      </view>
+      <view class="scan-font">请对准识别图</view>
+    </view>
      <!-- 拍照按钮 -->
-     <cover-image
+     <image
       wx:if="{{showTakePhoto && photo === ''}}"
       bind:tap="handleTakephoto"
       class="take-photo"
       src="/assets/icons/btn-takephoto.png"
-    ></cover-image>
+    ></image>
      <!-- 显示照片 -->
-     <cover-view class="layer photo-frame" wx:if="{{photo}}">
-      <cover-image class="layer" src="{{photo}}"></cover-image>
-      <cover-image
+     <view class="layer photo-frame" wx:if="{{photo}}">
+      <image class="layer" src="{{photo}}"></image>
+      <image
         class="btn-close"
         bind:tap="clearPhoto"
         src="/assets/icons/btn-close.png"
-      ></cover-image>
-      <cover-image
+      ></image>
+      <image
         class="btn-download"
         bind:tap="saveImg"
         src="/assets/icons/btn-download.png"
-      ></cover-image>
-    </cover-view>
+      ></image>
+    </view>
     <camera-frame showFrame="{{showFrame}}"></camera-frame>
-    <cover-view wx:if="{{showAlert && showFrame}}" class="show-alert">移近一点，保持扫描</cover-view>
+    <view wx:if="{{showAlert && showFrame}}" class="show-alert">移近一点，保持扫描</view>
 </view>

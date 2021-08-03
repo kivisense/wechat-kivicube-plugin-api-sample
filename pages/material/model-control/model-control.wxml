@@ -16,36 +16,36 @@
       hideDownload
       hideScan
     />
-    <cover-view class="bottom-btn-group" wx:if="{{progress === 1}}">
+    <view class="bottom-btn-group" wx:if="{{progress === 1}}">
       <!-- 控制模型 -->
-      <cover-view class="model-btn-group">
-        <cover-view class="default-view-btn" bind:tap="play" data-name="dance" data-flag="false">循环播放</cover-view>
-        <cover-view class="default-view-btn" bind:tap="pause">暂停播放</cover-view>
-        <cover-view class="default-view-btn" bind:tap="stopAll">停止播放</cover-view>
-        <cover-view class="default-view-btn" bind:tap="play" data-name="dance" data-flag="true">重新播放</cover-view>
-      </cover-view>
-    </cover-view>
+      <view class="model-btn-group">
+        <view class="default-view-btn" bind:tap="play" data-name="dance" data-flag="false">循环播放</view>
+        <view class="default-view-btn" bind:tap="pause">暂停播放</view>
+        <view class="default-view-btn" bind:tap="stopAll">停止播放</view>
+        <view class="default-view-btn" bind:tap="play" data-name="dance" data-flag="true">重新播放</view>
+      </view>
+    </view>
     <!-- loading -->
     <loading progress="{{progress}}" showProgressNum="{{false}}"></loading>
     <!-- 拍照按钮 -->
-    <cover-image
+    <image
       wx:if="{{showTakePhoto && photo === ''}}"
       bind:tap="handleTakephoto"
       class="take-photo"
       src="/assets/icons/btn-takephoto.png"
-    ></cover-image>
+    ></image>
     <!-- 显示照片 -->
-    <cover-view class="layer photo-frame" wx:if="{{photo}}">
-      <cover-image class="layer" src="{{photo}}"></cover-image>
-      <cover-image
+    <view class="layer photo-frame" wx:if="{{photo}}">
+      <image class="layer" src="{{photo}}"></image>
+      <image
         class="btn-close"
         bind:tap="clearPhoto"
         src="/assets/icons/btn-close.png"
-      ></cover-image>
-      <cover-image
+      ></image>
+      <image
         class="btn-download"
         bind:tap="saveImg"
         src="/assets/icons/btn-download.png"
-      ></cover-image>
-    </cover-view>
+      ></image>
+    </view>
   </view>
