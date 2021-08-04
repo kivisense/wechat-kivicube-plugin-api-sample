@@ -1,14 +1,15 @@
 /* pages/feedback/feedback.wxss */
 .content-wrap{
-  padding: 5vw 0;
+  padding: 100rpx 0 5vw;
   overflow-y: scroll;
+  background-color: #f9f9f9;
 }
 .list-item{
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: #555;
-  box-shadow: 0px 1px 1px #f5f5f5;
+  box-shadow: 0px 1px 1px #f1f1f1;
   padding: 8px 14px;
   margin-bottom: 5px;
   font-size: 14px;
@@ -18,4 +19,32 @@
 }
 .list-item .label{
   width: 50vw;
+}
+.nav{
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100rpx;
+  border-bottom: 1px solid #eee;
+  background-color: #fff;
+}
+.nav>view{
+  flex: 1;
+}
+.title{
+  text-align: center;
+  color: #333;
+}
+.back-icon{
+  padding-left: 10rpx;
+  width: 80rpx;
+}
+.back-icon image{
+  display: block;
+  width: 52rpx;
+  transform: rotateY(180deg);
 }

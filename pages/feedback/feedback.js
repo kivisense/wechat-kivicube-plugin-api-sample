@@ -2,6 +2,7 @@
 const { formatTime } = require("../../utils/util.js");
 Page({
   data: {
+    statusBarHeight: 0,
     list: [],
     labelMap: {
       time: "反馈时间",
@@ -39,13 +40,14 @@ Page({
     wx.getSystemInfoAsync({
       success: res => {
         console.log(res)
+        this.setData({statusBarHeight: res.statusBarHeight})
+        res.time = formatTime(new Date())
+        const safeArea = res.safeArea
+        res.safeAreaHeight = safeArea.height
+        res.safeAreaWidth = safeArea.width
+        res.safeAreaPos = `left:${safeArea.left} | right:${safeArea.right} | top:${safeArea.top} | bottom:${safeArea.bottom}`
         const arr = Object.entries(this.data.labelMap).map(arr => {
           const [key, label] = arr
-          res.time = formatTime(new Date())
-          const safeArea = res.safeArea
-          res.safeAreaHeight = safeArea.height
-          res.safeAreaWidth = safeArea.width
-          res.safeAreaPos = `left:${safeArea.left} | right:${safeArea.right} | top:${safeArea.top} | bottom:${safeArea.bottom}`
           return {
             key,
             label,
@@ -55,6 +57,9 @@ Page({
         this.setData({list: arr})
       }
     })
+  },
+  handleBack(){
+    wx.navigateBack();
   },
   onShareAppMessage: function () {
     return {
