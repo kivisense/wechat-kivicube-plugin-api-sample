@@ -573,17 +573,27 @@ const sceneOptions = [
     ]
   },
   {
-    title: "",
+    title: "反馈页面",
     child: [
       {
         id: 1001,
         name: "feedback",
         type: "feedback",
-        title: "反馈页面",
+        title: "小程序反馈",
         description: [],
         clickMta: "click_feedback_button",
         startMta: "click_feedback_start",
         url: "/pages/feedback/feedback"
+      },
+      {
+        id: 1002,
+        name: "web-feedback",
+        type: "feedback",
+        title: "WebView反馈",
+        description: [],
+        clickMta: "click_feedbackWeb_button",
+        startMta: "click_feedbackWeb_start",
+        url: "/pages/feedback-web/feedback-web"
       }
     ]
   }

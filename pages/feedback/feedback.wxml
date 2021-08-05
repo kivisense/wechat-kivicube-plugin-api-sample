@@ -6,7 +6,7 @@
         <image src="../../assets/icons/right.png" mode="widthFix"></image>
       </view>
     </view>
-    <view class="title">反馈页面</view>
+    <view class="title">{{title}}</view>
     <view></view>
   </view>
   <view style="padding-top: {{statusBarHeight}}px;">
@@ -19,6 +19,7 @@
       <view class="label">{{ item.label }}</view>
       <view class="value">{{ item.value }}</view>
     </view>
+    <view bind:tap="handleTap">点击跳转</view>
   </view>
   <view style="height: 15vw;"></view>
 </view>

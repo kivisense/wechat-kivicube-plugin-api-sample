@@ -22,7 +22,8 @@
     "pages/multi-continue-recognition/cloud-gyroscope/cloud-gyroscope",
     "pages/multi-continue-recognition/multi-tracking/multi-tracking",
     "pages/case/image-scan",
-    "pages/feedback/feedback"
+    "pages/feedback/feedback",
+    "pages/feedback-web/feedback-web"
   ],
   "window": {
     "backgroundTextStyle": "light",

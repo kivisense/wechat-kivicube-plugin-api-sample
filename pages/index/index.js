@@ -19,6 +19,7 @@ Page({
     const info = e.currentTarget.dataset.item;
     wx.uma.trackEvent(info.startMta);
     if(info.type === 'feedback'){
+      wx.setStorageSync("sceneData", info);
       wx.navigateTo({ url: info.url });
       return false
     }

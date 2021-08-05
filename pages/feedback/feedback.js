@@ -2,6 +2,7 @@
 const { formatTime } = require("../../utils/util.js");
 Page({
   data: {
+    title: '',
     statusBarHeight: 0,
     list: [],
     labelMap: {
@@ -34,9 +35,8 @@ Page({
     }
   },
   onLoad: function () {
-    wx.setNavigationBarTitle({
-      title: '反馈页面'
-    })
+    const sceneData = wx.getStorageSync("sceneData");
+    this.setData({ title: sceneData.title });
     wx.getSystemInfoAsync({
       success: res => {
         console.log(res)
@@ -59,11 +59,25 @@ Page({
     })
   },
   handleBack(){
-    wx.navigateBack();
+    const pagesArr = getCurrentPages()
+    if(pagesArr.length === 1) {
+      wx.reLaunch({
+        url: '/pages/index/index'
+      })
+    } else {
+      wx.navigateBack();
+    }
+  },
+  handleTap() {
+    // 点击后跳转示例小程序
+    wx.navigateToMiniProgram({
+      appId: "wx654ce96a7324e76f",
+      path: "/pages/hall?hall_code=hsfP0u6zJNhYGHmcRI9R6Q&t=ujJ3fVg9cAgxm-hBKbga6E7DTib9Vs8mZbp3H6aNl3Q"
+    });
   },
   onShareAppMessage: function () {
     return {
-      title: "Kivicube企业版高级API示例 - 页面反馈",
+      title: "Kivicube企业版高级API示例 - 小程序反馈",
       path: "/pages/feedback/feedback",
       imageUrl: "/assets/images/share.jpg"
     };
