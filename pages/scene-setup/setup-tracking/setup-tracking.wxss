@@ -1,4 +1,7 @@
 /* pages/scene-setup/setup-tracking.wxss */
+.photo-frame{
+  z-index: 99;
+}
 .kivicube {
   display: block;
   width: 100vw;

@@ -48,10 +48,14 @@ Page({
     this.hideModal();
     wx.setStorageSync("sceneData", info);
     wx.navigateTo({ url: info.url , success: () => {
-      // 打开页面后开启屏幕常亮
-      wx.setKeepScreenOn({
-        keepScreenOn: true
-      })
+      try{
+        // 打开页面后开启屏幕常亮
+        wx.setKeepScreenOn({
+          keepScreenOn: true
+        })
+      } catch (err) {
+        console.warn("屏幕常亮开启失败", err)
+      }
       wx.setNavigationBarTitle({
         title: info.title
       })
