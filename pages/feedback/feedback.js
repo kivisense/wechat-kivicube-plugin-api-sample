@@ -68,13 +68,6 @@ Page({
       wx.navigateBack();
     }
   },
-  handleTap() {
-    // 点击后跳转示例小程序
-    wx.navigateToMiniProgram({
-      appId: "wx654ce96a7324e76f",
-      path: "/pages/hall?hall_code=hsfP0u6zJNhYGHmcRI9R6Q&t=ujJ3fVg9cAgxm-hBKbga6E7DTib9Vs8mZbp3H6aNl3Q"
-    });
-  },
   onShareAppMessage: function () {
     return {
       title: "Kivicube企业版高级API示例 - 小程序反馈",

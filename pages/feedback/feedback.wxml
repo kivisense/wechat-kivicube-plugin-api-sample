@@ -19,7 +19,6 @@
       <view class="label">{{ item.label }}</view>
       <view class="value">{{ item.value }}</view>
     </view>
-    <view bind:tap="handleTap">点击跳转</view>
   </view>
   <view style="height: 15vw;"></view>
 </view>
