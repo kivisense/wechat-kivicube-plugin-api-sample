@@ -9,6 +9,7 @@ Page({
       time: "反馈时间",
       system: "操作系统",
       version: "微信版本",
+      SDKVersion: "基础库版本",
       brand: "手机品牌",
       model: "手机型号",
       language: "语言版本",
