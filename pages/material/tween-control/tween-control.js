@@ -1,6 +1,11 @@
 // pages/material/tween-control/tween-control.js
 const { takePhoto, downloadImage } = require("../../../utils/util.js");
-const TWEEN = require("@tweenjs/tween.js");
+let TWEEN;
+try {
+  TWEEN = require("@tweenjs/tween.js")
+} catch (err) {
+  console.warn(err)
+}
 Page({
   data: {
     startLoad: false,

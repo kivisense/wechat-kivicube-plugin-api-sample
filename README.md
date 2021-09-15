@@ -18,7 +18,7 @@
 
 * 使用微信开发者工具构建npm：点击工具栏`工具`按钮，在下拉列表中点击`构建npm`，构建成功后即可预览
 
-* 小程序npm构建有疑惑详见：[npm 支持 | 微信开放文档](https://github.com/kivisense/wechat-kivicube-plugin-api-demo)
+* 小程序npm构建有疑惑详见：[npm 支持 | 微信开放文档](https://developers.weixin.qq.com/miniprogram/dev/devtools/npm.html)
 
 ## 项目目录及页面介绍
 ```
