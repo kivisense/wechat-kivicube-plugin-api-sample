@@ -1,5 +1,10 @@
 // app.js
-import uma from "umtrack-wx";
+let uma;
+try{
+  uma = require('umtrack-wx')
+} catch (err) {
+  console.warn(err)
+}
 import sceneOptions from "/utils/sceneOptions.js"
 const logger = wx.getRealtimeLogManager();
 App({

@@ -1,6 +1,5 @@
 // index.js
 // 获取应用实例
-// const app = getApp();
 import sceneOptions from "../../utils/sceneOptions";
 Page({
   data: {
@@ -17,7 +16,11 @@ Page({
   handleTap(e) {
     const modal = this.selectComponent("#modal");
     const info = e.currentTarget.dataset.item;
-    wx.uma.trackEvent(info.startMta);
+    try {
+      wx.uma.trackEvent(info.startMta);
+    } catch (err) {
+      console.warn(err)
+    }
     if(info.type === 'feedback'){
       wx.setStorageSync("sceneData", info);
       wx.navigateTo({ url: info.url });
@@ -39,7 +42,11 @@ Page({
   handleBtnTap() {
     const modal = this.selectComponent("#modal");
     const modalInfo = modal.data.info;
-    wx.uma.trackEvent(modalInfo.clickMta);
+    try {
+      wx.uma.trackEvent(modalInfo.clickMta);
+    } catch (err) {
+      console.warn(err.message)
+    }
     if (modalInfo.type === "web") {
       return this.copyLink(modalInfo.url);
     }
