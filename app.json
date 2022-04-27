@@ -37,7 +37,7 @@
   },
   "plugins": {
     "kivicube": {
-      "version": "1.5.8",
+      "version": "1.6.5",
       "provider": "wx3bbab3920eabccb2"
     }
   },
