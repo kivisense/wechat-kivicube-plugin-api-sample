@@ -10,6 +10,7 @@ Page({
       system: "操作系统",
       version: "微信版本",
       SDKVersion: "基础库版本",
+      benchmarkLevel: "设备评级", // 设备性能等级（仅 Android）。取值为：-2 或 0（该设备无法运行小游戏），-1（性能未知），>=1（设备性能值，该值越高，设备性能越好，目前最高不到50）
       brand: "手机品牌",
       model: "手机型号",
       language: "语言版本",
@@ -32,7 +33,6 @@ Page({
       wifiEnabled: "系统WIFI开关",
       locationReducedAccuracy: "系统模糊定位(ios)", // true 表示模糊定位，false 表示精确定位，仅 iOS 支持
       deviceOrientation: "设备方向",
-      benchmarkLevel: "设备评级", // 设备性能等级（仅 Android）。取值为：-2 或 0（该设备无法运行小游戏），-1（性能未知），>=1（设备性能值，该值越高，设备性能越好，目前最高不到50）
     }
   },
   onLoad: function () {
