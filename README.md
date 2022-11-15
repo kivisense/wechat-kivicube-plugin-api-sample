@@ -4,7 +4,7 @@
 
 * 此项目是基于uniapp开发，[uniapp相关文档](https://uniapp.dcloud.io/)
 
-* **注意：如果不熟悉uniapp框架，可以查看小程序原生开发的sample，只需点击左上角分支按钮切换到“mp-weixin”即可。**
+* **注意：如果不熟悉uniapp框架，可以查看小程序原生开发的sample，只需点击左上角分支按钮切换到“mp-wechat”即可。**
 
 * 此项目功能说明文档，详见[示例仓库](https://www.yuque.com/kivicube/manual/advanced-api)
 
