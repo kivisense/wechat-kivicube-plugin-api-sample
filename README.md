@@ -71,7 +71,7 @@
 ### 引入插件代码包：
     "plugins": {
       "kivicube": {
-        "version": "1.5.8",
+        "version": "1.7.7",
         "provider": "wx3bbab3920eabccb2"
       }
 	}
