@@ -18,7 +18,6 @@
     "pages/material/mask-control/mask-control",
     "pages/material-special/environment-map/environment-map",
     "pages/material-special/sprite-image/sprite-image",
-    "pages/multi-recognition/multi-recognition",
     "pages/multi-continue-recognition/cloud-gyroscope/cloud-gyroscope",
     "pages/multi-continue-recognition/multi-tracking/multi-tracking",
     "pages/case/image-scan",
@@ -37,7 +36,7 @@
   },
   "plugins": {
     "kivicube": {
-      "version": "1.7.7",
+      "version": "2.1.0",
       "provider": "wx3bbab3920eabccb2"
     }
   },

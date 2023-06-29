@@ -101,7 +101,7 @@ Page({
       const image = await requestFile(
         "https://kivicube-resource.kivisense.com/wechat-kivicube-plugin-api-sample/music-effect.png"
       );
-      const imageSprite = await this.view.addImageSprite({
+      const imageSprite = await this.view.createImageSprite({
         images: image,
         type: "png",
         sprite: spriteName,
@@ -112,6 +112,8 @@ Page({
         height: 1,
         fps: 30
       });
+
+      this.view.add(imageSprite);
       // imageSprite.position.y = 2.5;
       imageSprite.rotation.y = -Math.PI / 4;
       imageSprite.scale.setScalar(1);

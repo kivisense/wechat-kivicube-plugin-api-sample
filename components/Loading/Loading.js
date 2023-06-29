@@ -5,14 +5,14 @@ Component({
    */
   properties: {
     progress: {
-      type: Number
+      type: Number,
     },
     showProgressNum: {
-      type: Boolean
+      type: Boolean,
     },
     animationData: {
-      type: Object
-    }
+      type: Object,
+    },
   },
 
   /**
@@ -23,5 +23,5 @@ Component({
   /**
    * 组件的方法列表
    */
-  methods: {}
+  methods: {},
 });

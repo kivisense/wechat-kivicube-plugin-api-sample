@@ -1,48 +1,40 @@
 <!--pages/material-special/environment-map/environment-map.wxml-->
 <view class="layer scene-box">
-    <kivicube-scene
-      class="kivicube"
-      scene-id="{{sceneId}}"
-      bind:error="error"
-      bind:ready="ready"
-      bind:downloadAssetStart="downloadAssetStart"
-      bind:downloadAssetProgress="downloadAssetProgress"
-      bind:downloadAssetEnd="downloadAssetEnd"
-      bind:loadSceneStart="loadSceneStart"
-      bind:loadSceneEnd="loadSceneEnd"
-      bind:sceneStart="sceneStart"
-      hideTakePhoto
-      hideLoading
-      hideDownload
-      hideScan
-    />
-    <view class="bottom-btn-group" wx:if="{{progress === 1}}">
-      <view class="model-btn-group">
-        <view class="default-view-btn" bind:tap="panorama">增加PBR贴图</view>
-        <view class="default-view-btn" bind:tap="remove">移除环境贴图</view>
-      </view>
-    </view>
-    <!-- loading -->
-    <loading progress="{{progress}}" showProgressNum="{{false}}"></loading>
-    <!-- 拍照按钮 -->
-    <image
-      wx:if="{{showTakePhoto && photo === ''}}"
-      bind:tap="handleTakephoto"
-      class="take-photo"
-      src="/assets/icons/btn-takephoto.png"
-    ></image>
-    <!-- 显示照片 -->
-    <view class="layer photo-frame" wx:if="{{photo}}">
-      <image class="layer" src="{{photo}}"></image>
-      <image
-        class="btn-close"
-        bind:tap="clearPhoto"
-        src="/assets/icons/btn-close.png"
-      ></image>
-      <image
-        class="btn-download"
-        bind:tap="saveImg"
-        src="/assets/icons/btn-download.png"
-      ></image>
+  <kivicube-scene
+    class="kivicube"
+    scene-id="{{sceneId}}"
+    bind:error="error"
+    bind:ready="ready"
+    bind:downloadAssetStart="downloadAssetStart"
+    bind:downloadAssetProgress="downloadAssetProgress"
+    bind:downloadAssetEnd="downloadAssetEnd"
+    bind:loadSceneStart="loadSceneStart"
+    bind:loadSceneEnd="loadSceneEnd"
+    bind:sceneStart="sceneStart"
+    hideTakePhoto
+    hideLoading
+    hideDownload
+    hideScan
+  />
+  <view class="bottom-btn-group" wx:if="{{progress === 1}}">
+    <view class="model-btn-group">
+      <view class="default-view-btn" bind:tap="panorama">增加PBR贴图</view>
+      <view class="default-view-btn" bind:tap="remove">移除环境贴图</view>
     </view>
   </view>
+  <!-- loading -->
+  <loading progress="{{progress}}" showProgressNum="{{false}}"></loading>
+  <!-- 拍照按钮 -->
+  <image
+    wx:if="{{showTakePhoto && photo === ''}}"
+    bind:tap="handleTakephoto"
+    class="take-photo"
+    src="/assets/icons/btn-takephoto.png"
+  ></image>
+  <!-- 显示照片 -->
+  <view class="layer photo-frame" wx:if="{{photo}}">
+    <image class="layer" src="{{photo}}"></image>
+    <image class="btn-close" bind:tap="clearPhoto" src="/assets/icons/btn-close.png"></image>
+    <image class="btn-download" bind:tap="saveImg" src="/assets/icons/btn-download.png"></image>
+  </view>
+</view>

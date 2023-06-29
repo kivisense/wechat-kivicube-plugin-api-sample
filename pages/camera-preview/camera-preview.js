@@ -9,7 +9,7 @@ Page({
     canvasWidth: "",
     canvasHeight: ""
   },
-  onLoad: function(options) {
+  onLoad(options) {
     this.setData({ tempFilePaths: decodeURIComponent(options.photo) }, () => {
       console.log(this.data.tempFilePaths);
       this.getCanvasInformation();

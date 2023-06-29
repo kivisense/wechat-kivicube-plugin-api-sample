@@ -1,14 +1,14 @@
 <view class="layout layer">
-    <canvas
-      type="2d"
-      style="width: {{canvasWidth}}px;height: {{canvasHeight}}px"
-      id="syntheticPic"
-    ></canvas>
-    <image class="layer" mode="widthFix" src="{{showImg}}"></image>
-    <cover-image
-      class="btn-download"
-      bind:tap="saveImg"
-      mode="widthFix"
-      src="/assets/icons/btn-download.png"
-    ></cover-image>
-  </view>
+  <canvas
+    type="2d"
+    style="width: {{canvasWidth}}px;height: {{canvasHeight}}px"
+    id="syntheticPic"
+  ></canvas>
+  <image class="layer" mode="widthFix" src="{{showImg}}"></image>
+  <cover-image
+    class="btn-download"
+    bind:tap="saveImg"
+    mode="widthFix"
+    src="/assets/icons/btn-download.png"
+  ></cover-image>
+</view>

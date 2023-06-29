@@ -13,19 +13,15 @@ Page({
     showTip: false,
     trackTimer: null,
     animationName: ["柠檬-1", "柠檬-2", "柠檬-3"],
-    animationInstance: []
+    animationInstance: [],
   },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function() {
+  onLoad() {
     const sceneData = wx.getStorageSync("sceneData");
     this.setData({ sceneData });
   },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function() {},
   // 开始下载场景所需的素材。
   downloadAssetStart() {
     this.setData({ startLoad: true });
@@ -69,7 +65,7 @@ Page({
     const model = this.view.getObject("Occluder");
     // 设置遮罩
     model.setEnableMask();
-    this.data.animationName.map(v => {
+    this.data.animationName.map((v) => {
       let lemonModel = this.view.getObject(v);
       this.data.animationInstance.push(lemonModel);
     });
@@ -87,16 +83,16 @@ Page({
     // 如果name为假，说明此模型没有模型动画
     if (name) {
       model.playAnimation({
-        name, // 动画名称
+        animationName: name, // 动画名称
         loop: false, // 是否循环播放
-        clampWhenFinished: true // 播放完毕后是否停留在动画最后一帧
+        clampWhenFinished: true, // 播放完毕后是否停留在动画最后一帧
       });
     } else {
       console.warn(`模型(${model.name})没有动画`);
     }
   },
   tracked() {
-    this.data.animationInstance.map(model => {
+    this.data.animationInstance.map((model) => {
       this.play(model);
     });
     this.setData({ showFrame: false, showTip: false, showAlert: false });
@@ -105,7 +101,7 @@ Page({
     }
   },
   lostTrack() {
-    this.data.animationInstance.map(model => {
+    this.data.animationInstance.map((model) => {
       this.stop(model);
     });
     this.setData({ showFrame: true, showTip: true });
@@ -113,11 +109,11 @@ Page({
       this.setData({ showAlert: true });
     }, 3000);
   },
-  onShareAppMessage: function() {
+  onShareAppMessage: function () {
     return {
       title: `Kivicube企业版高级API示例：${this.data.sceneData.title}`,
       path: `/pages/material/mask-control/mask-control?id=${this.data.sceneData.id}`,
-      imageUrl: "/assets/images/share.jpg"
+      imageUrl: "/assets/images/share.jpg",
     };
-  }
+  },
 });

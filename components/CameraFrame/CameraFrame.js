@@ -5,8 +5,8 @@ Component({
    */
   properties: {
     showFrame: {
-      type: Boolean
-    }
+      type: Boolean,
+    },
   },
 
   /**
@@ -17,5 +17,5 @@ Component({
   /**
    * 组件的方法列表
    */
-  methods: {}
+  methods: {},
 });

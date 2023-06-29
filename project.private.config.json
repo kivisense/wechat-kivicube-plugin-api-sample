@@ -1,5 +1,7 @@
 {
-    "setting": {},
+    "setting": {
+        "bigPackageSizeSupport": true
+    },
     "condition": {
         "miniprogram": {
             "list": [

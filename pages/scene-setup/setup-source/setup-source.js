@@ -11,19 +11,16 @@ Page({
     photo: "", // 拍照生成的图片地址
     showModel: false,
     showVideo: false,
-    isControl: false
+    isControl: false,
   },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function() {
+  onLoad() {
     const sceneData = wx.getStorageSync("sceneData");
     this.setData({ sceneData });
   },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function() {},
+
   back() {
     wx.navigateBack();
   },
@@ -70,10 +67,10 @@ Page({
   },
   handleTakephoto() {
     console.log("take photo");
-    if(this.data.showVideo){
-      this.video.pause();
+    if (this.data.showVideo) {
+      this.video.videoContext.pause();
     }
-    util.takePhoto(this.view).then(photo => {
+    util.takePhoto(this.view).then((photo) => {
       this.setData({ photo });
     });
   },
@@ -89,18 +86,19 @@ Page({
   },
   sceneStart() {},
   async addModel() {
-    const toDeg = num => (num * Math.PI) / 180;
+    const toDeg = (num) => (num * Math.PI) / 180;
     this.setData({
       showModel: true,
-      isControl: true
+      isControl: true,
     });
     wx.showLoading({ title: "下载中...", mask: true });
     try {
       const modelUrl =
         "https://kivicube-resource.kivisense.com/wechat-kivicube-plugin-api-sample/tyrannosaurus-rex.glb";
       const modelAb = await util.requestFile(modelUrl);
-      // 如果模型是gltf格式，则必须传递第二个参数。否则可为空
-      const model = await this.view.addModel(modelAb, null, () => {});
+
+      const model = await this.view.createGltfModel(modelAb);
+      this.view.add(model);
 
       // model.position.set(-0.8, -2.5, 0);
       model.position.set(0, 0, 0);
@@ -109,8 +107,8 @@ Page({
 
       const [name] = model.getAnimationNames();
       model.playAnimation({
-        name,
-        loop: true
+        animationName: name,
+        loop: true,
       });
       this.model = model;
       wx.hideLoading();
@@ -129,11 +127,13 @@ Page({
       );
       const defaultThumbnailUrl = ""; // 如果视频显示不出来，则显示默认的缩略图。传递为空则不显示缩略图。
 
-      const video = await this.view.addVideo(
-        videoUrlOrPath,
+      const video = await this.view.createVideo(
+        videoUrlOrPath, // 如果想视频边下边播，在线播放。这里直接输入视频URL地址即可(不需要预先下载下来)。
         defaultThumbnailUrl,
         () => {}
       );
+
+      this.view.add(video);
       // video.position.set(0, 1.65, 0);
       video.position.set(0, 0, 0);
       video.rotation.set(0, 0, 0);
@@ -162,8 +162,8 @@ Page({
   // 模型操作
   handleModelControl(e) {
     const type = e.currentTarget.dataset.type;
-    const deg = num => (num * Math.PI) / 180;
-    const angle = deg => (deg * 180) / Math.PI;
+    const deg = (num) => (num * Math.PI) / 180;
+    const angle = (deg) => (deg * 180) / Math.PI;
     const random = () => Math.random();
     if (type === "scale-up") {
       const scaleX = this.model.scale.x;
@@ -187,21 +187,21 @@ Page({
     const type = e.currentTarget.dataset.type;
     switch (type) {
       case "pause":
-        this.video.pause();
+        this.video.videoContext.pause();
         break;
       case "stop":
-        this.video.stop();
+        this.video.videoContext.stop();
         break;
       case "play":
-        this.video.loop = true; // 是否循环播放
-        this.video.play();
+        this.video.videoContext.loop = true; // 是否循环播放
+        this.video.videoContext.play();
         break;
       case "full-screen":
-        this.video.loop = false; // 是否循环播放
-        this.video.play();
-        this.video.requestFullScreen();
+        this.video.videoContext.loop = false; // 是否循环播放
+        this.video.videoContext.play();
+        this.video.videoContext.requestFullScreen();
         // 退出全屏API
-        // this.video.exitFullScreen();
+        // this.video.videoContext.exitFullScreen();
         break;
       default:
         break;
@@ -218,6 +218,7 @@ Page({
   // 移除视频
   removeVideo() {
     if (this.video) {
+      this.video.videoContext.stop();
       this.view.remove(this.video);
       this.video = null;
       this.setData({ showVideo: false, isControl: false });
@@ -227,7 +228,7 @@ Page({
     return {
       title: `Kivicube企业版高级API示例：${this.data.sceneData.title}`,
       path: `/pages/scene-setup/setup-source/setup-source?id=${this.data.sceneData.id}`,
-      imageUrl: "/assets/images/share.jpg"
+      imageUrl: "/assets/images/share.jpg",
     };
-  }
+  },
 });

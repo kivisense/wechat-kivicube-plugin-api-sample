@@ -26,17 +26,17 @@ Page({
     const obj4 = this.view.sceneInfo.objects[3]; // 透明视频
     console.log(this.view.sceneInfo);
     const model1 = this.view.getObject(obj1.name);
-    const model2 = this.view.getObject(obj2.name);
-    const model3 = this.view.getObject(obj3.name);
-    const model4 = this.view.getObject(obj4.name);
+    const video1 = this.view.getObject(obj2.name);
+    const audio = this.view.getObject(obj3.name);
+    const video2 = this.view.getObject(obj4.name);
     const [name] = model1.getAnimationNames();
     model1.playAnimation({
-      name,
+      animationName: name,
       loop: true
     });
-    model2.play();
-    model3.play();
-    model4.play();
+    video1.videoContext.play();
+    audio.play();
+    video2.videoContext.play();
   },
   onShareAppMessage() {
     return {

@@ -1,18 +1,6 @@
 <block wx:if="{{showFrame}}">
-  <image
-    class="frame frame-up-left"
-    src="/assets/images/Up_Left@2x.png"
-  ></image>
-  <image
-    class="frame frame-up-right"
-    src="/assets/images/Up_Left@2x.png"
-  ></image>
-  <image
-    class="frame frame-bottom-left"
-    src="/assets/images/Up_Left@2x.png"
-  ></image>
-  <image
-    class="frame frame-bottom-right"
-    src="/assets/images/Up_Left@2x.png"
-  ></image>
+  <image class="frame frame-up-left" src="/assets/images/Up_Left@2x.png"></image>
+  <image class="frame frame-up-right" src="/assets/images/Up_Left@2x.png"></image>
+  <image class="frame frame-bottom-left" src="/assets/images/Up_Left@2x.png"></image>
+  <image class="frame frame-bottom-right" src="/assets/images/Up_Left@2x.png"></image>
 </block>

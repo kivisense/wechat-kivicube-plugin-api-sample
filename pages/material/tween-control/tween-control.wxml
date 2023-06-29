@@ -1,42 +1,34 @@
 <!--pages/material/tween-control/tween-control.wxml-->
 <view class="layer scene-box">
-    <kivicube-scene
-      class="kivicube"
-      scene-id="{{sceneId}}"
-      bind:error="error"
-      bind:ready="ready"
-      bind:downloadAssetStart="downloadAssetStart"
-      bind:downloadAssetProgress="downloadAssetProgress"
-      bind:downloadAssetEnd="downloadAssetEnd"
-      bind:loadSceneStart="loadSceneStart"
-      bind:sceneStart="sceneStart"
-      bind:loadSceneEnd="loadSceneEnd"
-      hideTakePhoto
-      hideLoading
-      hideDownload
-      hideScan
-    />
-    <!-- loading -->
-    <loading progress="{{progress}}" showProgressNum="{{false}}"></loading>
-    <!-- 拍照按钮 -->
-    <image
-      wx:if="{{showTakePhoto && photo === ''}}"
-      bind:tap="handleTakephoto"
-      class="take-photo"
-      src="/assets/icons/btn-takephoto.png"
-    ></image>
-    <!-- 显示照片 -->
-    <view class="layer photo-frame" wx:if="{{photo}}">
-      <image class="layer" src="{{photo}}"></image>
-      <image
-        class="btn-close"
-        bind:tap="clearPhoto"
-        src="/assets/icons/btn-close.png"
-      ></image>
-      <image
-        class="btn-download"
-        bind:tap="saveImg"
-        src="/assets/icons/btn-download.png"
-      ></image>
-    </view>
+  <kivicube-scene
+    class="kivicube"
+    scene-id="{{sceneId}}"
+    bind:error="error"
+    bind:ready="ready"
+    bind:downloadAssetStart="downloadAssetStart"
+    bind:downloadAssetProgress="downloadAssetProgress"
+    bind:downloadAssetEnd="downloadAssetEnd"
+    bind:loadSceneStart="loadSceneStart"
+    bind:sceneStart="sceneStart"
+    bind:loadSceneEnd="loadSceneEnd"
+    hideTakePhoto
+    hideLoading
+    hideDownload
+    hideScan
+  />
+  <!-- loading -->
+  <loading progress="{{progress}}" showProgressNum="{{false}}"></loading>
+  <!-- 拍照按钮 -->
+  <image
+    wx:if="{{showTakePhoto && photo === ''}}"
+    bind:tap="handleTakephoto"
+    class="take-photo"
+    src="/assets/icons/btn-takephoto.png"
+  ></image>
+  <!-- 显示照片 -->
+  <view class="layer photo-frame" wx:if="{{photo}}">
+    <image class="layer" src="{{photo}}"></image>
+    <image class="btn-close" bind:tap="clearPhoto" src="/assets/icons/btn-close.png"></image>
+    <image class="btn-download" bind:tap="saveImg" src="/assets/icons/btn-download.png"></image>
   </view>
+</view>
