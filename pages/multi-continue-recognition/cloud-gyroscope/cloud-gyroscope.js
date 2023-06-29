@@ -16,9 +16,9 @@ Page({
     timer: null,
     scanProgress: 20,
     showScanning: false, // 显示相机扫描动画
-    titleTimer: null
+    titleTimer: null,
   },
-  onLoad: function() {
+  onLoad() {
     wx.showLoading({ title: "加载中..." });
     const sceneData = wx.getStorageSync("sceneData");
     this.setData({ sceneData, collectionId: sceneData.collectionId });
@@ -60,7 +60,7 @@ Page({
   sceneReady({ detail }) {
     this.setData({ recordSceneId: detail.sceneInfo.sceneId }, () => {
       this.setData({
-        isShark: this.data.recordSceneId === "6tcju7u0xlTbR44BQY4fchjiI4mt8TQ7"
+        isShark: this.data.recordSceneId === "6tcju7u0xlTbR44BQY4fchjiI4mt8TQ7",
       });
     });
     this.stopScanning();
@@ -100,7 +100,7 @@ Page({
       showScanning: true,
       titleTimer: setTimeout(() => {
         this.setData({ showAlert: true });
-      }, 3000)
+      }, 3000),
     });
   },
   stopScanning() {
@@ -109,7 +109,7 @@ Page({
     this.setData({
       showAlert: false,
       showScanning: false,
-      scanProgress: 20
+      scanProgress: 20,
     });
   },
   backToScan() {
@@ -131,7 +131,7 @@ Page({
       () => {
         console.log("已准备好场景信息，且sceneReady事件已触发");
       },
-      err => {
+      (err) => {
         wx.hideLoading();
         console.error("打开场景失败：", err);
       }
@@ -143,7 +143,7 @@ Page({
     // 判定是否camera权限问题，是则向用户申请权限。
     cameraErrorHandler(detail, page);
   },
-  onUnload: function() {
+  onUnload: function () {
     clearInterval(this.data.loadingTimer);
     clearInterval(this.data.timer);
   },
@@ -151,7 +151,7 @@ Page({
     return {
       title: `Kivicube企业版高级API示例：${this.data.sceneData.title}`,
       path: `/pages/multi-continue-recognition/cloud-gyroscope/cloud-gyroscope?id=${this.data.sceneData.id}`,
-      imageUrl: "/assets/images/share.jpg"
+      imageUrl: "/assets/images/share.jpg",
     };
-  }
+  },
 });

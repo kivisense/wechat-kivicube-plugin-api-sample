@@ -14,11 +14,11 @@
 .model-btn-group {
   display: flex;
 }
-.start-btn{
+.start-btn {
   display: flex;
   justify-content: center;
 }
-.start-btn .default-view-btn{
+.start-btn .default-view-btn {
   margin: 0 2vw;
 }
 .btn-close {

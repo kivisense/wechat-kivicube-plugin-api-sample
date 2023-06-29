@@ -1,9 +1,9 @@
 <view class="layer">
-    <kivicube-collection
-      class="kivicube"
-      collectionId="{{collectionId}}"
-      bind:error="error"
-      bind:ready="ready"
-      hideTakePhoto
-    />
-  </view>
+  <kivicube-collection
+    class="kivicube"
+    collectionId="{{collectionId}}"
+    bind:error="error"
+    bind:ready="ready"
+    hideTakePhoto
+  />
+</view>

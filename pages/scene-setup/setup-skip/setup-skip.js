@@ -9,12 +9,12 @@ Page({
     showTakePhoto: false, // 显示拍照UI
     sceneId: "qcAluuIz6JGQU0ArD2HS4fAytPPaLoZp", // 场景ID
     sceneData: { from: "list" },
-    photo: "" // 拍照生成的图片地址
+    photo: "", // 拍照生成的图片地址
   },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function() {
+  onLoad() {
     const sceneData = wx.getStorageSync("sceneData");
     this.setData({ sceneData });
   },
@@ -32,7 +32,7 @@ Page({
       // 点击后跳转示例小程序
       wx.navigateToMiniProgram({
         appId: "wx667be9ee0e001ef2",
-        path: "/pages/lemma/lemma?ch=wx.item&lid=4169539"
+        path: "/pages/lemma/lemma?ch=wx.item&lid=4169539",
       });
     });
   },
@@ -92,7 +92,7 @@ Page({
   },
   handleTakephoto() {
     console.log("take photo");
-    util.takePhoto(this.view).then(photo => {
+    util.takePhoto(this.view).then((photo) => {
       this.setData({ photo });
     });
   },
@@ -107,7 +107,7 @@ Page({
     return {
       title: `Kivicube企业版高级API示例：${this.data.sceneData.title}`,
       path: `/pages/scene-setup/setup-skip/setup-skip?id=${this.data.sceneData.id}`,
-      imageUrl: "/assets/images/share.jpg"
+      imageUrl: "/assets/images/share.jpg",
     };
-  }
+  },
 });

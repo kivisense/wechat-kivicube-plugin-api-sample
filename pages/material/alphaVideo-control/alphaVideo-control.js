@@ -8,19 +8,15 @@ Page({
     showTakePhoto: false, // 显示拍照UI
     sceneId: "lu1zB3xiVd1oVpqIFRNtk8Mt3h2XH1ox", // 场景ID
     sceneData: { from: "list" },
-    photo: "" // 拍照生成的图片地址
+    photo: "", // 拍照生成的图片地址
   },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function() {
+  onLoad() {
     const sceneData = wx.getStorageSync("sceneData");
     this.setData({ sceneData });
   },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function() {},
   back() {
     wx.navigateBack();
   },
@@ -60,8 +56,8 @@ Page({
   },
   handleTakephoto() {
     console.log("take photo");
-    this.video.pause();
-    takePhoto(this.view).then(photo => {
+    this.video.videoContext.pause();
+    takePhoto(this.view).then((photo) => {
       this.setData({ photo });
     });
   },
@@ -101,26 +97,26 @@ Page({
   handleControl(e) {
     const type = e.currentTarget.dataset.type;
     if (type === "pause") {
-      this.video.pause();
+      this.video.videoContext.pause();
     }
     if (type === "stop") {
-      this.video.stop();
+      this.video.videoContext.stop();
     }
     if (type === "play") {
       this.video.loop = true; // 是否循环播放
-      this.video.play();
+      this.video.videoContext.play();
     }
     if (type === "playback") {
-      this.video.play();
-      this.video.seek(0);
+      this.video.videoContext.play();
+      this.video.videoContext.seek(0);
       this.video.loop = false; // 是否循环播放
     }
   },
-  onShareAppMessage: function() {
+  onShareAppMessage: function () {
     return {
       title: `Kivicube企业版高级API示例：${this.data.sceneData.title}`,
       path: `/pages/material/alphaVideo-control/alphaVideo-control?id=${this.data.sceneData.id}`,
-      imageUrl: "/assets/images/share.jpg"
+      imageUrl: "/assets/images/share.jpg",
     };
-  }
+  },
 });

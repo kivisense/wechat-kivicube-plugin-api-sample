@@ -1,48 +1,40 @@
 <!--pages/scene-setup/setup-tracking.wxml-->
 <view class="layer">
-    <kivicube-scene
-      class="kivicube"
-      scene-id="{{sceneId}}"
-      bind:error="error"
-      bind:ready="ready"
-      bind:downloadAssetProgress="downloadAssetProgress"
-      bind:sceneStart="sceneStart"
-      bind:loadSceneEnd="loadSceneEnd"
-      bind:tracked="tracked"
-      bind:lostTrack="lostTrack"
-      hideTakePhoto
-      hideLoading
-      hideDownload
-      hideScan
-    />
-    <!-- 显示需要识别的图片和提示 -->
-    <view hidden="{{hideTip}}" class="tip">
-      <view class="scan-img-box">
-        <image class="scan-img" src="/assets/images/track-image.jpg"></image>
-      </view>
-      <view class="scan-font">请对准识别图</view>
+  <kivicube-scene
+    class="kivicube"
+    scene-id="{{sceneId}}"
+    bind:error="error"
+    bind:ready="ready"
+    bind:downloadAssetProgress="downloadAssetProgress"
+    bind:sceneStart="sceneStart"
+    bind:loadSceneEnd="loadSceneEnd"
+    bind:tracked="tracked"
+    bind:lostTrack="lostTrack"
+    hideTakePhoto
+    hideLoading
+    hideDownload
+    hideScan
+  />
+  <!-- 显示需要识别的图片和提示 -->
+  <view hidden="{{hideTip}}" class="tip">
+    <view class="scan-img-box">
+      <image class="scan-img" src="/assets/images/track-image.jpg"></image>
     </view>
-     <!-- 拍照按钮 -->
-     <image
-      wx:if="{{showTakePhoto && photo === ''}}"
-      bind:tap="handleTakephoto"
-      class="take-photo"
-      src="/assets/icons/btn-takephoto.png"
-    ></image>
-     <!-- 显示照片 -->
-     <view class="layer photo-frame" wx:if="{{photo}}">
-      <image class="layer" src="{{photo}}"></image>
-      <image
-        class="btn-close"
-        bind:tap="clearPhoto"
-        src="/assets/icons/btn-close.png"
-      ></image>
-      <image
-        class="btn-download"
-        bind:tap="saveImg"
-        src="/assets/icons/btn-download.png"
-      ></image>
-    </view>
-    <camera-frame showFrame="{{showFrame}}"></camera-frame>
-    <view wx:if="{{showAlert && showFrame}}" class="show-alert">移近一点，保持扫描</view>
+    <view class="scan-font">请对准识别图</view>
+  </view>
+  <!-- 拍照按钮 -->
+  <image
+    wx:if="{{showTakePhoto && photo === ''}}"
+    bind:tap="handleTakephoto"
+    class="take-photo"
+    src="/assets/icons/btn-takephoto.png"
+  ></image>
+  <!-- 显示照片 -->
+  <view class="layer photo-frame" wx:if="{{photo}}">
+    <image class="layer" src="{{photo}}"></image>
+    <image class="btn-close" bind:tap="clearPhoto" src="/assets/icons/btn-close.png"></image>
+    <image class="btn-download" bind:tap="saveImg" src="/assets/icons/btn-download.png"></image>
+  </view>
+  <camera-frame showFrame="{{showFrame}}"></camera-frame>
+  <view wx:if="{{showAlert && showFrame}}" class="show-alert">移近一点，保持扫描</view>
 </view>

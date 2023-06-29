@@ -19,9 +19,9 @@ Page({
     titleScanning: false,
     timer: null,
     scanProgress: 20,
-    titleTimer: null
+    titleTimer: null,
   },
-  onLoad: function() {
+  onLoad() {
     wx.showLoading({ title: "加载中..." });
     const sceneData = wx.getStorageSync("sceneData");
     this.setData({ sceneData, collectionId: sceneData.collectionId });
@@ -39,7 +39,7 @@ Page({
     // 记录场景id
     this.setData({ recordSceneId: detail.sceneInfo.sceneId }, () => {
       this.setData({
-        isShark: this.data.recordSceneId === "T8z00V3DB0KjwS9CLew7mo8c9DTBrFJU"
+        isShark: this.data.recordSceneId === "T8z00V3DB0KjwS9CLew7mo8c9DTBrFJU",
       });
     });
     this.stopScanning();
@@ -114,7 +114,7 @@ Page({
       ifClickModal: false,
       showTracking: false,
       showScanning: false,
-      showBtn: false
+      showBtn: false,
     });
     this.startScanning();
     // 开启云识别
@@ -143,7 +143,7 @@ Page({
       () => {
         console.log("已准备好场景信息，且sceneReady事件已触发");
       },
-      err => {
+      (err) => {
         console.error("打开场景失败：", err);
       }
     );
@@ -171,7 +171,7 @@ Page({
       showScanning: true,
       titleTimer: setTimeout(() => {
         this.setData({ showAlert: true });
-      }, 3000)
+      }, 3000),
     });
   },
   stopScanning() {
@@ -180,10 +180,10 @@ Page({
     this.setData({
       showAlert: false,
       showScanning: false,
-      scanProgress: 20
+      scanProgress: 20,
     });
   },
-  onUnload: function() {
+  onUnload: function () {
     clearInterval(this.data.loadingTimer);
     clearInterval(this.data.timer);
   },
@@ -191,7 +191,7 @@ Page({
     return {
       title: `Kivicube企业版高级API示例：${this.data.sceneData.title}`,
       path: `/pages/multi-continue-recognition/multi-tracking/multi-tracking?id=${this.data.sceneData.id}`,
-      imageUrl: "/assets/images/share.jpg"
+      imageUrl: "/assets/images/share.jpg",
     };
-  }
+  },
 });

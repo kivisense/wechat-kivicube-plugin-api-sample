@@ -1,7 +1,7 @@
 const {
   cameraErrorHandler,
   takePhoto,
-  downloadImage
+  downloadImage,
 } = require("../../../utils/util.js");
 Page({
   data: {
@@ -13,12 +13,12 @@ Page({
     showTakePhoto: false, // 显示拍照UI
     sceneId: "", // 场景ID
     sceneData: { from: "list" },
-    photo: "" // 拍照生成的图片地址
+    photo: "", // 拍照生成的图片地址
   },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onLoad: function (options) {
     const sceneData = wx.getStorageSync("sceneData");
     this.setData({ sceneData, sceneId: sceneData.sceneId });
     if (options.showBackIcon) {
@@ -28,7 +28,7 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {},
+  onReady: function () {},
   // 已获取到场景数据，并准备开始去打开场景
   ready({ detail: view }) {
     this.view = view;
@@ -85,7 +85,7 @@ Page({
     this.setData({ showTakePhoto: status });
   },
   handleTakephoto() {
-    takePhoto(this.view).then(photo => {
+    takePhoto(this.view).then((photo) => {
       this.setData({ photo });
     });
   },
@@ -96,11 +96,11 @@ Page({
     const path = this.data.photo;
     downloadImage(path);
   },
-  onShareAppMessage: function() {
+  onShareAppMessage: function () {
     return {
       title: `Kivicube企业版高级API示例：${this.data.sceneData.title}`,
       path: `/pages/started/kivicube-scene/kivicube-scene?id=${this.data.sceneData.id}`,
-      imageUrl: "/assets/images/share.jpg"
+      imageUrl: "/assets/images/share.jpg",
     };
-  }
+  },
 });

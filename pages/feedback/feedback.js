@@ -2,7 +2,7 @@
 const { formatTime } = require("../../utils/util.js");
 Page({
   data: {
-    title: '',
+    title: "",
     statusBarHeight: 0,
     list: [],
     labelMap: {
@@ -33,38 +33,38 @@ Page({
       wifiEnabled: "系统WIFI开关",
       locationReducedAccuracy: "系统模糊定位(ios)", // true 表示模糊定位，false 表示精确定位，仅 iOS 支持
       deviceOrientation: "设备方向",
-    }
+    },
   },
-  onLoad: function () {
+  onLoad() {
     const sceneData = wx.getStorageSync("sceneData");
     this.setData({ title: sceneData.title });
     wx.getSystemInfoAsync({
-      success: res => {
-        console.log(res)
-        this.setData({statusBarHeight: res.statusBarHeight})
-        res.time = formatTime(new Date())
-        const safeArea = res.safeArea
-        res.safeAreaHeight = safeArea.height
-        res.safeAreaWidth = safeArea.width
-        res.safeAreaPos = `left:${safeArea.left} | right:${safeArea.right} | top:${safeArea.top} | bottom:${safeArea.bottom}`
-        const arr = Object.entries(this.data.labelMap).map(arr => {
-          const [key, label] = arr
+      success: (res) => {
+        console.log(res);
+        this.setData({ statusBarHeight: res.statusBarHeight });
+        res.time = formatTime(new Date());
+        const safeArea = res.safeArea;
+        res.safeAreaHeight = safeArea.height;
+        res.safeAreaWidth = safeArea.width;
+        res.safeAreaPos = `left:${safeArea.left} | right:${safeArea.right} | top:${safeArea.top} | bottom:${safeArea.bottom}`;
+        const arr = Object.entries(this.data.labelMap).map((arr) => {
+          const [key, label] = arr;
           return {
             key,
             label,
-            value: res[key]
-          }
-        })
-        this.setData({list: arr})
-      }
-    })
+            value: res[key],
+          };
+        });
+        this.setData({ list: arr });
+      },
+    });
   },
-  handleBack(){
-    const pagesArr = getCurrentPages()
-    if(pagesArr.length === 1) {
+  handleBack() {
+    const pagesArr = getCurrentPages();
+    if (pagesArr.length === 1) {
       wx.reLaunch({
-        url: '/pages/index/index'
-      })
+        url: "/pages/index/index",
+      });
     } else {
       wx.navigateBack();
     }
@@ -73,7 +73,7 @@ Page({
     return {
       title: "Kivicube企业版高级API示例 - 小程序反馈",
       path: "/pages/feedback/feedback",
-      imageUrl: "/assets/images/share.jpg"
+      imageUrl: "/assets/images/share.jpg",
     };
-  }
-})
+  },
+});

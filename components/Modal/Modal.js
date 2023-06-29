@@ -5,15 +5,15 @@ Component({
    */
   properties: {
     hiddenStatus: {
-      type: Boolean
-    }
+      type: Boolean,
+    },
   },
 
   /**
    * 组件的初始数据
    */
   data: {
-    info: {}
+    info: {},
   },
 
   /**
@@ -36,6 +36,6 @@ Component({
       this.setData({ info }, () => {
         callback();
       });
-    }
-  }
+    },
+  },
 });

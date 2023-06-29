@@ -2,7 +2,7 @@
 const {
   cameraErrorHandler,
   takePhoto,
-  downloadImage
+  downloadImage,
 } = require("../../../utils/util.js");
 Page({
   data: {
@@ -14,19 +14,15 @@ Page({
     sceneData: { from: "list" },
     photo: "", // 拍照生成的图片地址
     playName: "",
-    walkProudNum: 0
+    walkProudNum: 0,
   },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function() {
+  onLoad() {
     const sceneData = wx.getStorageSync("sceneData");
     this.setData({ sceneData });
   },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function() {},
   back() {
     wx.navigateBack();
   },
@@ -73,8 +69,8 @@ Page({
   },
   handleTakephoto() {
     console.log("take photo");
-    this.pause()
-    takePhoto(this.view).then(photo => {
+    this.pause();
+    takePhoto(this.view).then((photo) => {
       this.setData({ photo });
     });
   },
@@ -94,7 +90,13 @@ Page({
     model.addEventListener("click", () => {
       wx.showToast({ icon: "none", title: "模型被点击" });
       setTimeout(() => {
-        this.play("walk_proud");
+        this.stopAll();
+
+        model.playAnimation({
+          animationName: "walk_proud", // 动画名称
+          loop: true, // 是否循环播放
+          clampWhenFinished: false, // 播放完毕后是否停留在动画最后一帧
+        });
       }, 100);
     });
     model.addEventListener("play", () => {
@@ -103,7 +105,7 @@ Page({
     model.addEventListener("animationEnded", ({ animationName }) => {
       wx.showToast({
         icon: "none",
-        title: `模型动画(${animationName})播放完毕`
+        title: `模型动画(${animationName})播放完毕`,
       });
     });
     model.addEventListener("animationLoop", ({ animationName }) => {
@@ -113,7 +115,7 @@ Page({
           wx.navigateTo({
             url: `../web/index?url=${encodeURIComponent(
               "https://www.kivicube.com"
-            )}`
+            )}`,
           });
         } else {
           this.walkProudNum++;
@@ -122,7 +124,7 @@ Page({
       }
       wx.showToast({
         icon: "none",
-        title: `模型动画(${animationName})循环播放`
+        title: `模型动画(${animationName})循环播放`,
       });
     });
 
@@ -133,7 +135,7 @@ Page({
   // 因为有多个动画，所以要全部停止
   stopAll() {
     const animations = this.model.getAnimationNames();
-    animations.forEach(name => {
+    animations.forEach((name) => {
       this.model.stopAnimation(name);
     });
   },
@@ -160,16 +162,16 @@ Page({
     this.playName = name;
 
     this.model.playAnimation({
-      name, // 动画名称
+      animationName: name, // 动画名称
       loop: true, // 是否循环播放
-      clampWhenFinished: false // 播放完毕后是否停留在动画最后一帧
+      clampWhenFinished: false, // 播放完毕后是否停留在动画最后一帧
     });
   },
-  onShareAppMessage: function() {
+  onShareAppMessage: function () {
     return {
       title: `Kivicube企业版高级API示例：${this.data.sceneData.title}`,
       path: `/pages/material/model-control/model-control?id=${this.data.sceneData.id}`,
-      imageUrl: "/assets/images/share.jpg"
+      imageUrl: "/assets/images/share.jpg",
     };
-  }
+  },
 });

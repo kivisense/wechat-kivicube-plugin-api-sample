@@ -8,19 +8,15 @@ Page({
     showTakePhoto: false, // 显示拍照UI
     sceneId: "Pd6b9beoc2ZgSZVMuMajAoRdhq79rday", // 场景ID
     sceneData: { from: "list" },
-    photo: "" // 拍照生成的图片地址
+    photo: "", // 拍照生成的图片地址
   },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function() {
+  onLoad() {
     const sceneData = wx.getStorageSync("sceneData");
     this.setData({ sceneData });
   },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function() {},
   back() {
     wx.navigateBack();
   },
@@ -60,7 +56,7 @@ Page({
   },
   handleTakephoto() {
     console.log("take photo");
-    takePhoto(this.view).then(photo => {
+    takePhoto(this.view).then((photo) => {
       this.setData({ photo });
     });
   },
@@ -84,13 +80,13 @@ Page({
     audio.addEventListener("pause", () => {
       wx.showToast({
         icon: "none",
-        title: `音乐暂停播放，当前时间：${audio.currentTime}`
+        title: `音乐暂停播放，当前时间：${audio.currentTime}`,
       });
     });
     audio.addEventListener("ended", () => {
       wx.showToast({
         icon: "none",
-        title: `音乐播放完毕，总时长：${audio.duration}`
+        title: `音乐播放完毕，总时长：${audio.duration}`,
       });
     });
     this.audio = audio;
@@ -115,11 +111,11 @@ Page({
       this.audio.playback();
     }
   },
-  onShareAppMessage: function() {
+  onShareAppMessage: function () {
     return {
       title: `Kivicube企业版高级API示例：${this.data.sceneData.title}`,
       path: `/pages/material/audio-control/audio-control?id=${this.data.sceneData.id}`,
-      imageUrl: "/assets/images/share.jpg"
+      imageUrl: "/assets/images/share.jpg",
     };
-  }
+  },
 });

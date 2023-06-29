@@ -9,9 +9,9 @@ Page({
     sceneId: "hDcL74ud0j1aUd8tSUtJs702EzpiULAA", // 场景ID
     sceneData: { from: "list" },
     photo: "", // 拍照生成的图片地址
-    defaultPosition: "back"
+    defaultPosition: "back",
   },
-  onLoad: function() {
+  onLoad() {
     const sceneData = wx.getStorageSync("sceneData");
     this.setData({ sceneData });
   },
@@ -55,11 +55,11 @@ Page({
   loadSceneStart() {},
   // 拍照
   handleTakephoto() {
-    takePhoto(this.view).then(photo => {
+    takePhoto(this.view).then((photo) => {
       wx.navigateTo({
         url: `/pages/camera-preview/camera-preview?photo=${encodeURIComponent(
           photo
-        )}`
+        )}`,
       });
     });
   },
@@ -74,7 +74,7 @@ Page({
     return {
       title: `Kivicube企业版高级API示例：${this.data.sceneData.title}`,
       path: `/pages/scene-setup/setup-ui/setup-ui?id=${this.data.sceneData.id}`,
-      imageUrl: "/assets/images/share.jpg"
+      imageUrl: "/assets/images/share.jpg",
     };
-  }
+  },
 });

@@ -11,12 +11,12 @@ const sceneOptions = [
           {
             txt: "文档地址：https://www.kivicube.com/blog/mp-ar",
             type: "txt",
-            style: ""
-          }
+            style: "",
+          },
         ],
         url: "https://www.kivicube.com/blog/mp-ar",
         clickMta: "click_creator_button",
-        startMta: "copy_creator_link"
+        startMta: "copy_creator_link",
       },
       {
         id: 2,
@@ -27,12 +27,12 @@ const sceneOptions = [
           {
             txt: "文档地址：https://www.kivicube.com/blog/mp-ar-plugin",
             type: "txt",
-            style: ""
-          }
+            style: "",
+          },
         ],
         url: "https://www.kivicube.com/blog/mp-ar-plugin",
         clickMta: "click_developer_button",
-        startMta: "copy_developer_link"
+        startMta: "copy_developer_link",
       },
       {
         id: 19,
@@ -43,12 +43,12 @@ const sceneOptions = [
           {
             txt: "文档地址：https://www.yuque.com/kivicube/manual/advanced-api",
             type: "txt",
-            style: ""
-          }
+            style: "",
+          },
         ],
         url: "https://www.yuque.com/kivicube/manual/advanced-api",
         clickMta: "click_doc_button",
-        startMta: "copy_doc_link"
+        startMta: "copy_doc_link",
       },
       {
         id: 3,
@@ -59,15 +59,14 @@ const sceneOptions = [
         title: "快速接入kivicube-scene组件",
         description: [
           {
-            txt:
-              "10分钟为您的小程序接入AR功能，并可以通过Kivicube后台实时管理与编辑~",
+            txt: "10分钟为您的小程序接入AR功能，并可以通过Kivicube后台实时管理与编辑~",
             type: "txt",
-            style: ""
-          }
+            style: "",
+          },
         ],
         clickMta: "click_quickstart_button",
         startMta: "click_quickstart_start",
-        url: "/pages/started/kivicube-scene/kivicube-scene"
+        url: "/pages/started/kivicube-scene/kivicube-scene",
       },
       {
         id: 18,
@@ -77,17 +76,16 @@ const sceneOptions = [
         title: "快速接入kivicube-collection组件",
         description: [
           {
-            txt:
-              "10分钟为您的小程序接入AR多场景（多图连续识别）功能，并可以通过Kivicube后台实时管理与编辑~",
+            txt: "10分钟为您的小程序接入AR多场景（多图连续识别）功能，并可以通过Kivicube后台实时管理与编辑~",
             type: "txt",
-            style: ""
-          }
+            style: "",
+          },
         ],
         clickMta: "click_colltction_button",
         startMta: "click_colltction_start",
-        url: "/pages/started/kivicube-collection/kivicube-collection"
-      }
-    ]
+        url: "/pages/started/kivicube-collection/kivicube-collection",
+      },
+    ],
   },
   {
     title: "场景设置",
@@ -103,27 +101,27 @@ const sceneOptions = [
           {
             txt: "源场景中仅添加了名称为“奶牛”的模型对象",
             type: "txt",
-            style: ""
+            style: "",
           },
           { txt: "高级API功能：", type: "title", style: "" },
           {
             txt: "1.隐藏自带的素材下载与加载Loading，并自定义UI；",
             type: "txt",
-            style: ""
+            style: "",
           },
           {
             txt: "2.隐藏自带的云识别扫描提示，并自定义UI；",
             type: "txt",
-            style: ""
+            style: "",
           },
           { txt: "3.隐藏自带的拍照按钮，并自定义UI；", type: "txt", style: "" },
           { txt: "4.自定义照片预览页面；", type: "txt", style: "" },
           { txt: "5.动态切换前后摄像头；", type: "txt", style: "" },
-          { txt: "6.自定义AR相框", type: "txt", style: "" }
+          { txt: "6.自定义AR相框", type: "txt", style: "" },
         ],
         clickMta: "click_uisetting_button",
         startMta: "click_uisetting_start",
-        url: "/pages/scene-setup/setup-ui/setup-ui"
+        url: "/pages/scene-setup/setup-ui/setup-ui",
       },
       {
         id: 5,
@@ -136,25 +134,25 @@ const sceneOptions = [
           {
             txt: "源场景中仅添加了名称为“07Global-Network”的模型对象；",
             type: "txt",
-            style: ""
+            style: "",
           },
           { txt: "高级API功能：", type: "title", style: "" },
           {
             txt: "1.隐藏自带的素材下载与加载Loading，并自定义UI；",
             type: "txt",
-            style: ""
+            style: "",
           },
           {
             txt: "2.隐藏自带的跟踪扫描提示，并自定义UI；",
             type: "txt",
-            style: ""
+            style: "",
           },
           { txt: "3.隐藏自带的拍照按钮，并自定义UI；", type: "txt", style: "" },
-          { txt: "4.自定义照片预览页面；", type: "txt", style: "" }
+          { txt: "4.自定义照片预览页面；", type: "txt", style: "" },
         ],
         clickMta: "click_uitracking_button",
         startMta: "click_uitracking_start",
-        url: "/pages/scene-setup/setup-tracking/setup-tracking"
+        url: "/pages/scene-setup/setup-tracking/setup-tracking",
       },
       {
         id: 6,
@@ -167,25 +165,24 @@ const sceneOptions = [
           {
             txt: "源场景中仅添加了名称为“animal cell”的模型对象；",
             type: "txt",
-            style: ""
+            style: "",
           },
           { txt: "高级API功能：", type: "title", style: "" },
           {
             txt: "不在后台设置“自动跳过扫描”，而是通过高级API设置",
             type: "txt",
-            style: ""
+            style: "",
           },
           { txt: "应用场景：", type: "txt", style: "" },
           {
-            txt:
-              "希望用户可以扫描后体验AR，但是期望用户如果长时间没有扫描成功，也可以自动跳过",
+            txt: "希望用户可以扫描后体验AR，但是期望用户如果长时间没有扫描成功，也可以自动跳过",
             type: "txt",
-            style: ""
-          }
+            style: "",
+          },
         ],
         clickMta: "click_skipcloudar_button",
         startMta: "click_skipcloudar_start",
-        url: "/pages/scene-setup/setup-skip/setup-skip"
+        url: "/pages/scene-setup/setup-skip/setup-skip",
       },
       {
         id: 7,
@@ -195,21 +192,20 @@ const sceneOptions = [
         description: [
           { txt: "源场景：", type: "title", style: "" },
           {
-            txt:
-              "源场景仅添加了一个音频（名称为“霸王龙音频”）、一个模型（名称为“霸王龙模型”）、一个AR视频（名称为“霸王龙AR视频”）与一个透明视频（名称为“霸王龙透明视频”），均未设置播放",
+            txt: "源场景仅添加了一个音频（名称为“霸王龙音频”）、一个模型（名称为“霸王龙模型”）、一个AR视频（名称为“霸王龙AR视频”）与一个透明视频（名称为“霸王龙透明视频”），均未设置播放",
             type: "txt",
-            style: ""
+            style: "",
           },
           { txt: "高级API功能：", type: "title", style: "" },
           {
             txt: "场景开始后，自动播放音频、模型动画、AR视频或透明视频",
             type: "txt",
-            style: ""
-          }
+            style: "",
+          },
         ],
         clickMta: "click_autoplay_button",
         startMta: "click_autoplay_start",
-        url: "/pages/scene-setup/setup-autoPlay/setup-autoPlay"
+        url: "/pages/scene-setup/setup-autoPlay/setup-autoPlay",
       },
       {
         id: 8,
@@ -221,19 +217,19 @@ const sceneOptions = [
           {
             txt: "源场景为空场景；",
             type: "txt",
-            style: ""
+            style: "",
           },
           { txt: "高级API功能：", type: "title", style: "" },
           { txt: "1.增加三方素材；", type: "txt", style: "" },
           { txt: "2.删除素材，从内存中移除；", type: "txt", style: "" },
           { txt: "3.修改素材属性；", type: "txt", style: "" },
-          { txt: "4.增加三方在线视频；", type: "txt", style: "" }
+          { txt: "4.增加三方在线视频；", type: "txt", style: "" },
         ],
         clickMta: "click_assetmanage_button",
         startMta: "click_assetmanage_start",
-        url: "/pages/scene-setup/setup-source/setup-source"
-      }
-    ]
+        url: "/pages/scene-setup/setup-source/setup-source",
+      },
+    ],
   },
   {
     title: "素材对象",
@@ -246,28 +242,25 @@ const sceneOptions = [
         description: [
           { txt: "源场景：", type: "title", style: "" },
           {
-            txt:
-              "场景中只添加了名称为“奶牛”的模型对象，并设置自动循环播放名叫“idle”的动画；",
+            txt: "场景中只添加了名称为“奶牛”的模型对象，并设置自动循环播放名叫“idle”的动画；",
             type: "txt",
-            style: ""
+            style: "",
           },
           { txt: "高级API功能：", type: "title", style: "" },
           {
-            txt:
-              "1.点击按钮循环播放名叫“dance”的动画，暂停当前的动画，停止当前的动画，重新播放名叫“dance”的动画；",
+            txt: "1.点击按钮循环播放名叫“dance”的动画，暂停当前的动画，停止当前的动画，重新播放名叫“dance”的动画；",
             type: "txt",
-            style: ""
+            style: "",
           },
           {
-            txt:
-              "2.点击“奶牛”模型播放名叫“walk_proud”的动画两遍，并且停在最后一帧，“walk_proud”动画播放完毕后跳转一个示意小程序页面；",
+            txt: "2.点击“奶牛”模型播放名叫“walk_proud”的动画两遍，并且停在最后一帧，“walk_proud”动画播放完毕后跳转一个示意小程序页面；",
             type: "txt",
-            style: ""
-          }
+            style: "",
+          },
         ],
         clickMta: "click_modelcontrol_button",
         startMta: "click_modelcontrol_start",
-        url: "/pages/material/model-control/model-control"
+        url: "/pages/material/model-control/model-control",
       },
       {
         id: 10,
@@ -277,27 +270,25 @@ const sceneOptions = [
         description: [
           { txt: "源场景：", type: "title", style: "" },
           {
-            txt:
-              "场景中只添加了名称为“mp-ar-cases”的AR视频对象，没有设置播放；",
+            txt: "场景中只添加了名称为“mp-ar-cases”的AR视频对象，没有设置播放；",
             type: "txt",
-            style: ""
+            style: "",
           },
           { txt: "高级API功能：", type: "title", style: "" },
           {
             txt: "1.视频的播放，暂停，停止，循环播放可通过点击事件直接控制；",
             type: "txt",
-            style: ""
+            style: "",
           },
           {
-            txt:
-              "2.视频被绑定点击、播放、暂停、播放结束四个事件，事件触发后会有toast提示；",
+            txt: "2.视频被绑定点击、播放、暂停、播放结束四个事件，事件触发后会有toast提示；",
             type: "txt",
-            style: ""
-          }
+            style: "",
+          },
         ],
         clickMta: "click_arvideocontrol_button",
         startMta: "click_arvideocontrol_start",
-        url: "/pages/material/video-control/video-control"
+        url: "/pages/material/video-control/video-control",
       },
       {
         id: 11,
@@ -309,24 +300,23 @@ const sceneOptions = [
           {
             txt: "场景中只添加了名称为“Cat”的透明视频对象，没有设置播放；",
             type: "txt",
-            style: ""
+            style: "",
           },
           { txt: "高级API功能：", type: "title", style: "" },
           {
-            txt:
-              "1.点击按钮分别循环播放视频，暂停播放视频，停止播放视频，重新播放视频；",
+            txt: "1.点击按钮分别循环播放视频，暂停播放视频，停止播放视频，重新播放视频；",
             type: "txt",
-            style: ""
+            style: "",
           },
           {
             txt: "2.点击视频暂停播放视频",
             type: "txt",
-            style: ""
-          }
+            style: "",
+          },
         ],
         clickMta: "click_alphavideocontrol_button",
         startMta: "click_alphavideocontrol_start",
-        url: "/pages/material/alphaVideo-control/alphaVideo-control"
+        url: "/pages/material/alphaVideo-control/alphaVideo-control",
       },
       {
         id: 12,
@@ -336,22 +326,20 @@ const sceneOptions = [
         description: [
           { txt: "源场景：", type: "title", style: "" },
           {
-            txt:
-              "场景中只添加了名称为“Childhood-Dreams”的音频对象，没有设置播放；",
+            txt: "场景中只添加了名称为“Childhood-Dreams”的音频对象，没有设置播放；",
             type: "txt",
-            style: ""
+            style: "",
           },
           { txt: "高级API功能：", type: "title", style: "" },
           {
-            txt:
-              "1.点击按钮循环播放音频，暂停播放音频，停止播放音频，重新播放音频；",
+            txt: "1.点击按钮循环播放音频，暂停播放音频，停止播放音频，重新播放音频；",
             type: "txt",
-            style: ""
-          }
+            style: "",
+          },
         ],
         clickMta: "click_audiocontrol_button",
         startMta: "click_audiocontrol_start",
-        url: "/pages/material/audio-control/audio-control"
+        url: "/pages/material/audio-control/audio-control",
       },
       {
         id: 13,
@@ -363,14 +351,14 @@ const sceneOptions = [
           {
             txt: "源场景中仅添加了名称为“animal cell”的模型对象；",
             type: "txt",
-            style: ""
+            style: "",
           },
           { txt: "高级API功能：", type: "title", style: "" },
-          { txt: "使用TweenJS实现一个简单的入场动画", type: "txt", style: "" }
+          { txt: "使用TweenJS实现一个简单的入场动画", type: "txt", style: "" },
         ],
         clickMta: "click_customanimation_button",
         startMta: "click_customanimation_start",
-        url: "/pages/material/tween-control/tween-control"
+        url: "/pages/material/tween-control/tween-control",
       },
       {
         id: 19,
@@ -382,21 +370,20 @@ const sceneOptions = [
           {
             txt: "源场景中添加了名称为“柠檬”与“Occluder”的模型对象",
             type: "txt",
-            style: ""
+            style: "",
           },
           { txt: "高级API功能：", type: "title", style: "" },
           {
-            txt:
-              "将Occluder设置为遮罩类型，Occluder便可以挡住“柠檬”部分运动轨迹，达到柠檬跑到物体背后被遮挡，AR体验更真实",
+            txt: "将Occluder设置为遮罩类型，Occluder便可以挡住“柠檬”部分运动轨迹，达到柠檬跑到物体背后被遮挡，AR体验更真实",
             type: "txt",
-            style: ""
-          }
+            style: "",
+          },
         ],
         clickMta: "click_occluder_button",
         startMta: "click_occluder_start",
-        url: "/pages/material/mask-control/mask-control"
-      }
-    ]
+        url: "/pages/material/mask-control/mask-control",
+      },
+    ],
   },
   {
     title: "特殊素材",
@@ -411,14 +398,14 @@ const sceneOptions = [
           {
             txt: "源场景中仅添加了名称为“sphere”的模型对象；",
             type: "txt",
-            style: ""
+            style: "",
           },
           { txt: "高级API功能：", type: "title", style: "" },
-          { txt: "自定义PBR材质的环境贴图", type: "txt", style: "" }
+          { txt: "自定义PBR材质的环境贴图", type: "txt", style: "" },
         ],
         clickMta: "click_customenv_button",
         startMta: "click_customenv_start",
-        url: "/pages/material-special/environment-map/environment-map"
+        url: "/pages/material-special/environment-map/environment-map",
       },
       {
         id: 15,
@@ -428,54 +415,28 @@ const sceneOptions = [
         description: [
           { txt: "源场景：", type: "title", style: "" },
           {
-            txt:
-              "源场景中仅添加了名称为“Childhood-Dreams-1”的音频对象，并在编辑器后台设置自动循环播放；",
+            txt: "源场景中仅添加了名称为“Childhood-Dreams-1”的音频对象，并在编辑器后台设置自动循环播放；",
             type: "txt",
-            style: ""
+            style: "",
           },
           { txt: "高级API功能：", type: "title", style: "" },
           { txt: "1.音频播放时同步播放精灵图序列；", type: "txt", style: "" },
           {
             txt: "2.点击精灵图序列暂停精灵图序列播放与音频播放；",
             type: "txt",
-            style: ""
+            style: "",
           },
           {
-            txt:
-              "3.处于暂停状态的精灵图序列再次被点击，继续播放精灵图序列与音频",
+            txt: "3.处于暂停状态的精灵图序列再次被点击，继续播放精灵图序列与音频",
             type: "txt",
-            style: ""
-          }
+            style: "",
+          },
         ],
         clickMta: "click_sprite_button",
         startMta: "click_sprite_start",
-        url: "/pages/material-special/sprite-image/sprite-image"
-      }
-    ]
-  },
-  {
-    title: "多图识别",
-    child: [
-      {
-        id: 16,
-        name: "autoEnter",
-        type: "cloudar",
-        title: "使用kivi-cloudar实现",
-        description: [
-          { txt: "实现流程：", type: "title", style: "" },
-          {
-            txt:
-              "1.使用kivi-cloudar加载Kivicube项目，扫描图像识别后，返回场景ID；",
-            type: "txt",
-            style: ""
-          },
-          { txt: "2.跳转新的页面加载刚才识别到的场景", type: "txt", style: "" }
-        ],
-        clickMta: "click_cloudar_button",
-        startMta: "click_cloudar_start",
-        url: "/pages/multi-recognition/multi-recognition"
-      }
-    ]
+        url: "/pages/material-special/sprite-image/sprite-image",
+      },
+    ],
   },
   {
     title: "多图连续识别（kivicube-collection组件）",
@@ -491,22 +452,22 @@ const sceneOptions = [
           {
             txt: "（1）隐藏自带的返回按钮，并自定义UI；",
             type: "txt",
-            style: ""
+            style: "",
           },
           {
             txt: "（2）隐藏自带的云识别扫描提示，并自定义UI；",
             type: "txt",
-            style: ""
+            style: "",
           },
           {
             txt: "（3）场景切换功能；",
             type: "txt",
-            style: ""
-          }
+            style: "",
+          },
         ],
         clickMta: "click_cloudar_button",
         startMta: "click_cloudar_start",
-        url: "/pages/multi-continue-recognition/cloud-gyroscope/cloud-gyroscope"
+        url: "/pages/multi-continue-recognition/cloud-gyroscope/cloud-gyroscope",
       },
       {
         id: 21,
@@ -519,29 +480,29 @@ const sceneOptions = [
           {
             txt: "（1）自定义开启或关闭识别的时机；",
             type: "txt",
-            style: ""
+            style: "",
           },
           {
             txt: "（2）隐藏自带的云识别扫描提示，并自定义UI；",
             type: "txt",
-            style: ""
+            style: "",
           },
           {
             txt: "（3）隐藏自带的图像跟踪提示，并自定义UI；",
             type: "txt",
-            style: ""
+            style: "",
           },
           {
             txt: "（4）场景切换功能；",
             type: "txt",
-            style: ""
-          }
+            style: "",
+          },
         ],
         clickMta: "click_tracking_button",
         startMta: "click_tracking _start",
-        url: "/pages/multi-continue-recognition/multi-tracking/multi-tracking"
-      }
-    ]
+        url: "/pages/multi-continue-recognition/multi-tracking/multi-tracking",
+      },
+    ],
   },
   {
     title: "实用案例",
@@ -556,21 +517,20 @@ const sceneOptions = [
           {
             txt: "空场景",
             type: "txt",
-            style: ""
+            style: "",
           },
           { txt: "高级API功能：", type: "title", style: "" },
           {
-            txt:
-              "1.透明视频播放完毕后，跳转到新的小程序页面（开发者可以在新的页面开发比如发券、发红包功能）",
+            txt: "1.透明视频播放完毕后，跳转到新的小程序页面（开发者可以在新的页面开发比如发券、发红包功能）",
             type: "txt",
-            style: ""
-          }
+            style: "",
+          },
         ],
         clickMta: "click_arscan_button",
         startMta: "click_arscan_start",
-        url: "/pages/case/image-scan"
-      }
-    ]
+        url: "/pages/case/image-scan",
+      },
+    ],
   },
   {
     title: "反馈页面",
@@ -583,7 +543,7 @@ const sceneOptions = [
         description: [],
         clickMta: "click_feedback_button",
         startMta: "click_feedback_start",
-        url: "/pages/feedback/feedback"
+        url: "/pages/feedback/feedback",
       },
       {
         id: 1002,
@@ -593,9 +553,9 @@ const sceneOptions = [
         description: [],
         clickMta: "click_feedbackWeb_button",
         startMta: "click_feedbackWeb_start",
-        url: "/pages/feedback-web/feedback-web"
-      }
-    ]
-  }
+        url: "/pages/feedback-web/feedback-web",
+      },
+    ],
+  },
 ];
 export default sceneOptions;

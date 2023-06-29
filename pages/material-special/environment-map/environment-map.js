@@ -3,7 +3,7 @@ const {
   downloadImage,
   cameraErrorHandler,
   takePhoto,
-  requestFile
+  requestFile,
 } = require("../../../utils/util.js");
 Page({
   data: {
@@ -13,19 +13,15 @@ Page({
     showTakePhoto: false, // 显示拍照UI
     sceneId: "oUtNGtjYDlAU4BhqH40z1UeUNkmOZKbL", // 场景ID
     sceneData: { from: "list" },
-    photo: "" // 拍照生成的图片地址
+    photo: "", // 拍照生成的图片地址
   },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function() {
+  onLoad() {
     const sceneData = wx.getStorageSync("sceneData");
     this.setData({ sceneData });
   },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function() {},
   back() {
     wx.navigateBack();
   },
@@ -72,7 +68,7 @@ Page({
   },
   handleTakephoto() {
     console.log("take photo");
-    takePhoto(this.view).then(photo => {
+    takePhoto(this.view).then((photo) => {
       this.setData({ photo });
     });
   },
@@ -90,9 +86,8 @@ Page({
     const panoramaAb = await requestFile(
       "https://kivicube-resource.kivisense.com/wechat-kivicube-plugin-api-demo/panorama-map/panorama.jpg"
     );
-    this.panoramaEnvMap = await this.view.generateEnvMapByPanorama(
+    this.panoramaEnvMap = await this.view.createEnvMapByPanorama(
       panoramaAb,
-      "jpg",
       () => {}
     );
     console.log("scene", this.view.sceneInfo);
@@ -106,11 +101,11 @@ Page({
   remove() {
     this.model.useEnvMap(null);
   },
-  onShareAppMessage: function() {
+  onShareAppMessage: function () {
     return {
       title: `Kivicube企业版高级API示例：${this.data.sceneData.title}`,
       path: `/pages/material-special/environment-map/environment-map?id=${this.data.sceneData.id}`,
-      imageUrl: "/assets/images/share.jpg"
+      imageUrl: "/assets/images/share.jpg",
     };
-  }
+  },
 });

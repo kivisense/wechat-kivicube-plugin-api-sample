@@ -3,7 +3,7 @@ const {
   cameraErrorHandler,
   takePhoto,
   downloadImage,
-  fetchBatch
+  fetchBatch,
 } = require("../../utils/util.js");
 Page({
   data: {
@@ -12,15 +12,15 @@ Page({
     startLoad: false,
     showFrame: false, // 显示相机外框
     photoList: {},
-    isStart: false
+    isStart: false,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function() {
+  onLoad() {
     const sceneData = wx.getStorageSync("sceneData");
-    console.log(sceneData)
+    console.log(sceneData);
     this.setData({ sceneData });
     let downloadList = [];
     for (let i = 0; i <= 74; i++) {
@@ -33,7 +33,7 @@ Page({
     fetchBatch(downloadList, 5, () => {
       progress += 0.01;
       this.changeProgress(progress);
-    }).then(list => {
+    }).then((list) => {
       this.setData({ photoList: list, showFrame: true });
       this.changeProgress(1);
     });
@@ -65,12 +65,9 @@ Page({
   },
   async drawImg(giftLoading) {
     const { width: canvasWidth, height: canvasHeight } = await new Promise(
-      r => {
+      (r) => {
         const query = wx.createSelectorQuery();
-        query
-          .in(this)
-          .select("#sequence")
-          .boundingClientRect(r);
+        query.in(this).select("#sequence").boundingClientRect(r);
         query.exec();
       }
     );
@@ -85,7 +82,7 @@ Page({
           },
           fail(e) {
             reject(e);
-          }
+          },
         });
       }
     );
@@ -121,7 +118,7 @@ Page({
     this.setData({ progress });
   },
   handleTakephoto() {
-    takePhoto(this.view).then(photo => {
+    takePhoto(this.view).then((photo) => {
       this.setData({ photo });
     });
   },
@@ -133,7 +130,7 @@ Page({
     downloadImage(path);
   },
   error(e) {
-    console.warn('error', e)
+    console.warn("error", e);
     const { detail } = e;
     const page = this;
     // 判定是否camera权限问题，是则向用户申请权限。
@@ -143,7 +140,7 @@ Page({
     return {
       title: `Kivicube企业版高级API示例：${this.data.sceneData.title}`,
       path: `/pages/case/image-scan?id=${this.data.sceneData.id}`,
-      imageUrl: "/assets/images/share.jpg"
+      imageUrl: "/assets/images/share.jpg",
     };
-  }
+  },
 });
