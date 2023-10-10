@@ -1,5 +1,6 @@
 {
   "usingComponents": {
+    "private-modal": "../../components/private-modal/private-modal",
     "Modal": "/components/Modal/Modal"
   }
 }

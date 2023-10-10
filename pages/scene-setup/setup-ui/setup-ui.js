@@ -1,5 +1,7 @@
 // pages/scene-setup/setup-ui/setup-ui.js
-const { takePhoto, cameraErrorHandler } = require("../../../utils/util.js");
+const { takePhoto, cameraErrorHandler, resUrl } = require("../../../utils/util.js");
+const bottomPic = resUrl("images/bottom.png");
+const framePic = resUrl("images/frame.png");
 Page({
   data: {
     startLoad: false,
@@ -10,6 +12,8 @@ Page({
     sceneData: { from: "list" },
     photo: "", // 拍照生成的图片地址
     defaultPosition: "back",
+    bottomPic,
+    framePic,
   },
   onLoad() {
     const sceneData = wx.getStorageSync("sceneData");

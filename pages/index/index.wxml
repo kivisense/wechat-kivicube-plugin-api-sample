@@ -25,3 +25,4 @@
     bind:btnTap="handleBtnTap"
   ></Modal>
 </view>
+<private-modal></private-modal>

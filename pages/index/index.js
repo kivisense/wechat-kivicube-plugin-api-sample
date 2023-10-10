@@ -1,6 +1,7 @@
 // index.js
 // 获取应用实例
 import sceneOptions from "../../utils/sceneOptions";
+import { getPrivate } from "../../utils/util";
 Page({
   data: {
     sceneOptions,
@@ -39,18 +40,23 @@ Page({
   /**
    * modal按钮被点击
    */
-  handleBtnTap() {
-    const modal = this.selectComponent("#modal");
-    const modalInfo = modal.data.info;
+  async handleBtnTap() {
     try {
-      wx.uma.trackEvent(modalInfo.clickMta);
-    } catch (err) {
-      console.warn(err.message);
+      await getPrivate();
+      const modal = this.selectComponent("#modal");
+      const modalInfo = modal.data.info;
+      try {
+        wx.uma.trackEvent(modalInfo.clickMta);
+      } catch (err) {
+        console.warn(err.message);
+      }
+      if (modalInfo.type === "web") {
+        return this.copyLink(modalInfo.url);
+      }
+      this.immediateExperience(modalInfo);
+    } catch (error) {
+      console.log(error);
     }
-    if (modalInfo.type === "web") {
-      return this.copyLink(modalInfo.url);
-    }
-    this.immediateExperience(modalInfo);
   },
   immediateExperience(info) {
     this.hideModal();

@@ -1,5 +1,6 @@
 // pages/material/mask-control/mask-control.js
-const { cameraErrorHandler } = require("../../../utils/util.js");
+const { cameraErrorHandler, resUrl } = require("../../../utils/util.js");
+const weitaPic = resUrl("images/weita.jpg");
 Page({
   data: {
     startLoad: false,
@@ -14,6 +15,7 @@ Page({
     trackTimer: null,
     animationName: ["柠檬-1", "柠檬-2", "柠檬-3"],
     animationInstance: [],
+    weitaPic,
   },
   /**
    * 生命周期函数--监听页面加载
