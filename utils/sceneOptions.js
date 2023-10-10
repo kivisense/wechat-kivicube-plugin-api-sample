@@ -2,22 +2,22 @@ const sceneOptions = [
   {
     title: "入门教程",
     child: [
-      {
-        id: 1,
-        type: "web",
-        title: "创意者",
-        key: "creativity",
-        description: [
-          {
-            txt: "文档地址：https://www.kivicube.com/blog/mp-ar",
-            type: "txt",
-            style: "",
-          },
-        ],
-        url: "https://www.kivicube.com/blog/mp-ar",
-        clickMta: "click_creator_button",
-        startMta: "copy_creator_link",
-      },
+    //   {
+    //     id: 1,
+    //     type: "web",
+    //     title: "创意者",
+    //     key: "creativity",
+    //     description: [
+    //       {
+    //         txt: "文档地址：https://www.kivicube.com/blog/mp-ar",
+    //         type: "txt",
+    //         style: "",
+    //       },
+    //     ],
+    //     url: "https://www.kivicube.com/blog/mp-ar",
+    //     clickMta: "click_creator_button",
+    //     startMta: "copy_creator_link",
+    //   },
       {
         id: 2,
         type: "web",
@@ -25,12 +25,12 @@ const sceneOptions = [
         key: "development",
         description: [
           {
-            txt: "文档地址：https://www.kivicube.com/blog/mp-ar-plugin",
+            txt: "文档地址：https://www.yuque.com/kivicube/manual/mp-ar",
             type: "txt",
             style: "",
           },
         ],
-        url: "https://www.kivicube.com/blog/mp-ar-plugin",
+        url: "https://www.yuque.com/kivicube/manual/mp-ar",
         clickMta: "click_developer_button",
         startMta: "copy_developer_link",
       },
