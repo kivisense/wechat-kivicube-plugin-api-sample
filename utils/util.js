@@ -244,7 +244,7 @@ const getPrivate = () => {
 }
 
 const resUrl = (filename) => {
-  return `https://meta.kivisense.com/wechat-kivicube-plugin-api-sample/assets-cdn/${filename}`;
+  return `https://meta.kivisense.com/wechat-kivicube-plugin-api-sample/${filename}`;
 }
 
 module.exports = {

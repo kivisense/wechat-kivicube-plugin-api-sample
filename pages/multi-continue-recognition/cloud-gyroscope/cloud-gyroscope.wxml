@@ -33,7 +33,7 @@
   <view wx:if="{{!showAlert && showScanning}}" class="show-alert">请对准识别图</view>
   <image
     wx:if="{{showScanning}}"
-    src="/assets/images/scanning.png"
+    src="{{scanningImage}}"
     class="icon-middle"
     style="top: {{scanProgress}}vh"
   ></image>

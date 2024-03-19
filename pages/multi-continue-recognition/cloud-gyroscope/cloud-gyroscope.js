@@ -1,5 +1,4 @@
-// pages/multi-continue-recognition/cloud-gyroscope/cloud-gyroscope.js
-const { cameraErrorHandler } = require("../../../utils/util.js");
+const { cameraErrorHandler, resUrl } = require("../../../utils/util.js");
 Page({
   data: {
     startLoad: false,
@@ -17,6 +16,7 @@ Page({
     scanProgress: 20,
     showScanning: false, // 显示相机扫描动画
     titleTimer: null,
+    scanningImage: resUrl("images/scanning.png"),
   },
   onLoad() {
     wx.showLoading({ title: "加载中..." });
