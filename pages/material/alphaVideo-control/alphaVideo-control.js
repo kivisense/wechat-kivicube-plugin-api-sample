@@ -1,5 +1,5 @@
 // pages/material/alphaVideo-control/alphaVideo-control.js
-const { takePhoto, downloadImage } = require("../../../utils/util.js");
+const { takePhoto, downloadImage, resUrl } = require("../../../utils/util.js");
 Page({
   data: {
     startLoad: false,
@@ -116,7 +116,7 @@ Page({
     return {
       title: `Kivicube企业版高级API示例：${this.data.sceneData.title}`,
       path: `/pages/material/alphaVideo-control/alphaVideo-control?id=${this.data.sceneData.id}`,
-      imageUrl: "/assets/images/share.jpg",
+      imageUrl: resUrl("share.jpg"),
     };
   },
 });

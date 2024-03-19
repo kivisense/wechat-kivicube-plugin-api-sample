@@ -4,11 +4,15 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "cdn": "kivi-cdn upload",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "@tweenjs/tween.js": "^18.4.2",
     "umtrack-wx": "^2.5.2"
+  },
+  "devDependencies": {
+    "kivi-cdn": "git+ssh://git@gitlab.kivisense.com:30001/developers/kivi-cdn.git#d5f8f558"
   },
   "author": "kivisense",
   "license": "ISC"

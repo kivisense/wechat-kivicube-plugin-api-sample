@@ -2,7 +2,8 @@
 const {
   takePhoto,
   cameraErrorHandler,
-  downloadImage
+  downloadImage,
+  resUrl
 } = require("../../../utils/util.js");
 
 Page({
@@ -15,7 +16,8 @@ Page({
     showTakePhoto: false, // 显示拍照UI
     sceneId: "2AzAoec4Ojw9G84NA4DFouYAgHP4Q5YT", // 场景ID
     sceneData: { from: "list" },
-    photo: "" // 拍照生成的图片地址
+    photo: "", // 拍照生成的图片地址
+    trackImage: resUrl("track-image.jpg"),
   },
   onLoad: function() {
     const sceneData = wx.getStorageSync("sceneData");
@@ -84,7 +86,7 @@ Page({
     return {
       title: `Kivicube企业版高级API示例：${this.data.sceneData.title}`,
       path: `/pages/scene-setup/setup-tracking/setup-tracking?id=${this.data.sceneData.id}`,
-      imageUrl: "/assets/images/share.jpg"
+      imageUrl: resUrl("share.jpg")
     };
   }
 });

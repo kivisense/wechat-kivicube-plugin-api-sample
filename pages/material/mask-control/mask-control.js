@@ -1,5 +1,5 @@
 // pages/material/mask-control/mask-control.js
-const { cameraErrorHandler } = require("../../../utils/util.js");
+const { cameraErrorHandler,resUrl } = require("../../../utils/util.js");
 Page({
   data: {
     startLoad: false,
@@ -14,6 +14,7 @@ Page({
     trackTimer: null,
     animationName: ["柠檬-1", "柠檬-2", "柠檬-3"],
     animationInstance: [],
+    weitaImage: resUrl("weita.jpg"),
   },
   /**
    * 生命周期函数--监听页面加载
@@ -113,7 +114,7 @@ Page({
     return {
       title: `Kivicube企业版高级API示例：${this.data.sceneData.title}`,
       path: `/pages/material/mask-control/mask-control?id=${this.data.sceneData.id}`,
-      imageUrl: "/assets/images/share.jpg",
+      imageUrl: resUrl("share.jpg"),
     };
   },
 });

@@ -1,6 +1,7 @@
 // index.js
 // 获取应用实例
 import sceneOptions from "../../utils/sceneOptions";
+const { resUrl } = require("../../utils/util.js");
 Page({
   data: {
     sceneOptions,
@@ -87,7 +88,7 @@ Page({
     return {
       title: "Kivicube企业版高级API示例",
       path: "/pages/index/index",
-      imageUrl: "/assets/images/share.jpg",
+      imageUrl: resUrl("share.jpg"),
     };
   },
 });

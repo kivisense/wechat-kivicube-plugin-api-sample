@@ -1,7 +1,7 @@
 // pages/camera-preview/camera-preview.js
-const { downloadImage, promisify } = require("../../utils/util.js");
-const phonePic = "../../assets/images/scene1/frame.png";
-const bottomPic = "../../assets/images/scene1/bottom.png";
+const { downloadImage, promisify, resUrl } = require("../../utils/util.js");
+const phonePic = resUrl("scene1/frame.png");
+const bottomPic = resUrl("scene1/bottom.png");
 Page({
   data: {
     tempFilePaths: "",

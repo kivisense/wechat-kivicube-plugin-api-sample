@@ -4,6 +4,7 @@ miniprogram_npm/
 unpackage/
 dist/
 project.private.config.json
+cdn-assets/
 
 # local env files
 .env.local

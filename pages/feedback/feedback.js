@@ -1,5 +1,5 @@
 // pages/feedback/feedback.js
-const { formatTime } = require("../../utils/util.js");
+const { formatTime, resUrl } = require("../../utils/util.js");
 Page({
   data: {
     title: "",
@@ -38,6 +38,7 @@ Page({
   onLoad() {
     const sceneData = wx.getStorageSync("sceneData");
     this.setData({ title: sceneData.title });
+    const deviceInfo = wx.getDeviceInfo();
     wx.getSystemInfoAsync({
       success: (res) => {
         console.log(res);
@@ -55,9 +56,31 @@ Page({
             value: res[key],
           };
         });
+        arr.push({
+          label: "CPU型号",
+          value: deviceInfo.cpuType,
+        });
+        arr.push({
+          label: "GPU型号",
+          value: this.getGpuInfo(),
+        });
+		arr.push({
+		  label: "内存大小",
+		  value: `${deviceInfo.memorySize}MB`,
+		});
         this.setData({ list: arr });
       },
     });
+  },
+  getGpuInfo() {
+    try {
+      const canvas = wx.createOffscreenCanvas({type: 'webgl', width: 10, height: 10})
+      const gl = canvas.getContext('webgl');
+      const debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
+      return gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL);
+    } catch (error) {
+      console.log(error);
+    }
   },
   handleBack() {
     const pagesArr = getCurrentPages();
@@ -73,7 +96,7 @@ Page({
     return {
       title: "Kivicube企业版高级API示例 - 小程序反馈",
       path: "/pages/feedback/feedback",
-      imageUrl: "/assets/images/share.jpg",
+      imageUrl: resUrl("share.jpg"),
     };
   },
 });

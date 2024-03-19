@@ -1,5 +1,5 @@
 // pages/scene-setup/setup-ui/setup-ui.js
-const { takePhoto, cameraErrorHandler } = require("../../../utils/util.js");
+const { takePhoto, cameraErrorHandler, resUrl } = require("../../../utils/util.js");
 Page({
   data: {
     startLoad: false,
@@ -10,6 +10,8 @@ Page({
     sceneData: { from: "list" },
     photo: "", // 拍照生成的图片地址
     defaultPosition: "back",
+    framePic: resUrl("scene1/frame.png"),
+    bottomPic: resUrl("scene1/bottom.png")
   },
   onLoad() {
     const sceneData = wx.getStorageSync("sceneData");
@@ -74,7 +76,7 @@ Page({
     return {
       title: `Kivicube企业版高级API示例：${this.data.sceneData.title}`,
       path: `/pages/scene-setup/setup-ui/setup-ui?id=${this.data.sceneData.id}`,
-      imageUrl: "/assets/images/share.jpg",
+      imageUrl: resUrl("share.jpg"),
     };
   },
 });

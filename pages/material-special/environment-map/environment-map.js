@@ -4,6 +4,7 @@ const {
   cameraErrorHandler,
   takePhoto,
   requestFile,
+  resUrl,
 } = require("../../../utils/util.js");
 Page({
   data: {
@@ -105,7 +106,7 @@ Page({
     return {
       title: `Kivicube企业版高级API示例：${this.data.sceneData.title}`,
       path: `/pages/material-special/environment-map/environment-map?id=${this.data.sceneData.id}`,
-      imageUrl: "/assets/images/share.jpg",
+      imageUrl: resUrl("share.jpg"),
     };
   },
 });

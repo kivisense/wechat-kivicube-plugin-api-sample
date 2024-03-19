@@ -1,5 +1,5 @@
 // pages/multi-continue-recognition/cloud-gyroscope/cloud-gyroscope.js
-const { cameraErrorHandler } = require("../../../utils/util.js");
+const { cameraErrorHandler, resUrl } = require("../../../utils/util.js");
 Page({
   data: {
     startLoad: false,
@@ -17,6 +17,7 @@ Page({
     scanProgress: 20,
     showScanning: false, // 显示相机扫描动画
     titleTimer: null,
+    scanningImage: resUrl("scanning.png"),
   },
   onLoad() {
     wx.showLoading({ title: "加载中..." });
@@ -151,7 +152,7 @@ Page({
     return {
       title: `Kivicube企业版高级API示例：${this.data.sceneData.title}`,
       path: `/pages/multi-continue-recognition/cloud-gyroscope/cloud-gyroscope?id=${this.data.sceneData.id}`,
-      imageUrl: "/assets/images/share.jpg",
+      imageUrl: resUrl("share.jpg"),
     };
   },
 });

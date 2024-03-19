@@ -1,4 +1,5 @@
 // pages/multi-continue-recognition/multi-tracking/multi-tracking.js
+const { resUrl } = require("../../../utils/util.js");
 Page({
   data: {
     startLoad: false,
@@ -20,6 +21,9 @@ Page({
     timer: null,
     scanProgress: 20,
     titleTimer: null,
+    scanningImage: resUrl("scanning.png"),
+    sharkImage: resUrl("shark.jpg"),
+    tyrannosaurusImage: resUrl("tyrannosaurus.jpg"),
   },
   onLoad() {
     wx.showLoading({ title: "加载中..." });
@@ -191,7 +195,7 @@ Page({
     return {
       title: `Kivicube企业版高级API示例：${this.data.sceneData.title}`,
       path: `/pages/multi-continue-recognition/multi-tracking/multi-tracking?id=${this.data.sceneData.id}`,
-      imageUrl: "/assets/images/share.jpg",
+      imageUrl: resUrl("share.jpg"),
     };
   },
 });

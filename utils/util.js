@@ -224,6 +224,10 @@ const fetchBatch = (downloadList, num = 5, progress = () => {}) => {
   });
 };
 
+function resUrl(name) {
+    return `https://meta.kivisense.com/wechat-kivicube-plugin-api-sample/cdn-assets/${name}`;
+}
+
 module.exports = {
   formatTime,
   downloadImage,
@@ -233,5 +237,6 @@ module.exports = {
   errorHandler,
   requestFile,
   downloadFile,
-  fetchBatch
+  fetchBatch,
+  resUrl
 };

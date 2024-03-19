@@ -19,7 +19,7 @@
   />
   <view wx:if="{{showTip}}" class="tip">
     <view class="scan-img-box">
-      <image class="scan-img" src="/assets/images/weita.jpg"></image>
+      <image class="scan-img" src="{{weitaImage}}"></image>
     </view>
     <view class="scan-font">请对准识别图</view>
   </view>

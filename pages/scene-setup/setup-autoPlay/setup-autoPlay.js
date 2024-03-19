@@ -1,5 +1,5 @@
 // pages/scene-setup/setup-autoPlay/setup-autoPlay.js
-const { cameraErrorHandler } = require("../../../utils/util.js");
+const { cameraErrorHandler, resUrl } = require("../../../utils/util.js");
 Page({
   data: {
     sceneId: "Q3mSW9yDIuLrXeUgaN0H23WaxBQ7ZKgE", // 场景ID
@@ -42,7 +42,7 @@ Page({
     return {
       title: `Kivicube企业版高级API示例：${this.data.sceneData.title}`,
       path: `/pages/scene-setup/setup-autoPlay/setup-autoPlay?id=${this.data.sceneData.id}`,
-      imageUrl: "/assets/images/share.jpg"
+      imageUrl: resUrl("share.jpg")
     };
   }
 });

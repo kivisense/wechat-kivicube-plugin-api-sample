@@ -1,4 +1,5 @@
 // pages/feedback-web/feedback-web.js
+const { resUrl } = require("../../utils/util.js");
 Page({
   data: {
     statusBarHeight: 0,
@@ -45,7 +46,7 @@ Page({
     return {
       title: "Kivicube企业版高级API示例 - WebView反馈",
       path: "/pages/feedback-web/feedback-web",
-      imageUrl: "/assets/images/share.jpg",
+      imageUrl: resUrl("share.jpg"),
     };
   },
 });

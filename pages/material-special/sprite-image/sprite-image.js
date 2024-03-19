@@ -4,7 +4,8 @@ const {
   takePhoto,
   downloadImage,
   requestFile,
-  errorHandler
+  errorHandler,
+  resUrl,
 } = require("../../../utils/util.js");
 Page({
   data: {
@@ -162,7 +163,7 @@ Page({
     return {
       title: `Kivicube企业版高级API示例：${this.data.sceneData.title}`,
       path: `/pages/material-special/sprite-image/sprite-image?id=${this.data.sceneData.id}`,
-      imageUrl: "/assets/images/share.jpg"
+      imageUrl: resUrl("share.jpg")
     };
   }
 });

@@ -79,3 +79,6 @@
     }
   }
 ```
+
+### 上传cdn素材
+npm run cdn cdn-assets

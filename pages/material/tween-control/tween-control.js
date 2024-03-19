@@ -1,5 +1,5 @@
 // pages/material/tween-control/tween-control.js
-const { takePhoto, downloadImage } = require("../../../utils/util.js");
+const { takePhoto, downloadImage, resUrl } = require("../../../utils/util.js");
 let TWEEN;
 try {
   TWEEN = require("@tweenjs/tween.js")
@@ -138,7 +138,7 @@ Page({
     return {
       title: `Kivicube企业版高级API示例：${this.data.sceneData.title}`,
       path: `/pages/material/tween-control/tween-control?id=${this.data.sceneData.id}`,
-      imageUrl: "/assets/images/share.jpg"
+      imageUrl: resUrl("share.jpg")
     };
   }
 });

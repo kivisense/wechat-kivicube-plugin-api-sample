@@ -15,11 +15,8 @@
       hideTakePhoto
     />
     <view class="layer" style="z-index: 2;">
-      <image class="layer" src="/assets/images/scene1/frame.png"></image>
-      <image
-        class="bottom-img"
-        src="/assets/images/scene1/bottom.png"
-      ></image>
+      <image class="layer" src="{{framePic}}"></image>
+      <image class="bottom-img" src="{{bottomPic}}"></image>
       <image
         bind:tap="handleTakephoto"
         class="camera-img"
