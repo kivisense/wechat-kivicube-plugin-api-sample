@@ -79,6 +79,3 @@
     }
   }
 ```
-
-### cdn素材管理
-使用仓库：http://gitlab.kivisense.com:30000/asset/wechat-kivicube-plugin-api-sample-asset
