@@ -2,7 +2,8 @@
 const {
   takePhoto,
   cameraErrorHandler,
-  downloadImage
+  downloadImage,
+  resUrl
 } = require("../../../utils/util.js");
 
 Page({
@@ -15,7 +16,8 @@ Page({
     showTakePhoto: false, // 显示拍照UI
     sceneId: "2AzAoec4Ojw9G84NA4DFouYAgHP4Q5YT", // 场景ID
     sceneData: { from: "list" },
-    photo: "" // 拍照生成的图片地址
+    photo: "", // 拍照生成的图片地址
+    trackImage: resUrl("images/track-image.jpg"),
   },
   onLoad: function() {
     const sceneData = wx.getStorageSync("sceneData");

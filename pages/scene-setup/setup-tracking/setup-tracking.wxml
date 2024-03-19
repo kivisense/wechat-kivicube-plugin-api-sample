@@ -18,7 +18,7 @@
   <!-- 显示需要识别的图片和提示 -->
   <view hidden="{{hideTip}}" class="tip">
     <view class="scan-img-box">
-      <image class="scan-img" src="/assets/images/track-image.jpg"></image>
+      <image class="scan-img" src="{{trackImage}}"></image>
     </view>
     <view class="scan-font">请对准识别图</view>
   </view>

@@ -13,6 +13,9 @@ Page({
       benchmarkLevel: "设备评级", // 设备性能等级（仅 Android）。取值为：-2 或 0（该设备无法运行小游戏），-1（性能未知），>=1（设备性能值，该值越高，设备性能越好，目前最高不到50）
       brand: "手机品牌",
       model: "手机型号",
+      cpuType: "CPU型号",
+      gpuType: "GPU型号",
+      memorySize: "内存大小",
       language: "语言版本",
       screenWidth: "屏幕宽度",
       screenHeight: "屏幕高度",
@@ -38,6 +41,7 @@ Page({
   onLoad() {
     const sceneData = wx.getStorageSync("sceneData");
     this.setData({ title: sceneData.title });
+    const deviceInfo = wx.getDeviceInfo();
     wx.getSystemInfoAsync({
       success: (res) => {
         console.log(res);
@@ -49,15 +53,35 @@ Page({
         res.safeAreaPos = `left:${safeArea.left} | right:${safeArea.right} | top:${safeArea.top} | bottom:${safeArea.bottom}`;
         const arr = Object.entries(this.data.labelMap).map((arr) => {
           const [key, label] = arr;
-          return {
-            key,
-            label,
-            value: res[key],
-          };
+          let value = "";
+          switch (key) {
+            case "cpuType":
+              value = deviceInfo.cpuType;
+              break;
+            case "gpuType":
+              value = this.getGpuInfo();
+              break;
+            case "memorySize":
+              value = `${deviceInfo.memorySize}MB`;
+              break;
+            default:
+              value = res[key];
+          }
+          return {key, label, value};
         });
         this.setData({ list: arr });
       },
     });
+  },
+  getGpuInfo() {
+    try {
+      const canvas = wx.createOffscreenCanvas({type: 'webgl', width: 10, height: 10})
+      const gl = canvas.getContext('webgl');
+      const debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
+      return gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL);
+    } catch (error) {
+      console.log(error);
+    }
   },
   handleBack() {
     const pagesArr = getCurrentPages();

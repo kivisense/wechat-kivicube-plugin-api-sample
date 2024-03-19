@@ -23,8 +23,8 @@
   <view wx:if="{{showTracking && titleScanning}}" class="show-tracking">移近一点，保持扫描</view>
   <view wx:if="{{showTracking}}" class="tip">
     <view class="scan-img-box">
-      <image wx:if="{{!isShark}}" class="scan-img" src="/assets/images/tyrannosaurus.jpg"></image>
-      <image wx:if="{{isShark}}" class="scan-img" src="/assets/images/shark.jpg"></image>
+      <image wx:if="{{!isShark}}" class="scan-img" src="{{tyrannosaurusImage}}"></image>
+      <image wx:if="{{isShark}}" class="scan-img" src="{{sharkImage}}"></image>
     </view>
     <view class="scan-font">请对准识别图</view>
   </view>
@@ -43,7 +43,7 @@
   <camera-frame showFrame="{{showTracking}}"></camera-frame>
   <image
     wx:if="{{showScanning}}"
-    src="/assets/images/scanning.png"
+    src="{{scanningImage}}"
     class="icon-middle"
     style="top: {{scanProgress}}vh"
   ></image>

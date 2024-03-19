@@ -13,6 +13,7 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  z-index: 2;
 }
 .scan-img-box {
   padding: 2.76vw;
@@ -23,7 +24,7 @@
 .scan-img {
   margin: 0 auto;
   width: 70vw;
-  height: auto;
+  height: 70vw;
 }
 .scan-font {
   margin-top: 2.4vw;

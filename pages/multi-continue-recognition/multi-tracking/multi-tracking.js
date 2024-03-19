@@ -1,4 +1,4 @@
-// pages/multi-continue-recognition/multi-tracking/multi-tracking.js
+const { resUrl } = require("../../../utils/util.js");
 Page({
   data: {
     startLoad: false,
@@ -20,6 +20,9 @@ Page({
     timer: null,
     scanProgress: 20,
     titleTimer: null,
+    scanningImage: resUrl("images/scanning.png"),
+    sharkImage: resUrl("images/shark.jpg"),
+    tyrannosaurusImage: resUrl("images/tyrannosaurus.jpg"),
   },
   onLoad() {
     wx.showLoading({ title: "加载中..." });
