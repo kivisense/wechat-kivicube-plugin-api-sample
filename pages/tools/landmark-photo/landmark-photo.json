@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "shoot-control": "/components/shoot-control/shoot-control",
+    "loading": "/components/Loading/Loading"
+  }
+}

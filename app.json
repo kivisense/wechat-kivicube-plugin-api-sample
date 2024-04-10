@@ -22,7 +22,9 @@
     "pages/multi-continue-recognition/multi-tracking/multi-tracking",
     "pages/case/image-scan",
     "pages/feedback/feedback",
-    "pages/feedback-web/feedback-web"
+    "pages/feedback-web/feedback-web",
+    "pages/tools/landmark-video/landmark-video",
+    "pages/tools/landmark-photo/landmark-photo"
   ],
   "window": {
     "backgroundTextStyle": "light",

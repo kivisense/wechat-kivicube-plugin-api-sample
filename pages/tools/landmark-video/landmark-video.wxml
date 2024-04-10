@@ -1,0 +1,25 @@
+<view class="landmark-video">
+  <camera
+    class="layer"
+    resolution="high"
+    device-position="back"
+    flash="off"
+    frame-size="large"
+    bind:initdone="onInit"
+  />
+  <shoot-control wx:if="{{showUI}}" bind:startRecord="startRecord" bind:stopRecord="stopRecord" />
+  <view class="layer preview" wx:if="{{videoUrl}}">
+    <video class="layer" src="{{videoUrl}}" loop="{{true}}" autoplay="{{true}}"></video>
+    <view class="touch-btns">
+      <view class="take-photo-3d btn" bind:tap="again">
+        <!-- <image class="btn-img" src="/static/images/photo-img.png" mode="aspectFill" /> -->
+        <view class="btn-text">重新拍摄</view>
+      </view>
+      <view class="recorder-video btn" bind:tap="save">
+        <!-- <image class="btn-img" src="/static/images/play-circle.png" mode="aspectFill" /> -->
+        <view class="btn-text">保存</view>
+      </view>
+    </view>
+  </view>
+  <loading wx:if="{{!showUI}}" />
+</view>

@@ -1,0 +1,24 @@
+<view
+  class="shoot-control {{isRecording?'recording':''}}"
+  bindtap="takePhoto"
+  bindlongpress="startRecord"
+  bindtouchend="stopRecord"
+>
+  <view class="shoot-control-bg center"></view>
+  <canvas type="2d" id="recordCountDownCanvas" class="center record-canvas"></canvas>
+  <view class="take-photo-btn center {{isRecording?'hide':''}}"></view>
+  <view class="center center-btn {{showPosterLoading ? 'loading' : ''}}">
+    <image
+      wx:if="{{showPosterLoading}}"
+      src="/assets/images/loading-circle.png"
+      mode="aspectFit"
+      class="center loading-icon"
+    />
+  </view>
+</view>
+<view wx:if="{{!isRecording && !showPosterLoading && showShootTipss}}" class="shoot-control-tips"
+  >轻触拍照{{canRecord?" 长按拍摄":""}}</view
+>
+<view wx:if="{{showPosterLoading}}" class="shoot-control-tips"
+  >{{loadingType === 'image' ? '海报' : '视频'}}生成中...</view
+>
