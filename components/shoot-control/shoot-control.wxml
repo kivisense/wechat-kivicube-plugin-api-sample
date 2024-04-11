@@ -16,9 +16,9 @@
     />
   </view>
 </view>
-<view wx:if="{{!isRecording && !showPosterLoading && showShootTipss}}" class="shoot-control-tips"
-  >轻触拍照{{canRecord?" 长按拍摄":""}}</view
+<view wx:if="{{!isRecording && showShootTips}}" class="shoot-control-tips"
+  >{{showType=="both"?"轻触拍照 长按拍摄":showType==="record"?"长按拍摄":"轻触拍照"}}</view
 >
 <view wx:if="{{showPosterLoading}}" class="shoot-control-tips"
-  >{{loadingType === 'image' ? '海报' : '视频'}}生成中...</view
+  >{{loadingType === 'image' ? '照片' : '视频'}}生成中...</view
 >

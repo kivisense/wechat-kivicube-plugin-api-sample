@@ -1,3 +1,4 @@
+const { downloadImage, promisify } = require("../../../utils/util.js");
 Page({
   data: {
     showUI: false,
@@ -14,6 +15,38 @@ Page({
     this.setData({
       showUI: true,
     });
+  },
+
+  async error() {
+    // 用户不允许使用摄像头时触发
+    const { confirm } = await promisify(wx.showModal)({
+      title: "提示",
+      content: "请给予“摄像头”权限",
+      confirmText: "去开启",
+    });
+
+    if (confirm) {
+      wx.openSetting({
+        success: ({ authSetting: { "scope.camera": isGrantedCamera } }) => {
+          if (isGrantedCamera) {
+            wx.redirectTo({ url: "/" + this.__route__ });
+          } else {
+            wx.showToast({
+              title: "获取“摄像头”权限失败！",
+              icon: "none",
+            });
+          }
+        },
+      });
+    } else {
+      wx.showToast({
+        title: "获取相机权限失败，请重新进入",
+        icon: "none",
+      });
+      setTimeout(() => {
+        wx.navigateBack();
+      }, 500);
+    }
   },
 
   takePhoto() {
@@ -33,13 +66,6 @@ Page({
     });
   },
   save() {
-    wx.saveVideoToPhotosAlbum({
-      filePath: this.data.imgUrl,
-      success(res) {
-        wx.showToast({
-          title: "保存成功",
-        });
-      },
-    });
+    downloadImage(this.data.imgUrl);
   },
 });

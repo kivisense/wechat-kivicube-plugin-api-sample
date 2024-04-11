@@ -4,17 +4,25 @@ Component({
       type: Boolean,
       value: false,
     },
+    // 是否在内部定时超时是触发结束事件
+    isTimeoutEnd: {
+      type: Boolean,
+      value: true,
+    },
+    // 是否显示可以录屏（UI）
+    showType: {
+      type: String,
+      value: "both",
+    },
   },
   data: {
     isRecording: false,
     loadingType: "image",
     showShootTips: true,
-    canRecord: true,
   },
   lifetimes: {
     attached() {
       this.createPoster();
-      // this.checkRecord();
       const showShootTips = wx.getStorageSync("showShootTips");
       if (showShootTips !== "") {
         this.setData({
@@ -24,19 +32,6 @@ Component({
     },
   },
   methods: {
-    // checkRecord() {
-    //   if (
-    //     (systemInfo.platform === "android" &&
-    //       systemInfo.benchmarkLevel >= 0 &&
-    //       systemInfo.benchmarkLevel <= 24) ||
-    //     getGLVersion() === "2"
-    //   ) {
-    //     this.setData({
-    //       canRecord: false,
-    //     });
-    //   }
-    // },
-
     saveStroage() {
       if (this.data.showShootTips) {
         this.setData({
@@ -47,6 +42,7 @@ Component({
     },
 
     takePhoto() {
+      if (this.properties.showType === "record") return;
       if (this.properties.showPosterLoading) return;
       this.setData({
         loadingType: "image",
@@ -56,9 +52,8 @@ Component({
     },
 
     startRecord() {
+      if (this.properties.showType === "photo") return;
       if (this.properties.showPosterLoading) return;
-      // 不支持录屏
-      if (!this.data.canRecord) return;
       this.setData({
         loadingType: "video",
         isRecording: true,
@@ -74,6 +69,7 @@ Component({
     },
 
     stopRecord() {
+      if (this.properties.showType === "photo") return;
       if (this.properties.showPosterLoading) return;
       if (!this.data.isRecording) return;
       this.stopLoading();
@@ -146,7 +142,7 @@ Component({
                   (end * Math.PI) / 180
                 );
                 ctx.stroke();
-                if (load >= total) {
+                if (this.properties.isTimeoutEnd && load >= total) {
                   this.stopLoading();
                 }
 
@@ -155,6 +151,7 @@ Component({
                 // 修改结束角度
                 end += stepDeg * timeScale;
                 load += 1 * timeScale;
+                console.log(`load`, load);
                 startTime = endTime;
               }, stepTime);
             };

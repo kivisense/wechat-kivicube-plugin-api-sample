@@ -1,3 +1,37 @@
-page {
-  
+.preview {
+  z-index: 9;
+}
+.preview .touch-btns {
+  position: absolute;
+  bottom: 10.67vw;
+  display: flex;
+  width: 100vw;
+  height: 12vw;
+  align-items: center;
+  justify-content: center;
+  gap: 5.33vw;
+}
+.touch-btns .btn {
+  display: flex;
+  width: 37.33vw;
+  height: 11.2vw;
+  align-items: center;
+  justify-content: center;
+  border: 0.5px solid rgba(51, 51, 51, 0.35);
+  backdrop-filter: blur(3px);
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 11.2vw;
+  gap: 1.07vw;
+}
+.touch-btns .btn-img {
+  width: 6.4vw;
+  height: 6.4vw;
+}
+
+.touch-btns .btn-text {
+  color: #000;
+  font-size: 4.27vw;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 6.4vw;
 }

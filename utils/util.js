@@ -1,4 +1,4 @@
-const formatTime = date => {
+const formatTime = (date) => {
   const year = date.getFullYear();
   const month = date.getMonth() + 1;
   const day = date.getDate();
@@ -9,30 +9,30 @@ const formatTime = date => {
   return `${[year, month, day].map(formatNumber).join("/")} ${[
     hour,
     minute,
-    second
+    second,
   ]
     .map(formatNumber)
     .join(":")}`;
 };
 
-const formatNumber = n => {
+const formatNumber = (n) => {
   n = n.toString();
   return n[1] ? n : `0${n}`;
 };
 /**
  * 图片下载
  */
-const downloadImage = url => {
+const downloadImage = (url) => {
   wx.saveImageToPhotosAlbum({
     filePath: url,
     success: () => {
       wx.showToast({
         icon: "none",
         duration: 2000,
-        title: "保存成功"
+        title: "保存成功",
       });
     },
-    fail: async err => {
+    fail: async (err) => {
       if (
         err.errMsg &&
         (err.errMsg.includes("auth deny") ||
@@ -41,7 +41,7 @@ const downloadImage = url => {
         const { confirm } = await promisify(wx.showModal)({
           title: "提示",
           content: "开启相册授权后，就可以把照片保存到本地啦！",
-          confirmText: "去开启"
+          confirmText: "去开启",
         });
         if (confirm) {
           const { authSetting } = await promisify(wx.openSetting)();
@@ -52,21 +52,57 @@ const downloadImage = url => {
       } else {
         console.log("保存失败", err);
       }
-    }
+    },
+  });
+};
+/**
+ * 视频下载
+ */
+const downloadVideo = (url) => {
+  wx.saveVideoToPhotosAlbum({
+    filePath: url,
+    success: () => {
+      wx.showToast({
+        icon: "none",
+        duration: 2000,
+        title: "保存成功",
+      });
+    },
+    fail: async (err) => {
+      if (
+        err.errMsg &&
+        (err.errMsg.includes("auth deny") ||
+          err.errMsg.includes("authorize no response"))
+      ) {
+        const { confirm } = await promisify(wx.showModal)({
+          title: "提示",
+          content: "开启相册授权后，就可以把视频保存到本地啦！",
+          confirmText: "去开启",
+        });
+        if (confirm) {
+          const { authSetting } = await promisify(wx.openSetting)();
+          if (authSetting["scope.writePhotosAlbum"]) {
+            downloadVideo(url);
+          }
+        }
+      } else {
+        console.log("保存失败", err);
+      }
+    },
   });
 };
 
-const takePhoto = view => {
+const takePhoto = (view) => {
   return new Promise((resolve, reject) => {
     wx.showLoading({ title: "拍照中...", mask: true });
     console.log(view);
     view
       .takePhoto()
-      .then(photoPath => {
+      .then((photoPath) => {
         wx.hideLoading();
         resolve(photoPath);
       })
-      .catch(e => {
+      .catch((e) => {
         wx.hideLoading();
         reject("error", e);
       });
@@ -74,12 +110,12 @@ const takePhoto = view => {
 };
 
 const promisify = (fn, context) => {
-  return config => {
+  return (config) => {
     return new Promise((resolve, reject) => {
       fn.call(context || wx, {
         ...config,
         success: resolve,
-        fail: reject
+        fail: reject,
       });
     });
   };
@@ -99,21 +135,21 @@ const cameraErrorHandler = (detail, page) => {
             } else {
               wx.showToast({
                 title: "获取“摄像头”权限失败！",
-                icon: "none"
+                icon: "none",
               });
             }
-          }
+          },
         });
-      }
+      },
     });
   } else {
     wx.showToast({
       title: "初始化失败，请重新进入",
-      icon: "none"
+      icon: "none",
     });
     setTimeout(() => {
       wx.navigateBack();
-    }, 500)
+    }, 500);
   }
 };
 
@@ -131,7 +167,7 @@ function errorHandler(errInfo) {
   console.error(errInfo);
   wx.showToast({
     title: message,
-    icon: "none"
+    icon: "none",
   });
 }
 
@@ -148,7 +184,7 @@ function requestFile(url) {
           reject(new Error(`下载素材(${url})发生错误(状态码-${statusCode})`));
         }
       },
-      fail: reject
+      fail: reject,
     });
   });
 }
@@ -166,7 +202,7 @@ function downloadFile(file) {
           );
         }
       },
-      fail: reject
+      fail: reject,
     });
   });
 }
@@ -178,7 +214,7 @@ function downloadFile(file) {
  * @return {Promise} - 返回一个 Promise 值来确认所有数据是否迭代完成
  */
 const mapLimit = (list, limit, asyncHandle) => {
-  let recursion = arr => {
+  let recursion = (arr) => {
     return asyncHandle(arr.shift()).then(() => {
       if (arr.length !== 0) return recursion(arr);
       // 数组还未迭代完，递归继续进行迭代
@@ -196,10 +232,10 @@ const mapLimit = (list, limit, asyncHandle) => {
 
 const fetchBatch = (downloadList, num = 5, progress = () => {}) => {
   let downloadListObj = {};
-  downloadList.forEach(el => {
+  downloadList.forEach((el) => {
     downloadListObj[el] = "";
   });
-  return mapLimit(downloadList, num, file => {
+  return mapLimit(downloadList, num, (file) => {
     const download = (resolve, reject) => {
       wx.downloadFile({
         url: file,
@@ -213,7 +249,7 @@ const fetchBatch = (downloadList, num = 5, progress = () => {}) => {
         fail: () => {
           download(resolve, reject);
           // reject();
-        }
+        },
       });
     };
     return new Promise((resolve, reject) => {
@@ -241,15 +277,16 @@ const getPrivate = () => {
   } else {
     return Promise.resolve();
   }
-}
+};
 
 const resUrl = (filename) => {
   return `https://meta.kivisense.com/wechat-kivicube-plugin-api-sample/${filename}`;
-}
+};
 
 module.exports = {
   formatTime,
   downloadImage,
+  downloadVideo,
   takePhoto,
   promisify,
   cameraErrorHandler,
@@ -258,5 +295,5 @@ module.exports = {
   downloadFile,
   fetchBatch,
   getPrivate,
-  resUrl
+  resUrl,
 };

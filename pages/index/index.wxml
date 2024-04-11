@@ -2,6 +2,8 @@
 <view class="layout layer">
   <scroll-view scroll-y="true" class="layer">
     <view class="scene-list-box">
+      <navigator url="/pages/tools/landmark-video/landmark-video">landmark-video </navigator>
+      <navigator url="/pages/tools/landmark-photo/landmark-photo">landmark-photo </navigator>
       <view wx:for="{{sceneOptions}}" wx:key="idx" wx:for-item="type" class="scene-type">
         <view class="title">{{ type.title }}</view>
         <view
