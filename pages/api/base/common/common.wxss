@@ -1,0 +1,31 @@
+.kivicube {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+
+view {
+  color: white;
+}
+
+.click {
+  position: absolute;
+  top: 10vw;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.hide,
+.show {
+  position: absolute;
+  z-index: 2;
+  bottom: 10vw;
+  left: 20vw;
+  width: auto;
+}
+
+.show {
+  right: 20vw;
+  left: auto;
+}
