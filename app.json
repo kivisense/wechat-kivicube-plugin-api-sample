@@ -23,9 +23,50 @@
     "pages/case/image-scan",
     "pages/feedback/feedback",
     "pages/feedback-web/feedback-web",
+    "pages/collection/index/index",
+    "pages/api/index/index",
+    "pages/extension/index/index",
+    "pages/tools/index/index",
     "pages/tools/landmark-video/landmark-video",
     "pages/tools/landmark-photo/landmark-photo"
   ],
+  "tabBar": {
+    "color": "#333333",
+    "selectedColor": "#0eb2b0",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "text": "场景开发",
+        "iconPath": "/assets/tabbar/scene.png",
+        "selectedIconPath": "/assets/tabbar/scene-selected.png",
+        "pagePath": "pages/index/index"
+      },
+      {
+        "text": "合辑开发",
+        "iconPath": "/assets/tabbar/collection.png",
+        "selectedIconPath": "/assets/tabbar/collection-selected.png",
+        "pagePath": "pages/collection/index/index"
+      },
+      {
+        "text": "高级API",
+        "iconPath": "/assets/tabbar/api.png",
+        "selectedIconPath": "/assets/tabbar/api-selected.png",
+        "pagePath": "pages/api/index/index"
+      },
+      {
+        "text": "高级扩展功能",
+        "iconPath": "/assets/tabbar/extension.png",
+        "selectedIconPath": "/assets/tabbar/extension-selected.png",
+        "pagePath": "pages/extension/index/index"
+      },
+      {
+        "text": "工具",
+        "iconPath": "/assets/tabbar/tools.png",
+        "selectedIconPath": "/assets/tabbar/tools-selected.png",
+        "pagePath": "pages/tools/index/index"
+      }
+    ]
+  },
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
@@ -41,6 +82,9 @@
       "version": "2.1.0",
       "provider": "wx3bbab3920eabccb2"
     }
+  },
+  "useExtendedLib": {
+    "weui": true
   },
   "__usePrivacyCheck__": true,
   "style": "v2",

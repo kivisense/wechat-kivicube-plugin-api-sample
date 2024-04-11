@@ -11,7 +11,6 @@
   <shoot-control
     wx:if="{{showUI}}"
     showType="record"
-    isTimeoutEnd="{{false}}"
     bind:startRecord="startRecord"
     bind:stopRecord="stopRecord"
   />

@@ -87,7 +87,7 @@ Component({
       };
       let end = -90; //结束角度
       let load = 0; // 创建变量，进度值1%
-      const total = 300;
+      const total = 310;
       const stepDeg = 360 / total;
       const strokeColor = "#FFE6C3";
       const strokeWeight = px(0.8);

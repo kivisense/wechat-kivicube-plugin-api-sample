@@ -1,4 +1,4 @@
-export const sceneOptions = [
+const sceneOptions_origin = [
   {
     title: "入门教程",
     child: [
@@ -67,6 +67,23 @@ export const sceneOptions = [
         clickMta: "click_quickstart_button",
         startMta: "click_quickstart_start",
         url: "/pages/started/kivicube-scene/kivicube-scene",
+      },
+      {
+        id: 18,
+        name: "collectionEnter",
+        collectionId: "uucpmp",
+        type: "collectScene",
+        title: "快速接入kivicube-collection组件",
+        description: [
+          {
+            txt: "10分钟为您的小程序接入AR多场景（多图连续识别）功能，并可以通过Kivicube后台实时管理与编辑~",
+            type: "txt",
+            style: "",
+          },
+        ],
+        clickMta: "click_colltction_button",
+        startMta: "click_colltction_start",
+        url: "/pages/started/kivicube-collection/kivicube-collection",
       },
     ],
   },
@@ -421,63 +438,6 @@ export const sceneOptions = [
       },
     ],
   },
-];
-
-export const collectionOptions = [
-  {
-    title: "入门教程",
-    child: [
-      {
-        id: 2,
-        type: "web",
-        title: "开发者",
-        key: "development",
-        description: [
-          {
-            txt: "文档地址：https://www.yuque.com/kivicube/manual/mp-ar",
-            type: "txt",
-            style: "",
-          },
-        ],
-        url: "https://www.yuque.com/kivicube/manual/mp-ar",
-        clickMta: "click_developer_button",
-        startMta: "copy_developer_link",
-      },
-      {
-        id: 19,
-        type: "web",
-        title: "AR示例说明文档",
-        key: "development",
-        description: [
-          {
-            txt: "文档地址：https://www.yuque.com/kivicube/manual/advanced-api",
-            type: "txt",
-            style: "",
-          },
-        ],
-        url: "https://www.yuque.com/kivicube/manual/advanced-api",
-        clickMta: "click_doc_button",
-        startMta: "copy_doc_link",
-      },
-      {
-        id: 18,
-        name: "collectionEnter",
-        collectionId: "uucpmp",
-        type: "collectScene",
-        title: "快速接入kivicube-collection组件",
-        description: [
-          {
-            txt: "10分钟为您的小程序接入AR多场景（多图连续识别）功能，并可以通过Kivicube后台实时管理与编辑~",
-            type: "txt",
-            style: "",
-          },
-        ],
-        clickMta: "click_colltction_button",
-        startMta: "click_colltction_start",
-        url: "/pages/started/kivicube-collection/kivicube-collection",
-      },
-    ],
-  },
   {
     title: "多图连续识别（kivicube-collection组件）",
     child: [
@@ -544,33 +504,6 @@ export const collectionOptions = [
       },
     ],
   },
-];
-
-export const apiOptions = [
-  {
-    title: "高级API",
-    child: [
-      {
-        id: 2,
-        type: "web",
-        title: "高级API文档",
-        key: "api",
-        description: [
-          {
-            txt: "文档地址：https://github.com/kivisense/wechat-kivicube-plugin-api-demo",
-            type: "txt",
-            style: "",
-          },
-        ],
-        url: "https://github.com/kivisense/wechat-kivicube-plugin-api-demo",
-        // clickMta: "click_developer_button",
-        // startMta: "copy_developer_link",
-      },
-    ],
-  },
-];
-
-export const extensionOptions = [
   {
     title: "实用案例",
     child: [
@@ -596,46 +529,6 @@ export const extensionOptions = [
         clickMta: "click_arscan_button",
         startMta: "click_arscan_start",
         url: "/pages/case/image-scan",
-      },
-    ],
-  },
-];
-
-export const toolsOptions = [
-  {
-    title: "地标AR",
-    child: [
-      {
-        id: 22,
-        name: "videoCapture",
-        type: "tool",
-        title: "采集地标训练视频（最佳体验点视频）",
-        description: [
-          {
-            txt: "快速采集地标训练视频，最短2秒，最长30秒，并保存到手机",
-            type: "txt",
-            style: "",
-          },
-        ],
-        // clickMta: "click_quickstart_button",
-        // startMta: "click_quickstart_start",
-        url: "/pages/tools/landmark-video/landmark-video",
-      },
-      {
-        id: 23,
-        name: "imageCapture",
-        type: "tool",
-        title: "采集地标定位图（识别图）",
-        description: [
-          {
-            txt: "快速采集地标定位图（识别图），并保存到手机",
-            type: "txt",
-            style: "",
-          },
-        ],
-        // clickMta: "click_colltction_button",
-        // startMta: "click_colltction_start",
-        url: "/pages/tools/landmark-photo/landmark-photo",
       },
     ],
   },
@@ -665,3 +558,4 @@ export const toolsOptions = [
     ],
   },
 ];
+export default sceneOptions_origin;

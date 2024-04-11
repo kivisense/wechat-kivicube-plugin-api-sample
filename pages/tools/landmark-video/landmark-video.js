@@ -51,12 +51,8 @@ Page({
   },
 
   getAuth() {
-    console.log(`in getAuth`);
     wx.authorize({
       scope: "scope.record",
-      success() {
-        console.log(`scope.record success`);
-      },
       fail: async (err) => {
         if (
           err.errMsg &&
@@ -75,13 +71,12 @@ Page({
             }
           }
         } else {
-          console.log("保存失败", err);
+          console.log("请求麦克风权限失败：", err);
         }
       },
     });
   },
   startRecord() {
-    console.log(`startRecord`);
     this.cameraCtx.startRecord({
       timeoutCallback: ({ tempVideoPath }) => {
         console.log("timeoutCallback", tempVideoPath);
@@ -89,13 +84,13 @@ Page({
           videoUrl: tempVideoPath,
         });
       },
+      timeout: 31,
       fail: (err) => {
         console.error(err);
       },
     });
   },
   stopRecord() {
-    console.log(`stopRecord`);
     this.cameraCtx.stopRecord({
       success: ({ tempVideoPath }) => {
         console.log("stopRecord", tempVideoPath);

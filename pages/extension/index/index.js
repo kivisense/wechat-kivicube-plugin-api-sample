@@ -1,10 +1,10 @@
 // index.js
 // 获取应用实例
-import { sceneOptions } from "../../utils/sceneOptions";
-import { getPrivate } from "../../utils/util";
+import { extensionOptions } from "../../../utils/sceneOptions";
+import { getPrivate } from "../../../utils/util";
 Page({
   data: {
-    sceneOptions,
+    sceneOptions: extensionOptions,
     modalHidden: true,
   },
   onShow() {

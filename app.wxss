@@ -29,7 +29,7 @@ page {
   margin: 0 auto;
   z-index: 2;
 }
-.scene-box{
+.scene-box {
   background-color: dimgray;
 }
 .center {
