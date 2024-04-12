@@ -190,18 +190,15 @@ function requestFile(url) {
     });
   });
 }
-
-function downloadFile(file) {
+function downloadFile(url) {
   return new Promise((resolve, reject) => {
     wx.downloadFile({
-      url: file,
-      success(res) {
-        if (res.statusCode === 200) {
-          resolve(res.tempFilePath);
+      url,
+      success({ statusCode, tempFilePath }) {
+        if (statusCode === 200) {
+          resolve(tempFilePath);
         } else {
-          reject(
-            new Error(`下载文件：${file} 失败。statusCode：${res.statusCode}`)
-          );
+          reject(new Error(`下载文件：${url} 失败。statusCode：${statusCode}`));
         }
       },
       fail: reject,

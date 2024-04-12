@@ -68,6 +68,91 @@ export const sceneOptions = [
         startMta: "click_quickstart_start",
         url: "/pages/started/kivicube-scene/kivicube-scene",
       },
+      {
+        id: 101,
+        type: "web",
+        title: "入门示例",
+        description: [
+          {
+            txt: "未使用任何高级API的入门示例",
+            type: "txt",
+            style: "",
+          },
+          {
+            txt: "示例代码：https://github.com/kivisense/wechat-kivicube-plugin-quickstart?#一-场景",
+            type: "txt",
+            style: "",
+          },
+        ],
+        url: "https://github.com/kivisense/wechat-kivicube-plugin-quickstart?#%E4%B8%80-%E5%9C%BA%E6%99%AF",
+        // clickMta: "click_developer_button",
+        // startMta: "copy_developer_link",
+      },
+    ],
+  },
+  {
+    title: "场景案例",
+    child: [
+      {
+        id: 102,
+        type: "web",
+        title: "图像AR - 动态壁画",
+        description: [
+          {
+            txt: "使用高级API开发的一个完整的案例",
+            type: "txt",
+            style: "",
+          },
+          {
+            txt: "文档与示例代码地址：https://www.yuque.com/kivicube/manual/the-sun",
+            type: "txt",
+            style: "",
+          },
+        ],
+        url: "https://www.yuque.com/kivicube/manual/the-sun",
+        // clickMta: "click_developer_button",
+        // startMta: "copy_developer_link",
+      },
+      {
+        id: 103,
+        type: "web",
+        title: "图像AR - 裸眼插画",
+        description: [
+          {
+            txt: "使用高级API开发的一个完整的案例",
+            type: "txt",
+            style: "",
+          },
+          {
+            txt: "文档与示例代码地址：https://www.yuque.com/kivicube/manual/image-tracking",
+            type: "txt",
+            style: "",
+          },
+        ],
+        url: "https://www.yuque.com/kivicube/manual/image-tracking",
+        // clickMta: "click_developer_button",
+        // startMta: "copy_developer_link",
+      },
+      {
+        id: 104,
+        type: "web",
+        title: "云识别/陀螺仪 - AR 虎娃贺新春",
+        description: [
+          {
+            txt: "使用高级API开发的一个完整的案例",
+            type: "txt",
+            style: "",
+          },
+          {
+            txt: "文档与示例代码地址：https://github.com/kivisense/wechat-kivicube-plugin-cases/tree/main/tiger-year-red-envelopes-%E9%AB%98%E7%BA%A7api",
+            type: "txt",
+            style: "",
+          },
+        ],
+        url: "https://github.com/kivisense/wechat-kivicube-plugin-cases/tree/main/tiger-year-red-envelopes-%E9%AB%98%E7%BA%A7api",
+        // clickMta: "click_developer_button",
+        // startMta: "copy_developer_link",
+      },
     ],
   },
   {
@@ -476,6 +561,26 @@ export const collectionOptions = [
         startMta: "click_colltction_start",
         url: "/pages/started/kivicube-collection/kivicube-collection",
       },
+      {
+        id: 201,
+        type: "web",
+        title: "入门示例",
+        description: [
+          {
+            txt: "未使用任何高级API的入门示例",
+            type: "txt",
+            style: "",
+          },
+          {
+            txt: "示例代码：https://github.com/kivisense/wechat-kivicube-plugin-quickstart#二-合辑",
+            type: "txt",
+            style: "",
+          },
+        ],
+        url: "https://github.com/kivisense/wechat-kivicube-plugin-quickstart#%E4%BA%8C-%E5%90%88%E8%BE%91",
+        // clickMta: "click_developer_button",
+        // startMta: "copy_developer_link",
+      },
     ],
   },
   {
@@ -576,12 +681,6 @@ export const apiOptions = [
         type: "scene",
         title: "3D对象共有API【基类】",
         description: [
-          { txt: "源场景：", type: "title", style: "" },
-          {
-            txt: "空场景",
-            type: "txt",
-            style: "",
-          },
           { txt: "高级API功能：", type: "title", style: "" },
           {
             txt: "包含子对象处理、点击事件、渲染钩子函数、显示隐藏等的示例",
@@ -598,12 +697,6 @@ export const apiOptions = [
         type: "scene",
         title: "glb模型",
         description: [
-          { txt: "源场景：", type: "title", style: "" },
-          {
-            txt: "空场景",
-            type: "txt",
-            style: "",
-          },
           { txt: "高级API功能：", type: "title", style: "" },
           {
             txt: "加载glb模型",
@@ -620,12 +713,6 @@ export const apiOptions = [
         type: "scene",
         title: "组合容器",
         description: [
-          { txt: "源场景：", type: "title", style: "" },
-          {
-            txt: "空场景",
-            type: "txt",
-            style: "",
-          },
           { txt: "高级API功能：", type: "title", style: "" },
           {
             txt: "组合容器",
@@ -642,12 +729,6 @@ export const apiOptions = [
         type: "scene",
         title: "将素材指定为遮罩",
         description: [
-          { txt: "源场景：", type: "title", style: "" },
-          {
-            txt: "空场景",
-            type: "txt",
-            style: "",
-          },
           { txt: "高级API功能：", type: "title", style: "" },
           {
             txt: "将素材指定为遮罩",
@@ -664,12 +745,6 @@ export const apiOptions = [
         type: "scene",
         title: "精灵图",
         description: [
-          { txt: "源场景：", type: "title", style: "" },
-          {
-            txt: "空场景",
-            type: "txt",
-            style: "",
-          },
           { txt: "高级API功能：", type: "title", style: "" },
           {
             txt: "精灵图",
@@ -686,12 +761,6 @@ export const apiOptions = [
         type: "scene",
         title: "音频",
         description: [
-          { txt: "源场景：", type: "title", style: "" },
-          {
-            txt: "空场景",
-            type: "txt",
-            style: "",
-          },
           { txt: "高级API功能：", type: "title", style: "" },
           {
             txt: "音频",
@@ -708,12 +777,6 @@ export const apiOptions = [
         type: "scene",
         title: "AR视频/透明视频",
         description: [
-          { txt: "源场景：", type: "title", style: "" },
-          {
-            txt: "空场景",
-            type: "txt",
-            style: "",
-          },
           { txt: "高级API功能：", type: "title", style: "" },
           {
             txt: "AR视频/透明视频",
@@ -730,12 +793,6 @@ export const apiOptions = [
         type: "scene",
         title: "全景图",
         description: [
-          { txt: "源场景：", type: "title", style: "" },
-          {
-            txt: "空场景",
-            type: "txt",
-            style: "",
-          },
           { txt: "高级API功能：", type: "title", style: "" },
           {
             txt: "全景图",
@@ -752,12 +809,6 @@ export const apiOptions = [
         type: "scene",
         title: "全景视频",
         description: [
-          { txt: "源场景：", type: "title", style: "" },
-          {
-            txt: "空场景",
-            type: "txt",
-            style: "",
-          },
           { txt: "高级API功能：", type: "title", style: "" },
           {
             txt: "全景视频",
@@ -774,12 +825,6 @@ export const apiOptions = [
         type: "scene",
         title: "天空盒子",
         description: [
-          { txt: "源场景：", type: "title", style: "" },
-          {
-            txt: "空场景",
-            type: "txt",
-            style: "",
-          },
           { txt: "高级API功能：", type: "title", style: "" },
           {
             txt: "天空盒子",
@@ -796,12 +841,6 @@ export const apiOptions = [
         type: "scene",
         title: "灯光",
         description: [
-          { txt: "源场景：", type: "title", style: "" },
-          {
-            txt: "空场景",
-            type: "txt",
-            style: "",
-          },
           { txt: "高级API功能：", type: "title", style: "" },
           {
             txt: "灯光",
@@ -818,12 +857,6 @@ export const apiOptions = [
         type: "scene",
         title: "自定义环境贴图",
         description: [
-          { txt: "源场景：", type: "title", style: "" },
-          {
-            txt: "空场景",
-            type: "txt",
-            style: "",
-          },
           { txt: "高级API功能：", type: "title", style: "" },
           {
             txt: "自定义环境贴图",
@@ -840,12 +873,6 @@ export const apiOptions = [
         type: "scene",
         title: "素材管理 包含自定义增删改素材",
         description: [
-          { txt: "源场景：", type: "title", style: "" },
-          {
-            txt: "空场景",
-            type: "txt",
-            style: "",
-          },
           { txt: "高级API功能：", type: "title", style: "" },
           {
             txt: "素材管理 包含自定义增删改素材",
@@ -867,12 +894,6 @@ export const apiOptions = [
         type: "scene",
         title: "云识别/陀螺仪场景主动跳过云识别阶段【不依赖后台配置】",
         description: [
-          { txt: "源场景：", type: "title", style: "" },
-          {
-            txt: "空场景",
-            type: "txt",
-            style: "",
-          },
           { txt: "高级API功能：", type: "title", style: "" },
           {
             txt: "云识别/陀螺仪场景主动跳过云识别阶段【不依赖后台配置】",
@@ -894,12 +915,6 @@ export const apiOptions = [
         type: "scene",
         title: "使用license去除图像追踪水印",
         description: [
-          { txt: "源场景：", type: "title", style: "" },
-          {
-            txt: "空场景",
-            type: "txt",
-            style: "",
-          },
           { txt: "高级API功能：", type: "title", style: "" },
           {
             txt: "使用license去除图像追踪水印",
@@ -916,12 +931,6 @@ export const apiOptions = [
         type: "scene",
         title: "手动设置图像追踪版本",
         description: [
-          { txt: "源场景：", type: "title", style: "" },
-          {
-            txt: "空场景",
-            type: "txt",
-            style: "",
-          },
           { txt: "高级API功能：", type: "title", style: "" },
           {
             txt: "手动设置图像追踪版本",
@@ -943,12 +952,6 @@ export const apiOptions = [
         type: "scene",
         title: "使用指示器点击放置",
         description: [
-          { txt: "源场景：", type: "title", style: "" },
-          {
-            txt: "空场景",
-            type: "txt",
-            style: "",
-          },
           { txt: "高级API功能：", type: "title", style: "" },
           {
             txt: "使用指示器点击放置",
@@ -963,17 +966,11 @@ export const apiOptions = [
       {
         id: 42,
         type: "scene",
-        title: "使用指示器点击放置",
+        title: "检测到平面自动放置",
         description: [
-          { txt: "源场景：", type: "title", style: "" },
-          {
-            txt: "空场景",
-            type: "txt",
-            style: "",
-          },
           { txt: "高级API功能：", type: "title", style: "" },
           {
-            txt: "使用指示器点击放置",
+            txt: "检测到平面自动放置",
             type: "txt",
             style: "",
           },
@@ -992,12 +989,6 @@ export const apiOptions = [
         type: "scene",
         title: "漫游AR场景示例",
         description: [
-          { txt: "源场景：", type: "title", style: "" },
-          {
-            txt: "空场景",
-            type: "txt",
-            style: "",
-          },
           { txt: "高级API功能：", type: "title", style: "" },
           {
             txt: "漫游AR场景示例",
@@ -1019,12 +1010,6 @@ export const apiOptions = [
         type: "scene",
         title: "世界AR场景示例",
         description: [
-          { txt: "源场景：", type: "title", style: "" },
-          {
-            txt: "空场景",
-            type: "txt",
-            style: "",
-          },
           { txt: "高级API功能：", type: "title", style: "" },
           {
             txt: "世界AR场景示例",
@@ -1041,12 +1026,6 @@ export const apiOptions = [
         type: "scene",
         title: "世界AR场景自定义 marker",
         description: [
-          { txt: "源场景：", type: "title", style: "" },
-          {
-            txt: "空场景",
-            type: "txt",
-            style: "",
-          },
           { txt: "高级API功能：", type: "title", style: "" },
           {
             txt: "世界AR场景自定义 marker",
@@ -1063,12 +1042,6 @@ export const apiOptions = [
         type: "scene",
         title: "多图连续识别",
         description: [
-          { txt: "源场景：", type: "title", style: "" },
-          {
-            txt: "空场景",
-            type: "txt",
-            style: "",
-          },
           { txt: "高级API功能：", type: "title", style: "" },
           {
             txt: "多图连续识别",
@@ -1090,12 +1063,6 @@ export const apiOptions = [
         type: "scene",
         title: "自定义模型动画播放和控制",
         description: [
-          { txt: "源场景：", type: "title", style: "" },
-          {
-            txt: "空场景",
-            type: "txt",
-            style: "",
-          },
           { txt: "高级API功能：", type: "title", style: "" },
           {
             txt: "自定义模型动画播放和控制",
@@ -1112,12 +1079,6 @@ export const apiOptions = [
         type: "scene",
         title: "动态切换前后摄像头",
         description: [
-          { txt: "源场景：", type: "title", style: "" },
-          {
-            txt: "空场景",
-            type: "txt",
-            style: "",
-          },
           { txt: "高级API功能：", type: "title", style: "" },
           {
             txt: "动态切换前后摄像头",
@@ -1134,12 +1095,6 @@ export const apiOptions = [
         type: "scene",
         title: "自动播放",
         description: [
-          { txt: "源场景：", type: "title", style: "" },
-          {
-            txt: "空场景",
-            type: "txt",
-            style: "",
-          },
           { txt: "高级API功能：", type: "title", style: "" },
           {
             txt: "自动播放",
@@ -1156,12 +1111,6 @@ export const apiOptions = [
         type: "scene",
         title: "自定义UI 穿透自定义UI点击到模型",
         description: [
-          { txt: "源场景：", type: "title", style: "" },
-          {
-            txt: "空场景",
-            type: "txt",
-            style: "",
-          },
           { txt: "高级API功能：", type: "title", style: "" },
           {
             txt: "自定义UI 穿透自定义UI点击到模型",
@@ -1178,12 +1127,6 @@ export const apiOptions = [
         type: "scene",
         title: "拍照处理 自定义拍照按钮",
         description: [
-          { txt: "源场景：", type: "title", style: "" },
-          {
-            txt: "空场景",
-            type: "txt",
-            style: "",
-          },
           { txt: "高级API功能：", type: "title", style: "" },
           {
             txt: "拍照处理 自定义拍照按钮",
@@ -1200,12 +1143,6 @@ export const apiOptions = [
         type: "scene",
         title: "简单的自定义动画",
         description: [
-          { txt: "源场景：", type: "title", style: "" },
-          {
-            txt: "空场景",
-            type: "txt",
-            style: "",
-          },
           { txt: "高级API功能：", type: "title", style: "" },
           {
             txt: "简单的自定义动画",
@@ -1222,12 +1159,6 @@ export const apiOptions = [
         type: "scene",
         title: "使用TWEEN 实现缓动动画",
         description: [
-          { txt: "源场景：", type: "title", style: "" },
-          {
-            txt: "空场景",
-            type: "txt",
-            style: "",
-          },
           { txt: "高级API功能：", type: "title", style: "" },
           {
             txt: "使用TWEEN 实现缓动动画",
@@ -1244,12 +1175,6 @@ export const apiOptions = [
         type: "scene",
         title: "使用 trackball 手势",
         description: [
-          { txt: "源场景：", type: "title", style: "" },
-          {
-            txt: "空场景",
-            type: "txt",
-            style: "",
-          },
           { txt: "高级API功能：", type: "title", style: "" },
           {
             txt: "使用 trackball 手势",
@@ -1266,12 +1191,6 @@ export const apiOptions = [
         type: "scene",
         title: "AR画面录制",
         description: [
-          { txt: "源场景：", type: "title", style: "" },
-          {
-            txt: "空场景",
-            type: "txt",
-            style: "",
-          },
           { txt: "高级API功能：", type: "title", style: "" },
           {
             txt: "AR画面录制",
@@ -1288,12 +1207,6 @@ export const apiOptions = [
         type: "scene",
         title: "设置色调映射",
         description: [
-          { txt: "源场景：", type: "title", style: "" },
-          {
-            txt: "空场景",
-            type: "txt",
-            style: "",
-          },
           { txt: "高级API功能：", type: "title", style: "" },
           {
             txt: "设置色调映射",
@@ -1310,12 +1223,6 @@ export const apiOptions = [
         type: "scene",
         title: "设置各向异性",
         description: [
-          { txt: "源场景：", type: "title", style: "" },
-          {
-            txt: "空场景",
-            type: "txt",
-            style: "",
-          },
           { txt: "高级API功能：", type: "title", style: "" },
           {
             txt: "设置各向异性",
@@ -1332,12 +1239,6 @@ export const apiOptions = [
         type: "scene",
         title: "加载量化(优化三角形/网格/材质/纹理/顶点/动画)后的模型",
         description: [
-          { txt: "源场景：", type: "title", style: "" },
-          {
-            txt: "空场景",
-            type: "txt",
-            style: "",
-          },
           { txt: "高级API功能：", type: "title", style: "" },
           {
             txt: "加载量化(优化三角形/网格/材质/纹理/顶点/动画)后的模型",
@@ -1354,12 +1255,6 @@ export const apiOptions = [
         type: "scene",
         title: "camera - 获取位置、3D素材放置屏幕上",
         description: [
-          { txt: "源场景：", type: "title", style: "" },
-          {
-            txt: "空场景",
-            type: "txt",
-            style: "",
-          },
           { txt: "高级API功能：", type: "title", style: "" },
           {
             txt: "camera - 获取位置、3D素材放置屏幕上",
@@ -1376,12 +1271,6 @@ export const apiOptions = [
         type: "scene",
         title: "简单判断模型是否在相机画面内",
         description: [
-          { txt: "源场景：", type: "title", style: "" },
-          {
-            txt: "空场景",
-            type: "txt",
-            style: "",
-          },
           { txt: "高级API功能：", type: "title", style: "" },
           {
             txt: "简单判断模型是否在相机画面内",
@@ -1403,12 +1292,6 @@ export const apiOptions = [
         type: "collection",
         title: "基础【如何获取高级API】",
         description: [
-          { txt: "源场景：", type: "title", style: "" },
-          {
-            txt: "空场景",
-            type: "txt",
-            style: "",
-          },
           { txt: "高级API功能：", type: "title", style: "" },
           {
             txt: "基础【如何获取高级API】",
@@ -1430,12 +1313,6 @@ export const apiOptions = [
         type: "collection",
         title: "云识别类型合辑 - 自定义返回扫描功能",
         description: [
-          { txt: "源场景：", type: "title", style: "" },
-          {
-            txt: "空场景",
-            type: "txt",
-            style: "",
-          },
           { txt: "高级API功能：", type: "title", style: "" },
           {
             txt: "云识别类型合辑 - 自定义返回扫描功能",
@@ -1452,12 +1329,6 @@ export const apiOptions = [
         type: "collection",
         title: "云识别开启与关闭",
         description: [
-          { txt: "源场景：", type: "title", style: "" },
-          {
-            txt: "空场景",
-            type: "txt",
-            style: "",
-          },
           { txt: "高级API功能：", type: "title", style: "" },
           {
             txt: "云识别开启与关闭",
@@ -1474,12 +1345,6 @@ export const apiOptions = [
         type: "collection",
         title: "场景的打开与关闭",
         description: [
-          { txt: "源场景：", type: "title", style: "" },
-          {
-            txt: "空场景",
-            type: "txt",
-            style: "",
-          },
           { txt: "高级API功能：", type: "title", style: "" },
           {
             txt: "场景的打开与关闭",
@@ -1496,12 +1361,6 @@ export const apiOptions = [
         type: "collection",
         title: "拍照",
         description: [
-          { txt: "源场景：", type: "title", style: "" },
-          {
-            txt: "空场景",
-            type: "txt",
-            style: "",
-          },
           { txt: "高级API功能：", type: "title", style: "" },
           {
             txt: "拍照",
@@ -1518,6 +1377,118 @@ export const apiOptions = [
 ];
 
 export const extensionOptions = [
+  {
+    title: "开发框架示例",
+    child: [
+      {
+        id: 301,
+        type: "web",
+        title: "uni-app",
+        description: [{ txt: "uni-app开发文档：", type: "txt", style: "" }],
+        // clickMta: "click_arscan_button",
+        // startMta: "click_arscan_start",
+        url: "",
+      },
+      {
+        id: 302,
+        type: "web",
+        title: "taro3-react",
+        description: [{ txt: "taro3-react开发文档：", type: "txt", style: "" }],
+        // clickMta: "click_arscan_button",
+        // startMta: "click_arscan_start",
+        url: "",
+      },
+      {
+        id: 303,
+        type: "web",
+        title: "taro3-vue2",
+        description: [{ txt: "taro3-vue2开发文档：", type: "txt", style: "" }],
+        // clickMta: "click_arscan_button",
+        // startMta: "click_arscan_start",
+        url: "",
+      },
+    ],
+  },
+  {
+    title: "插件分包示例",
+    child: [
+      {
+        id: 304,
+        type: "web",
+        title: "uni-app",
+        description: [{ txt: "uni-app分包文档：", type: "txt", style: "" }],
+        // clickMta: "click_arscan_button",
+        // startMta: "click_arscan_start",
+        url: "",
+      },
+      {
+        id: 305,
+        type: "web",
+        title: "wechat-native-mp",
+        description: [
+          { txt: "wechat-native-mp分包文档：", type: "txt", style: "" },
+        ],
+        // clickMta: "click_arscan_button",
+        // startMta: "click_arscan_start",
+        url: "",
+      },
+    ],
+  },
+  {
+    title: "网页端开发",
+    child: [
+      {
+        id: 306,
+        type: "web",
+        title: "自研H5接入",
+        description: [
+          {
+            txt: "文档与示例代码地址：https://www.yuque.com/kivicube/manual/h5-access",
+            type: "txt",
+            style: "",
+          },
+        ],
+        // clickMta: "click_arscan_button",
+        // startMta: "click_arscan_start",
+        url: "https://www.yuque.com/kivicube/manual/h5-access",
+      },
+      {
+        id: 307,
+        type: "web",
+        title: "Web版AR插件快速接入",
+        description: [
+          {
+            txt: "文档与示例代码地址：https://www.yuque.com/kivicube/manual/web-ar-plugin-quick-start",
+            type: "txt",
+            style: "",
+          },
+        ],
+        // clickMta: "click_arscan_button",
+        // startMta: "click_arscan_start",
+        url: "https://www.yuque.com/kivicube/manual/web-ar-plugin-quick-start",
+      },
+    ],
+  },
+  {
+    title: "APP开发",
+    child: [
+      {
+        id: 308,
+        type: "web",
+        title: "自研APP接入",
+        description: [
+          {
+            txt: "文档与示例代码地址：https://www.yuque.com/kivicube/manual/app-access",
+            type: "txt",
+            style: "",
+          },
+        ],
+        // clickMta: "click_arscan_button",
+        // startMta: "click_arscan_start",
+        url: "https://www.yuque.com/kivicube/manual/app-access",
+      },
+    ],
+  },
   {
     title: "实用案例",
     child: [
@@ -1543,6 +1514,131 @@ export const extensionOptions = [
         clickMta: "click_arscan_button",
         startMta: "click_arscan_start",
         url: "/pages/case/image-scan",
+      },
+    ],
+  },
+  {
+    title: "更对增值功能",
+    child: [
+      {
+        id: 310,
+        type: "web",
+        title: "弥知AI插件开发",
+        description: [
+          {
+            txt: "文档地址：https://www.yuque.com/kivicube/manual/ai-plugin",
+            type: "txt",
+            style: "",
+          },
+        ],
+        // clickMta: "click_arscan_button",
+        // startMta: "click_arscan_start",
+        url: "https://www.yuque.com/kivicube/manual/ai-plugin",
+      },
+      {
+        id: 311,
+        type: "web",
+        title: "Web端AI插件开发",
+        description: [
+          {
+            txt: "文档地址：",
+            type: "txt",
+            style: "",
+          },
+        ],
+        // clickMta: "click_arscan_button",
+        // startMta: "click_arscan_start",
+        url: "",
+      },
+      {
+        id: 312,
+        type: "web",
+        title: "AR虚拟试戴平台",
+        description: [
+          {
+            txt: "制作眼镜试戴的平台，提供插件供开发者接入",
+            type: "txt",
+            style: "",
+          },
+          {
+            txt: "文档地址：https://www.yuque.com/kivisense/vto",
+            type: "txt",
+            style: "",
+          },
+        ],
+        // clickMta: "click_arscan_button",
+        // startMta: "click_arscan_start",
+        url: "https://www.yuque.com/kivisense/vto",
+      },
+      {
+        id: 313,
+        type: "web",
+        title: "Kivisense Try-on平台",
+        description: [
+          {
+            txt: "制作AR试鞋的平台，提供Shopify插件开发",
+            type: "txt",
+            style: "",
+          },
+          {
+            txt: "文档地址：https://www.yuque.com/kivisense/try-on",
+            type: "txt",
+            style: "",
+          },
+        ],
+        // clickMta: "click_arscan_button",
+        // startMta: "click_arscan_start",
+        url: "https://www.yuque.com/kivisense/try-on",
+      },
+      {
+        id: 314,
+        type: "web",
+        title: "弥知声网美颜插件",
+        description: [
+          {
+            txt: "提供声网美颜插件",
+            type: "txt",
+            style: "",
+          },
+          {
+            txt: "文档与示例代码地址：https://www.yuque.com/kivisense/agora/start",
+            type: "txt",
+            style: "",
+          },
+        ],
+        // clickMta: "click_arscan_button",
+        // startMta: "click_arscan_start",
+        url: "https://www.yuque.com/kivisense/agora/start",
+      },
+      {
+        id: 315,
+        type: "web",
+        title: "AR涂涂乐（即将上线）",
+        description: [
+          {
+            txt: "AR涂涂乐（即将上线）",
+            type: "txt",
+            style: "",
+          },
+        ],
+        // clickMta: "click_arscan_button",
+        // startMta: "click_arscan_start",
+        url: "",
+      },
+      {
+        id: 316,
+        type: "web",
+        title: "AR实景导航（即将上线）",
+        description: [
+          {
+            txt: "AR实景导航（即将上线）",
+            type: "txt",
+            style: "",
+          },
+        ],
+        // clickMta: "click_arscan_button",
+        // startMta: "click_arscan_start",
+        url: "",
       },
     ],
   },
