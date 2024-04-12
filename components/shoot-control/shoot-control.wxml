@@ -16,9 +16,14 @@
     />
   </view>
 </view>
-<view wx:if="{{!isRecording && showShootTips}}" class="shoot-control-tips"
+<view
+  wx:if="{{!showPosterLoading && !isRecording && showShootTips && !showMinTips}}"
+  class="shoot-control-tips"
   >{{showType=="both"?"轻触拍照 长按拍摄":showType==="record"?"长按拍摄":"轻触拍照"}}</view
 >
 <view wx:if="{{showPosterLoading}}" class="shoot-control-tips"
   >{{loadingType === 'image' ? '照片' : '视频'}}生成中...</view
+>
+<view wx:if="{{!isRecording && showMinTips}}" class="min-tips shoot-control-tips"
+  >请最少录制2秒</view
 >

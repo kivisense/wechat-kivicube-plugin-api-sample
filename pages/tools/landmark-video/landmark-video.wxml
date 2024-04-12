@@ -11,6 +11,7 @@
   <shoot-control
     wx:if="{{showUI}}"
     showType="record"
+    showPosterLoading="{{showPosterLoading}}"
     bind:startRecord="startRecord"
     bind:stopRecord="stopRecord"
   />

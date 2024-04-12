@@ -2,10 +2,10 @@ const { promisify, downloadVideo } = require("../../../utils/util.js");
 Page({
   data: {
     showUI: false,
+    showPosterLoading: false,
     videoUrl: "",
   },
   onLoad() {
-    this.getAuth();
     this.cameraCtx = wx.createCameraContext();
   },
   onUnload() {
@@ -13,6 +13,7 @@ Page({
   },
 
   onInit() {
+    this.getAuth();
     this.setData({
       showUI: true,
     });
@@ -33,9 +34,12 @@ Page({
             wx.redirectTo({ url: "/" + this.__route__ });
           } else {
             wx.showToast({
-              title: "获取“摄像头”权限失败！",
+              title: "获取相机权限失败，请重新进入",
               icon: "none",
             });
+            setTimeout(() => {
+              wx.navigateBack();
+            }, 500);
           }
         },
       });
@@ -69,9 +73,24 @@ Page({
             if (authSetting["scope.record"]) {
               this.getAuth();
             }
+          } else {
+            wx.showToast({
+              title: "初始化失败，请重新进入",
+              icon: "none",
+            });
+            setTimeout(() => {
+              wx.navigateBack();
+            }, 500);
           }
         } else {
           console.log("请求麦克风权限失败：", err);
+          wx.showToast({
+            title: "初始化失败，请重新进入",
+            icon: "none",
+          });
+          setTimeout(() => {
+            wx.navigateBack();
+          }, 500);
         }
       },
     });
@@ -90,13 +109,20 @@ Page({
       },
     });
   },
-  stopRecord() {
+  stopRecord({ detail }) {
+    if (detail.timeout !== "min") {
+      this.setData({
+        showPosterLoading: true,
+      });
+    }
     this.cameraCtx.stopRecord({
       success: ({ tempVideoPath }) => {
-        console.log("stopRecord", tempVideoPath);
-        this.setData({
-          videoUrl: tempVideoPath,
-        });
+        if (detail.timeout !== "min") {
+          this.setData({
+            videoUrl: tempVideoPath,
+            showPosterLoading: false,
+          });
+        }
       },
     });
   },
