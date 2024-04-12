@@ -124,24 +124,7 @@ const promisify = (fn, context) => {
 const cameraErrorHandler = (detail, page) => {
   // 判定是否camera权限问题，是则向用户申请权限。
   if (detail && detail.isCameraAuthDenied) {
-    wx.showModal({
-      title: "提示",
-      content: "请给予“摄像头”权限",
-      success() {
-        wx.openSetting({
-          success({ authSetting: { "scope.camera": isGrantedCamera } }) {
-            if (isGrantedCamera) {
-              wx.redirectTo({ url: "/" + page.__route__ });
-            } else {
-              wx.showToast({
-                title: "获取“摄像头”权限失败！",
-                icon: "none",
-              });
-            }
-          },
-        });
-      },
-    });
+    showAuthModal(page);
   } else {
     wx.showToast({
       title: "初始化失败，请重新进入",
@@ -152,6 +135,25 @@ const cameraErrorHandler = (detail, page) => {
     }, 500);
   }
 };
+
+function showAuthModal(page) {
+  wx.showModal({
+    title: "提示",
+    content: "请给予“摄像头”权限",
+    showCancel: false,
+    success() {
+      wx.openSetting({
+        success({ authSetting: { "scope.camera": isGrantedCamera } }) {
+          if (isGrantedCamera) {
+            wx.redirectTo({ url: "/" + page.__route__ });
+          } else {
+            wx.showToast({ title: "获取“摄像头”权限失败！", icon: "none" });
+          }
+        },
+      });
+    },
+  });
+}
 
 function errorHandler(errInfo) {
   let message = errInfo;
@@ -230,6 +232,25 @@ const mapLimit = (list, limit, asyncHandle) => {
   return Promise.all(asyncList); // 所有并发异步操作都完成后，本次并发控制迭代完成
 };
 
+export function downloadMarker(url) {
+  return new Promise((resolve, reject) => {
+    const filename = url.split("?").shift().split("/").pop();
+    const filePath = `${wx.env.USER_DATA_PATH}/__marker-${filename}`;
+    wx.downloadFile({
+      url,
+      filePath,
+      success({ statusCode }) {
+        if (statusCode === 200) {
+          resolve(filePath);
+        } else {
+          reject(new Error(`下载文件(${url})失败, statusCode: ${statusCode}`));
+        }
+      },
+      fail: reject,
+    });
+  });
+}
+
 const fetchBatch = (downloadList, num = 5, progress = () => {}) => {
   let downloadListObj = {};
   downloadList.forEach((el) => {
@@ -279,6 +300,16 @@ const getPrivate = () => {
   }
 };
 
+// 弧度角度转换
+// 角度转弧度
+function degToRad(degrees) {
+  return (degrees * Math.PI) / 180;
+}
+// 弧度转角度
+function radToDeg(radians) {
+  return (radians * 180) / Math.PI;
+}
+
 const resUrl = (filename) => {
   return `https://meta.kivisense.com/wechat-kivicube-plugin-api-sample/${filename}`;
 };
@@ -290,10 +321,14 @@ module.exports = {
   takePhoto,
   promisify,
   cameraErrorHandler,
+  showAuthModal,
   errorHandler,
   requestFile,
   downloadFile,
+  downloadMarker,
   fetchBatch,
   getPrivate,
+  degToRad,
+  radToDeg,
   resUrl,
 };

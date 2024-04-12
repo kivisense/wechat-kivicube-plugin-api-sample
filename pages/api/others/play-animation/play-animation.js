@@ -2,7 +2,7 @@ import {
   errorHandler,
   showAuthModal,
   requestFile,
-} from "../../../../utils/helper";
+} from "../../../../utils/util";
 
 Page({
   data: {

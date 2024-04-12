@@ -2,7 +2,7 @@ import {
   errorHandler,
   showAuthModal,
   downloadMarker,
-} from "../../../../../utils/helper";
+} from "../../../../../utils/util";
 
 const marker1ImageUrl =
   "https://meta.kivisense.com/kivicube-wechat-mp-plugin/demo-assets/image/kivi-test1.jpeg";

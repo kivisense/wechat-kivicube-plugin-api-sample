@@ -3,7 +3,7 @@ import {
   showAuthModal,
   requestFile,
   downloadMarker,
-} from "../../../../utils/helper";
+} from "../../../../utils/util";
 
 const markerImageUrl =
   "https://meta.kivisense.com/kivicube-wechat-mp-plugin/demo-assets/image/wonder.jpg";

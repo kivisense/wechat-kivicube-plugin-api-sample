@@ -2,7 +2,7 @@ import {
   errorHandler,
   showAuthModal,
   requestFile,
-} from "../../../../utils/helper";
+} from "../../../../utils/util";
 
 /**
  * 下载被gltfpack工具进行网格面优化压缩后的模型。

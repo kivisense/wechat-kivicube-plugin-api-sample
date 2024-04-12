@@ -1,4 +1,4 @@
-import { errorHandler } from "../../../../utils/helper";
+import { errorHandler } from "../../../../utils/util";
 
 Page({
   data: {

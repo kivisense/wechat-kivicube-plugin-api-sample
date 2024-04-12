@@ -1,4 +1,4 @@
-import { errorHandler, showAuthModal } from "../../../../utils/helper";
+import { errorHandler, showAuthModal } from "../../../../utils/util";
 
 Page({
   data: {},

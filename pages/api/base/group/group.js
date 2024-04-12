@@ -3,7 +3,7 @@ import {
   showAuthModal,
   requestFile,
   downloadFile,
-} from "../../../../utils/helper";
+} from "../../../../utils/util";
 
 Page({
   data: {
