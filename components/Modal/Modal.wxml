@@ -5,15 +5,14 @@
   id="modal-wrap"
 >
   <view class="modal-box flex-box" scroll-top="0">
-    <view wx:if="info.title" class="modal-title" scroll-top="0">
-      {{ info.title }}
+    <view class="close-hotspot" scroll-top="0" capture-bind:tap="handleHide">
+      <image class="close" src="/assets/icons/close.png"></image>
     </view>
-    <cover-image
-      class="close"
-      src="/assets/icons/close.png"
-      capture-bind:tap="handleHide"
-    ></cover-image>
+
     <view wx:if="info.description" class="modal-txt" scroll-top="0">
+      <view wx:if="info.title" class="modal-title" scroll-top="0">
+        {{ info.title }}
+      </view>
       <view
         wx:for="{{info.description}}"
         wx:key="idx"

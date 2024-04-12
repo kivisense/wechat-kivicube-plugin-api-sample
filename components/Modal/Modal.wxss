@@ -14,9 +14,9 @@
 }
 .modal {
   background-color: rgba(0, 0, 0, 0.5);
-  transition: all .4s ease;
+  transition: all 0.4s ease;
 }
-.modal.hidden{
+.modal.hidden {
   /* bug: 安卓会渲染遮罩层，导致无法点击遮罩层下面的内容 */
   /* visibility: hidden;
   opacity: 0; */
@@ -29,25 +29,21 @@
   position: relative;
 }
 .modal-title {
-  position: absolute;
-  height: 18px;
-  top: 25px;
-  right: 0;
-  left: 0;
   font-size: 14px;
   color: #1b1b1b;
   letter-spacing: 0.7px;
   text-align: center;
   font-weight: bold;
+  margin-bottom: 8px;
 }
 .modal-txt {
-  width: 80%;
+  width: 82%;
   font-size: 12px;
   color: #999999;
   letter-spacing: 0;
   text-align: left;
   line-height: 14px;
-  margin: 60px auto 5vw;
+  margin: 10vw auto 5vw;
 }
 .line-txt {
   line-height: 1.5;
@@ -70,10 +66,17 @@
   letter-spacing: 0;
   margin-bottom: 10vw;
 }
-.close {
+.close-hotspot {
   position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+.close {
   width: 18px;
   height: 18px;
-  top: 25px;
-  right: 25px;
 }
