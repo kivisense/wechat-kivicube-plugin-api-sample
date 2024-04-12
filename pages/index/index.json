@@ -1,6 +1,5 @@
 {
   "usingComponents": {
-    "private-modal": "../../../components/private-modal/private-modal",
-    "Modal": "/components/Modal/Modal"
+    "page-list": "/components/page-list/page-list"
   }
 }

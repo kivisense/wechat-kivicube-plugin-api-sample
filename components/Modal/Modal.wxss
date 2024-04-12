@@ -27,6 +27,7 @@
   width: 307px;
   min-height: 215px;
   position: relative;
+  padding-bottom: 16px;
 }
 .modal-title {
   font-size: 14px;
@@ -55,18 +56,29 @@
   font-weight: bold;
   color: #333;
 }
+.btns {
+  width: 82%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
 .btn {
+  flex: 1;
   background: #1b1b1b;
   text-align: center;
-  width: 220px;
+  max-width: 220px;
+  /* width: 220px; */
   height: 40px;
   line-height: 40px;
   font-size: 14px;
   color: #e5dfd9;
   letter-spacing: 0;
-  margin-bottom: 10vw;
+  margin-bottom: 16px;
 }
 .close-hotspot {
+  flex: 1;
   position: absolute;
   right: 0;
   top: 0;

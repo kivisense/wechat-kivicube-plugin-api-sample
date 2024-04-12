@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "styleIsolation": "apply-shared",
+  "usingComponents": {
+    "private-modal": "/components/private-modal/private-modal",
+    "Modal": "/components/Modal/Modal"
+  }
+}

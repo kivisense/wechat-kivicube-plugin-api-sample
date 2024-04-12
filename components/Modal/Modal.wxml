@@ -22,8 +22,18 @@
         {{ descItem.txt }}
       </view>
     </view>
-    <view class="btn" scroll-top="0" bindtap="handleTap"
-      >{{info.type === 'web' ? '复制链接' : '立即体验'}}</view
-    >
+    <view class="btns">
+      <view class="btn" scroll-top="0" bindtap="handleTap"
+        >{{info.type === 'web' ? '复制链接' : '立即体验'}}</view
+      >
+      <view
+        wx:if="{{info.miniprogram && info.miniprogram.appId}}"
+        class="btn"
+        scroll-top="0"
+        bindtap="handleMiniprogramBtnTap"
+      >
+        {{info.miniprogram.btnText || "跳转小程序体验"}}
+      </view>
+    </view>
   </view>
 </view>

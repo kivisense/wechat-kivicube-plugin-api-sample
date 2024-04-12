@@ -1,0 +1,28 @@
+<view class="layout layer">
+  <scroll-view scroll-y="true" class="layer">
+    <view class="scene-list-box">
+      <view wx:for="{{list}}" wx:key="idx" wx:for-item="type" class="scene-type">
+        <view class="title">{{ type.title }}</view>
+        <view
+          wx:for="{{type.child}}"
+          wx:key="idx2"
+          wx:for-item="item"
+          class="item"
+          data-item="{{item}}"
+          bind:tap="handleTap"
+        >
+          <view class="{{item.url ? '' : 'undo'}}">{{ item.title }}</view>
+          <image src="/assets/icons/right.png" class="aim" mode="widthFix" />
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <Modal
+    id="modal"
+    hiddenStatus="{{modalHidden}}"
+    bind:onHide="hideModal"
+    bind:btnTap="handleBtnTap"
+    bind:miniprogramBtnTap="handleMiniprogramBtnTap"
+  ></Modal>
+</view>
+<private-modal></private-modal>

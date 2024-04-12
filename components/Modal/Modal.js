@@ -23,6 +23,9 @@ Component({
     handleTap() {
       this.triggerEvent("btnTap", this.data.info);
     },
+    handleMiniprogramBtnTap() {
+      this.triggerEvent("miniprogramBtnTap", this.data.info);
+    },
     maskTap(e) {
       if (e.target.id === "modal-wrap") {
         this.triggerEvent("onHide");
