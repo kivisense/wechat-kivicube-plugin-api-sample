@@ -78,7 +78,8 @@ Component({
     /**
      * 跳转其他小程序按钮被点击
      */
-    handleMiniprogramBtnTap({ miniprogram }) {
+    handleMiniprogramBtnTap({ detail: { miniprogram } }) {
+      console.log(`miniprogram`, miniprogram);
       if (!miniprogram || !miniprogram.appId) {
         wx.showToast({
           title: `跳转失败`,

@@ -72,7 +72,9 @@
     "pages/api/roam/roam-ar/roam-ar",
     "pages/api/world/world-ar/world-ar",
     "pages/api/world/world-marker/world-marker",
-    "pages/api/world/multiple/simple/multiple-simple"
+    "pages/api/world/multiple/simple/multiple-simple",
+    "pages/tools/miniprogram-feedback/miniprogram-feedback",
+    "pages/tools/web-feedback/web-feedback"
   ],
   "tabBar": {
     "color": "#333333",
@@ -123,8 +125,12 @@
   },
   "plugins": {
     "kivicube": {
-      "version": "2.8.7",
+      "version": "dev-5607096a701f3fc9c70f352753fba170",
       "provider": "wx3bbab3920eabccb2"
+    },
+    "kivisense-ar": {
+      "version": "2.2.1",
+      "provider": "wxa3efe8d073b86367"
     }
   },
   "useExtendedLib": {

@@ -21,7 +21,7 @@ export const sceneOptions = [
       {
         id: 2,
         type: "web",
-        title: "开发者",
+        title: "开发者文档",
         key: "development",
         description: [
           {
@@ -111,7 +111,7 @@ export const sceneOptions = [
         ],
         url: "https://www.yuque.com/kivicube/manual/the-sun",
         miniprogram: {
-          appId: "",
+          appId: "wx96a8b6a94a60e9e5",
           path: "",
           btnText: "立即体验",
         },
@@ -136,7 +136,7 @@ export const sceneOptions = [
         ],
         url: "https://www.yuque.com/kivicube/manual/image-tracking",
         miniprogram: {
-          appId: "",
+          appId: "wx03800a762308862c",
           path: "",
           btnText: "立即体验",
         },
@@ -161,7 +161,7 @@ export const sceneOptions = [
         ],
         url: "https://github.com/kivisense/wechat-kivicube-plugin-cases/tree/main/tiger-year-red-envelopes-%E9%AB%98%E7%BA%A7api",
         miniprogram: {
-          appId: "",
+          appId: "wx359163cee1fa4fb9",
           path: "",
           btnText: "立即体验",
         },
@@ -530,7 +530,7 @@ export const collectionOptions = [
       {
         id: 2,
         type: "web",
-        title: "开发者",
+        title: "开发者文档",
         key: "development",
         description: [
           {
@@ -689,7 +689,7 @@ export const apiOptions = [
     ],
   },
   {
-    title: "基础 素材管理和使用",
+    title: "基础素材管理和使用",
     child: [
       {
         id: 25,
@@ -730,7 +730,7 @@ export const apiOptions = [
         description: [
           { txt: "高级API功能：", type: "title", style: "" },
           {
-            txt: "组合容器",
+            txt: "可以将模型、图片、AR视频、透明视频、精灵图组合未一个整体",
             type: "txt",
             style: "",
           },
@@ -742,11 +742,11 @@ export const apiOptions = [
       {
         id: 28,
         type: "scene",
-        title: "将素材指定为遮罩",
+        title: "将模型素材指定为遮罩",
         description: [
           { txt: "高级API功能：", type: "title", style: "" },
           {
-            txt: "将素材指定为遮罩",
+            txt: "将模型素材指定为遮罩",
             type: "txt",
             style: "",
           },
@@ -762,7 +762,7 @@ export const apiOptions = [
         description: [
           { txt: "高级API功能：", type: "title", style: "" },
           {
-            txt: "精灵图",
+            txt: "可以将序列帧处理为单张精灵图进行加载",
             type: "txt",
             style: "",
           },
@@ -778,7 +778,7 @@ export const apiOptions = [
         description: [
           { txt: "高级API功能：", type: "title", style: "" },
           {
-            txt: "音频",
+            txt: "加载音频",
             type: "txt",
             style: "",
           },
@@ -794,7 +794,7 @@ export const apiOptions = [
         description: [
           { txt: "高级API功能：", type: "title", style: "" },
           {
-            txt: "AR视频/透明视频",
+            txt: "加载AR视频/透明视频",
             type: "txt",
             style: "",
           },
@@ -810,7 +810,7 @@ export const apiOptions = [
         description: [
           { txt: "高级API功能：", type: "title", style: "" },
           {
-            txt: "全景图",
+            txt: "加载 360 全景图",
             type: "txt",
             style: "",
           },
@@ -826,7 +826,7 @@ export const apiOptions = [
         description: [
           { txt: "高级API功能：", type: "title", style: "" },
           {
-            txt: "全景视频",
+            txt: "加载 360 全景视频",
             type: "txt",
             style: "",
           },
@@ -842,7 +842,7 @@ export const apiOptions = [
         description: [
           { txt: "高级API功能：", type: "title", style: "" },
           {
-            txt: "天空盒子",
+            txt: "加载 6 张图形式的 skybox",
             type: "txt",
             style: "",
           },
@@ -858,7 +858,7 @@ export const apiOptions = [
         description: [
           { txt: "高级API功能：", type: "title", style: "" },
           {
-            txt: "灯光",
+            txt: "设置场景灯光",
             type: "txt",
             style: "",
           },
@@ -874,7 +874,7 @@ export const apiOptions = [
         description: [
           { txt: "高级API功能：", type: "title", style: "" },
           {
-            txt: "自定义环境贴图",
+            txt: "加载自定义环境贴图",
             type: "txt",
             style: "",
           },
@@ -1071,7 +1071,7 @@ export const apiOptions = [
     ],
   },
   {
-    title: "其他",
+    title: "其它",
     child: [
       {
         id: 47,
@@ -1112,7 +1112,7 @@ export const apiOptions = [
         description: [
           { txt: "高级API功能：", type: "title", style: "" },
           {
-            txt: "自动播放",
+            txt: "自动播放动画",
             type: "txt",
             style: "",
           },
@@ -1192,7 +1192,7 @@ export const apiOptions = [
         description: [
           { txt: "高级API功能：", type: "title", style: "" },
           {
-            txt: "使用 trackball 手势",
+            txt: "使用 trackball 手势，旋转场景没有限制",
             type: "txt",
             style: "",
           },
@@ -1220,11 +1220,11 @@ export const apiOptions = [
       {
         id: 56,
         type: "scene",
-        title: "设置色调映射",
+        title: "设置渲染色调映射",
         description: [
           { txt: "高级API功能：", type: "title", style: "" },
           {
-            txt: "设置色调映射",
+            txt: "设置渲染色调映射",
             type: "txt",
             style: "",
           },
@@ -1374,11 +1374,11 @@ export const apiOptions = [
       {
         id: 65,
         type: "collection",
-        title: "拍照",
+        title: "合辑拍照",
         description: [
           { txt: "高级API功能：", type: "title", style: "" },
           {
-            txt: "拍照",
+            txt: "合辑拍照",
             type: "txt",
             style: "",
           },
@@ -1399,28 +1399,46 @@ export const extensionOptions = [
         id: 301,
         type: "web",
         title: "uni-app",
-        description: [{ txt: "uni-app开发文档：", type: "txt", style: "" }],
+        description: [
+          {
+            txt: "示例代码：https://github.com/kivisense/wechat-kivicube-plugin-samples/tree/master/framework/uni-app",
+            type: "txt",
+            style: "",
+          },
+        ],
         // clickMta: "click_arscan_button",
         // startMta: "click_arscan_start",
-        url: "",
+        url: "https://github.com/kivisense/wechat-kivicube-plugin-samples/tree/master/framework/uni-app",
       },
       {
         id: 302,
         type: "web",
         title: "taro3-react",
-        description: [{ txt: "taro3-react开发文档：", type: "txt", style: "" }],
+        description: [
+          {
+            txt: "示例代码：https://github.com/kivisense/wechat-kivicube-plugin-samples/tree/master/framework/taro3-react",
+            type: "txt",
+            style: "",
+          },
+        ],
         // clickMta: "click_arscan_button",
         // startMta: "click_arscan_start",
-        url: "",
+        url: "https://github.com/kivisense/wechat-kivicube-plugin-samples/tree/master/framework/taro3-react",
       },
       {
         id: 303,
         type: "web",
         title: "taro3-vue2",
-        description: [{ txt: "taro3-vue2开发文档：", type: "txt", style: "" }],
+        description: [
+          {
+            txt: "示例代码：https://github.com/kivisense/wechat-kivicube-plugin-samples/tree/master/framework/taro3-vue2",
+            type: "txt",
+            style: "",
+          },
+        ],
         // clickMta: "click_arscan_button",
         // startMta: "click_arscan_start",
-        url: "",
+        url: "https://github.com/kivisense/wechat-kivicube-plugin-samples/tree/master/framework/taro3-vue2",
       },
     ],
   },
@@ -1431,21 +1449,31 @@ export const extensionOptions = [
         id: 304,
         type: "web",
         title: "uni-app",
-        description: [{ txt: "uni-app分包文档：", type: "txt", style: "" }],
+        description: [
+          {
+            txt: "示例代码：https://github.com/kivisense/wechat-kivicube-plugin-samples/tree/master/subpackages/uni-app",
+            type: "txt",
+            style: "",
+          },
+        ],
         // clickMta: "click_arscan_button",
         // startMta: "click_arscan_start",
-        url: "",
+        url: "https://github.com/kivisense/wechat-kivicube-plugin-samples/tree/master/subpackages/uni-app",
       },
       {
         id: 305,
         type: "web",
         title: "wechat-native-mp",
         description: [
-          { txt: "wechat-native-mp分包文档：", type: "txt", style: "" },
+          {
+            txt: "示例代码：https://github.com/kivisense/wechat-kivicube-plugin-samples/tree/master/subpackages/wechat-native-mp",
+            type: "txt",
+            style: "",
+          },
         ],
         // clickMta: "click_arscan_button",
         // startMta: "click_arscan_start",
-        url: "",
+        url: "https://github.com/kivisense/wechat-kivicube-plugin-samples/tree/master/subpackages/wechat-native-mp",
       },
     ],
   },
@@ -1553,10 +1581,10 @@ export const extensionOptions = [
       {
         id: 311,
         type: "web",
-        title: "Web端AI插件开发",
+        title: "Web端AI插件开发（即将上线）",
         description: [
           {
-            txt: "文档地址：",
+            txt: "",
             type: "txt",
             style: "",
           },
@@ -1720,6 +1748,26 @@ export const toolsOptions = [
         startMta: "click_feedbackWeb_start",
         url: "/pages/feedback-web/feedback-web",
       },
+      // {
+      //   id: 1003,
+      //   name: "web-feedback",
+      //   type: "feedback",
+      //   title: "小程序兼容反馈",
+      //   description: [],
+      //   // clickMta: "click_feedbackWeb_button",
+      //   // startMta: "click_feedbackWeb_start",
+      //   url: "/pages/tools/miniprogram-feedback/miniprogram-feedback",
+      // },
+      // {
+      //   id: 1004,
+      //   name: "web-feedback",
+      //   type: "feedback",
+      //   title: "web兼容反馈",
+      //   description: [],
+      //   // clickMta: "click_feedbackWeb_button",
+      //   // startMta: "click_feedbackWeb_start",
+      //   url: "/pages/tools/web-feedback/web-feedback",
+      // },
     ],
   },
 ];

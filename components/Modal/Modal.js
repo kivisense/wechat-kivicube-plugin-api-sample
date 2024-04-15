@@ -24,6 +24,7 @@ Component({
       this.triggerEvent("btnTap", this.data.info);
     },
     handleMiniprogramBtnTap() {
+      console.log(`this.data.info`, this.data.info);
       this.triggerEvent("miniprogramBtnTap", this.data.info);
     },
     maskTap(e) {
