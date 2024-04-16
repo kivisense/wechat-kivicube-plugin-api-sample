@@ -7,6 +7,13 @@
         "miniprogram": {
             "list": [
                 {
+                    "name": "pages/tools/landmark-video/landmark-video",
+                    "pathName": "pages/tools/landmark-video/landmark-video",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
                     "name": "pages/feedback/feedback",
                     "pathName": "pages/feedback/feedback",
                     "query": "",
