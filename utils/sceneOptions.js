@@ -1561,7 +1561,7 @@ export const extensionOptions = [
     ],
   },
   {
-    title: "更对增值功能",
+    title: "更多增值功能",
     child: [
       {
         id: 310,

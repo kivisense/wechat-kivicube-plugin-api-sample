@@ -1,4 +1,5 @@
 const { promisify, downloadVideo } = require("../../../utils/util.js");
+const systemInfo = wx.getSystemInfoSync();
 Page({
   data: {
     showUI: false,
@@ -101,9 +102,10 @@ Page({
         console.log("timeoutCallback", tempVideoPath);
         this.setData({
           videoUrl: tempVideoPath,
+          showPosterLoading: false,
         });
       },
-      timeout: 31,
+      timeout: systemInfo.platform === "android" ? 31 : 30,
       fail: (err) => {
         console.error(err);
       },
@@ -115,16 +117,18 @@ Page({
         showPosterLoading: true,
       });
     }
-    this.cameraCtx.stopRecord({
-      success: ({ tempVideoPath }) => {
-        if (detail.timeout !== "min") {
-          this.setData({
-            videoUrl: tempVideoPath,
-            showPosterLoading: false,
-          });
-        }
-      },
-    });
+    if (detail.timeout !== "max") {
+      this.cameraCtx.stopRecord({
+        success: ({ tempVideoPath }) => {
+          if (detail.timeout !== "min") {
+            this.setData({
+              videoUrl: tempVideoPath,
+              showPosterLoading: false,
+            });
+          }
+        },
+      });
+    }
   },
 
   again() {

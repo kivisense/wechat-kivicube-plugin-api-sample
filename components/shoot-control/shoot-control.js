@@ -94,7 +94,7 @@ Component({
       let end = -90; // 结束角度
       this.load = 0; // 记录进度值ms
 
-      const total = max + 500; //时间超过一点，开始录制和结束录制的调用均需要时间，避免录不满max时长，
+      const total = max + 800; //时间超过一点，开始录制和结束录制的调用均需要时间，避免录不满max时长，
       const stepTime = 100;
       const stepDeg = 360 / (total / stepTime);
 

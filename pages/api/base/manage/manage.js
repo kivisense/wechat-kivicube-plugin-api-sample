@@ -188,6 +188,7 @@ Page({
 
   removeVideo() {
     if (this.video) {
+      this.video.videoContext.stop();
       this.view.remove(this.video);
       this.video = null;
     }
@@ -195,6 +196,7 @@ Page({
 
   removeAlphaVideo() {
     if (this.alphaVideo) {
+      this.alphaVideo.videoContext.stop();
       this.view.remove(this.alphaVideo);
       this.alphaVideo = null;
     }
@@ -209,6 +211,7 @@ Page({
 
   removeAudio() {
     if (this.audio) {
+      this.audio.stop();
       this.view.remove(this.audio);
       this.audio = null;
     }
