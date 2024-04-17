@@ -7,6 +7,20 @@
         "miniprogram": {
             "list": [
                 {
+                    "name": "web-feedback",
+                    "pathName": "pages/tools/web-feedback/web-feedback",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "miniprogram-feedback",
+                    "pathName": "pages/tools/miniprogram-feedback/miniprogram-feedback",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
                     "name": "pages/feedback/feedback",
                     "pathName": "pages/feedback/feedback",
                     "query": "",

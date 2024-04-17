@@ -705,7 +705,7 @@ export const apiOptions = [
         ],
         // clickMta: "click_arscan_button",
         // startMta: "click_arscan_start",
-        url: "/pages/api/base/common/common",
+        url: "/api/pages/base/common/common",
       },
       {
         id: 26,
@@ -721,7 +721,7 @@ export const apiOptions = [
         ],
         // clickMta: "click_arscan_button",
         // startMta: "click_arscan_start",
-        url: "/pages/api/base/model/model",
+        url: "/api/pages/base/model/model",
       },
       {
         id: 27,
@@ -737,7 +737,7 @@ export const apiOptions = [
         ],
         // clickMta: "click_arscan_button",
         // startMta: "click_arscan_start",
-        url: "/pages/api/base/group/group",
+        url: "/api/pages/base/group/group",
       },
       {
         id: 28,
@@ -753,7 +753,7 @@ export const apiOptions = [
         ],
         // clickMta: "click_arscan_button",
         // startMta: "click_arscan_start",
-        url: "/pages/api/base/mask/mask",
+        url: "/api/pages/base/mask/mask",
       },
       {
         id: 29,
@@ -769,7 +769,7 @@ export const apiOptions = [
         ],
         // clickMta: "click_arscan_button",
         // startMta: "click_arscan_start",
-        url: "/pages/api/base/imageSprite/imageSprite",
+        url: "/api/pages/base/imageSprite/imageSprite",
       },
       {
         id: 30,
@@ -785,7 +785,7 @@ export const apiOptions = [
         ],
         // clickMta: "click_arscan_button",
         // startMta: "click_arscan_start",
-        url: "/pages/api/base/audio/audio",
+        url: "/api/pages/base/audio/audio",
       },
       {
         id: 31,
@@ -801,7 +801,7 @@ export const apiOptions = [
         ],
         // clickMta: "click_arscan_button",
         // startMta: "click_arscan_start",
-        url: "/pages/api/base/video/video",
+        url: "/api/pages/base/video/video",
       },
       {
         id: 32,
@@ -817,7 +817,7 @@ export const apiOptions = [
         ],
         // clickMta: "click_arscan_button",
         // startMta: "click_arscan_start",
-        url: "/pages/api/base/panorama/panorama",
+        url: "/api/pages/base/panorama/panorama",
       },
       {
         id: 33,
@@ -833,7 +833,7 @@ export const apiOptions = [
         ],
         // clickMta: "click_arscan_button",
         // startMta: "click_arscan_start",
-        url: "/pages/api/base/panorama-video/panorama-video",
+        url: "/api/pages/base/panorama-video/panorama-video",
       },
       {
         id: 34,
@@ -849,7 +849,7 @@ export const apiOptions = [
         ],
         // clickMta: "click_arscan_button",
         // startMta: "click_arscan_start",
-        url: "/pages/api/base/sky-box/sky-box",
+        url: "/api/pages/base/sky-box/sky-box",
       },
       {
         id: 35,
@@ -865,7 +865,7 @@ export const apiOptions = [
         ],
         // clickMta: "click_arscan_button",
         // startMta: "click_arscan_start",
-        url: "/pages/api/base/light/light",
+        url: "/api/pages/base/light/light",
       },
       {
         id: 36,
@@ -881,7 +881,7 @@ export const apiOptions = [
         ],
         // clickMta: "click_arscan_button",
         // startMta: "click_arscan_start",
-        url: "/pages/api/base/env-map/env-map",
+        url: "/api/pages/base/env-map/env-map",
       },
       {
         id: 37,
@@ -897,7 +897,7 @@ export const apiOptions = [
         ],
         // clickMta: "click_arscan_button",
         // startMta: "click_arscan_start",
-        url: "/pages/api/base/manage/manage",
+        url: "/api/pages/base/manage/manage",
       },
     ],
   },
@@ -918,7 +918,7 @@ export const apiOptions = [
         ],
         // clickMta: "click_arscan_button",
         // startMta: "click_arscan_start",
-        url: "/pages/api/cloudar/skipCloudar/skipCloudar",
+        url: "/api/pages/cloudar/skipCloudar/skipCloudar",
       },
     ],
   },
@@ -939,7 +939,7 @@ export const apiOptions = [
         ],
         // clickMta: "click_arscan_button",
         // startMta: "click_arscan_start",
-        url: "/pages/api/image-tracking/image2d-tracking/image2d-tracking",
+        url: "/api/pages/image-tracking/image2d-tracking/image2d-tracking",
       },
       {
         id: 40,
@@ -955,7 +955,7 @@ export const apiOptions = [
         ],
         // clickMta: "click_arscan_button",
         // startMta: "click_arscan_start",
-        url: "/pages/api/image-tracking/tracking-version/tracking-version",
+        url: "/api/pages/image-tracking/tracking-version/tracking-version",
       },
     ],
   },
@@ -976,7 +976,7 @@ export const apiOptions = [
         ],
         // clickMta: "click_arscan_button",
         // startMta: "click_arscan_start",
-        url: "/pages/api/plane/indicator/indicator",
+        url: "/api/pages/plane/indicator/indicator",
       },
       {
         id: 42,
@@ -992,7 +992,7 @@ export const apiOptions = [
         ],
         // clickMta: "click_arscan_button",
         // startMta: "click_arscan_start",
-        url: "/pages/api/plane/auto-locate/auto-locate",
+        url: "/api/pages/plane/auto-locate/auto-locate",
       },
     ],
   },
@@ -1013,7 +1013,7 @@ export const apiOptions = [
         ],
         // clickMta: "click_arscan_button",
         // startMta: "click_arscan_start",
-        url: "/pages/api/roam/roam-ar/roam-ar",
+        url: "/api/pages/roam/roam-ar/roam-ar",
       },
     ],
   },
@@ -1034,7 +1034,7 @@ export const apiOptions = [
         ],
         // clickMta: "click_arscan_button",
         // startMta: "click_arscan_start",
-        url: "/pages/api/world/world-ar/world-ar",
+        url: "/api/pages/world/world-ar/world-ar",
       },
       {
         id: 45,
@@ -1050,7 +1050,7 @@ export const apiOptions = [
         ],
         // clickMta: "click_arscan_button",
         // startMta: "click_arscan_start",
-        url: "/pages/api/world/world-marker/world-marker",
+        url: "/api/pages/world/world-marker/world-marker",
       },
       {
         id: 46,
@@ -1066,7 +1066,7 @@ export const apiOptions = [
         ],
         // clickMta: "click_arscan_button",
         // startMta: "click_arscan_start",
-        url: "/pages/api/world/multiple/simple/multiple-simple",
+        url: "/api/pages/world/multiple/simple/multiple-simple",
       },
     ],
   },
@@ -1087,7 +1087,7 @@ export const apiOptions = [
         ],
         // clickMta: "click_arscan_button",
         // startMta: "click_arscan_start",
-        url: "/pages/api/others/play-animation/play-animation",
+        url: "/api/pages/others/play-animation/play-animation",
       },
       {
         id: 48,
@@ -1103,7 +1103,7 @@ export const apiOptions = [
         ],
         // clickMta: "click_arscan_button",
         // startMta: "click_arscan_start",
-        url: "/pages/api/others/camera/camera",
+        url: "/api/pages/others/camera/camera",
       },
       {
         id: 49,
@@ -1119,7 +1119,7 @@ export const apiOptions = [
         ],
         // clickMta: "click_arscan_button",
         // startMta: "click_arscan_start",
-        url: "/pages/api/others/autoPlay/autoPlay",
+        url: "/api/pages/others/autoPlay/autoPlay",
       },
       {
         id: 50,
@@ -1135,7 +1135,7 @@ export const apiOptions = [
         ],
         // clickMta: "click_arscan_button",
         // startMta: "click_arscan_start",
-        url: "/pages/api/others/penetrateUI/penetrateUI",
+        url: "/api/pages/others/penetrateUI/penetrateUI",
       },
       {
         id: 51,
@@ -1151,7 +1151,7 @@ export const apiOptions = [
         ],
         // clickMta: "click_arscan_button",
         // startMta: "click_arscan_start",
-        url: "/pages/api/others/photo/photo",
+        url: "/api/pages/others/photo/photo",
       },
       {
         id: 52,
@@ -1167,7 +1167,7 @@ export const apiOptions = [
         ],
         // clickMta: "click_arscan_button",
         // startMta: "click_arscan_start",
-        url: "/pages/api/others/simpleAnimation/simpleAnimation",
+        url: "/api/pages/others/simpleAnimation/simpleAnimation",
       },
       {
         id: 53,
@@ -1183,7 +1183,7 @@ export const apiOptions = [
         ],
         // clickMta: "click_arscan_button",
         // startMta: "click_arscan_start",
-        url: "/pages/api/others/tweenAnimation/tweenAnimation",
+        url: "/api/pages/others/tweenAnimation/tweenAnimation",
       },
       {
         id: 54,
@@ -1199,7 +1199,7 @@ export const apiOptions = [
         ],
         // clickMta: "click_arscan_button",
         // startMta: "click_arscan_start",
-        url: "/pages/api/others/trackball/trackball",
+        url: "/api/pages/others/trackball/trackball",
       },
       {
         id: 55,
@@ -1215,7 +1215,7 @@ export const apiOptions = [
         ],
         // clickMta: "click_arscan_button",
         // startMta: "click_arscan_start",
-        url: "/pages/api/others/recorder/recorder",
+        url: "/api/pages/others/recorder/recorder",
       },
       {
         id: 56,
@@ -1231,7 +1231,7 @@ export const apiOptions = [
         ],
         // clickMta: "click_arscan_button",
         // startMta: "click_arscan_start",
-        url: "/pages/api/others/tone-mapping/tone-mapping",
+        url: "/api/pages/others/tone-mapping/tone-mapping",
       },
       {
         id: 57,
@@ -1247,7 +1247,7 @@ export const apiOptions = [
         ],
         // clickMta: "click_arscan_button",
         // startMta: "click_arscan_start",
-        url: "/pages/api/others/set-anisotropy/set-anisotropy",
+        url: "/api/pages/others/set-anisotropy/set-anisotropy",
       },
       {
         id: 58,
@@ -1263,7 +1263,7 @@ export const apiOptions = [
         ],
         // clickMta: "click_arscan_button",
         // startMta: "click_arscan_start",
-        url: "/pages/api/others/load-compressed-gltf/load-compressed-gltf",
+        url: "/api/pages/others/load-compressed-gltf/load-compressed-gltf",
       },
       {
         id: 59,
@@ -1279,7 +1279,7 @@ export const apiOptions = [
         ],
         // clickMta: "click_arscan_button",
         // startMta: "click_arscan_start",
-        url: "/pages/api/others/screen/screen",
+        url: "/api/pages/others/screen/screen",
       },
       {
         id: 60,
@@ -1295,7 +1295,7 @@ export const apiOptions = [
         ],
         // clickMta: "click_arscan_button",
         // startMta: "click_arscan_start",
-        url: "/pages/api/others/model-render/model-render",
+        url: "/api/pages/others/model-render/model-render",
       },
     ],
   },
@@ -1316,7 +1316,7 @@ export const apiOptions = [
         ],
         // clickMta: "click_arscan_button",
         // startMta: "click_arscan_start",
-        url: "/pages/api/collection/collection/collection",
+        url: "/api/pages/collection/collection/collection",
       },
     ],
   },
@@ -1337,7 +1337,7 @@ export const apiOptions = [
         ],
         // clickMta: "click_arscan_button",
         // startMta: "click_arscan_start",
-        url: "/pages/api/collection/backToScan/backToScan",
+        url: "/api/pages/collection/backToScan/backToScan",
       },
       {
         id: 63,
@@ -1353,7 +1353,7 @@ export const apiOptions = [
         ],
         // clickMta: "click_arscan_button",
         // startMta: "click_arscan_start",
-        url: "/pages/api/collection/cloudar/cloudar",
+        url: "/api/pages/collection/cloudar/cloudar",
       },
       {
         id: 64,
@@ -1369,7 +1369,7 @@ export const apiOptions = [
         ],
         // clickMta: "click_arscan_button",
         // startMta: "click_arscan_start",
-        url: "/pages/api/collection/scene/scene",
+        url: "/api/pages/collection/scene/scene",
       },
       {
         id: 65,
@@ -1385,7 +1385,7 @@ export const apiOptions = [
         ],
         // clickMta: "click_arscan_button",
         // startMta: "click_arscan_start",
-        url: "/pages/api/collection/collectionPhoto/collectionPhoto",
+        url: "/api/pages/collection/collectionPhoto/collectionPhoto",
       },
     ],
   },

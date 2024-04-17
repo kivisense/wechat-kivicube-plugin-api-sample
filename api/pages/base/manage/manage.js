@@ -31,6 +31,7 @@ Page({
   },
 
   async addImage() {
+    if (this.image) return;
     wx.showLoading({ title: "下载中...", mask: true });
     try {
       const imageAb = await requestFile(
@@ -58,6 +59,7 @@ Page({
   },
 
   async addVideo() {
+    if (this.video) return;
     wx.showLoading({ title: "下载中...", mask: true });
     try {
       // 既支持下载为本地文件路径，也支持直接使用url。
@@ -90,6 +92,7 @@ Page({
   },
 
   async addAlphaVideo() {
+    if (this.alphaVideo) return;
     wx.showLoading({ title: "下载中...", mask: true });
     try {
       // 既支持下载为本地文件路径，也支持直接使用url。
@@ -123,6 +126,7 @@ Page({
   },
 
   async addModel() {
+    if (this.model) return;
     wx.showLoading({ title: "下载中...", mask: true });
     try {
       const modelUrl =
@@ -158,6 +162,7 @@ Page({
   },
 
   async addAudio() {
+    if (this.audio) return;
     wx.showLoading({ title: "下载中...", mask: true });
     try {
       // 既支持下载为本地文件路径，也支持直接使用url。
