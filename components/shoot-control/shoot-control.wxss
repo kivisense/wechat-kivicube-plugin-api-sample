@@ -25,8 +25,8 @@
 }
 
 .shoot-control .record-canvas {
-  width: 19.2vw;
-  height: 19.2vw;
+  width: 25vw;
+  height: 25vw;
   transition: all 0.5s;
 }
 
@@ -68,11 +68,6 @@
 .shoot-control.recording .shoot-control-bg {
   width: 23.47vw;
   height: 23.47vw;
-}
-
-.shoot-control.recording .record-canvas {
-  width: 25vw;
-  height: 25vw;
 }
 
 .shoot-control.recording .center-btn {

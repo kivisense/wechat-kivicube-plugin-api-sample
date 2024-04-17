@@ -95,7 +95,7 @@ Component({
       this.load = 0; // 记录进度值ms
 
       const total = max + 800; //时间超过一点，开始录制和结束录制的调用均需要时间，避免录不满max时长，
-      const stepTime = 100;
+      const stepTime = 1000 / 60;
       const stepDeg = 360 / (total / stepTime);
 
       // 用于时偏修复
@@ -106,20 +106,24 @@ Component({
       const strokeColor = "#FFE6C3";
       const strokeWeight = vw2px(0.8);
 
+      let scaleCount = 200 / stepTime;
+      let stepScale = (1 - 0.768) / scaleCount;
+      let i = 0;
+
       this.recordingTimer = setInterval(() => {
         //每次加载前清除画布
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.beginPath();
         ctx.strokeStyle = "rgba(255,255,255,0.4)"; //底框的背景颜色
         ctx.lineWidth = strokeWeight; //底框的宽度
+
+        let r = (canvas.width * (0.768 + stepScale * i)) / 2 - strokeWeight;
+        if (i < scaleCount) {
+          i++;
+        }
+
         //底框显示的位置想x,y,r,start,end
-        ctx.arc(
-          canvas.width / 2,
-          canvas.height / 2,
-          canvas.width / 2 - strokeWeight,
-          0,
-          2 * Math.PI
-        );
+        ctx.arc(canvas.width / 2, canvas.height / 2, r, 0, 2 * Math.PI);
         ctx.stroke(); //绘制底框，空心圆
         // 开始新的路径
         ctx.beginPath();
