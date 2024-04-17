@@ -131,7 +131,7 @@
   ],
   "plugins": {
     "kivicube": {
-      "version": "dev-30c975d83e2af402788b1426691b0c8f",
+      "version": "2.9.1",
       "provider": "wx3bbab3920eabccb2"
     }
   },
