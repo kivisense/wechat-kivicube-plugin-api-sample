@@ -1240,7 +1240,7 @@ export const apiOptions = [
         description: [
           { txt: "高级API功能：", type: "title", style: "" },
           {
-            txt: "设置各向异性",
+            txt: "设置贴图各项异性",
             type: "txt",
             style: "",
           },
