@@ -1,5 +1,8 @@
-const { promisify, downloadVideo } = require("../../../utils/util.js");
-const systemInfo = wx.getSystemInfoSync();
+const {
+  promisify,
+  downloadVideo,
+  systemInfo,
+} = require("../../../utils/util.js");
 Page({
   data: {
     showUI: false,
@@ -117,6 +120,7 @@ Page({
         showPosterLoading: true,
       });
     }
+    console.log(`detail.timeout`, detail.timeout);
     if (detail.timeout !== "max") {
       this.cameraCtx.stopRecord({
         success: ({ tempVideoPath }) => {
@@ -126,6 +130,9 @@ Page({
               showPosterLoading: false,
             });
           }
+        },
+        fail: (err) => {
+          console.error(err);
         },
       });
     }

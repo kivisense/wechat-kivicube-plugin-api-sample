@@ -1,5 +1,10 @@
 // pages/camera-preview/camera-preview.js
-const { downloadImage, promisify, resUrl } = require("../../utils/util.js");
+const {
+  downloadImage,
+  promisify,
+  resUrl,
+  systemInfo,
+} = require("../../utils/util.js");
 const phonePic = resUrl("images/frame.png");
 const bottomPic = resUrl("images/bottom.png");
 Page({
@@ -7,7 +12,7 @@ Page({
     tempFilePaths: "",
     showImg: "",
     canvasWidth: "",
-    canvasHeight: ""
+    canvasHeight: "",
   },
   onLoad(options) {
     this.setData({ tempFilePaths: decodeURIComponent(options.photo) }, () => {
@@ -23,13 +28,15 @@ Page({
     query
       .select("#syntheticPic")
       .fields({ node: true })
-      .exec(res => {
+      .exec((res) => {
         const canvas = res[0].node;
         const ctx = canvas.getContext("2d");
-        const { screenWidth, windowHeight } = wx.getSystemInfoSync();
+
+        const { screenWidth, windowHeight } = systemInfo;
+
         this.setData({
           canvasWidth: screenWidth,
-          canvasHeight: windowHeight
+          canvasHeight: windowHeight,
         });
         canvas.width = screenWidth * 2;
         canvas.height = windowHeight * 2;
@@ -54,7 +61,7 @@ Page({
       img.onload = () => {
         resolve(img);
       };
-      img.onError = e => {
+      img.onError = (e) => {
         reject(new Error(e.message + +"(图片路径错误)"));
       };
     });
@@ -84,7 +91,7 @@ Page({
       destHeight: canvas.height,
       canvas: canvas,
       fileType: "image/jpg",
-      quality: 1
+      quality: 1,
     });
-  }
+  },
 });

@@ -25,7 +25,7 @@ Component({
         return false;
       }
       if (!info.url) {
-        return wx.showToast({ title: "正在开发中", icon: "none" });
+        return wx.showToast({ title: "即将上线", icon: "none" });
       }
       modal.setInfo(info, () => {
         this.setData({ modalHidden: false });
@@ -92,10 +92,10 @@ Component({
         path: miniprogram.path,
         fail(err) {
           console.error(err);
-          wx.showToast({
-            title: `跳转失败`,
-            icon: "none",
-          });
+          // wx.showToast({
+          //   title: `跳转失败`,
+          //   icon: "none",
+          // });
         },
       });
     },

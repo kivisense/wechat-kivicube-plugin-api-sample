@@ -67,7 +67,7 @@ Page({
             default:
               value = res[key];
           }
-          return {key, label, value};
+          return { key, label, value };
         });
         this.setData({ list: arr });
       },
@@ -75,9 +75,13 @@ Page({
   },
   getGpuInfo() {
     try {
-      const canvas = wx.createOffscreenCanvas({type: 'webgl', width: 10, height: 10})
-      const gl = canvas.getContext('webgl');
-      const debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
+      const canvas = wx.createOffscreenCanvas({
+        type: "webgl",
+        width: 10,
+        height: 10,
+      });
+      const gl = canvas.getContext("webgl");
+      const debugInfo = gl.getExtension("WEBGL_debug_renderer_info");
       return gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL);
     } catch (error) {
       console.log(error);

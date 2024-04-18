@@ -1,4 +1,7 @@
-const { pixelRatio, windowWidth } = wx.getSystemInfoSync();
+import { systemInfo } from "../../utils/util";
+
+const { pixelRatio, windowWidth } = systemInfo;
+
 const dpr = pixelRatio * 2;
 
 const vw2px = (number) => {

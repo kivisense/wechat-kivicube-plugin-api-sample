@@ -1,4 +1,5 @@
 // pages/feedback-web/feedback-web.js
+import { systemInfo } from "../../utils/util";
 Page({
   data: {
     statusBarHeight: 0,
@@ -15,15 +16,9 @@ Page({
     // })
     wx.showLoading({ title: "加载中" });
 
-    const { benchmarkLevel } = wx.getSystemInfoSync();
+    const { benchmarkLevel } = systemInfo;
     const webviewUrl = `https://project.kivisense.com/helper-tools/feedback.html?benchmarkLevel=${benchmarkLevel}`;
-    this.setData({ webviewUrl });
-
-    wx.getSystemInfoAsync({
-      success: (res) => {
-        this.setData({ statusBarHeight: res.statusBarHeight });
-      },
-    });
+    this.setData({ webviewUrl, statusBarHeight: systemInfo.statusBarHeight });
   },
 
   webviewLoad() {

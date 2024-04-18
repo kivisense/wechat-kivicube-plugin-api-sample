@@ -311,6 +311,27 @@ const resUrl = (filename) => {
   return `https://meta.kivisense.com/wechat-kivicube-plugin-api-sample/${filename}`;
 };
 
+function getSystemInfo() {
+  let systemInfo = wx.getSystemInfoSync();
+
+  if (wx.getWindowInfo) {
+    systemInfo = Object.assign(systemInfo, wx.getWindowInfo());
+  }
+  if (wx.getDeviceInfo) {
+    systemInfo = Object.assign(systemInfo, wx.getDeviceInfo());
+  }
+  if (wx.getSystemSetting) {
+    systemInfo = Object.assign(systemInfo, wx.getSystemSetting());
+  }
+  if (wx.getAppBaseInfo) {
+    systemInfo = Object.assign(systemInfo, wx.getAppBaseInfo());
+  }
+  if (wx.getAppAuthorizeSetting) {
+    systemInfo = Object.assign(systemInfo, wx.getAppAuthorizeSetting());
+  }
+  return systemInfo;
+}
+
 module.exports = {
   formatTime,
   downloadImage,
@@ -328,4 +349,5 @@ module.exports = {
   degToRad,
   radToDeg,
   resUrl,
+  systemInfo: getSystemInfo(),
 };

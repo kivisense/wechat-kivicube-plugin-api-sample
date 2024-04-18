@@ -154,7 +154,7 @@ export const sceneOptions = [
             style: "",
           },
           {
-            txt: "文档与示例代码地址：https://github.com/kivisense/wechat-kivicube-plugin-cases/tree/main/tiger-year-red-envelopes-%E9%AB%98%E7%BA%A7api",
+            txt: "文档与示例代码地址：https://github.com/kivisense/wechat-kivicube-plugin-cases/tree/main/tiger-year-red-envelopes-高级api",
             type: "txt",
             style: "",
           },
@@ -730,7 +730,7 @@ export const apiOptions = [
         description: [
           { txt: "高级API功能：", type: "title", style: "" },
           {
-            txt: "可以将模型、图片、AR视频、透明视频、精灵图组合未一个整体",
+            txt: "可以将模型、图片、AR视频、透明视频、精灵图组合为一个整体",
             type: "txt",
             style: "",
           },
@@ -1236,7 +1236,7 @@ export const apiOptions = [
       {
         id: 57,
         type: "scene",
-        title: "设置各向异性",
+        title: "设置贴图各项异性",
         description: [
           { txt: "高级API功能：", type: "title", style: "" },
           {

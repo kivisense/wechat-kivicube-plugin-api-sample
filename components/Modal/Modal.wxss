@@ -36,6 +36,7 @@
   text-align: center;
   font-weight: bold;
   margin-bottom: 8px;
+  line-height: 1.5;
 }
 .modal-txt {
   width: 82%;
