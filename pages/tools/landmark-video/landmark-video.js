@@ -3,31 +3,21 @@ const {
   downloadVideo,
   systemInfo,
 } = require("../../../utils/util.js");
-/**
- * 可能的情况：
- * 长按开始：
- *    2s 内松手，
- *        微信stopRecord 报错
- *
- *    timeout 前松手，
- *        正常
- *    timeout 触发时松手，
- *        微信录制超时接口触发，但未返回，此时触发stop会报错，且不会再返回
- *
- *
- *    定时器不准，最好使用录制的超时，否者最多可录制的文案时间与实际视频的事件可能对应不上
- *
- *
- */
-
 Page({
   data: {
     showUI: false,
     showPosterLoading: false,
     timeout: 30,
     videoUrl: "",
+    windowWidth: "",
+    windowHeight: "",
   },
   onLoad() {
+    const { windowWidth, windowHeight } = systemInfo;
+    this.setData({
+      windowWidth,
+      windowHeight,
+    });
     this.cameraCtx = wx.createCameraContext();
   },
   onUnload() {

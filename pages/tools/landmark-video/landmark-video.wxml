@@ -1,5 +1,6 @@
 <view class="landmark-video">
   <camera
+    style="width:{{windowWidth}}px;heihgt:{{windowHeight}}px;"
     class="layer"
     resolution="high"
     device-position="back"
