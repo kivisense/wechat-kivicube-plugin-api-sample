@@ -123,7 +123,19 @@ Page({
     console.log(`in startRecord`);
     const shootControl = this.selectComponent("#shootControl");
     this.cameraCtx.startRecord({
-      timeout: this.data.timeout + 10, // 避免自动超时
+      timeout:
+        systemInfo.platform === "android"
+          ? this.data.timeout + 1
+          : this.data.timeout,
+      timeoutCallback: ({ tempVideoPath }) => {
+        console.log("timeoutCallback", tempVideoPath);
+        this.setData({
+          videoUrl: tempVideoPath,
+          showPosterLoading: false,
+        });
+        shootControl.stopRecord();
+        this.startRecording = false;
+      },
       success: () => {
         shootControl.startRecord();
         this.startRecording = false;
