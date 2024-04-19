@@ -1,6 +1,7 @@
 {
   "navigationBarTitleText": "",
   "usingComponents": {
+    "private-modal": "/components/private-modal/private-modal",
     "shoot-control": "/components/shoot-control/shoot-control",
     "loading": "/components/Loading/Loading"
   }

@@ -31,3 +31,4 @@
   </view>
   <loading wx:if="{{!showUI}}" />
 </view>
+<private-modal></private-modal>
