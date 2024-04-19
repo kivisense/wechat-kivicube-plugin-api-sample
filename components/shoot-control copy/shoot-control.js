@@ -56,24 +56,13 @@ Component({
     },
   },
   methods: {
-    handleTap() {
-      this.takePhoto();
-      this.triggerEvent("takePhoto");
-    },
-    handleLongPress() {
-      this.triggerEvent("startRecord");
-    },
-    handleTouchend() {
-      console.log(`in handleTouchend`);
-      this.triggerEvent("stopRecord");
-    },
-
     takePhoto() {
       if (this.properties.showType === "record") return;
       if (this.properties.showPosterLoading) return;
       this.setData({
         loadingType: "image",
       });
+      this.triggerEvent("takePhoto");
     },
 
     startRecord() {
@@ -85,7 +74,7 @@ Component({
       });
 
       this.startLoading();
-      // this.triggerEvent("startRecord");
+      this.triggerEvent("startRecord");
     },
 
     stopRecord() {
@@ -108,7 +97,7 @@ Component({
       let end = -90; // 结束角度
       this.load = 0; // 记录进度值ms
 
-      const total = max + 200; //时间超过一点，开始录制和结束录制的调用均需要时间，避免录不满max时长，
+      const total = max + 800; //时间超过一点，开始录制和结束录制的调用均需要时间，避免录不满max时长，
       const stepTime = 1000 / 60;
       const stepDeg = 360 / (total / stepTime);
 
@@ -188,9 +177,9 @@ Component({
         }, 2000);
       }
 
-      // this.triggerEvent("stopRecord", {
-      //   timeout: type,
-      // });
+      this.triggerEvent("stopRecord", {
+        timeout: type,
+      });
     },
   },
 });
