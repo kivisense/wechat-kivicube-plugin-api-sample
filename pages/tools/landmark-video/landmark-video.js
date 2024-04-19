@@ -110,7 +110,6 @@ Page({
   startRecord() {
     if (this.startRecording) return;
     this.startRecording = true;
-    console.log(`in startRecord`);
     const shootControl = this.selectComponent("#shootControl");
     this.cameraCtx.startRecord({
       timeout:
@@ -127,6 +126,7 @@ Page({
         this.startRecording = false;
       },
       success: () => {
+        this.startTime = new Date().getTime();
         shootControl.startRecord();
         this.startRecording = false;
       },
@@ -139,7 +139,6 @@ Page({
   stopRecord() {
     if (this.stopRecording) return;
     this.stopRecording = true;
-    console.log(`in stopRecord`);
     this.setData({
       showPosterLoading: true,
     });
@@ -154,12 +153,18 @@ Page({
         this.stopRecording = false;
       },
       fail: (err) => {
-        console.error("stopRecord error:", err);
         this.setData({
           showPosterLoading: false,
         });
         shootControl.stopRecord();
         this.stopRecording = false;
+
+        if (new Date().getTime() - this.startTime > 2000) {
+          wx.showToast({
+            title: "录制失败，请重新开始录制",
+            icon: "none",
+          });
+        }
       },
     });
   },
