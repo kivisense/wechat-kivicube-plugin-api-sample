@@ -1,8 +1,8 @@
 <view
   class="shoot-control {{isRecording?'recording':''}}"
-  bindtap="handleTap"
-  bindlongpress="handleLongPress"
-  bindtouchend="handleTouchend"
+  bindtap="takePhoto"
+  bindlongpress="startRecord"
+  bindtouchend="stopRecord"
 >
   <view class="shoot-control-bg center"></view>
   <canvas type="2d" id="recordCountDownCanvas" class="center record-canvas"></canvas>

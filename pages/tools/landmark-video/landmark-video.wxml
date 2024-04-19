@@ -1,5 +1,6 @@
 <view class="landmark-video">
   <camera
+    style="width:{{windowWidth}}px;heihgt:{{windowHeight}}px;"
     class="layer"
     resolution="high"
     device-position="back"
@@ -9,8 +10,10 @@
     bind:error="error"
   />
   <shoot-control
+    id="shootControl"
     wx:if="{{showUI}}"
     showType="record"
+    max="{{timeout*1000}}"
     showPosterLoading="{{showPosterLoading}}"
     bind:startRecord="startRecord"
     bind:stopRecord="stopRecord"

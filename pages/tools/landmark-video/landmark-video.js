@@ -7,9 +7,17 @@ Page({
   data: {
     showUI: false,
     showPosterLoading: false,
+    timeout: 30,
     videoUrl: "",
+    windowWidth: "",
+    windowHeight: "",
   },
   onLoad() {
+    const { windowWidth, windowHeight } = systemInfo;
+    this.setData({
+      windowWidth,
+      windowHeight,
+    });
     this.cameraCtx = wx.createCameraContext();
   },
   onUnload() {
@@ -100,42 +108,60 @@ Page({
     });
   },
   startRecord() {
+    if (this.startRecording) return;
+    this.startRecording = true;
+    console.log(`in startRecord`);
+    const shootControl = this.selectComponent("#shootControl");
     this.cameraCtx.startRecord({
+      timeout:
+        systemInfo.platform === "android"
+          ? this.data.timeout + 1
+          : this.data.timeout,
       timeoutCallback: ({ tempVideoPath }) => {
         console.log("timeoutCallback", tempVideoPath);
         this.setData({
           videoUrl: tempVideoPath,
           showPosterLoading: false,
         });
+        shootControl.stopRecord();
+        this.startRecording = false;
       },
-      timeout: systemInfo.platform === "android" ? 31 : 30,
+      success: () => {
+        shootControl.startRecord();
+        this.startRecording = false;
+      },
       fail: (err) => {
-        console.error(err);
+        console.error("startRecord error:", err);
+        this.startRecording = false;
       },
     });
   },
-  stopRecord({ detail }) {
-    if (detail.timeout !== "min") {
-      this.setData({
-        showPosterLoading: true,
-      });
-    }
-    console.log(`detail.timeout`, detail.timeout);
-    if (detail.timeout !== "max") {
-      this.cameraCtx.stopRecord({
-        success: ({ tempVideoPath }) => {
-          if (detail.timeout !== "min") {
-            this.setData({
-              videoUrl: tempVideoPath,
-              showPosterLoading: false,
-            });
-          }
-        },
-        fail: (err) => {
-          console.error(err);
-        },
-      });
-    }
+  stopRecord() {
+    if (this.stopRecording) return;
+    this.stopRecording = true;
+    console.log(`in stopRecord`);
+    this.setData({
+      showPosterLoading: true,
+    });
+    const shootControl = this.selectComponent("#shootControl");
+    this.cameraCtx.stopRecord({
+      success: ({ tempVideoPath }) => {
+        this.setData({
+          videoUrl: tempVideoPath,
+          showPosterLoading: false,
+        });
+        shootControl.stopRecord();
+        this.stopRecording = false;
+      },
+      fail: (err) => {
+        console.error("stopRecord error:", err);
+        this.setData({
+          showPosterLoading: false,
+        });
+        shootControl.stopRecord();
+        this.stopRecording = false;
+      },
+    });
   },
 
   again() {

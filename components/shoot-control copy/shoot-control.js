@@ -56,31 +56,9 @@ Component({
     },
   },
   methods: {
-    handleTap() {
-      console.log(`handleTap`);
+    takePhoto() {
       if (this.properties.showType === "record") return;
       if (this.properties.showPosterLoading) return;
-      this.takePhoto();
-    },
-    handleLongPress() {
-      console.log(`handleLongPress`);
-      this.triggerEvent("startRecord");
-    },
-    handleTouchend() {
-      console.log(`handleTouchend`);
-      const { showType, showPosterLoading } = this.properties;
-      if (showPosterLoading) return;
-      if (showType === "photo") return;
-      if (!this.data.isRecording) return;
-
-      if (!this.isTimeout) {
-        console.log(`handleTouchend stopRecord`);
-        this.triggerEvent("stopRecord");
-      }
-    },
-
-    takePhoto() {
-      console.log(`takePhoto`);
       this.setData({
         loadingType: "image",
       });
@@ -88,7 +66,6 @@ Component({
     },
 
     startRecord() {
-      console.log(`startRecord`);
       if (this.properties.showType === "photo") return;
       if (this.properties.showPosterLoading) return;
       this.setData({
@@ -97,12 +74,14 @@ Component({
       });
 
       this.startLoading();
-      // this.triggerEvent("startRecord");
+      this.triggerEvent("startRecord");
     },
 
     stopRecord() {
-      console.log(`stopRecord`);
-      const { min } = this.properties;
+      const { showType, showPosterLoading, min } = this.properties;
+      if (showType === "photo") return;
+      if (showPosterLoading) return;
+      if (!this.data.isRecording) return;
 
       let stopType = "";
       if (this.load < min) {
@@ -112,15 +91,13 @@ Component({
     },
 
     startLoading() {
-      console.log(`startLoading`);
-      this.isTimeout = false;
       const { canvas, ctx } = this;
       const { max } = this.properties;
 
       let end = -90; // 结束角度
       this.load = 0; // 记录进度值ms
 
-      const total = max + 200; //时间超过一点，开始录制和结束录制的调用均需要时间，避免录不满max时长，
+      const total = max + 800; //时间超过一点，开始录制和结束录制的调用均需要时间，避免录不满max时长，
       const stepTime = 1000 / 60;
       const stepDeg = 360 / (total / stepTime);
 
@@ -174,9 +151,7 @@ Component({
         this.load += endTime - startTime;
 
         if (this.load >= total) {
-          this.isTimeout = true;
-          console.log(`isTimeout true`);
-          // this.stopLoading("max");
+          this.stopLoading("max");
         }
         // 更新时偏基准
         startTime = endTime;
@@ -184,7 +159,6 @@ Component({
     },
 
     stopLoading(type) {
-      console.log(`stopLoading`);
       const { canvas, ctx } = this;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       clearInterval(this.recordingTimer);
@@ -203,9 +177,9 @@ Component({
         }, 2000);
       }
 
-      // this.triggerEvent("stopRecord", {
-      //   timeout: type,
-      // });
+      this.triggerEvent("stopRecord", {
+        timeout: type,
+      });
     },
   },
 });
