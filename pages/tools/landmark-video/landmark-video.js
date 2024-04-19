@@ -2,6 +2,7 @@ const {
   promisify,
   downloadVideo,
   systemInfo,
+  getPrivate,
 } = require("../../../utils/util.js");
 Page({
   data: {
@@ -12,7 +13,8 @@ Page({
     windowWidth: "",
     windowHeight: "",
   },
-  onLoad() {
+  async onLoad() {
+    await getPrivate();
     const { windowWidth, windowHeight } = systemInfo;
     this.setData({
       windowWidth,

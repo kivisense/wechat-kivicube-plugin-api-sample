@@ -1,10 +1,15 @@
-const { downloadImage, promisify } = require("../../../utils/util.js");
+const {
+  downloadImage,
+  promisify,
+  getPrivate,
+} = require("../../../utils/util.js");
 Page({
   data: {
     showUI: false,
     imgUrl: "",
   },
-  onLoad() {
+  async onLoad() {
+    await getPrivate();
     this.cameraCtx = wx.createCameraContext();
   },
   onUnload() {
