@@ -1,3 +1,0 @@
-<!--pages/feedback-web/feedback-web.wxml-->
-<!-- 每个页面只能有一个 web-view，web-view 会自动铺满整个页面，并覆盖其他组件。 -->
-<web-view src="{{webviewUrl}}" bindload="webviewLoad"></web-view>

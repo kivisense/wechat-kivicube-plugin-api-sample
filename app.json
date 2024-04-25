@@ -21,16 +21,10 @@
     "pages/multi-continue-recognition/cloud-gyroscope/cloud-gyroscope",
     "pages/multi-continue-recognition/multi-tracking/multi-tracking",
     "pages/case/image-scan",
-    "pages/feedback/feedback",
-    "pages/feedback-web/feedback-web",
     "pages/collection/index/index",
     "pages/api/index/index",
     "pages/extension/index/index",
-    "pages/tools/index/index",
-    "pages/tools/landmark-video/landmark-video",
-    "pages/tools/landmark-photo/landmark-photo",
-    "pages/tools/miniprogram-feedback/miniprogram-feedback",
-    "pages/tools/web-feedback/web-feedback"
+    "pages/tools/index/index"
   ],
   "tabBar": {
     "color": "#333333",

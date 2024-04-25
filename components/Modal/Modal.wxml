@@ -23,7 +23,7 @@
       </view>
     </view>
     <view class="btns">
-      <view class="btn" scroll-top="0" bindtap="handleTap"
+      <view wx:if="{{info.url}}" class="btn" scroll-top="0" bindtap="handleTap"
         >{{info.type === 'web' ? '复制链接' : '立即体验'}}</view
       >
       <view

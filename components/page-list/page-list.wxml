@@ -11,7 +11,7 @@
           data-item="{{item}}"
           bind:tap="handleTap"
         >
-          <view class="{{item.url ? '' : 'undo'}}">{{ item.title }}</view>
+          <view class="{{item.url||item.miniprogram ? '' : 'undo'}}">{{ item.title }}</view>
           <image src="/assets/icons/right.png" class="aim" mode="widthFix" />
         </view>
       </view>

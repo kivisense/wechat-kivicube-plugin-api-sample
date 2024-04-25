@@ -24,7 +24,7 @@ Component({
         wx.navigateTo({ url: info.url });
         return false;
       }
-      if (!info.url) {
+      if (!info.url && !info.miniprogram) {
         return wx.showToast({ title: "即将上线", icon: "none" });
       }
       modal.setInfo(info, () => {
@@ -90,6 +90,7 @@ Component({
       wx.navigateToMiniProgram({
         appId: miniprogram.appId,
         path: miniprogram.path,
+        envVersion: miniprogram.envVersion || "release",
         fail(err) {
           console.error(err);
           // wx.showToast({

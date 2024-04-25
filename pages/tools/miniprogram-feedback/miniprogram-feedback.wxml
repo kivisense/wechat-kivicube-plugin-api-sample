@@ -1,7 +1,0 @@
-<!--pages/tools/miniprogram-feedback/miniprogram-feedback.wxml-->
-<view class="layer content-wrap">
-  <view wx:for="{{list}}" wx:key="index" wx:for-item="item" class="list-item">
-    <view class="label">{{ item.label }}</view>
-    <view class="value">{{ item.value }}</view>
-  </view>
-</view>
