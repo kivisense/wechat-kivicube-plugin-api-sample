@@ -1709,7 +1709,6 @@ export const toolsOptions = [
         miniprogram: {
           appId: "wx3bbab3920eabccb2",
           path: "/tools/pages/landmark-video/landmark-video",
-          envVersion: "develop",
           btnText: "立即体验",
         },
       },
@@ -1731,7 +1730,6 @@ export const toolsOptions = [
         miniprogram: {
           appId: "wx3bbab3920eabccb2",
           path: "/tools/pages/landmark-photo/landmark-photo",
-          envVersion: "develop",
           btnText: "立即体验",
         },
       },
@@ -1746,14 +1744,19 @@ export const toolsOptions = [
         // type: "feedback",
         type: "miniprogram",
         title: "小程序反馈",
-        description: ["点击跳转查看小程序反馈"],
+        description: [
+          {
+            txt: "点击跳转查看小程序反馈",
+            type: "txt",
+            style: "",
+          },
+        ],
         clickMta: "click_feedback_button",
         startMta: "click_feedback_start",
         // url: "/pages/feedback/feedback",
         miniprogram: {
           appId: "wx3bbab3920eabccb2",
           path: "/tools/pages/feedback/feedback",
-          envVersion: "develop",
           btnText: "立即体验",
         },
       },
@@ -1763,14 +1766,19 @@ export const toolsOptions = [
         // type: "feedback",
         type: "miniprogram",
         title: "WebView反馈",
-        description: ["点击跳转查看WebView反馈"],
+        description: [
+          {
+            txt: "点击跳转查看WebView反馈",
+            type: "txt",
+            style: "",
+          },
+        ],
         clickMta: "click_feedbackWeb_button",
         startMta: "click_feedbackWeb_start",
         // url: "/pages/feedback-web/feedback-web",
         miniprogram: {
           appId: "wx3bbab3920eabccb2",
           path: "/tools/pages/feedback-web/feedback-web",
-          envVersion: "develop",
           btnText: "立即体验",
         },
       },
@@ -1779,14 +1787,19 @@ export const toolsOptions = [
         name: "miniprogram-compatibility-feedback",
         type: "miniprogram",
         title: "小程序兼容反馈",
-        description: ["点击跳转查看小程序兼容反馈"],
+        description: [
+          {
+            txt: "点击跳转查看小程序兼容反馈",
+            type: "txt",
+            style: "",
+          },
+        ],
         // clickMta: "click_feedbackWeb_button",
         // startMta: "click_feedbackWeb_start",
         // url: "/pages/tools/miniprogram-feedback/miniprogram-feedback",
         miniprogram: {
           appId: "wx3bbab3920eabccb2",
           path: "/tools/pages/miniprogram-feedback/miniprogram-feedback",
-          envVersion: "develop",
           btnText: "立即体验",
         },
       },
@@ -1795,14 +1808,19 @@ export const toolsOptions = [
         name: "web-compatibility-feedback",
         type: "miniprogram",
         title: "web兼容反馈",
-        description: ["点击跳转查看web兼容反馈"],
+        description: [
+          {
+            txt: "点击跳转查看web兼容反馈",
+            type: "txt",
+            style: "",
+          },
+        ],
         // clickMta: "click_feedbackWeb_button",
         // startMta: "click_feedbackWeb_start",
         // url: "/pages/tools/web-feedback/web-feedback",
         miniprogram: {
           appId: "wx3bbab3920eabccb2",
           path: "/tools/pages/web-feedback/web-feedback",
-          envVersion: "develop",
           btnText: "立即体验",
         },
       },
