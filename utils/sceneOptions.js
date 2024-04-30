@@ -1807,10 +1807,10 @@ export const toolsOptions = [
         id: 1004,
         name: "web-compatibility-feedback",
         type: "miniprogram",
-        title: "web兼容反馈",
+        title: "网页端兼容反馈",
         description: [
           {
-            txt: "点击跳转查看web兼容反馈",
+            txt: "点击跳转查看网页端兼容反馈",
             type: "txt",
             style: "",
           },
