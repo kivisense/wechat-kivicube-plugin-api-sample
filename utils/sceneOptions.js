@@ -1698,7 +1698,7 @@ export const toolsOptions = [
         title: "采集地标训练视频（最佳体验点视频）",
         description: [
           {
-            txt: "快速采集地标训练视频，最短2秒，最长30秒，并保存到手机",
+            txt: "快速采集地标训练视频，最短2秒，最长30秒，并保存到手机相册",
             type: "txt",
             style: "",
           },
@@ -1719,7 +1719,7 @@ export const toolsOptions = [
         title: "采集地标定位图（识别图）",
         description: [
           {
-            txt: "快速采集地标定位图（识别图），并保存到手机",
+            txt: "快速采集地标定位图（识别图），并保存到手机相册",
             type: "txt",
             style: "",
           },
@@ -1746,7 +1746,7 @@ export const toolsOptions = [
         title: "小程序反馈",
         description: [
           {
-            txt: "点击跳转查看小程序反馈",
+            txt: "跳转小程序（AR扫呀扫）查看小程序运行环境，用于反馈给官方诊断错误",
             type: "txt",
             style: "",
           },
@@ -1768,7 +1768,7 @@ export const toolsOptions = [
         title: "WebView反馈",
         description: [
           {
-            txt: "点击跳转查看WebView反馈",
+            txt: "跳转小程序（AR扫呀扫）查看网页运行环境，用于反馈给官方诊断错误",
             type: "txt",
             style: "",
           },
@@ -1789,7 +1789,7 @@ export const toolsOptions = [
         title: "小程序兼容反馈",
         description: [
           {
-            txt: "点击跳转查看小程序兼容反馈",
+            txt: "跳转小程序（AR扫呀扫）查看当前运行环境对Kivicube的小程序支持情况",
             type: "txt",
             style: "",
           },
@@ -1810,7 +1810,7 @@ export const toolsOptions = [
         title: "网页端兼容反馈",
         description: [
           {
-            txt: "点击跳转查看网页端兼容反馈",
+            txt: "跳转小程序（AR扫呀扫）查看当前运行环境对Kivicube的网页端支持情况",
             type: "txt",
             style: "",
           },
