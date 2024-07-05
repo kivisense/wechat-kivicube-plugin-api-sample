@@ -9,7 +9,7 @@
 
 * DEMO示例[（API示例与文档）](https://github.com/kivisense/wechat-kivicube-plugin-api-demo)
 
-* 此项目对应的微信小程序叫”AR示例“，可扫描下方小程序码进行体验  
+* 此项目对应的微信小程序叫”AR示例“，可扫描下方小程序码进行体验
 ![avatar](https://cdn.nlark.com/yuque/0/2020/jpeg/217517/1606982678816-87c46bb6-261c-458d-b8bf-e3a6d15b9993.jpeg?x-oss-process=image%2Fresize%2Cw_200)
 
 ## 项目启动步骤
@@ -74,7 +74,7 @@
 ```
   "plugins": {
     "kivicube": {
-      "version": "2.1.0",
+      "version": "2.10.0",
       "provider": "wx3bbab3920eabccb2"
     }
   }
