@@ -125,7 +125,7 @@
   ],
   "plugins": {
     "kivicube": {
-      "version": "2.9.2",
+      "version": "2.10.0",
       "provider": "wx3bbab3920eabccb2"
     }
   },
