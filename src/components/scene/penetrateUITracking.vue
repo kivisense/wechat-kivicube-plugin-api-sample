@@ -26,11 +26,7 @@
 
 <script>
 import scene from "@/mixins/scene.mixin";
-const { setOptions } = requirePlugin("kivicube");
-setOptions({
-  license:
-    "jwD727H1wtZYvnOtS4QMLr1KJxVHTQ/+BhH4aLak1ktRLCaSWvffWudfIzSK0uYU0XUlZMSnPBj/dNO3n6+H3+qr+f9xV+F/J05ZN8dD1+VYdRIvjA8grYO/PqhuWJFGGvn+XlOPANh6BIAzJavPgo/SY03lwjwVWBpulEDjtUVtIE7kS9vaszBMIKSp9iCRle5V6/Dj0gyJ1A4opB5JmYLxPzkDw/nXfTwj0SyAocwXfTwpQyyd3Di/MoWOcae747az9sNSjeHy7ovXx4ssxY2A145KfuVACbXHYr/uOXlQDhKQyYhEfKLFkl26f4a1bpvUXRHQhsgx7ZVRogWsVA=="
-});
+
 export default {
   props: {},
   data: () => ({

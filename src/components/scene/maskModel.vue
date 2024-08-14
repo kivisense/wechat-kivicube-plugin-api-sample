@@ -78,7 +78,7 @@ export default {
       // 如果name为假，说明此模型没有模型动画
       if (name) {
         model.playAnimation({
-          name, // 动画名称
+          animationName: name, // 动画名称
           loop: false, // 是否循环播放
           clampWhenFinished: true // 播放完毕后是否停留在动画最后一帧
         });

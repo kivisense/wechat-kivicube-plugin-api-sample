@@ -45,7 +45,7 @@ export default {
       const model4 = this.view.getObject(obj4.name);
       const [name] = model1.getAnimationNames();
       model1.playAnimation({
-        name,
+        animationName: name,
         loop: true
       });
       model2.play();

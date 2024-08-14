@@ -57,7 +57,7 @@ export default {
       const video = this.view.getObject(name);
       video.addEventListener("click", () => {
         wx.showToast({ icon: "none", title: "视频被点击" });
-        video.stop();
+        video.videoContext.stop();
       });
       video.addEventListener("play", () => {
         wx.showToast({ icon: "none", title: "视频开始播放" });
@@ -76,21 +76,21 @@ export default {
     },
     videoOpt(type) {
       if (type === "pause") {
-        this.video.pause();
+        this.video.videoContext.pause();
       }
       if (type === "stop") {
-        this.video.stop();
+        this.video.videoContext.stop();
       }
       if (type === "play") {
         this.video.loop = true; // 是否循环播放
-        this.video.play();
+        this.video.videoContext.play();
       }
       if (type === "playback") {
-        this.video.seek(0.1);
+        this.video.videoContext.seek(0.1);
         // seek需要一段时间起作用
         setTimeout(() => {
           this.video.loop = false; // 是否循环播放
-          this.video.play();
+          this.video.videoContext.play();
         }, 50);
       }
     },

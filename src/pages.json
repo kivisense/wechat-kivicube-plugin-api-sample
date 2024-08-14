@@ -7,9 +7,6 @@
       "path": "pages/scene/index"
     },
     {
-      "path": "pages/cloudar/index"
-    },
-    {
       "path": "pages/some/index"
     },
     {
@@ -28,7 +25,6 @@
     "navigationBarTextStyle": "black",
     "usingComponents": {
       "kivicube-scene": "plugin://kivicube/kivicube-scene",
-      "kivi-cloudar": "plugin://kivicube/kivi-cloudar",
       "kivicube-collection": "plugin://kivicube/kivicube-collection"
     }
   }
