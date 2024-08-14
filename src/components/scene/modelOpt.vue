@@ -124,7 +124,7 @@ export default {
       this.playName = name;
 
       this.model.playAnimation({
-        name, // 动画名称
+        animationName: name, // 动画名称
         loop: true, // 是否循环播放
         clampWhenFinished: false // 播放完毕后是否停留在动画最后一帧
       });

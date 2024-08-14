@@ -444,29 +444,29 @@ const sceneOptions = [
       }
     ]
   },
-  {
-    title: "多图识别",
-    child: [
-      {
-        id: 16,
-        name: "autoEnter",
-        type: "cloudar",
-        title: "使用kivi-cloudar实现",
-        description: [
-          { txt: "实现流程：", type: "title", style: "" },
-          {
-            txt:
-              "1.使用kivi-cloudar加载Kivicube项目，扫描图像识别后，返回场景ID；",
-            type: "txt",
-            style: ""
-          },
-          { txt: "2.跳转新的页面加载刚才识别到的场景", type: "txt", style: "" }
-        ],
-        clickMta: "click_cloudar_button",
-        startMta: "click_cloudar_start"
-      }
-    ]
-  },
+  // {
+  //   title: "多图识别",
+  //   child: [
+  //     {
+  //       id: 16,
+  //       name: "autoEnter",
+  //       type: "cloudar",
+  //       title: "使用kivi-cloudar实现",
+  //       description: [
+  //         { txt: "实现流程：", type: "title", style: "" },
+  //         {
+  //           txt:
+  //             "1.使用kivi-cloudar加载Kivicube项目，扫描图像识别后，返回场景ID；",
+  //           type: "txt",
+  //           style: ""
+  //         },
+  //         { txt: "2.跳转新的页面加载刚才识别到的场景", type: "txt", style: "" }
+  //       ],
+  //       clickMta: "click_cloudar_button",
+  //       startMta: "click_cloudar_start"
+  //     }
+  //   ]
+  // },
   {
     title: "多图连续识别（kivicube-collection组件）",
     child: [

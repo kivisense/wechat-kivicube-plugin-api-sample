@@ -105,9 +105,8 @@ export default {
         const modelUrl =
           "https://kivicube-resource.kivisense.com/wechat-kivicube-plugin-api-sample/tyrannosaurus-rex.glb";
         const modelAb = await requestFile(modelUrl);
-        // 如果模型是gltf格式，则必须传递第二个参数。否则可为空
-        const model = await this.view.addModel(modelAb, null, () => {});
-
+        const model = await this.view.createGltfModel(modelAb, () => {});
+        this.view.add(model);
         // model.position.set(-0.8, -2.5, 0);
         model.position.set(0, 0, 0);
         model.rotation.set(0, toDeg(45), 0);
@@ -115,7 +114,7 @@ export default {
 
         const [name] = model.getAnimationNames();
         model.playAnimation({
-          name,
+          animationName: name,
           loop: true
         });
 
@@ -138,11 +137,12 @@ export default {
         );
         const defaultThumbnailUrl = ""; // 如果视频显示不出来，则显示默认的缩略图。传递为空则不显示缩略图。
 
-        const video = await this.view.addVideo(
+        const video = await this.view.createVideo(
           videoUrlOrPath,
           defaultThumbnailUrl,
           () => {}
         );
+        this.view.add(video);
         // video.position.set(0, 1.65, 0);
         video.position.set(0, 0, 0);
         video.rotation.set(0, 0, 0);
@@ -195,21 +195,21 @@ export default {
     // 视频操作
     videoOpt(type) {
       if (type === "pause") {
-        this.video.pause();
+        this.video.videoContext.pause();
       }
       if (type === "stop") {
-        this.video.stop();
+        this.video.videoContext.stop();
       }
       if (type === "play") {
         this.video.loop = true; // 是否循环播放
-        this.video.play();
+        this.video.videoContext.play();
       }
       if (type === "full-screen") {
         this.video.loop = false; // 是否循环播放
-        this.video.play();
-        this.video.requestFullScreen();
+        this.video.videoContext.play();
+        this.video.videoContext.requestFullScreen();
         // 退出全屏API
-        // this.video.exitFullScreen();
+        // this.video.videoContext.exitFullScreen();
       }
     },
     // 移除模型
@@ -224,6 +224,7 @@ export default {
     // 移除视频
     removeVideo() {
       if (this.video) {
+        this.video.videoContext.pause();
         this.view.remove(this.video);
         this.video = null;
         this.showVideo = false;

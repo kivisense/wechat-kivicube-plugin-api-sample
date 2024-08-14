@@ -10,7 +10,7 @@
 
 * DEMO示例[（API示例与文档）](https://github.com/kivisense/wechat-kivicube-plugin-api-demo)
 
-* 此项目对应的微信小程序叫”AR示例“，可扫描如下所示小程序码  
+* 此项目对应的微信小程序叫”AR示例“，可扫描如下所示小程序码
 ![avatar](https://cdn.nlark.com/yuque/0/2020/jpeg/217517/1606982678816-87c46bb6-261c-458d-b8bf-e3a6d15b9993.jpeg?x-oss-process=image%2Fresize%2Cw_200)
 
 ## 项目启动步骤
@@ -21,19 +21,19 @@
 
 ## 项目基本构成
 
-collect: 分包页面（合辑)  
-components：各种场景的demo  
-mixins: 项目公共混合方法  
-pages 主包页面  
-static 静态图片资源  
-App.vue 导入全局样式  
-utils 全局工具集  
-main.js 入口文件  
-manifest.json uni-app配置文件 appid 插件等  
-pages.json 页面url注册 分包已建好  
-uni.scss 全局scss变量  
+collect: 分包页面（合辑)
+components：各种场景的demo
+mixins: 项目公共混合方法
+pages 主包页面
+static 静态图片资源
+App.vue 导入全局样式
+utils 全局工具集
+main.js 入口文件
+manifest.json uni-app配置文件 appid 插件等
+pages.json 页面url注册 分包已建好
+uni.scss 全局scss变量
 
-###  AR示例分为三个页面
+###  AR示例分为两个页面
 
 1.kivicube-scene ==> @/pages/scene
 
@@ -41,13 +41,7 @@ uni.scss 全局scss变量
 
 因以上功能示例具有大部分相同功能，故@/pages/scene页面中实现公共功能，并引入scene组件（@/components/scene）进行不同功能展示。
 
-2.kivi-cloudar ==> @/pages/cloudar
-
-功能示例：多图识别，实用案例
-
-因以上功能示例具有大部分相同功能，故@/pages/cloudar页面中实现公共功能，并引入cloudar组件（@/components/scene）进行不同功能展示。
-
-3.kivicube-collection ==> @/collect/pages/index 
+2.kivicube-collection ==> @/collect/pages/index
 
 功能示例：多图连续识别（kivicube-collection组件）
 
@@ -69,7 +63,7 @@ uni.scss 全局scss变量
 ### 引入插件代码包：
     "plugins": {
       "kivicube": {
-        "version": "1.5.1",
+        "version": "2.10.1",
         "provider": "wx3bbab3920eabccb2"
       }
 	}

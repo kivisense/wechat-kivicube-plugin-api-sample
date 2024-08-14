@@ -68,14 +68,15 @@
     /* 微信小程序特有相关 */
     "appid": "wxd7870f63f5450bbc",
     "setting": {
-      "urlCheck": false
+      "urlCheck": false,
+      "bigPackageSizeSupport": true
     },
     "usingComponents": true,
     // 优化分包
     "optimization":{"subPackages":true},
     "plugins": {
       "kivicube": {
-        "version": "1.6.5",
+        "version": "2.10.1",
         "provider": "wx3bbab3920eabccb2"
       }
 		}

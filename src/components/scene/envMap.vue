@@ -49,9 +49,8 @@ export default {
         "https://kivicube-resource.kivisense.com/wechat-kivicube-plugin-api-demo/panorama-map/panorama.jpg"
       );
 
-      this.panoramaEnvMap = await this.view.generateEnvMapByPanorama(
+      this.panoramaEnvMap = await this.view.createEnvMapByPanorama(
         this.panoramaAb,
-        "jpg",
         () => {}
       );
 
