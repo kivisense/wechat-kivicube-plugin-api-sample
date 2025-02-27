@@ -63,7 +63,7 @@ uni.scss 全局scss变量
 ### 引入插件代码包：
     "plugins": {
       "kivicube": {
-        "version": "2.10.1",
+        "version": "2.16.2",
         "provider": "wx3bbab3920eabccb2"
       }
 	}
