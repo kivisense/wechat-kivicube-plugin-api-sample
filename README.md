@@ -74,7 +74,7 @@
 ```
   "plugins": {
     "kivicube": {
-      "version": "2.10.0",
+      "version": "2.16.2",
       "provider": "wx3bbab3920eabccb2"
     }
   }
