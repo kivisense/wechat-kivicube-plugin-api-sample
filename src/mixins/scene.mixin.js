@@ -9,9 +9,9 @@ export default {
         }
       }, 5000);
     },
-    // 下载素材时的进度通知。event.detail的值范围为0.0 - 1.0，代表下载的进度。
+    // 下载素材时的进度通知。event.detail.progress的值范围为0.0 - 1.0，代表下载的进度。
     downloadAssetProgress(e) {
-      const progress = e.detail * 0.9;
+      const progress = e.detail.progress * 0.9;
       this.$parent.changeProgress(progress);
     },
     // 素材下载完毕。
