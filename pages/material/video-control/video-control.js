@@ -115,7 +115,7 @@ Page({
     return {
       title: `Kivicube企业版高级API示例：${this.data.sceneData.title}`,
       path: `/pages/material/video-control/video-control?id=${this.data.sceneData.id}`,
-      imageUrl: "/assets/images/share.jpg",
+      imageUrl: "https://meta.kivisense.com/wechat-kivicube-plugin-api-sample/images/share.jpg",
     };
   },
 });

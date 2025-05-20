@@ -28,7 +28,3 @@ button {
   margin-bottom: 5vw;
   font-size: 3.73vw;
 }
-
-button.long {
-  width: 52vw;
-}

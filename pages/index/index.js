@@ -15,7 +15,7 @@ Page({
     return {
       title: "Kivicube企业版高级API示例",
       path: "/pages/index/index",
-      imageUrl: "/assets/images/share.jpg",
+      imageUrl: "https://meta.kivisense.com/wechat-kivicube-plugin-api-sample/images/share.jpg",
     };
   },
 });

@@ -12,7 +12,5 @@
   <button bind:tap="change" data-type="LinearToneMapping">LinearToneMapping</button>
   <button bind:tap="change" data-type="ReinhardToneMapping">ReinhardToneMapping</button>
   <button bind:tap="change" data-type="CineonToneMapping">CineonToneMapping</button>
-  <button class="long" bind:tap="change" data-type="ACESFilmicToneMapping">
-    ACESFilmicToneMapping
-  </button>
+  <button bind:tap="change" data-type="ACESFilmicToneMapping">ACESFilmicToneMapping</button>
 </view>
