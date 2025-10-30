@@ -1,13 +1,10 @@
 // pages/material/tween-control/tween-control.js
 const { takePhoto, downloadImage } = require("../../../utils/util.js");
 let TWEEN;
-try {
-  TWEEN = require("@tweenjs/tween.js")
-} catch (err) {
-  console.warn(err)
-}
+
 Page({
   data: {
+    showAR: false,
     startLoad: false,
     progress: 0, // 下载进度
     showProgressNum: false, // 显示下载进度
@@ -19,9 +16,23 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad() {
+  async onLoad() {
     const sceneData = wx.getStorageSync("sceneData");
     this.setData({ sceneData });
+
+    try {
+      // 主包暂时不够用了，使用分包的tween.umd.js
+      TWEEN = await require.async('../../../api/pages/others/tweenAnimation/tween.umd.js')
+      console.log("tween", TWEEN)
+    } catch (error) {
+      wx.showToast({
+        title: 'TWEEN.js 加载失败',
+        icon: 'none'
+      });
+      return
+    }
+
+    this.setData({ showAR: true });
   },
   back() {
     wx.navigateBack();

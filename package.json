@@ -7,7 +7,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@tweenjs/tween.js": "^18.4.2",
     "umtrack-wx": "^2.5.2"
   },
   "author": "kivisense",

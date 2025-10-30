@@ -1,9 +1,21 @@
 // index.js
 // 获取应用实例
-import { extensionOptions } from "../../../utils/sceneOptions";
 Page({
   data: {
-    extensionOptions,
+    extensionOptions: [],
+    showList: false,
+  },
+  async onLoad() {
+    try {
+      const { extensionOptions } = await require.async('../../../subpackage-common/sceneOptions.js')
+      this.setData({ extensionOptions, showList: true })
+    } catch (error) {
+      this.setData({ showList: false })
+      wx.showToast({
+        title: '扩展选项加载失败',
+        icon: 'none'
+      });
+    }
   },
   onShow() {
     // 打开页面后开启屏幕常亮

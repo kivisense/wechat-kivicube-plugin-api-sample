@@ -1,2 +1,2 @@
 <!--index.wxml-->
-<page-list list="{{apiOptions}}" />
+<page-list wx:if="{{showList}}" list="{{apiOptions}}" />

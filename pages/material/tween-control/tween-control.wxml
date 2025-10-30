@@ -1,6 +1,7 @@
 <!--pages/material/tween-control/tween-control.wxml-->
 <view class="layer scene-box">
   <kivicube-scene
+    wx:if="{{showAR}}"
     class="kivicube"
     scene-id="{{sceneId}}"
     bind:error="error"

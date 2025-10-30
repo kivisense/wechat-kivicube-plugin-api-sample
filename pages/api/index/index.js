@@ -1,9 +1,21 @@
 // index.js
 // 获取应用实例
-import { apiOptions } from "../../../utils/sceneOptions";
 Page({
   data: {
-    apiOptions,
+    apiOptions: [],
+    showList: false,
+  },
+  async onLoad() {
+    try {
+      const { apiOptions } = await require.async('../../../subpackage-common/sceneOptions.js')
+      this.setData({ apiOptions, showList: true })
+    } catch (error) {
+      this.setData({ showList: false })
+      wx.showToast({
+        title: 'API选项加载失败',
+        icon: 'none'
+      });
+    }
   },
   onShow() {
     // 打开页面后开启屏幕常亮
